@@ -1108,6 +1108,7 @@ html ul > hanla {
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;©
+<span id="sitetime"></span>
             
                 <span id="year">2019-2021</span>
             
@@ -1174,6 +1175,46 @@ html ul > hanla {
 </footer>
 
 <div class="progress-bar"></div>
+作者：godweiyang
+链接：https://zhuanlan.zhihu.com/p/35668237
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+<script language="javascript"><hanla></hanla>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回<hanla></hanla>date<hanla></hanla>对象距世界标准时间<hanla></hanla>(UTC)1970<hanla></hanla>年<hanla></hanla>1<hanla></hanla>月<hanla></hanla>1<hanla></hanla>日午夜之间的毫秒数<hanla></hanla>(时间戳)
+        year - 作为<hanla></hanla>date<hanla></hanla>对象的年份，为<hanla></hanla>4<hanla></hanla>位年份值
+        month - 0-11<hanla></hanla>之间的整数，做为<hanla></hanla>date<hanla></hanla>对象的月份
+        day - 1-31<hanla></hanla>之间的整数，做为<hanla></hanla>date<hanla></hanla>对象的天数
+        hours - 0(午夜<hanla></hanla>24<hanla></hanla>点)-23<hanla></hanla>之间的整数，做为<hanla></hanla>date<hanla></hanla>对象的小时数
+        minutes - 0-59<hanla></hanla>之间的整数，做为<hanla></hanla>date<hanla></hanla>对象的分钟数
+        seconds - 0-59<hanla></hanla>之间的整数，做为<hanla></hanla>date<hanla></hanla>对象的秒数
+        microseconds - 0-999<hanla></hanla>之间的整数，做为<hanla></hanla>date<hanla></hanla>对象的毫秒数 */
+        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //<hanla></hanla>北京时间<hanla></hanla>2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*<hanla></hanla>因为建站时间还没有一年，就将之注释掉了。需要的可以取消<hanla></hanla>*/
+    siteTime();
+</script>
 
 
     <!-- 搜索遮罩框 -->
@@ -1335,4 +1376,4 @@ $(function () {
 
 
 
-</body></html>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body></html>
