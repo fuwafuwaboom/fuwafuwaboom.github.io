@@ -1,0 +1,1447 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="【C语言从青铜到王者】第一篇·详解分支与循环, Locke Lloyd's World">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>【C语言从青铜到王者】第一篇·详解分支与循环 | Locke Lloyd's World</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start --><style>
+.body hanla:after {
+    content: ' ';
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
+}
+
+html code hanla,
+html pre hanla,
+html kbd hanla,
+html samp hanla {
+    display: none;
+}
+
+html ol > hanla,
+html ul > hanla {
+    display: none;
+}
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Locke Lloyd's World" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Locke Lloyd's World</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Locke Lloyd's World</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"><hanla></hanla>【C<hanla></hanla>语言从青铜到王者】第一篇·详解分支与循环</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color"><hanla></hanla>C<hanla></hanla>语言学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%88%86%E6%94%AF%E4%B8%8E%E5%BE%AA%E7%8E%AF/">
+                                <span class="chip bg-color">分支与循环</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E4%BB%8E%E9%9D%92%E9%93%9C%E5%88%B0%E7%8E%8B%E8%80%85%E3%80%91/" class="post-category"><hanla></hanla>
+                                【C<hanla></hanla>语言从青铜到王者】
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-03
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    22 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>本篇前言</strong><br>前文我们说到，编程的一个目的就是借助计算机帮助我们解决生活中的问题，而世界运行的基本时间逻辑，在向计算机描述时可以大致归纳成三种逻辑结构：顺序、选择、循环。<br><strong>顺序</strong>就是从前往后，从上到下，我们的写好的程序就是按顺序从第一行起被一行一行的编译的<br><strong>选择</strong>也叫分支，是同一时间点面对问题时，有不同的选择，我们选其一而行<br><strong>循环</strong>是指程序进入了一段不断重复的路，可能会一直在此循环往复，也可以打破循环，继续前进。<br>在顺序执行的程序中，分支中可能有循环，循环中也可能有分支。分支和循环是让我们的代码变得多姿多彩的关键技能，今天就让我们来升级它们吧！</p>
+<hr>
+<p>[toc]</p>
+<hr>
+<h1 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h1><hr>
+<h3 id="if-else语句"><a href="#if-else语句" class="headerlink" title="if - else语句"></a><hanla></hanla>if - else<hanla></hanla>语句</h3><p><hanla></hanla>if-else<hanla></hanla>语句就是由<hanla></hanla>if、else（、else if）组成的语句块。它是分支语句的一种，也是我们写出选择结构必须掌握的语句<br><hanla></hanla>我在这里不厌其烦的把<hanla></hanla>if-else<hanla></hanla>语句分成了三种：单<hanla></hanla>if<hanla></hanla>语句、if-else<hanla></hanla>双分支语句、if-else if-else<hanla></hanla>多分支语句</p>
+<hr>
+<h5 id="单if语句"><a href="#单if语句" class="headerlink" title="单if语句"></a><hanla></hanla>单<hanla></hanla>if<hanla></hanla>语句</h5><p><hanla></hanla>单<hanla></hanla>if<hanla></hanla>语句就是没有<hanla></hanla>else<hanla></hanla>只有<hanla></hanla>if<hanla></hanla>的语句。</p>
+<blockquote>
+<p>if(条件表达式)<br>{<br>执行的语句；<br>}</p>
+</blockquote>
+<p><hanla></hanla>if<hanla></hanla>的英文意思是<hanla></hanla>“如果”，我们可以按照语义理解成<hanla></hanla>“如果我满足条件就执行语句”。单<hanla></hanla>if<hanla></hanla>语句完成的就是这么一个功能。那如果不满足条件呢？不满足条件，就不执行语句。这里可以看出<hanla></hanla>if-else<hanla></hanla>不是一定得配套使用，只要有<hanla></hanla>if<hanla></hanla>就可以做出最基本的判断，这个特征在<hanla></hanla>if-else if-else<hanla></hanla>语句中同样适用，所以以后见到只有<hanla></hanla>if<hanla></hanla>或只有<hanla></hanla>if-else if<hanla></hanla>的语句就不要觉得奇怪了。<br>给出样例代码：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">	<span class="keyword">if</span> (age &gt; <span class="number">18</span>)</span><br><span class="line">	    <span class="built_in">printf</span>(<span class="string">"可以考驾照\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210411184434918.png" alt="在这里插入图片描述"><br><hanla></hanla>代码分析：由于<hanla></hanla>age=20,20&gt;18,if<hanla></hanla>后<hanla></hanla>()<hanla></hanla>里的条件判断为真，所以执行语句<hanla></hanla>printf(“可以考驾照\n”);</p>
+<hr>
+<h6 id="知识补充一"><a href="#知识补充一" class="headerlink" title="知识补充一"></a>知识补充一</h6><p>往后讲之前我们先补充两个基础知识：<br>给出样例代码：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</span><br><span class="line">	<span class="keyword">if</span> (a &lt; <span class="number">60</span>)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"挂科\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"稳过\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210410231345189.png" alt="在这里插入图片描述"><br><strong><hanla></hanla>1.C<hanla></hanla>语言的真和假与<hanla></hanla>if<hanla></hanla>语句判断的条件</strong><br><hanla></hanla>C<hanla></hanla>语言中的<hanla></hanla>“真”<hanla></hanla>和<hanla></hanla>“假”<hanla></hanla>可以简单的理解成<hanla></hanla>“非零”<hanla></hanla>和<hanla></hanla>“零”。选择语句其实就是通过判断<strong>条件</strong><hanla></hanla>的真假来<hanla></hanla>“做出选择”，这个条件就是写在<hanla></hanla>if<hanla></hanla>后面的<hanla></hanla>()<hanla></hanla>里的表达式。上面的程序中，这个<strong>条件</strong><hanla></hanla>就是<hanla></hanla>“a&lt;60”，前面我们说过<hanla></hanla>“&lt;”<hanla></hanla>的意思是<hanla></hanla>“判断是否小于”，结果为真就输出<hanla></hanla>1，结果为假就输出<hanla></hanla>0。所以<hanla></hanla>“a&lt;60”<hanla></hanla>的意思就是判断<hanla></hanla>a<hanla></hanla>是否小于<hanla></hanla>60，我们通过<hanla></hanla>scanf<hanla></hanla>键入的<hanla></hanla>a<hanla></hanla>的值是<hanla></hanla>60，所以判断为假，表达式的结果是<hanla></hanla>0，为假，执行<hanla></hanla>else<hanla></hanla>语句，屏幕打印出<hanla></hanla>“稳过”。<br><hanla></hanla>（博主希望大家在都能稳过<hanla></hanla>(￣▽￣)）</p>
+<p><strong><hanla></hanla>2.if<hanla></hanla>后的执行语句加不加大括号的问题</strong><br><hanla></hanla>通过下面的程序来看不加大括号的情况。不加大括号时，if<hanla></hanla>条件判断为真时会默认只执行其后最近的一条语句</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">14</span>;</span><br><span class="line">	<span class="keyword">if</span> (age &lt; <span class="number">18</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"未成年\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/202104110822205.png" alt="在这里插入图片描述"><br><hanla></hanla>通过下面的程序看一下加大括号的情况。加大括号时，if<hanla></hanla>条件判断为真时会执行大括号内所有语句</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">14</span>;</span><br><span class="line">	<span class="keyword">if</span> (age &lt; <span class="number">18</span>)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"未成年\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能谈恋爱\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210411082520710.png" alt="在这里插入图片描述"><br><hanla></hanla>再看下面这段程序，我们的<hanla></hanla>age<hanla></hanla>明明已经到<hanla></hanla>18<hanla></hanla>了却仍然不能谈恋爱，这是为什么呢？原因就是<hanla></hanla>“<strong><hanla></hanla>不加大括号时<hanla></hanla>if<hanla></hanla>仅与其后最近的一条语句配对</strong><hanla></hanla>”，由于<hanla></hanla>age<hanla></hanla>是<hanla></hanla>18，条件判断为假，所以不执行<hanla></hanla>printf(“未成年\n”);然后不论条件真假，程序都会按照顺序执行<hanla></hanla>printf(“不能谈恋爱\n”);</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">18</span>;</span><br><span class="line">	<span class="keyword">if</span> (age &lt; <span class="number">18</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"未成年\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能谈恋爱\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210411082746488.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>知识总结：<br><hanla></hanla>1.C<hanla></hanla>语言中<hanla></hanla>if<hanla></hanla>后的条件判断：非零为真，零为假<br><hanla></hanla>2.<hanla></hanla>不加大括号时<hanla></hanla>if<hanla></hanla>仅与其后最近的一条语句配对</p>
+</blockquote>
+<hr>
+<h5 id="if-else双分支语句"><a href="#if-else双分支语句" class="headerlink" title="if - else双分支语句"></a><hanla></hanla>if - else<hanla></hanla>双分支语句</h5><p><hanla></hanla>双分支语句其实就是判断题，非<hanla></hanla>if<hanla></hanla>即<hanla></hanla>else<br><hanla></hanla>给出语法：</p>
+<blockquote>
+<p>if(条件表达式）<br>{<br><hanla></hanla>执行的语句<hanla></hanla>1；<br>}<br>else<br>{<br><hanla></hanla>执行的语句<hanla></hanla>2；<br>}</p>
+</blockquote>
+<p><hanla></hanla>条件表达式为真，执行<hanla></hanla>if<hanla></hanla>后语句，条件表达式为假，执行<hanla></hanla>else<hanla></hanla>后语句<br>案例：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;age);</span><br><span class="line">	<span class="keyword">if</span> (age &lt; <span class="number">18</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"未成年\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"成年\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210414100729174.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210414100743504.png" alt="在这里插入图片描述"></p>
+<hr>
+<h5 id="if-else-if-else多分支语句"><a href="#if-else-if-else多分支语句" class="headerlink" title="if - else if - else多分支语句"></a><hanla></hanla>if - else if - else<hanla></hanla>多分支语句</h5><p>多分支语句就是将判断题变成了多选题<br>给出语法：</p>
+<blockquote>
+<p><hanla></hanla>if(条件表达式<hanla></hanla>1）<br>{<br><hanla></hanla>执行的语句<hanla></hanla>1；<br>}<br><hanla></hanla>else if(条件表达式<hanla></hanla>2)<br>{<br><hanla></hanla>执行的语句<hanla></hanla>2；<br>}<br>…<br><hanla></hanla>else if(条件表达式<hanla></hanla>n)<br>{<br><hanla></hanla>执行的语句<hanla></hanla>n;<br>}<br>else<br>{<br><hanla></hanla>执行的语句<hanla></hanla>n+1；<br>}</p>
+</blockquote>
+<p><hanla></hanla>条件表达式<hanla></hanla>1<hanla></hanla>为真则执行语句<hanla></hanla>1，条件表达式<hanla></hanla>2<hanla></hanla>为真则执行语句<hanla></hanla>2，以此类推，条件表达式<hanla></hanla>n<hanla></hanla>为真，执行语句<hanla></hanla>n; 如果，以上的<hanla></hanla>n<hanla></hanla>个条件都不满足，执行<hanla></hanla>else<hanla></hanla>下的语句<hanla></hanla>n+1。<br>案例：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> score = <span class="number">80</span>;</span><br><span class="line">	<span class="keyword">if</span> (score &gt;= <span class="number">0</span> &amp;&amp; score &lt; <span class="number">60</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"挂科\n"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">60</span> &amp;&amp; score &lt; <span class="number">70</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"中等\n"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">70</span> &amp;&amp; score &lt;= <span class="number">90</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"良好\n"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">90</span> &amp;&amp; score &lt;= <span class="number">100</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"优秀\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"成绩出错\n"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210414100909694.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210414100924883.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210414100941408.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210414101100196.png" alt="在这里插入图片描述"></p>
+<p>小问题：每个条件表达式的分数段的下限一定需要写出来吗？答案是不需要，因为当前一个条件判断不过时，已经自动的确认了后一个条件判断的下限。</p>
+<h6 id="常见错误提醒一"><a href="#常见错误提醒一" class="headerlink" title="常见错误提醒一"></a>常见错误提醒一</h6><p>初学者可能会把这条语句</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (score &gt;= <span class="number">0</span> &amp;&amp; score &lt; <span class="number">60</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>写成</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">0</span> &lt;= score &lt; <span class="number">60</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><hanla></hanla>如果我们这么写，我们来测试一下程序的结果是什么（我们假设成绩是<hanla></hanla>80）<br><img src="https://img-blog.csdnimg.cn/20210411183436801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><hanla></hanla>明明是<hanla></hanla>80<hanla></hanla>分怎么会挂科呢？是改卷老师心情不好吗？并不是，其实这条语句</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">0</span> &lt;= score &lt; <span class="number">60</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><hanla></hanla>的逻辑是：先执行<hanla></hanla>“0 &lt;= score”，score<hanla></hanla>为<hanla></hanla>80，所以表达式<hanla></hanla>“0 &lt;=  score”<hanla></hanla>为真，表达式的结果就是<hanla></hanla>1，然后<hanla></hanla>“1 &lt; 60”<hanla></hanla>这个表达式也是真，所以<hanla></hanla>if<hanla></hanla>后<hanla></hanla>()<hanla></hanla>内的表达式值为<hanla></hanla>1，直接打印了<hanla></hanla>“挂科”。由此启示我们，不要想当然的把数学中的表达式写在程序中，C<hanla></hanla>语言有自己的语法，我们要严格的遵守它才能让它为我们所用。</p>
+<hr>
+<h5 id="悬空else的匹配问题"><a href="#悬空else的匹配问题" class="headerlink" title="悬空else的匹配问题"></a><hanla></hanla>悬空<hanla></hanla>else<hanla></hanla>的匹配问题</h5><p>看这段代码，先自行计算结果</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">	<span class="keyword">if</span> (a == <span class="number">20</span>)</span><br><span class="line">		<span class="keyword">if</span> (b == <span class="number">20</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>, b);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>结果是什么呢？<br>结果是<strong>什么都不打印</strong>。原因是<strong><hanla></hanla>else<hanla></hanla>默认与离自己最近的未匹配的<hanla></hanla>if<hanla></hanla>匹配</strong>。上面的程序书写风格不好，在我们的编程软件（Visual Studio 2019）上这段代码实际上会被自动的排版成下面这种形式。</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">	<span class="keyword">if</span> (a == <span class="number">20</span>)</span><br><span class="line">		<span class="keyword">if</span> (b == <span class="number">20</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>, b);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>小伙伴们一定要学习养成好的代码风格！当然，我们也应该具备识别书写不规范代码的能力</p>
+<h6 id="常见错误提醒二"><a href="#常见错误提醒二" class="headerlink" title="常见错误提醒二"></a>常见错误提醒二</h6><p>初学者可能会把这句</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">20</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>写成</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a = <span class="number">20</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><hanla></hanla>那么这个表达式就不再是一个判断的表达式，而是一个赋值的表达式，表达式的结果就是<hanla></hanla>a<hanla></hanla>的值，为<hanla></hanla>20，非零，为真，程序会直接执行<hanla></hanla>if<hanla></hanla>的语句，而且更糟糕的是，我们如果以后在很长的程序中不小心犯了这样的错误，编译器还不会报错，但是程序的结果肯定是不对的，那可就真是<hanla></hanla>“死都不知道怎么死的”<hanla></hanla>了。<br>为了杜绝这种错误，我们学习一个小技巧<br><strong>小技巧：</strong><br>上面的语句可以写成</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">20</span> == a)</span><br></pre></td></tr></tbody></table></figure>
+<p><hanla></hanla>这样的话如果我们哪天丢掉了一个<hanla></hanla>=，写成了</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">20</span> = a)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><hanla></hanla>程序就会直接报错<br><img src="https://img-blog.csdnimg.cn/20210411194920876.png" alt="在这里插入图片描述"></p>
+<hr>
+<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a><hanla></hanla>switch<hanla></hanla>语句</h3><hr>
+<h5 id="初识switch语句"><a href="#初识switch语句" class="headerlink" title="初识switch语句"></a><hanla></hanla>初识<hanla></hanla>switch<hanla></hanla>语句</h5><p><hanla></hanla>switch<hanla></hanla>语句是一种适用于处理多分支的语句<br>给出语法：</p>
+<blockquote>
+<p>switch （整形表达式）<br>{<br><hanla></hanla>case  整形常量表达式<hanla></hanla>1：<br><hanla></hanla>语句<hanla></hanla>1；<br><hanla></hanla>case 整形常量表达式<hanla></hanla>2：<br><hanla></hanla>语句<hanla></hanla>2；<br>}</p>
+<p><hanla></hanla>switch<hanla></hanla>后面的<hanla></hanla>()<hanla></hanla>内是整形表达式，就是说这个表达式结果的数据类型必须是整形（实际上字符型<hanla></hanla>char<hanla></hanla>也可以，以后遇到再细说） case<hanla></hanla>后面的表达式是整形常量表达式，就是说这个表达式不仅结果必须是整形，而且结果必须是常量</p>
+</blockquote>
+<p><hanla></hanla>这个语法是什么意思呢？我们这样理解：switch<hanla></hanla>的英文意思是开关，那么<hanla></hanla>switch<hanla></hanla>后面整形表达式的值代表的就是这个开关在哪里被打开，也就是说这个整形表达式的值决定了整个<hanla></hanla>switch<hanla></hanla>程序块的<strong>入口</strong></p>
+<p>比如下面的代码：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> day = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">switch</span> (day)</span><br><span class="line">	{</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210411202549705.png" alt="在这里插入图片描述"><br><hanla></hanla>从上面的程序中就可以看出，程序是从上往下的，从这个入口（day = 3，也就是<hanla></hanla>case 3）开始，一行一行的执行。但是光是这样，switch<hanla></hanla>是做不到分支的功能的，所以我们还需要一个<strong>出口</strong></p>
+<hr>
+<h5 id="必不可少的的break关键字"><a href="#必不可少的的break关键字" class="headerlink" title="必不可少的的break关键字"></a><hanla></hanla>必不可少的的<hanla></hanla>break<hanla></hanla>关键字</h5><p><hanla></hanla>break<hanla></hanla>充当的是<hanla></hanla>switch<hanla></hanla>程序块<strong>出口</strong><hanla></hanla>的角色。break<hanla></hanla>是一个关键字，作用是让程序读到它时跳出自己当前所在的子程序。这样，程序块就被分划成了不同的部分，我们才能实现分支的功能</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> day = <span class="number">6</span>;</span><br><span class="line">	<span class="keyword">switch</span> (day)</span><br><span class="line">	{</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210411203135218.png" alt="在这里插入图片描述"><br><hanla></hanla>比如这个程序就从<hanla></hanla>case 6<hanla></hanla>入口进入，然后读了一句<hanla></hanla>printf(“休息\n”)，再读到<hanla></hanla>break<hanla></hanla>出口出选择程序块</p>
+<h6 id="知识补充二"><a href="#知识补充二" class="headerlink" title="知识补充二"></a>知识补充二</h6><p><hanla></hanla>swtich<hanla></hanla>语句块的最后一项不管加不加<hanla></hanla>break<hanla></hanla>都可以跳出程序，但是<strong>编程的好习惯</strong><hanla></hanla>是加上，这样便于以后别人或我们修改程序增添<hanla></hanla>case</p>
+<hr>
+<h5 id="常用的default子句"><a href="#常用的default子句" class="headerlink" title="常用的default子句"></a><hanla></hanla>常用的<hanla></hanla>default<hanla></hanla>子句</h5><p><hanla></hanla>default<hanla></hanla>子句和<hanla></hanla>if-else<hanla></hanla>中的<hanla></hanla>else<hanla></hanla>作用类似，都是将前面所有情况的补集作为自己的触发条件，也就是说前面的所有情况的条件判断都为假就执行它,<hanla></hanla>而且它和<hanla></hanla>else<hanla></hanla>一样，并不是必须得存在。由于是所有情况的补集，所以<hanla></hanla>default<hanla></hanla>和<hanla></hanla>else<hanla></hanla>都至多只能出现一次<br>给出案例：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> day = <span class="number">8</span>;</span><br><span class="line">	<span class="keyword">switch</span> (day)</span><br><span class="line">	{</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"输入错误\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><hanla></hanla>由于<hanla></hanla>8<hanla></hanla>不在任何一个<hanla></hanla>case<hanla></hanla>里，所以它在前面所有情况的子集：default<hanla></hanla>里，所以执行<hanla></hanla>default<hanla></hanla>子句内容<br><img src="https://img-blog.csdnimg.cn/20210411203922572.png" alt="在这里插入图片描述"></p>
+<h6 id="知识补充三"><a href="#知识补充三" class="headerlink" title="知识补充三"></a>知识补充三</h6><p><hanla></hanla>else<hanla></hanla>和<hanla></hanla>default<hanla></hanla>有一个很大的区别就是它们在程序中的位置问题：<br><strong><hanla></hanla>default<hanla></hanla>可以在任意位置，而<hanla></hanla>else<hanla></hanla>只能在最后</strong><br>比如上面的程序写成</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> day = <span class="number">8</span>;</span><br><span class="line">	<span class="keyword">switch</span> (day)</span><br><span class="line">	{</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"输入错误\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>一点问题没有，程序照常执行<br><hanla></hanla>但是如果<hanla></hanla>else<hanla></hanla>放在了<hanla></hanla>else if<hanla></hanla>的前面，程序就会报错<br><hanla></hanla>这是因为<hanla></hanla>switch<hanla></hanla>实际上是把所有的情况看成了一块大饼切成不同的块块儿，块块儿的名字无所谓，反正都是块块儿。而<hanla></hanla>if-else<hanla></hanla>语句是有逻辑结构的，如果<hanla></hanla>else<hanla></hanla>放在了前面就和<hanla></hanla>if<hanla></hanla>直接配对形成程序块，后面的<hanla></hanla>else if<hanla></hanla>就无家可归了。</p>
+<hr>
+<h3 id="分支语句的嵌套"><a href="#分支语句的嵌套" class="headerlink" title="分支语句的嵌套"></a>分支语句的嵌套</h3><p><hanla></hanla>分支语句也就是<hanla></hanla>if<hanla></hanla>语句和<hanla></hanla>switch<hanla></hanla>语句，都是可以嵌套的。所谓分支嵌套就是在分支中再加入分支，这样我们就可以描述相对比较复杂的情况了</p>
+<h5 id="if嵌套"><a href="#if嵌套" class="headerlink" title="if嵌套"></a><hanla></hanla>if<hanla></hanla>嵌套</h5><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line"><hanla></hanla>1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (a == <span class="number">1</span>)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"考入名校\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"你是否要努力学习？（1/0）："</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b);</span><br><span class="line">		<span class="keyword">if</span> (b == <span class="number">1</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"成为大神\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"放飞自我，毕业即失业\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/202104112109532.png" alt="在这里插入图片描述"></p>
+<h5 id="switch嵌套"><a href="#switch嵌套" class="headerlink" title="switch嵌套"></a><hanla></hanla>switch<hanla></hanla>嵌套</h5><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line"><hanla></hanla>1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> day = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">switch</span> (day)</span><br><span class="line">	{</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">switch</span> (a)</span><br><span class="line">		{</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"划水\n"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		case2:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"努力工作\n"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"工作\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"输入错误\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"休息\n"</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210411210301478.png" alt="在这里插入图片描述"></p>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/20210414103932142.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<hr>
+<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><p><hanla></hanla>循环语句就是一些语句重复执行多次。C<hanla></hanla>语言中的循环结构有三种常见的语句，分别是<hanla></hanla>while、for、do-while<hanla></hanla>循环，它们大同小异，都具有<strong>初始化部分</strong>、<strong>条件判断部分</strong>、<strong>调整部分</strong>，我们抓住这三个点来学习他们吧。</p>
+<hr>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a><hanla></hanla>while<hanla></hanla>循环</h3><p>给出语法：</p>
+<blockquote>
+<p>while(表达式）<br>{<br>循环语句；<br>}<br><hanla></hanla>其他语句；</p>
+</blockquote>
+<p>表达式的值为真（非零），就重复执行循环语句，直到表达式的值为假（零），跳出循环，执行其他语句<br><hanla></hanla>案例<hanla></hanla>“打印<hanla></hanla>1-10”：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (i &lt;= <span class="number">10</span>)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">		i++;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210412155123272.png" alt="在这里插入图片描述"></p>
+<p><strong>初始化部分：</strong></p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>初始化部分的作用就是初始化一个循环变量</p>
+<p><strong>条件判断部分：</strong></p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(i &lt;= <span class="number">10</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>条件判断部分就是我们初始化的这个循环变量的作用所在。循环变量的值的改变会导致条件判断表达式的值改变，从而决定循环是否继续。条件判断为真，就继续循环，条件判断为假，就跳出循环</p>
+<p><strong>调整部分：</strong></p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i++;</span><br></pre></td></tr></tbody></table></figure>
+<p>调整部分就是让我们的循环变量的值发生改变的语句，这样我们的条件判断表达式的值才有可能改变，不会进入死循环（停不下来的循环就是死循环）<br><hanla></hanla>（这里的<hanla></hanla>i++<hanla></hanla>是<hanla></hanla>i=i+1<hanla></hanla>的意思，前文讲过，这里仍然提示一下）<br><strong>循环体</strong></p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br></pre></td></tr></tbody></table></figure>
+<p>循环体就是每次循环都会执行的循环语句，是我们循环语句的主体内容</p>
+<hr>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a><hanla></hanla>for<hanla></hanla>循环</h3><p><hanla></hanla>清楚了<hanla></hanla>while<hanla></hanla>循环，后面两个就可以类比学习了<br>给出语法：</p>
+<blockquote>
+<p>for(初始化部分；条件判断部分；调整部分）<br>{<br>循环语句；<br>}</p>
+</blockquote>
+<p><hanla></hanla>对比于<hanla></hanla>while<hanla></hanla>比较分散的三部分，for<hanla></hanla>就集中的多，直接将三个部分写在了<hanla></hanla>for<hanla></hanla>后面的括号中，清晰明了<br><hanla></hanla>同样给出<hanla></hanla>“打印<hanla></hanla>1-10”<hanla></hanla>的案例方便同学们类比学习：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210412155123272.png" alt="在这里插入图片描述"><br><hanla></hanla>for<hanla></hanla>循环还有几个注意点：</p>
+<ul>
+<li><hanla></hanla>1.<hanla></hanla>一般不建议在<hanla></hanla>for<hanla></hanla>循环体中修改循环变量，可能会导致程序错乱</li>
+<li><hanla></hanla>2.for<hanla></hanla>循环的三个部分可以都为空，直接用来表示死循环<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line"><hanla></hanla>1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (;;)</span><br><span class="line">{</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"阿巴"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<img src="https://img-blog.csdnimg.cn/20210412161136308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（光标一直在闪烁，说明程序一直在运行）</li>
+<li><hanla></hanla>for<hanla></hanla>循环可以同时使用多个循环变量</li>
+</ul>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> x, y;</span><br><span class="line">	<span class="keyword">for</span> (x = <span class="number">0</span>, y = <span class="number">0</span>; x &lt; <span class="number">2</span> &amp;&amp; y &lt; <span class="number">5</span>; x++, y += <span class="number">2</span>)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d%d"</span>, x, y);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h3 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a><hanla></hanla>do-while<hanla></hanla>循环</h3><p>给出语法：</p>
+<blockquote>
+<p>do<br>{<br>循环语句<br>} while(条件判断表达式)；</p>
+</blockquote>
+<p><hanla></hanla>程序逻辑：先执行一次循环语句，再进行条件判断是否继续循环。与<hanla></hanla>for<hanla></hanla>和<hanla></hanla>while<hanla></hanla>循环的区别是至少可以循环一次。<br>给出类比案例：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">		i++;</span><br><span class="line">	} <span class="keyword">while</span> (i &lt;= <span class="number">10</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210412155123272.png" alt="在这里插入图片描述"><br><hanla></hanla>do-while<hanla></hanla>循环使用场景有限。总体的使用频率来说：for<hanla></hanla>循环 &gt; while<hanla></hanla>循环 &gt; do while<hanla></hanla>循环</p>
+<hr>
+<h3 id="循环语句中的break和continue"><a href="#循环语句中的break和continue" class="headerlink" title="循环语句中的break和continue"></a><hanla></hanla>循环语句中的<hanla></hanla>break<hanla></hanla>和<hanla></hanla>continue</h3><ul>
+<li>break<br><hanla></hanla>当程序读到<hanla></hanla>break<hanla></hanla>关键字的时候，直接跳出循环<br>举例：</li>
+</ul>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span> (i == <span class="number">5</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210412162429189.png" alt="在这里插入图片描述"><br><hanla></hanla>当<hanla></hanla>i<hanla></hanla>累加到<hanla></hanla>5<hanla></hanla>的时候，执行<hanla></hanla>break,<hanla></hanla>直接跳出循环，程序结束</p>
+<ul>
+<li>continue<br><hanla></hanla>当程序读到<hanla></hanla>continue<hanla></hanla>关键字的时候，跳过本次循环中<hanla></hanla>continue<hanla></hanla>以后的循环语句<br><hanla></hanla>for<hanla></hanla>循环中<hanla></hanla>continue<hanla></hanla>举例：</li>
+</ul>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span> (i == <span class="number">5</span>)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20210412162509653.png" alt="在这里插入图片描述"><br><hanla></hanla>当 i 累加到<hanla></hanla>5<hanla></hanla>的时候，执行<hanla></hanla>continue，跳过本次循环剩下的语句<hanla></hanla>printf(“%d “, i)，直接跳转到调整语句<hanla></hanla>i++，然后进入下一次的条件判断语句，开始下一轮循环<br><hanla></hanla>while<hanla></hanla>循环中<hanla></hanla>continue<hanla></hanla>举例：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (i &lt;= <span class="number">10</span>)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span> (i == <span class="number">5</span>)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">		i++;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20210414105230742.png" alt="在这里插入图片描述"><br><hanla></hanla>程序结果是<hanla></hanla>1 2 3 4 然后<strong>死循环</strong><hanla></hanla>（光标一直在闪烁说明程序一直未结束），这是因为<hanla></hanla>i<hanla></hanla>累加到<hanla></hanla>5<hanla></hanla>时，执行<hanla></hanla>continue<hanla></hanla>语句，跳过本次循环剩下的语句<hanla></hanla>printf(“%d “, i)<hanla></hanla>和<hanla></hanla>i++，直接跳转到条件判断 i &lt;= 10,<hanla></hanla>判断<hanla></hanla>i=5 , 5&lt;=10,<hanla></hanla>然后又跳过本次循环剩下的语句<hanla></hanla>printf(“%d “, i)<hanla></hanla>和<hanla></hanla>i++，直接跳转到条件判断 i &lt;= 10，判断<hanla></hanla>i=5 , 5&lt;=10…<br>总结：<br><hanla></hanla>for<hanla></hanla>循环中，由于调整部分不在循环体中，所以不会因为<hanla></hanla>continue<hanla></hanla>的影响陷入死循环；while<hanla></hanla>循环中，调整部分在循环体中，极有可能因为<hanla></hanla>continue<hanla></hanla>陷入死循环</p>
+<hr>
+<h3 id="循环语句的嵌套"><a href="#循环语句的嵌套" class="headerlink" title="循环语句的嵌套"></a>循环语句的嵌套</h3><p>循环语句的嵌套就是在循环体中再加入另一个循环，从而会让我们的程序可以描述更多的循环情况，也提升了程序的空间复杂度<br><hanla></hanla>给出<hanla></hanla>for<hanla></hanla>嵌套案例：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= <span class="number">10</span>; j++)</span><br><span class="line">		{</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>, <span class="number">10</span> * (i - <span class="number">1</span>) + j);</span><br><span class="line">		}</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210412163152908.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>打印九九乘法口诀表：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> arr[] = { <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span> };</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt;= i; j++)</span><br><span class="line">		{</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d × %d = %d "</span>, arr[i], arr[j], arr[i] * arr[j]);</span><br><span class="line">		}</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20210414105936984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/20210414110039775.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<hr>
+<h1 id="goto语句"><a href="#goto语句" class="headerlink" title="goto语句"></a><hanla></hanla>goto<hanla></hanla>语句</h1><hr>
+<h3 id="goto语句的使用方法"><a href="#goto语句的使用方法" class="headerlink" title="goto语句的使用方法"></a><hanla></hanla>goto<hanla></hanla>语句的使用方法</h3><p><hanla></hanla>goto<hanla></hanla>语句相当于一个传送门，可以直接暴力的改变代码执行的逻辑，它就像一把双刃剑，用得好确实有奇效，但滥用可能会自废武功</p>
+<p>给出语法：</p>
+<blockquote>
+<p>goto 标记名称；</p>
+</blockquote>
+<blockquote>
+<p>标记名称：其他语句；</p>
+</blockquote>
+<p>用一个简单的例子认识一下使用方法</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">0</span>;</span><br><span class="line">again:</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;age);</span><br><span class="line">	<span class="keyword">if</span> (age &lt; <span class="number">18</span> &amp;&amp; age &gt;= <span class="number">1</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"未成年\n"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (age &gt;= <span class="number">18</span> &amp;&amp; age &lt;= <span class="number">121</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"成年\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string"><hanla></hanla>"输入错误,<hanla></hanla>请重新输入\n"</span>);</span><br><span class="line">		<span class="keyword">goto</span> again;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210414111310573.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><hanla></hanla>我们输入<hanla></hanla>200<hanla></hanla>的时候，执行<hanla></hanla>else<hanla></hanla>里的语句，先执行<hanla></hanla>printf(“输入错误,<hanla></hanla>请重新输入\n”)<hanla></hanla>然后执行<hanla></hanla>goto again，again<hanla></hanla>在程序最开始，所以我们可以继续进行选择判断。</p>
+<hr>
+<h3 id="goto语句的使用场景"><a href="#goto语句的使用场景" class="headerlink" title="goto语句的使用场景"></a><hanla></hanla>goto<hanla></hanla>语句的使用场景</h3><p><hanla></hanla>goto<hanla></hanla>是一把双刃剑，我们需要学会使用它的场景<br><hanla></hanla>使用<hanla></hanla>goto<hanla></hanla>的一个非常合适的场景就是用于跳出多重循环<br>看下面这个案例：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> x, y, z;</span><br><span class="line">    <span class="keyword">for</span> (x = <span class="number">0</span>; x &lt;= <span class="number">100</span> / <span class="number">5</span>; x++)</span><br><span class="line">        <span class="keyword">for</span> (y = <span class="number">0</span>; y &lt;= <span class="number">100</span> / <span class="number">3</span>; y++)</span><br><span class="line">            <span class="keyword">for</span> (z = <span class="number">0</span>; z &lt;= <span class="number">100</span> * <span class="number">3</span>; z++)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span> ((x * <span class="number">5</span> + y * <span class="number">3</span> + z / <span class="number">3</span> == <span class="number">100</span>) &amp;&amp; (z % <span class="number">3</span> == <span class="number">0</span>) &amp;&amp; (x + y + z == <span class="number">100</span>))</span><br><span class="line">                {</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"x=%d y=%d z=%d\n"</span>, x, y, z);</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="keyword">goto</span> error;</span><br><span class="line">            }</span><br><span class="line">error:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><hanla></hanla>这里的<hanla></hanla>goto<hanla></hanla>语句就像是一个保险，把深陷<hanla></hanla>“多重梦境”<hanla></hanla>中的程序一语点醒</p>
+<hr>
+<p>至此为止，第一篇的内容结束。博主才疏学浅，又讲解不周的地方希望大家积极指出，我们共同探讨，共同进步。</p>
+
+                
+            </div>
+            <hr>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Locke Lloyd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://fuwafuwaboom.github.io/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/">http://fuwafuwaboom.github.io/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Locke Lloyd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async="" defer=""><hanla></hanla>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span><hanla></hanla>复制成功，请遵循本文的转载规则<hanla></hanla></span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller"><hanla></hanla>查看<hanla></hanla>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </button></script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color"><hanla></hanla>C<hanla></hanla>语言学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%88%86%E6%94%AF%E4%B8%8E%E5%BE%AA%E7%8E%AF/">
+                                    <span class="chip bg-color">分支与循环</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="【C语言从青铜到王者】第二篇·详解函数">
+                        
+                        <span class="card-title"><hanla></hanla>【C<hanla></hanla>语言从青铜到王者】第二篇·详解函数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i><hanla></hanla>2021-08-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E4%BB%8E%E9%9D%92%E9%93%9C%E5%88%B0%E7%8E%8B%E8%80%85%E3%80%91/" class="post-category"><hanla></hanla>
+                                    【C<hanla></hanla>语言从青铜到王者】
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color"><hanla></hanla>C<hanla></hanla>语言学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%87%BD%E6%95%B0/">
+                        <span class="chip bg-color">函数</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【C语言从青铜到王者】第零篇·与C语言来个约会">
+                        
+                        <span class="card-title"><hanla></hanla>【C<hanla></hanla>语言从青铜到王者】第零篇·与<hanla></hanla>C<hanla></hanla>语言来个约会</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i><hanla></hanla>2021-07-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E4%BB%8E%E9%9D%92%E9%93%9C%E5%88%B0%E7%8E%8B%E8%80%85%E3%80%91/" class="post-category"><hanla></hanla>
+                                    【C<hanla></hanla>语言从青铜到王者】
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color"><hanla></hanla>C<hanla></hanla>语言学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E8%A7%88/">
+                        <span class="chip bg-color">知识总览</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script><hanla></hanla>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换<hanla></hanla>TOC<hanla></hanla>目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="503838841" fixed="true" autoplay="false" theme="#42b983" loop="all" order="random" preload="auto" volume="0.7" list-folded="true">
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;©
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Locke Lloyd</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">20.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async="" src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+
+
+
+</body></html>
