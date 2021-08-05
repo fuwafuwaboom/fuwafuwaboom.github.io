@@ -416,7 +416,7 @@
   </entry>
   <entry>
     <title>【C语言从青铜到王者】第三篇·详解数组</title>
-    <url>/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</url>
+    <url>/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</url>
     <content><![CDATA[<p><strong>本篇前言</strong></p>
 <p>数组就是一组相同类型元素的集合，通过数组我们可以更为方便快捷的存储和访问数据。理论上来说C语言可以构造n维数组，但是由于一维数组和二维数组使用更加频繁，所以本篇着重讲解一维数组与二维数组，多维数组仅作了解。</p>
 <hr>
@@ -530,7 +530,7 @@
   </entry>
   <entry>
     <title>【C语言从青铜到王者】第一篇·详解分支与循环</title>
-    <url>/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</url>
+    <url>/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</url>
     <content><![CDATA[<p><strong>本篇前言</strong><br>前文我们说到，编程的一个目的就是借助计算机帮助我们解决生活中的问题，而世界运行的基本时间逻辑，在向计算机描述时可以大致归纳成三种逻辑结构：顺序、选择、循环。<br><strong>顺序</strong>就是从前往后，从上到下，我们的写好的程序就是按顺序从第一行起被一行一行的编译的<br><strong>选择</strong>也叫分支，是同一时间点面对问题时，有不同的选择，我们选其一而行<br><strong>循环</strong>是指程序进入了一段不断重复的路，可能会一直在此循环往复，也可以打破循环，继续前进。<br>在顺序执行的程序中，分支中可能有循环，循环中也可能有分支。分支和循环是让我们的代码变得多姿多彩的关键技能，今天就让我们来升级它们吧！</p>
 <hr>
 <p>[toc]</p>
@@ -729,7 +729,7 @@
   </entry>
   <entry>
     <title>【C语言从青铜到王者】第二篇·详解函数</title>
-    <url>/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/</url>
+    <url>/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/</url>
     <content><![CDATA[<p><strong>本篇前言</strong><br>C语言有各种各样的库函数，调用它们需要引用相应的头文件。由于C语言库函数较多，讲解原理的话涉及内容庞杂，作为替代这里给出C语言库函数（包括各种关键字）查询的网址供大家参考。有条件的小伙伴建议下载MSDN软件（相当于离线的知识站）辅助学习</p>
 <blockquote>
 <p><a href="http://www.cplusplus.com/reference/">C/C++官方知识站</a></p>

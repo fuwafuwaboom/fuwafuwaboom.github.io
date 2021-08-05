@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Locke Lloyd&#39;s World</title>
+  <title>小葉的学习笔记</title>
   
-  <subtitle>Welcome My Friends</subtitle>
+  <subtitle>忘我在进步的快乐中</subtitle>
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
@@ -10,7 +10,7 @@
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
-    <name>Locke Lloyd</name>
+    <name>小葉</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第三篇·详解数组</title>
-    <link href="http://fuwafuwaboom.github.io/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/"/>
+    <id>http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</id>
     <published>2021-08-03T03:32:55.000Z</published>
     <updated>2021-08-03T03:33:46.898Z</updated>
     
@@ -46,8 +46,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第二篇·详解函数</title>
-    <link href="http://fuwafuwaboom.github.io/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/"/>
+    <id>http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/</id>
     <published>2021-08-03T03:29:56.000Z</published>
     <updated>2021-08-03T03:36:16.414Z</updated>
     
@@ -72,8 +72,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第一篇·详解分支与循环</title>
-    <link href="http://fuwafuwaboom.github.io/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/"/>
-    <id>http://fuwafuwaboom.github.io/2021/08/03/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/"/>
+    <id>http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</id>
     <published>2021-08-03T03:23:02.000Z</published>
     <updated>2021-08-03T03:29:18.094Z</updated>
     
