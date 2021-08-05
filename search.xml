@@ -16,47 +16,99 @@
 <blockquote>
 <p>//</p>
 </blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//I love C</span></span><br><span class="line"><span class="comment">//You love C</span></span><br><span class="line"><span class="comment">// We all love C</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//I love C</span>
+<span class="token comment" spellcheck="true">//You love C</span>
+<span class="token comment" spellcheck="true">// We all love C</span>
+</code></pre>
 <p>下图是C语言的注释风格</p>
 <blockquote>
 <p>/*    */</p>
 </blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*I love C</span></span><br><span class="line"><span class="comment">You love C</span></span><br><span class="line"><span class="comment"> We all love C</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*I love C
+You love C
+ We all love C
+ */</span>
+</code></pre>
 <hr>
 <h2 id="2-C语言程序基本框架"><a href="#2-C语言程序基本框架" class="headerlink" title="2.C语言程序基本框架"></a>2.C语言程序基本框架</h2><hr>
 <p>下面是一段程序</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;I love C\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I love C\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>下图是程序编译的结果。<br><img src="https://img-blog.csdnimg.cn/20210404204743849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>也就是说，我们敲了一段代码，然后程序在控制台给我们输出了“I love C”<br>也就是说我们一段程序实际上好像就只执行了这句话</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;I love C\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I love C\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>再看这段程序</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;You love C\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"You love C\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>结果是<br><img src="https://img-blog.csdnimg.cn/20210410100842270.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>通过这样的“单一变量”的实验，我们大概可以知道了，除了“printf”开头的这句话以外的东西都是换汤不换药的<br>运用一下刚学的注释，就是：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//在这里执行语句</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//在这里执行语句</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>我们把上图除了注释以外的部分就叫做C语言的基本框架</p>
 <hr>
 <p>我们来逐句讲解它们是什么意思</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+</code></pre>
 <p>这一行的作用是引出“头文件”<br>#include表示的是“引出头文件”，后面&lt;&gt;中的就是头文件的名字，这些名字的后缀一般是.h<br>头文件是什么？为什么要引出头文件呢？问题留着往下看</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
 <p>这一行的作用是定义主函数<br>int是函数返回值的类型，这里是整型<br>main是函数名，表示这是主函数<br>（）是形式参数，主函数由于默认形式参数为void，void的意思是“无类型”，所以（）里是空的<br>什么是函数返回值呢？什么是形式参数呢？具体内容在“主动技能——函数”中介绍，等不及的小伙伴可以直接走目录跳读</p>
 <hr>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;I love C\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I love C\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>{}一对大括号是一个整体，里面是主函数的内容<br>printf是一个函数，全称是print function,作用是把一些东西打印到屏幕上，用法是printf(“要打印的内容”)<br>但是这个函数我们自己并没有定义它是怎么运作的，它其实是我们“借来”的，像谁借的呢，就是像我们一开始定义的头文件stdio.h，头文件就是一个别人已经帮我们写好的函数库，stdio的全称是standard input output，表示一个涵盖输入输出类型函数的文件。我们引用它，计算机就可以调用别人已经写好的程序了<br>我们注意到I love C后面还有一个\n，它是转义字符，表示换行<br>return 0;表示这个函数的返回值是0<br>我们也注意到了在大括号内的每一行代码后面都有一个英文输入法的分号；它表示一行语句的结束，所以小伙伴们以后写语句千万不要忘记用“；”结束它哦</p>
 <hr>
 <h2 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h2><p>我们写程序的目的其实是通过借助计算机强大的计算能力来解决生活中的问题，那么我们必须得学会向计算机描述这个问题<br>比如我的身高是1.75m，体重是65kg，我的国家是China<br>这些数据各有家门，必须分门别类，它们各自的类型就是数据类型</p>
 <hr>
-<h4 id="常见的数据类型"><a href="#常见的数据类型" class="headerlink" title="常见的数据类型"></a>常见的数据类型</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span></span><br><span class="line"><span class="keyword">short</span></span><br><span class="line"><span class="keyword">int</span></span><br><span class="line"><span class="keyword">long</span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span></span><br><span class="line"><span class="keyword">float</span></span><br><span class="line"><span class="keyword">double</span></span><br></pre></td></tr></table></figure>
+<h4 id="常见的数据类型"><a href="#常见的数据类型" class="headerlink" title="常见的数据类型"></a>常见的数据类型</h4><pre class=" language-c"><code class="language-c">    <span class="token keyword">char</span>
+    <span class="token keyword">short</span>
+    <span class="token keyword">int</span>
+    <span class="token keyword">long</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span>
+    <span class="token keyword">float</span>
+    <span class="token keyword">double</span>
+</code></pre>
 <p>char-字符数据类型<br>用来表示字符<br> eg:ABCabc</p>
 <p>short-短整型<br>  int-整形<br>  long-长整型<br>  long long-更长的整形<br>  整形都用来表示整数<br>  eg:1234</p>
 <p>float-单精度浮点数<br>double-双精度浮点数<br>浮点数表示小数，浮点的意思就是浮动的小数点<br>eg:1.75</p>
 <hr>
 <h4 id="各种数据类型的大小"><a href="#各种数据类型的大小" class="headerlink" title="各种数据类型的大小"></a>各种数据类型的大小</h4><p><em>介绍操作符sizeof()，它的作用是显示数据类型的大小（长度）</em><br>我们运行一下下面的程序看一下结果(简约起见结果注释在行末)</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">char</span>));<span class="comment">//1 </span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">short</span>));<span class="comment">//2</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>));<span class="comment">//4</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">long</span>));<span class="comment">//4</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">long</span> <span class="keyword">long</span>));<span class="comment">//8</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">float</span>));<span class="comment">//4</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">double</span>));<span class="comment">//8</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//1 </span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">short</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//4</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//4</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//8</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//4</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//8</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>这里的结果是数字，它的量纲是什么呢？答案就是“字节”，“字节”的英文名是byte<br>这里引入一下c语言中数据大小的单位<br>最小的单位是“比特位”，“比特”的英文名是bit<br><img src="https://img-blog.csdnimg.cn/20210410102314353.png#pic_center" alt="在这里插入图片描述"></p>
 <p>bit是一个二元量，在计算机语言中存放1或者0，表示计算机内部电路的“通”或者“断”，通过一连串的0/1我们就可以描述出一个整体的电路状态，这个电路状态就可以用来表示信息<br><img src="https://img-blog.csdnimg.cn/20210410102717386.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <p>我们可以把比特位想象成一个存放0或1的盒子，那么一个字节（byte）就是8个并排排放的盒子，可以同时存储8个0/1</p>
 <p>以后我们说的<strong>数据的长度</strong>就是这一排存放0/1的盒子一共有多少个<br>大家看到上图有没有想到我们常见的8位二进制数，没错，实际上，一个byte就是可以存放一个8位的二进制数。一次类推，如果我们给一个数据分配了4字节的空间，那么就可以存放一个32位的二进制数，例如：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</code></pre>
 <p>我们定义了一个int类型的变量，变量名叫a，赋值为10，根据上面的知识我们知道int类型的变量长度是4字节<br>10 = 8 + 2 =1x2^3^ + 0x2^2^ + 1x2^1^ + 0x2^0^，那么，a在内存中的状态就是这样的：<br><img src="https://img-blog.csdnimg.cn/20210412090519776.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <p>上面的a是int类型，int类型的长度是四字节，也就是32个bit位，也就是说a这个变量有32个并排的盒子去装它的二进制序列。每个盒子中存放的1/0从左到右需要依次乘2的0次方、2的1次方、2的2次方…这是二进制数转换成十进制数的方法，是相当基础的知识，如果还有不懂的小伙伴可以自己做些功课哦<br>实际上，我们还有一系列的表示内存大小的单位<br>下面给出单位换算表</p>
 <blockquote>
@@ -73,7 +125,10 @@
 <h2 id="4-变量与常量"><a href="#4-变量与常量" class="headerlink" title="4.变量与常量"></a>4.变量与常量</h2><hr>
 <h4 id="什么是变量和常量"><a href="#什么是变量和常量" class="headerlink" title="什么是变量和常量"></a>什么是变量和常量</h4><p>在程序中值可以继续变化的量叫做<strong>变量</strong>，值无法继续改变的量叫做<strong>常量</strong></p>
 <hr>
-<h4 id="定义变量的方法"><a href="#定义变量的方法" class="headerlink" title="定义变量的方法"></a>定义变量的方法</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">float</span> height = <span class="number">1.74</span>;</span><br><span class="line"><span class="keyword">char</span> ml = <span class="string">&#x27;c&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="定义变量的方法"><a href="#定义变量的方法" class="headerlink" title="定义变量的方法"></a>定义变量的方法</h4><pre class=" language-c"><code class="language-c">    <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> height <span class="token operator">=</span> <span class="token number">1.74</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> ml <span class="token operator">=</span> <span class="token string">'c'</span><span class="token punctuation">;</span>
+</code></pre>
 <p>定义变量时的写法是</p>
 <blockquote>
 <p>数据类型 变量名 = 变量值 ；</p>
@@ -84,12 +139,45 @@
 <li>局部变量<br>作用域在自己函数内部的变量</li>
 <li>全局变量<br>作用域是全局的变量<br>由于还没有介绍作用域的概念，我们先感性的认识一下什么是局部变量和全局变量<br>看下面这段程序：</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">2019</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">2020</span>;</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> c = <span class="number">2021</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n%d\n&quot;</span>, a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">2019</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">2020</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">2021</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n%d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>程序的结果是<br><img src="https://img-blog.csdnimg.cn/20210405162338655.png" alt="在这里插入图片描述"><br>我们来分析一下这段程序</p>
 <p>a就是全局变量。可以看到a虽然在主函数外定义的但是可以在主函数里面使用，主函数的printf函数输出了a的值，也就是说a在全局都可以被使用。<br>b、c都是局部变量，可以发现b是在主函数的{}内被定义的，c是在主函数{}内部的{}内被定义的，那么b和c就只能在这个程序的局部被使用。<br>b和c都是局部变量，它们有区别吗？答案是有的<br>看下面的程序：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">2019</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">2020</span>;</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> c = <span class="number">2021</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//printf(&quot;%d\n&quot;,c);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">2019</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">2020</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">2021</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//printf("%d\n",c);</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>结果是<br><img src="https://img-blog.csdnimg.cn/20210405162802438.png" alt="在这里插入图片描述"><br>我们发现b在printf(“%d\n”,b);的大括号外部被定义，但是仍可以使用<br>如果我们把注释掉的printf(“%d\n”,c)加上，会发现程序错误，检测不到c：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">2019</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">2020</span>;</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> c = <span class="number">2021</span>;</span><br><span class="line">		<span class="comment">//printf(&quot;%d\n&quot;, b);</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">2019</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">2020</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">2021</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//printf("%d\n", b);</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>上图结果<br><img src="https://img-blog.csdnimg.cn/20210405162854324.png" alt="在这里插入图片描述"></p>
 <hr>
 <p>总结：局部变量的作用域是自己所在的大括号<strong>内部</strong>，包括<strong>内部的大括号</strong></p>
@@ -103,14 +191,34 @@
 <ul>
 <li>字面常量<br>比如程序中出现的数字或者字符：123 1.75 12f<br>eg：</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>10就是字面常量</p>
 <ul>
 <li>const修饰的<strong>常变量</strong><br>具有常属性（不能变值）的变量<br>为什么变量又会具有常属性呢？为什么变量要被分类为常量呢？看下面两个例子：<br>eg:</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	a = <span class="number">20</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    a <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210405164936836.png" alt="在这里插入图片描述"><br>从上图可知const定义的变量不可变值，不可变值，就是具有常属性</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> b[a] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, b[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b<span class="token punctuation">[</span>a<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210405165230192.png" alt="在这里插入图片描述"><br>由于定义数组的大小必须是常量，从上图可知a的本质仍然是变量<br>这就解释了为什么const修饰的变量叫做<strong>常变量</strong></p>
 <ul>
 <li><p>#define 定义的标识符常量<br>直接永久赋值，相当于给字面常量取了个别名<br>这种常量的定义既可以在主函数外部也可以在内部定义<br><img src="https://img-blog.csdnimg.cn/20210405165538604.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
@@ -118,15 +226,54 @@
 <li><p>枚举常量<br>引入enum枚举关键字<br>通过例子看看它的用法</p>
 </li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Sex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	MALE,</span><br><span class="line">    FEMALE,</span><br><span class="line">    SECRET</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">enum</span> <span class="title">Sex</span> <span class="title">a</span> =</span> SECRET;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">enum</span> Sex
+<span class="token punctuation">{</span>
+    MALE<span class="token punctuation">,</span>
+    FEMALE<span class="token punctuation">,</span>
+    SECRET
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">enum</span> Sex a <span class="token operator">=</span> SECRET<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>结果是2<br>我们解析一下：通过enum我们定义了一个“组”，名字是Sex,这个“组”实际上是一个常量组，组中的MALE,FEMALE,SECRET都是常量，它们的值分别是0，1，2，因为枚举常量未赋值时按序号赋默认值<br>在主函数中如果我们想要使用这样的常量，就先声明枚举组，就可以使用了：</p>
 <blockquote>
 <p>enum 枚举组名称 变量名 = 枚举常量 ；</p>
 </blockquote>
 <p>接下来看一下枚举常量的赋值问题，还是通过例子来看：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Sex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	MALE=<span class="number">3</span>,</span><br><span class="line">    FEMALE=<span class="number">5</span>,</span><br><span class="line">    SECRET=<span class="number">123</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">enum</span> <span class="title">Sex</span> <span class="title">a</span> =</span> SECRET;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">enum</span> Sex
+<span class="token punctuation">{</span>
+    MALE<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>
+    FEMALE<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span>
+    SECRET<span class="token operator">=</span><span class="token number">123</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">enum</span> Sex a <span class="token operator">=</span> SECRET<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>结果是123，因为SECRET被赋值为123</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Sex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	MALE=<span class="number">3</span>,</span><br><span class="line">    FEMALE=<span class="number">5</span>,</span><br><span class="line">    SECRET</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">enum</span> <span class="title">Sex</span> <span class="title">a</span> =</span> SECRET;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">enum</span> Sex
+<span class="token punctuation">{</span>
+    MALE<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>
+    FEMALE<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span>
+    SECRET
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">enum</span> Sex a <span class="token operator">=</span> SECRET<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>结果是6，因为SECRET上一个枚举常量FEMALE是5，所以按照序号，未赋值枚举常量SECRET是6</p>
 <p>总结规律如下：<br>赋值枚举常量按所赋值定义<br>未赋值枚举常量按序号定义</p>
 <hr>
@@ -158,7 +305,15 @@
 <li><strong>右移操作符 &gt;&gt;</strong><br>将对象的二进制位向右移动一位</li>
 </ul>
 <p>简单介绍：<br>比如1的二进制位是00000000000000000000000000000001一共32个数字<br>在总数字个数不变的情况下把这段数字向左移动一位，缺位补0<br>那么<br>00000000000000000000000000000001<br>就变成了<br>00000000000000000000000000000010<br>也就是二进制的数字2<br>写成代码的形式就是</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> b = a &lt;&lt; <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, b);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> a <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210406232709260.png" alt="在这里插入图片描述"></p>
 <hr>
 <h4 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h4><ul>
@@ -179,12 +334,26 @@
 <li><strong>取地址 &amp;</strong> （见本篇指针部分）</li>
 <li><strong>以字节为单位计算类型长度 sizeof</strong><br>见程序“打印数组的个数”</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> arr[] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> sz = <span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, sz);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> sz <span class="token operator">=</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> sz<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <ul>
 <li><strong>对数二进制按位取反 ~</strong></li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ~a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">~</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>输出的值是-1<br>为什么呢？<br>这里引入C语言中原码反码补码的概念</p>
 <blockquote>
 <p>C语言中的二进制整数的第一位是符号位，0代表正数，1代表负数</p>
@@ -197,17 +366,36 @@
 <ul>
 <li><strong>强制类型转换 （类型）</strong><br>比如我们打出下面这句话</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">;</span>
+</code></pre>
 <p>输出的时候会报错，告诉我们数据类型不对的时候会丢失数据<br>那我们怎么才能强制让一个浮点数按照整形输出呢</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = （<span class="keyword">int</span>）<span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = (<span class="keyword">int</span>) <span class="number">3.14</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a <span class="token operator">=</span> （<span class="token keyword">int</span>）<span class="token number">3.14</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token number">3.14</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>结果是3</p>
 <ul>
 <li><strong>前置++和后置++</strong></li>
 </ul>
 <p>++在前，先++，再参与本行运算<br>++在后，先参与本行运算，再++</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> b = ++a;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, b);</span><br><span class="line">	<span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> d = c++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token operator">++</span>a<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> d <span class="token operator">=</span> c<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>++a——a先加一再参与b的赋值运算<br>c++——c先参与d的赋值运算再加一<br>上图结果是<br>1<br>0</p>
 <hr>
 <h4 id="n目操作符"><a href="#n目操作符" class="headerlink" title="n目操作符"></a>n目操作符</h4><p>双目操作符：操作两个对象的操作符<br>三目操作符：操作三个对象的操作符<br>…</p>
@@ -224,7 +412,17 @@
 </ul>
 <hr>
 <h4 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h4><p>逗号隔开的一串表达式</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> c = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> d = (a = b - <span class="number">1</span>, b = c + <span class="number">2</span>, c = a - b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, d);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> d <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">=</span> b <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> c <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">,</span> c <span class="token operator">=</span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>整个逗号表达式表示的并列语句，从左向右进行计算<br>整个表达式的结果是最后一句计算结束的结果<br>上图结果为-4</p>
 <hr>
 <h2 id="7-常见关键字"><a href="#7-常见关键字" class="headerlink" title="7.常见关键字"></a>7.常见关键字</h2><hr>
@@ -249,8 +447,15 @@
 <ul>
 <li>typedef<br>类型重定义<br>可以给类型重新起名字，用于简化代码</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> u_int;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u_int d = <span class="number">-100</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, d);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> u_int<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    u_int d <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p>typedef 旧类型名 新类型名 ；</p>
 </blockquote>
@@ -260,7 +465,25 @@
 <ol>
 <li>static修饰局部变量<br>static修饰的局部变量出作用域后不会销毁</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">	a++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Add();</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">void</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    a<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">Add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>第一次调用Add函数的时候，a=2<br>由于是static定义，a出作用域未被销毁，a仍然被定义且值为2<br>第二次调用Add函数的时候，a = a+1 = 2+1 = 3，以此类推</p>
 <blockquote>
 <p>static修饰的局部变量，本质上是改变了变量的存储类型<br>把栈区的局部变量分配到了静态区<br>让局部变量的生命周期延长到了全局变量<br>2. static修饰全局变量<br>static修饰全局变量使得全局变量只能在自己的源文件中使用，不再能通过extern声明引用跨源文件的全局变量（忘记了回看<strong>全局变量</strong>中的“<strong>全局变量在相同解决方案不同源.c文件的使用</strong>”）</p>
@@ -284,18 +507,47 @@
 </blockquote>
 <hr>
 <h4 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h4><p>看下面这段程序</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;你想要一个女朋友吗\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="keyword">if</span> (a)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;恭喜你脱单\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;单身万岁\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"你想要一个女朋友吗\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"恭喜你脱单\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"单身万岁\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>程序的意思就是：<br>你想要女朋友吗<br>输入1，就会脱单<br><img src="https://img-blog.csdnimg.cn/20210405192700328.png" alt="在这里插入图片描述"><br>输入0，就继续单身<br><img src="https://img-blog.csdnimg.cn/20210405192718936.png" alt="在这里插入图片描述"><br>这样就是做出了一个选择</p>
 <p>接下来让我们逐句解读一下</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span>
+</code></pre>
 <p>这句话是干啥的呢？我们暂时只需要知道这句话的作用是保证调用scanf函数的时候系统不会报错的就行了。如果你在运行程序的时候在出现scanf报错的情况，就请先加上它吧<br>由于讲过了程序框架，接下来我们就只看程序主体部分</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c">    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</code></pre>
 <p>定义一个新的变量a并且初始化，初值为0</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;你想要一个女朋友吗\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c">    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"你想要一个女朋友吗\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>打印“你想要一个女朋友吗”这句话并且换行</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c">    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>引入函数scanf<br>作用是把从键盘上输入的值赋值给指定变量<br>我们可以发现scanf函数和printf函数很像，唯一的不同就是在变量名前面必须加上一个取地址符&amp;<br>这句话的意思从键盘接受一个数并且把它赋值给a</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (a)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;恭喜你脱单\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;单身万岁\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c">    <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"恭喜你脱单\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"单身万岁\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
 <p>判断a的值，如果a的值是真（非零），就执行if下的语句：打印“恭喜你脱单”，如果a的值是零，就打印“单身万岁”</p>
 <hr>
 <h2 id="2-循环语句"><a href="#2-循环语句" class="headerlink" title="2.循环语句"></a>2.循环语句</h2><p>计算机最强大的地方就是可以把同一个步骤在极短的时间内不知疲倦的重复成千上万次，我们利用这个强大特性的语句就是循环语句。接下来引入第二个主动技能——循环语句</p>
@@ -307,7 +559,36 @@
 <p>条件为假则跳出循环</p>
 <hr>
 <h4 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h4><p>“编程之路”</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> input = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;欢迎来到编程的世界\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;你要好好学习吗？（1/0）:&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;input);</span><br><span class="line">	<span class="keyword">if</span> (input == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;好工作\n&quot;</span>);</span><br><span class="line">	<span class="keyword">int</span> day = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> line = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;开始编程\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;day);</span><br><span class="line">	<span class="keyword">while</span> (line &lt; day)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;坚持敲代码 坚持天数：%d\n&quot;</span>, line);</span><br><span class="line">		line++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (line &gt;= <span class="number">20000</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;好offer\n&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;坠入爱河无心学习\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;回家种地\n&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> input <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"欢迎来到编程的世界\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"你要好好学习吗？（1/0）:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>input <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"好工作\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> day <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> line <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"开始编程\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>line <span class="token operator">&lt;</span> day<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"坚持敲代码 坚持天数：%d\n"</span><span class="token punctuation">,</span> line<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        line<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>line <span class="token operator">>=</span> <span class="token number">20000</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"好offer\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"坠入爱河无心学习\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"回家种地\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>提示：使用了if的嵌套和while循环，并且使用if判断条件跳出循环</p>
 <hr>
 <h2 id="3-函数"><a href="#3-函数" class="headerlink" title="3.函数"></a>3.函数</h2><p>我们在初中就学过函数,比如这样一个函数<br> f^1^(x)=2x<br> 它的意思是把对象变成自身的二倍，你可能觉得这个函数并不能起到什么简化的作用，再看这一个函数<br> f^2^(x,y)=(x^3^+y^3^)/(x^3^-y^3^)<br> 如果我们每次使用都把后面这一串运算表示出来就太麻烦了，我们可以直接用f^2^(x,y)来表示<br> 同理，c语言中我们可以用已经写好的函数来极大的帮助我们简化主函数，让我们的代码更加清晰，层次分明，可读性强</p>
@@ -318,7 +599,30 @@
 <p>形式参数就就相当于f(x)=…中的x（实际参数就相当于使用函数时x的实际值）<br>返回值就是我们调用函数以后，函数输出的结果</p>
 <hr>
 <h4 id="综合案例-1"><a href="#综合案例-1" class="headerlink" title="综合案例"></a>综合案例</h4><p>“比大小”</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Cpa</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a &gt; =  b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> y = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> z = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">	z = Cpa(x, y);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, z);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">Cpa</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">></span> <span class="token operator">=</span>  b<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> z <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>x<span class="token punctuation">,</span> <span class="token operator">&amp;</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    z <span class="token operator">=</span> <span class="token function">Cpa</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>提示：注意定义函数的写法和调用函数的写法，注意形式参数和实际参数不要弄混</p>
 <hr>
 <h2 id="4-数组"><a href="#4-数组" class="headerlink" title="4.数组"></a>4.数组</h2><p>要想存储5个数，怎么存储？你可能觉得我定义5个变量abcde就好了。那50个数呢？500个数呢？<br>引出C语言中数组的概念：一组相同类型元素的集合</p>
@@ -330,18 +634,46 @@
 <h4 id="访问数组元素"><a href="#访问数组元素" class="headerlink" title="访问数组元素"></a>访问数组元素</h4><blockquote>
 <p>数组名[下标]</p>
 </blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">10</span>] = &#123; <span class="number">1</span> &#125;;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, arr[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>下标是按照0、1、2、3、4…的顺序排列的，所以第一个元素的下标是0</p>
 <hr>
 <h4 id="综合案例-2"><a href="#综合案例-2" class="headerlink" title="综合案例"></a>综合案例</h4><p>打印数组中所有的元素</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">10</span>] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span> &#125;;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, arr[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, arr[i]);</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <hr>
 <h2 id="5-define定义宏"><a href="#5-define定义宏" class="headerlink" title="5.define定义宏"></a>5.define定义宏</h2><hr>
 <h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><blockquote>
 <p>#defne 宏名（形式参数）（宏内容）</p>
 </blockquote>
 <hr>
-<h4 id="综合案例-3"><a href="#综合案例-3" class="headerlink" title="综合案例"></a>综合案例</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Add(x,y) (x+y)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">5</span>*Add(<span class="number">2</span>, <span class="number">3</span>));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="综合案例-3"><a href="#综合案例-3" class="headerlink" title="综合案例"></a>综合案例</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> Add(x,y) (x+y)</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>上图结果为25<br>define定义宏本质就是替换，作用和函数类似</p>
 <hr>
 <h2 id="6-指针"><a href="#6-指针" class="headerlink" title="6.指针"></a>6.指针</h2><p>指针是C语言的灵魂，是当之无愧的大招。接下来我们详细讲解一下指针到底是个啥</p>
@@ -363,15 +695,35 @@
 <li><strong>取地址</strong><br>引入取地址符号&amp;<br>取地址就是把一个变量的地址取出来<br>如果我们定义是四个字节的变量，虽然它每个字节都会分配地址，但是取地址就是取出这个变量第一个字节的地址<br><img src="https://img-blog.csdnimg.cn/20210407140309452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>%p是打印地址的类型</li>
 <li><strong>指针变量(存地址)</strong><br>专门定义出来用来存放地址的变量叫做指针变量，<strong>简称指针</strong>（指针其实就是这玩意儿）</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span>* pa = &amp;a;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>*表示pa是指针变量，int说明pa执行的对象int类型的<br>再比如char类型的指针变量就是char *</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> ch = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">	<span class="keyword">char</span>* pa = &amp;ch;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> ch <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>ch<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <ul>
 <li><strong>访问地址</strong></li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span>* pa = &amp;a;</span><br><span class="line">	*pa = <span class="number">20</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token operator">*</span>pa <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p><em>解引用操作，</em>pa就是通过pa里面存放的地址找到a</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">*pa = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token operator">*</span>pa <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+</code></pre>
 <p>这句话就是通过指针pa操作了指针指向的对象a，将a重新赋值为20</p>
 <ul>
 <li><strong>指针变量的大小</strong><br>指针是用来存放地址的，而在32位机器上地址是32位的二进制数，大小是32bit，而地址有多大就决定了指针变量的大小<br>所以指针变量的大小就是32bit<br>也就是4个字节<br>（在64位机器上就是8个字节）</li>
@@ -383,22 +735,73 @@
 <blockquote>
 <p>struct 结构体名<br>{<br>定义成员变量1；<br>定义成员变量2；<br>}；</p>
 </blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> Name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">int</span> height;</span><br><span class="line">	<span class="keyword">double</span> score;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> Stu
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> Name<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> height<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> score<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
 <hr>
-<h4 id="使用结构体"><a href="#使用结构体" class="headerlink" title="使用结构体"></a>使用结构体</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> Name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">float</span> height;</span><br><span class="line">	<span class="keyword">double</span> score;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Stu</span> <span class="title">s</span> =</span> &#123; <span class="string">&quot;小白&quot;</span>,<span class="number">18</span>,<span class="number">1.74</span>,<span class="number">85.5</span> &#125;;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s %d %f %lf&quot;</span>, s.Name, s.age, s.height, s.score);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span> <span class="title">s</span> =</span> &#123; <span class="string">&quot;小白&quot;</span>,<span class="number">18</span>,<span class="number">1.74</span>,<span class="number">85.5</span> &#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="使用结构体"><a href="#使用结构体" class="headerlink" title="使用结构体"></a>使用结构体</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">struct</span> Stu
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> Name<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> height<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> score<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Stu s <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"小白"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">1.74</span><span class="token punctuation">,</span><span class="token number">85.5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %d %f %lf"</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> s<span class="token punctuation">.</span>age<span class="token punctuation">,</span> s<span class="token punctuation">.</span>height<span class="token punctuation">,</span> s<span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> Stu s <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"小白"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">1.74</span><span class="token punctuation">,</span><span class="token number">85.5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
 <p>s是结构体变量名<br>{}内部是结构体各项的内容</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s %d %f %lf&quot;</span>, s.Name, s.age, s.height, s.score);</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %d %f %lf"</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> s<span class="token punctuation">.</span>age<span class="token punctuation">,</span> s<span class="token punctuation">.</span>height<span class="token punctuation">,</span> s<span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>s.Name中的点操作符是用来访问结构体成员</p>
 <blockquote>
 <p>结构体变量 . 结构体成员</p>
 </blockquote>
 <hr>
-<h4 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> Name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">float</span> height;</span><br><span class="line">	<span class="keyword">double</span> score;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Stu</span> <span class="title">s</span> =</span> &#123; <span class="string">&quot;小白&quot;</span>,<span class="number">18</span>,<span class="number">1.74</span>,<span class="number">85.5</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Stu</span>* <span class="title">pa</span> =</span> &amp;s;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s %d %f %lf&quot;</span>, (*pa).Name, (*pa).age, (*pa).height, (*pa).score);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">struct</span> Stu
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> Name<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> height<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> score<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Stu s <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"小白"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">1.74</span><span class="token punctuation">,</span><span class="token number">85.5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> Stu<span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>s<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %d %f %lf"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">*</span>pa<span class="token punctuation">)</span><span class="token punctuation">.</span>Name<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">*</span>pa<span class="token punctuation">)</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">*</span>pa<span class="token punctuation">)</span><span class="token punctuation">.</span>height<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">*</span>pa<span class="token punctuation">)</span><span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>pa就是结构体指针<br>但是这种写法有点啰嗦，看下面这种写法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> Name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">float</span> height;</span><br><span class="line">	<span class="keyword">double</span> score;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Stu</span> <span class="title">s</span> =</span> &#123; <span class="string">&quot;小白&quot;</span>,<span class="number">18</span>,<span class="number">1.74</span>,<span class="number">85.5</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Stu</span>* <span class="title">pa</span> =</span> &amp;s;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s %d %f %lf&quot;</span>, pa-&gt;Name, pa-&gt;age, pa-&gt;height, pa-&gt;score);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">struct</span> Stu
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> Name<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> height<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> score<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Stu s <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"小白"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">1.74</span><span class="token punctuation">,</span><span class="token number">85.5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> Stu<span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>s<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %d %f %lf"</span><span class="token punctuation">,</span> pa<span class="token operator">-></span>Name<span class="token punctuation">,</span> pa<span class="token operator">-></span>age<span class="token punctuation">,</span> pa<span class="token operator">-></span>height<span class="token punctuation">,</span> pa<span class="token operator">-></span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>-&gt;就是箭头操作符<br>语法是</p>
 <blockquote>
 <p>结构体指针-&gt;结构体成员名</p>
