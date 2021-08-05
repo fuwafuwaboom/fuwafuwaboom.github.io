@@ -241,7 +241,12 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #bf3030 0%, #9d0f0f 100%);
+}
+@-webkit-keyframes rainbow {
+}
+
+@keyframes rainbow {
 }
 
 .text-color {
