@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小葉的学习笔记</title>
+  <title>小葉的博客</title>
   
-  <subtitle>忘我在进步的快乐中</subtitle>
+  
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2021-08-03T03:33:46.898Z</updated>
+  <updated>2021-08-12T04:39:41.649Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【C语言从青铜到王者】第四篇·详解操作符</title>
+    <link href="http://fuwafuwaboom.github.io/2021/08/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/"/>
+    <id>http://fuwafuwaboom.github.io/2021/08/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</id>
+    <published>2021-08-12T04:39:41.000Z</published>
+    <updated>2021-08-12T04:39:41.649Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>【C语言从青铜到王者】第三篇·详解数组</title>
@@ -104,7 +117,7 @@
     <link href="http://fuwafuwaboom.github.io/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/"/>
     <id>http://fuwafuwaboom.github.io/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</id>
     <published>2021-07-30T16:00:00.000Z</published>
-    <updated>2021-08-05T08:54:18.180Z</updated>
+    <updated>2021-08-05T10:27:38.774Z</updated>
     
     
       
