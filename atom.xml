@@ -117,17 +117,16 @@
     <link href="http://fuwafuwaboom.github.io/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/"/>
     <id>http://fuwafuwaboom.github.io/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</id>
     <published>2021-07-30T16:00:00.000Z</published>
-    <updated>2021-09-06T15:01:26.377Z</updated>
+    <updated>2021-09-06T15:05:34.608Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;br&gt;C语言对于每个刚刚入门的编程新人来说都是熟面孔了，可真正在初学阶段就掌握透彻的又有几人呢。在【C语言从青铜到王者】系列中，我致力于通过整理自己的C语言学习笔记，牢牢的打实自己的C语言基础，希望为每个造访我博客的朋友带来最细致的知识梳理。本篇文章是C语言知识体系的概论，先纵览山河，再细嗅蔷薇&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;博主的编程环境是 Visual Studio 2019&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h1&gt;&lt;h2 id=&quot;什么是注释&quot;&gt;&lt;a href=&quot;#什么是注释&quot; class=&quot;headerlink&quot; title=&quot;什么是注释&quot;&gt;&lt;/a&gt;什么是注释&lt;/h2&gt;&lt;p&gt;注释就是写在程序里但是不会执行的语句&lt;/p&gt;
-&lt;h2 id=&quot;为什么要写注释&quot;&gt;&lt;a href=&quot;#为什么要写注释&quot; class=&quot;headerlink&quot; title=&quot;为什么要写注释&quot;&gt;&lt;/a&gt;为什么要写注释&lt;/h2&gt;&lt;p&gt;作用一：注释掉暂时不需要的代码，以后需要再反注释回来&lt;br&gt;作用二：理解别人的程序时添加笔记，方便我们整理思路&lt;br&gt;作用三：为大型算法添加注解，方便自己和后来的读者能更容易的看懂&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;良好的注释习惯是我们成为优秀IT人必须具备的素养&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;br&gt;C语言对于每个刚刚入门的编程新人来说都是熟面孔了，可真正在初学阶段就掌握透彻的又有几人呢。在【C语言从青铜到王者】系列中，我致力于通过整理自己的C语言学习笔记，牢牢的打实自己的C语言基础，希望为每个造访我博客的朋友带来最细致的知</summary>
+        
+      
     
     
     
