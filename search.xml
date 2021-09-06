@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【C语言从青铜到王者】第四篇·详解操作符</title>
+    <url>/2021/08/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>【C语言从青铜到王者】第三篇·详解数组</title>
     <url>/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</url>
     <content><![CDATA[<p><strong>本篇前言</strong></p>
@@ -224,11 +229,6 @@
         <tag>C语言学习</tag>
         <tag>数组</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>【C语言从青铜到王者】第四篇·详解操作符</title>
-    <url>/2021/08/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>【C语言从青铜到王者】第一篇·详解分支与循环</title>
@@ -1168,16 +1168,17 @@ error<span class="token punctuation">:</span>
   <entry>
     <title>【C语言从青铜到王者】第零篇·与C语言来个约会</title>
     <url>/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</url>
-    <content><![CDATA[<p><strong>本篇前言</strong><br>C语言对于每个刚刚入门的编程新人来说都是熟面孔了，可真正在初学阶段就掌握透彻的又有几人呢。在【C语言从青铜到王者】系列中，我致力于通过整理自己的C语言学习笔记，牢牢的打实自己的C语言基础，希望为每个造访我博客的朋友带来最细致的知识梳理。<br><em><strong>博主的编程环境是 Visual Studio 2019</strong></em></p>
+    <content><![CDATA[<p><strong>前言</strong><br>C语言对于每个刚刚入门的编程新人来说都是熟面孔了，可真正在初学阶段就掌握透彻的又有几人呢。在【C语言从青铜到王者】系列中，我致力于通过整理自己的C语言学习笔记，牢牢的打实自己的C语言基础，希望为每个造访我博客的朋友带来最细致的知识梳理。本篇文章是C语言知识体系的概论，先纵览山河，再细嗅蔷薇</p>
+<p><em><strong>博主的编程环境是 Visual Studio 2019</strong></em></p>
 <hr>
 <h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><h2 id="什么是注释"><a href="#什么是注释" class="headerlink" title="什么是注释"></a>什么是注释</h2><p>注释就是写在程序里但是不会执行的语句</p>
 <h2 id="为什么要写注释"><a href="#为什么要写注释" class="headerlink" title="为什么要写注释"></a>为什么要写注释</h2><p>作用一：注释掉暂时不需要的代码，以后需要再反注释回来<br>作用二：理解别人的程序时添加笔记，方便我们整理思路<br>作用三：为大型算法添加注解，方便自己和后来的读者能更容易的看懂</p>
 <blockquote>
-<p>良好的注释习惯是我们成为优秀IT人必须具备的素养</p>
+<p><strong>良好的注释习惯是我们成为优秀IT人必须具备的素养</strong></p>
 </blockquote>
 <h2 id="注释的写法"><a href="#注释的写法" class="headerlink" title="注释的写法"></a>注释的写法</h2><p>下图是C++的注释风格</p>
 <blockquote>
-<p>//</p>
+<p><strong>//</strong></p>
 </blockquote>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//I love C</span>
 <span class="token comment" spellcheck="true">//You love C</span>
@@ -1185,7 +1186,7 @@ error<span class="token punctuation">:</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>下图是C语言的注释风格</p>
 <blockquote>
-<p>/*    */</p>
+<p><strong>/*    */</strong></p>
 </blockquote>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*I love C
 You love C
@@ -1275,9 +1276,8 @@ You love C
 <td>1.75    3.14</td>
 </tr>
 </tbody></table>
-<hr>
 <h2 id="数据类型的大小"><a href="#数据类型的大小" class="headerlink" title="数据类型的大小"></a>数据类型的大小</h2><blockquote>
-<p>引入操作符 sizeof()，它的作用是显示数据类型的大小（长度）</p>
+<p><strong>引入操作符 sizeof()，它的作用是显示数据类型的大小（长度）</strong></p>
 </blockquote>
 <p>我们运行一下下面的程序看一下结果(简约起见结果注释在行末)</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
@@ -1303,34 +1303,75 @@ You love C
 <p>解析一下这句话：我们定义了一个int类型的变量，变量名叫a，赋值为10，根据上面的程序运行结果我们知道int类型的变量长度是4字节<br>10 = 8 + 2 =1x2^3^ + 0x2^2^ + 1x2^1^ + 0x2^0^，那么，a在内存中的状态就是这样的：<br><img src="https://img-blog.csdnimg.cn/20210412090519776.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <p>上面的a是int类型，int类型的长度是四字节，也就是32个bit位，也就是说a这个变量有32个并排的盒子去装它的二进制序列。每个盒子中存放的1/0从左到右需要依次乘2的0次方、2的1次方、2的2次方…这是二进制数转换成十进制数的方法，我们初中实际上就学过了</p>
 <p>实际上，我们还有一系列的表示内存大小的单位<br>下面给出单位换算表</p>
-<blockquote>
-<p>1 byte = 8 bit<br>1 kb = 1024 byte<br>1 mb = 1024 kb<br>1 gb = 1024 mb<br>1 tb = 1024 gb<br>1 pb = 1024 tb<br>（1024=2^10^）</p>
-</blockquote>
-<p>这里的kb、mb、gb等就是我们熟悉的U盘、网盘、硬盘、内存的容量单位，今天放到这里介绍，大家是不是对他们有更深的理解了呢</p>
-<hr>
-<h4 id="数据类型的作用"><a href="#数据类型的作用" class="headerlink" title="数据类型的作用"></a>数据类型的作用</h4><ul>
+<table>
+<thead>
+<tr>
+<th>内存单位</th>
+<th>中文名</th>
+<th>换算</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bit</td>
+<td>比特位</td>
+<td>（用来存储0或1）</td>
+</tr>
+<tr>
+<td>byte (B)</td>
+<td>字节</td>
+<td>1byte = 8 bit</td>
+</tr>
+<tr>
+<td>KB (K)</td>
+<td>千字节</td>
+<td>1 KB = 1024 byte (1024 = 2^10)</td>
+</tr>
+<tr>
+<td>MB (M)</td>
+<td>兆字节</td>
+<td>1 MB = 1024 KB</td>
+</tr>
+<tr>
+<td>GB (G)</td>
+<td>吉字节</td>
+<td>1 GB = 1024 MB</td>
+</tr>
+<tr>
+<td>TB (T)</td>
+<td>太字节</td>
+<td>1 TB = 1024 GB</td>
+</tr>
+<tr>
+<td>PB (P)</td>
+<td>拍字节</td>
+<td>1 PB = 1024 TB</td>
+</tr>
+</tbody></table>
+<p>这里的KB、MB、GB等 就是我们熟悉的U盘、网盘、硬盘、内存的容量单位，今天放到这里介绍，大家是不是对他们有更深的理解了呢</p>
+<h2 id="数据类型的作用"><a href="#数据类型的作用" class="headerlink" title="数据类型的作用"></a>数据类型的作用</h2><ul>
 <li>用于创建变量时表示新变量的类型</li>
 <li>可以丰富的表达生活中的各种值</li>
 <li>让内存的空间利用率更高(小数据用小类型，大数据用大类型）</li>
 </ul>
 <hr>
-<h2 id="4-变量与常量"><a href="#4-变量与常量" class="headerlink" title="4.变量与常量"></a>4.变量与常量</h2><hr>
-<h4 id="什么是变量和常量"><a href="#什么是变量和常量" class="headerlink" title="什么是变量和常量"></a>什么是变量和常量</h4><p>在程序中值可以继续变化的量叫做<strong>变量</strong>，值无法继续改变的量叫做<strong>常量</strong></p>
-<hr>
-<h4 id="定义变量的方法"><a href="#定义变量的方法" class="headerlink" title="定义变量的方法"></a>定义变量的方法</h4><pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<h1 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h1><hr>
+<h2 id="什么是变量和常量"><a href="#什么是变量和常量" class="headerlink" title="什么是变量和常量"></a>什么是变量和常量</h2><p>在程序中值可以继续变化的量叫做<strong>变量</strong>，值无法继续改变的量叫做<strong>常量</strong></p>
+<h2 id="为什么要定义变量和常量的概念"><a href="#为什么要定义变量和常量的概念" class="headerlink" title="为什么要定义变量和常量的概念"></a>为什么要定义变量和常量的概念</h2><p>因为生活中的数据就有变量和常量的区分。比如一个人的年龄，就是随时都在增长的一个变量，而自然对数e就是一个常量。程序中描述它们时当然也得分开描述</p>
+<h2 id="定义变量的方法"><a href="#定义变量的方法" class="headerlink" title="定义变量的方法"></a>定义变量的方法</h2><pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
     <span class="token keyword">float</span> height <span class="token operator">=</span> <span class="token number">1.74</span><span class="token punctuation">;</span>
     <span class="token keyword">char</span> ml <span class="token operator">=</span> <span class="token string">'c'</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>定义变量时的写法是</p>
 <blockquote>
-<p>数据类型 变量名 = 变量值 ；</p>
+<p><strong>数据类型 变量名 = 变量值 ；</strong></p>
 </blockquote>
-<p>也可以不给初值，但是我们在定义新变量的时候最好养成定义初值的习惯<br>给一个变量赋初值的这个行为还有一个帅气的名字——“初始化”</p>
-<hr>
-<h4 id="变量的分类"><a href="#变量的分类" class="headerlink" title="变量的分类"></a>变量的分类</h4><ul>
+<p>也可以在定义变量的时候不给初值，用到的时候再给，但是我们在定义新变量的时候最好养成定义初值的好习惯，原因以后再说<br>给一个变量赋初值的这个行为还有一个帅气的名字——“初始化”</p>
+<p>所以这个好习惯总结就是<strong>我们应该在定义变量时就初始化它</strong></p>
+<h2 id="变量的分类"><a href="#变量的分类" class="headerlink" title="变量的分类"></a>变量的分类</h2><ul>
 <li>局部变量<br>作用域在自己函数内部的变量</li>
-<li>全局变量<br>作用域是全局的变量<br>由于还没有介绍作用域的概念，我们先感性的认识一下什么是局部变量和全局变量<br>看下面这段程序：</li>
+<li>全局变量<br>作用域是全局的变量</li>
 </ul>
+<p>由于还没有介绍作用域的概念，我们先感性的认识一下什么是局部变量和全局变量<br>看下面这段程序：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">2019</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1371,15 +1412,40 @@ You love C
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上图结果<br><img src="https://img-blog.csdnimg.cn/20210405162854324.png" alt="在这里插入图片描述"></p>
-<hr>
-<p>总结：局部变量的作用域是自己所在的大括号<strong>内部</strong>，包括<strong>内部的大括号</strong></p>
-<h4 id="变量的作用域和生命周期"><a href="#变量的作用域和生命周期" class="headerlink" title="变量的作用域和生命周期"></a>变量的作用域和生命周期</h4><ul>
-<li>作用域<br>变量能在哪里使用哪里就是变量的作用域</li>
-<li>生命周期<br>变量创建到销毁的时间段<br>eg:<br>全局变量的作用域是整个工程<br>生命周期就是程序的生命周期<br>eg:<br>局部变量的作用域是变量所在的局部范围，一般是所属的{}内部<br>进作用域生命周期开始，出作用域生命周期结束</li>
-<li>补充知识：<strong>全局变量在相同解决方案不同源.c文件的使用</strong><br>在同解决方案下另一源文件中使用全局变量需要用extern声明其为外部变量<br><img src="https://img-blog.csdnimg.cn/20210405163957754.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210405163957740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<p>总结：<strong>局部变量的作用域是自己所在的大括号内部，包括内部的大括号</strong></p>
+<h2 id="变量的作用域和生命周期"><a href="#变量的作用域和生命周期" class="headerlink" title="变量的作用域和生命周期"></a>变量的作用域和生命周期</h2><ul>
+<li><p>作用域<br>变量能在哪里使用哪里就是变量的作用域</p>
+</li>
+<li><p>生命周期<br>变量创建到销毁的时间段</p>
+</li>
 </ul>
+<p>总结：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>作用域</th>
+<th>生命周期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>全局变量</td>
+<td>整个工程</td>
+<td>整个程序的生命周期</td>
+</tr>
+<tr>
+<td>局部变量</td>
+<td>变量所在的局部范围，一般是所属的大括号{}内部</td>
+<td>进作用域生命周期开始，出作用域生命周期结束</td>
+</tr>
+</tbody></table>
+<h2 id="全局变量在相同解决方案不同源-c文件的使用"><a href="#全局变量在相同解决方案不同源-c文件的使用" class="headerlink" title="全局变量在相同解决方案不同源.c文件的使用"></a>全局变量在相同解决方案不同源.c文件的使用</h2><p>在同解决方案下另一源文件中使用全局变量需要用extern声明其为外部变量</p>
+<p>下面的int d定义在同一个解决方案的一个c文件中，在另一个c文件中使用它时要写：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">extern</span> <span class="token keyword">int</span> d
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20210405163957754.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210405163957740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <hr>
-<h4 id="常量的分类"><a href="#常量的分类" class="headerlink" title="常量的分类"></a>常量的分类</h4><p>C语言有四种常见的常量</p>
+<h2 id="常量的分类"><a href="#常量的分类" class="headerlink" title="常量的分类"></a>常量的分类</h2><p>C语言有四种常见的常量</p>
 <ul>
 <li>字面常量<br>比如程序中出现的数字或者字符：123 1.75 12f<br>eg：</li>
 </ul>
@@ -1402,7 +1468,7 @@ You love C
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210405164936836.png" alt="在这里插入图片描述"><br>从上图可知const定义的变量不可变值，不可变值，就是具有常属性</p>
+<p><img src="https://img-blog.csdnimg.cn/20210405164936836.png" alt="在这里插入图片描述"><br>从上图可知const定义的变量不可变值，“不可变值”就是具有常属性</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1434,7 +1500,7 @@ You love C
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>结果是2<br>我们解析一下：通过enum我们定义了一个“组”，名字是Sex,这个“组”实际上是一个常量组，组中的MALE,FEMALE,SECRET都是常量，它们的值分别是0，1，2，因为枚举常量未赋值时按序号赋默认值<br>在主函数中如果我们想要使用这样的常量，就先声明枚举组，就可以使用了：</p>
 <blockquote>
-<p>enum 枚举组名称 变量名 = 枚举常量 ；</p>
+<p><strong>enum 枚举组名称 变量名 = 枚举常量 ；</strong></p>
 </blockquote>
 <p>接下来看一下枚举常量的赋值问题，还是通过例子来看：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
@@ -1469,22 +1535,26 @@ You love C
 <p>结果是6，因为SECRET上一个枚举常量FEMALE是5，所以按照序号，未赋值枚举常量SECRET是6</p>
 <p>总结规律如下：<br>赋值枚举常量按所赋值定义<br>未赋值枚举常量按序号定义</p>
 <hr>
-<h2 id="5-字符、字符串、转义字符"><a href="#5-字符、字符串、转义字符" class="headerlink" title="5.字符、字符串、转义字符"></a>5.字符、字符串、转义字符</h2><hr>
-<h4 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h4><p>单个字母或符号<br><img src="https://img-blog.csdnimg.cn/2021040517080251.png" alt="在这里插入图片描述"><br>b就是字符</p>
+<h1 id="字符、字符串、转义字符"><a href="#字符、字符串、转义字符" class="headerlink" title="字符、字符串、转义字符"></a>字符、字符串、转义字符</h1><h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><p>单个字母或符号<br><img src="https://img-blog.csdnimg.cn/2021040517080251.png" alt="在这里插入图片描述"><br><strong>b</strong>就是字符</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>由双引号引起的一串字符<br><img src="https://img-blog.csdnimg.cn/20210405170908178.png" alt="在这里插入图片描述"><br>“ ”中的 <strong>I love C\n</strong> 就是字符串</p>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>转义就是意义被转变了，转义字符就是不是原本含义的，有特殊作用的字符组合<br><img src="https://img-blog.csdnimg.cn/20210405171012494.png" alt="在这里插入图片描述"><br>还是这个程序，<strong>\n</strong>的意思不是“斜杠和n”,而是<strong>换行</strong>的意思，<strong>\n</strong>就是转义字符<br>下面给出常见转义字符<br><img src="https://img-blog.csdnimg.cn/20210410110642279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>基本要求是认识常见的转义字符，<strong>会数出含有转义字符的字符串的长度</strong></p>
+<p>比如下面这段程序，我们来数一数下面这串字符串的长度吧：</p>
+<p><strong>c:\test\328\test.c</strong></p>
+<blockquote>
+<p><strong>补充知识：strlen函数</strong><br><strong>strlen–string length</strong><br><strong>用来计算字符串的长度</strong></p>
+<p>语法是</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token function">strlen</span><span class="token punctuation">(</span><span class="token string">"要计算长度的字符串"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<p>答案解析：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210405172440900.png" alt="在这里插入图片描述"></p>
+<p>c : e s t 8 e s t . c共11个字符<br>两个\t是两个转义字符<br>一个\32是一个转义字符<br>一共14个字符</p>
+<h2 id="字符串的结束标志——字符终止符-0"><a href="#字符串的结束标志——字符终止符-0" class="headerlink" title="字符串的结束标志——字符终止符\0"></a>字符串的结束标志——字符终止符\0</h2><p><strong>\0是一个转义字符，表示字符串的终止，计算字符串长度的时候作为结束的标识，不算做字符串的内容, 没有长度</strong><br>看这段程序<br><img src="https://img-blog.csdnimg.cn/20210405171823481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>总结：<br>“ “内字符串默认存在\0作为结束标志<br>‘ ‘ 内字符必须手动添加\0作为结束标志，否则会产生乱码，比如上图的arr2</p>
 <hr>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>由双引号引起的一串字符<br><img src="https://img-blog.csdnimg.cn/20210405170908178.png" alt="在这里插入图片描述"><br>I love C\n就是字符串</p>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><p>用来处理变量、常量、字符和它们之间关系的符号</p>
 <hr>
-<h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><p>转义就是意义被转变了，转义字符就是不是原本含义的，有特殊作用的字符组合<br><img src="https://img-blog.csdnimg.cn/20210405171012494.png" alt="在这里插入图片描述"><br>还是这个程序，\n的意思不是“斜杠和n”,而是换行的意思，\n就是转义字符<br>下面给出常见转义字符<br><img src="https://img-blog.csdnimg.cn/20210410110642279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p>一个基本要求是认识常见的转义字符，会数出含有转义字符的字符串的长度</p>
-<p><em>补充知识：strlen函数<br>strlen–string length<br>用来计算字符串的长度</em></p>
-<p>比如下面这段程序，我们来数一数字符串的长度吧</p>
-<p><img src="https://img-blog.csdnimg.cn/20210405172440900.png" alt="在这里插入图片描述"><br>答案解析：<br>c : e s t 8 e s t . c共11个字符<br>两个\t是两个转义字符<br>一个\32是一个转义字符<br>一共14个字符</p>
-<hr>
-<h4 id="字符串的结束标志——字符终止符-0"><a href="#字符串的结束标志——字符终止符-0" class="headerlink" title="字符串的结束标志——字符终止符\0"></a>字符串的结束标志——字符终止符\0</h4><p>\0是一个转义字符，表示字符串的终止，计算字符串长度的时候作为结束的标识，不算做字符串的内容，没有长度<br>看这段程序<br><img src="https://img-blog.csdnimg.cn/20210405171823481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>总结：<br>“ “内字符串默认存在\0作为结束标志<br>‘ ‘ 内字符必须手动添加\0作为结束标志，否则会产生乱码，比如上图的arr2</p>
-<hr>
-<h2 id="6-操作符"><a href="#6-操作符" class="headerlink" title="6.操作符"></a>6.操作符</h2><p>用来处理变量、常量、字符和它们之间关系的符号</p>
-<hr>
-<h4 id="算数操作符"><a href="#算数操作符" class="headerlink" title="算数操作符"></a>算数操作符</h4><ul>
+<h2 id="算数操作符"><a href="#算数操作符" class="headerlink" title="算数操作符"></a>算数操作符</h2><ul>
 <li>**加 +</li>
 <li>减 -</li>
 <li>乘 *</li>
@@ -1492,7 +1562,7 @@ You love C
 <li>取余 %**<br>(a%b=a除以b的余数）</li>
 </ul>
 <hr>
-<h4 id="移位操作符"><a href="#移位操作符" class="headerlink" title="移位操作符"></a>移位操作符</h4><ul>
+<h2 id="移位操作符"><a href="#移位操作符" class="headerlink" title="移位操作符"></a>移位操作符</h2><ul>
 <li><strong>左移操作符 &lt;&lt;</strong><br>将对象的二进制位向左移动一位</li>
 <li><strong>右移操作符 &gt;&gt;</strong><br>将对象的二进制位向右移动一位</li>
 </ul>
@@ -1508,23 +1578,23 @@ You love C
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210406232709260.png" alt="在这里插入图片描述"></p>
 <hr>
-<h4 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h4><ul>
+<h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><ul>
 <li><strong>与 &amp;</strong> （同真为真 其余为假）</li>
 <li><strong>或 ^</strong>（同假为假 其余为真）</li>
 <li>**非 |**（非假为真 非真为假）</li>
 </ul>
 <hr>
-<h4 id="赋值操作符与复合赋值符"><a href="#赋值操作符与复合赋值符" class="headerlink" title="赋值操作符与复合赋值符"></a>赋值操作符与复合赋值符</h4><ul>
+<h2 id="赋值操作符与复合赋值符"><a href="#赋值操作符与复合赋值符" class="headerlink" title="赋值操作符与复合赋值符"></a>赋值操作符与复合赋值符</h2><ul>
 <li><strong>赋值操作符 =</strong> （将右值赋给左边）</li>
 <li><strong>复合赋值符 += -= <em>= /= &amp;= ^= |= &gt;&gt;= &lt;&lt;=</em></strong><br>(a x= b 等价于 a=a x b ,x是操作符)</li>
 </ul>
 <hr>
-<h4 id="单目操作符"><a href="#单目操作符" class="headerlink" title="单目操作符"></a>单目操作符</h4><ul>
+<h2 id="单目操作符"><a href="#单目操作符" class="headerlink" title="单目操作符"></a>单目操作符</h2><ul>
 <li><strong>逻辑反 ！</strong>（！非0=0，！0=1）</li>
 <li>**负值 -**（取相反数）</li>
 <li><strong>正值 +</strong></li>
 <li><strong>取地址 &amp;</strong> （见本篇指针部分）</li>
-<li><strong>以字节为单位计算类型长度 sizeof</strong><br>见程序“打印数组的个数”</li>
+<li><strong>以字节为单位计算类型长度 sizeof</strong><br>程序“打印数组的个数”如下</li>
 </ul>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1536,7 +1606,7 @@ You love C
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li><strong>对数二进制按位取反 ~</strong></li>
+<li><strong>二进制按位取反 ~</strong></li>
 </ul>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1590,20 +1660,20 @@ You love C
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>++a——a先加一再参与b的赋值运算<br>c++——c先参与d的赋值运算再加一<br>上图结果是<br>1<br>0</p>
 <hr>
-<h4 id="n目操作符"><a href="#n目操作符" class="headerlink" title="n目操作符"></a>n目操作符</h4><p>双目操作符：操作两个对象的操作符<br>三目操作符：操作三个对象的操作符<br>…</p>
+<h2 id="n目操作符"><a href="#n目操作符" class="headerlink" title="n目操作符"></a>n目操作符</h2><p>双目操作符：操作两个对象的操作符<br>三目操作符：操作三个对象的操作符<br>…</p>
 <hr>
-<h4 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h4><p>测试是否大于 <strong>&gt;</strong><br>测试是否大于等于 <strong>&gt;=</strong><br>测试是否小于 <strong>&lt;</strong><br>测试是否小于等于 <strong>&lt;=</strong><br>测试是否不等于 <strong>！=</strong><br>测试是否等于 <strong>==</strong><br>是结果为1，否结果为0</p>
+<h2 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h2><p>测试是否大于 <strong>&gt;</strong><br>测试是否大于等于 <strong>&gt;=</strong><br>测试是否小于 <strong>&lt;</strong><br>测试是否小于等于 <strong>&lt;=</strong><br>测试是否不等于 <strong>！=</strong><br>测试是否等于 <strong>==</strong><br>是结果为1，否结果为0</p>
 <hr>
-<h4 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h4><ul>
+<h2 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h2><ul>
 <li><strong>逻辑与</strong> <strong>&amp;&amp;</strong><br>“并且”的意思<br>同真（非0）为1，其余为0</li>
 <li><strong>逻辑或</strong> <strong>||</strong><br>“或者”的意思<br>同假（0）为0，其余为1</li>
 </ul>
 <hr>
-<h4 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h4><ul>
+<h2 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h2><ul>
 <li> <strong>a ? b : c</strong><br>a真为b,a假为c</li>
 </ul>
 <hr>
-<h4 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h4><p>逗号隔开的一串表达式</p>
+<h2 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h2><p>逗号隔开的一串表达式</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1617,46 +1687,22 @@ You love C
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>整个逗号表达式表示的并列语句，从左向右进行计算<br>整个表达式的结果是最后一句计算结束的结果<br>上图结果为-4</p>
 <hr>
-<h2 id="7-常见关键字"><a href="#7-常见关键字" class="headerlink" title="7.常见关键字"></a>7.常见关键字</h2><hr>
-<h4 id="关键字的特性"><a href="#关键字的特性" class="headerlink" title="关键字的特性"></a>关键字的特性</h4><p>关键字是C语言自带的语法，不能自己创建关键字<br>在C语言中，关键字不能用作变量名</p>
-<hr>
-<h4 id="32个常用关键字"><a href="#32个常用关键字" class="headerlink" title="32个常用关键字"></a>32个常用关键字</h4><p>C语言中一共有32个常见关键字<br>给出32个关键字（表粗为今天介绍的4个关键字）</p>
+<h1 id="常见关键字"><a href="#常见关键字" class="headerlink" title="常见关键字"></a>常见关键字</h1><h2 id="什么是关键字"><a href="#什么是关键字" class="headerlink" title="什么是关键字"></a>什么是关键字</h2><p>关键字是C语言自带的语法，不能自己创建关键字<br>在C语言中，关键字不能用作变量名</p>
+<h2 id="32个C语言常用关键字"><a href="#32个C语言常用关键字" class="headerlink" title="32个C语言常用关键字"></a>32个C语言常用关键字</h2><p>C语言中一共有32个常见关键字<br>给出32个关键字（表粗为今天介绍的4个关键字）</p>
 <blockquote>
 <p><strong>auto</strong>   break   case   char<br>const   continue   default   do<br>double else enum extern<br>float for goto if<br>int long <strong>register</strong> return<br>short signed sizeof <strong>static</strong><br>struct switch <strong>typedef</strong> union<br>unsigned void volatile while</p>
 </blockquote>
 <hr>
-<h4 id="介绍部分关键字"><a href="#介绍部分关键字" class="headerlink" title="介绍部分关键字"></a>介绍部分关键字</h4><p>节选部分讲解，其余的之前已经讲过或今后会慢慢接触</p>
+<h2 id="关键字讲解"><a href="#关键字讲解" class="headerlink" title="关键字讲解"></a>关键字讲解</h2><p>节选部分讲解，其余的之前已经讲过或今后会慢慢接触    </p>
+<p>重点介绍static关键字，因为对于初学者我们会经常看到它</p>
 <ul>
-<li>aoto<br>“自动的”<br>每个局部变量都是aotu修饰的，所以经常省略不写</li>
-<li>register<br>寄存器关键字</li>
-</ul>
-<blockquote>
-<ul>
-<li>什么是寄存器？<br>简单理解，寄存器就是运行速度很快，空间很小的储存数据的东西<br>它比内存快的多，所以使用寄存器可以大大的提高数据调用速度</li>
-</ul>
-</blockquote>
-<p>所以，被大量频繁使用的数据，就可以放在寄存器变量中，提升效率<br>但是现在的许多编译器已经能够自动识别这种数据并把它们放进寄存器，所以register关键字现实使用意义不大</p>
-<ul>
-<li>typedef<br>类型重定义<br>可以给类型重新起名字，用于简化代码</li>
-</ul>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">typedef</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> u_int<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    u_int d <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>typedef 旧类型名 新类型名 ；</p>
-</blockquote>
-<ul>
-<li>static<br>静态的</li>
-</ul>
+<li><p>​    <strong>static</strong><br>（静态的）</p>
+<p>static关键字可以用来修饰变量、常量和函数</p>
 <ol>
-<li>static修饰局部变量<br>static修饰的局部变量出作用域后不会销毁</li>
+<li>static修饰局部变量——局部变量出作用域后不会销毁</li>
 </ol>
+</li>
+</ul>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">void</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1676,9 +1722,10 @@ You love C
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>第一次调用Add函数的时候，a=2<br>由于是static定义，a出作用域未被销毁，a仍然被定义且值为2<br>第二次调用Add函数的时候，a = a+1 = 2+1 = 3，以此类推</p>
+<p>第一次调用Add函数的时候，a=2<br>由于是static定义，a出作用域未被销毁，a仍然被定义且值为2<br>第二次调用Add函数的时候，由于a已经被定义，跳过定义语句，直接执行a++</p>
+<p>a = a+1 = 2+1 = 3，以此类推</p>
 <blockquote>
-<p>static修饰的局部变量，本质上是改变了变量的存储类型<br>把栈区的局部变量分配到了静态区<br>让局部变量的生命周期延长到了全局变量<br>2. static修饰全局变量<br>static修饰全局变量使得全局变量只能在自己的源文件中使用，不再能通过extern声明引用跨源文件的全局变量（忘记了回看<strong>全局变量</strong>中的“<strong>全局变量在相同解决方案不同源.c文件的使用</strong>”）</p>
+<p>static修饰的局部变量，本质上是改变了变量的存储类型<br>把栈区的局部变量分配到了静态区<br>让局部变量的生命周期延长成了全局变量的生命周期<br>2. static修饰全局变量<br>使得全局变量只能在自己的源文件中使用，不再能通过extern声明引用跨源文件的全局变量（忘记了回看<strong>全局变量</strong>中的“<strong>全局变量在相同解决方案不同源.c文件的使用</strong>”）</p>
 </blockquote>
 <ol start="3">
 <li>static修饰函数<br>static修饰函数使得函数只能在自己的源文件中被调用，不再能通过extern声明引用跨源文件的函数（与static修饰全局变量作用类似）<blockquote>
@@ -1686,19 +1733,41 @@ You love C
 </blockquote>
 </li>
 </ol>
+<ul>
+<li>register寄存器关键字</li>
+</ul>
+<blockquote>
+<ul>
+<li>什么是寄存器？<br>简单理解，寄存器就是运行速度很快，空间很小的储存数据的东西<br>它比内存快的多，所以使用寄存器可以大大的提高数据调用速度</li>
+</ul>
+</blockquote>
+<p>所以，被大量频繁使用的数据，就可以放在寄存器变量中，提升效率<br>但是现在的许多编译器已经能够自动识别这种数据并把它们放进寄存器，所以register关键字现实使用意义不大</p>
+<ul>
+<li>typedef 类型重定义<br>可以给数据类型重新起名字，用于简化代码</li>
+</ul>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> u_int<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    u_int d <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>typedef 旧类型名 新类型名 ；</p>
+</blockquote>
 <hr>
-<p>注意：<br>define 、include等不是关键字，是预处理指令，以后会介绍，不要弄混</p>
+<p>注意：<br><strong>define 、include等不是关键字，是预处理指令，以后会介绍，特别是define和typedef不要弄混</strong></p>
 <hr>
-<h1 id="主动技能"><a href="#主动技能" class="headerlink" title="主动技能"></a>主动技能</h1><p>恭喜你已经习得C语言的各种被动技能，但是光有被动我们还只是一个任人宰割的小兵。接下来让我们开始学习C语言的主动技能吧，它们是C语言的重头戏，效果十分强劲，是我们以后征战沙场的得力助手。今后会继续就每一个主动技能做讲解，今天我们就先和它们打个照面，交个朋友吧！</p>
+<h1 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h1><p>我们在生活中常常会面对各种各样的选择，有时候会陷入两难的境地<br>那么，如何向计算机描述这种选择的情况呢？接下来我们引入第一个主动技能——选择语句</p>
 <hr>
-<h2 id="1-选择语句"><a href="#1-选择语句" class="headerlink" title="1.选择语句"></a>1.选择语句</h2><p>我们在生活中常常会面对各种各样的选择，有时候会陷入两难的境地<br>那么，如何向计算机描述这种选择的情况呢？接下来我们引入第一个主动技能——选择语句</p>
-<hr>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>（由于是第零篇，仅介绍if-else语句）</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>（由于是第零篇，仅介绍if-else语句）</p>
 <blockquote>
 <p>if(条件)<br>{<br>条件为真的时候执行的语句；<br>}<br>else<br>{<br>条件为假的时候执行的语句；<br>}</p>
 </blockquote>
 <hr>
-<h4 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h4><p>看下面这段程序</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>看下面这段程序</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1742,15 +1811,15 @@ You love C
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>判断a的值，如果a的值是真（非零），就执行if下的语句：打印“恭喜你脱单”，如果a的值是零，就打印“单身万岁”</p>
 <hr>
-<h2 id="2-循环语句"><a href="#2-循环语句" class="headerlink" title="2.循环语句"></a>2.循环语句</h2><p>计算机最强大的地方就是可以把同一个步骤在极短的时间内不知疲倦的重复成千上万次，我们利用这个强大特性的语句就是循环语句。接下来引入第二个主动技能——循环语句</p>
+<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><p>计算机最强大的地方就是可以把同一个步骤在极短的时间内不知疲倦的重复成千上万次，我们利用这个强大特性的语句就是循环语句。接下来引入第二个主动技能——循环语句</p>
 <hr>
-<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><p>（由于是第零篇，仅介绍while语句）</p>
+<h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><p>（由于是第零篇，仅介绍while语句）</p>
 <blockquote>
 <p>while(条件)<br>{<br>条件为真时重复执行的语句；<br>}</p>
 </blockquote>
 <p>条件为假则跳出循环</p>
 <hr>
-<h4 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h4><p>“编程之路”</p>
+<h2 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h2><p>“编程之路”</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1783,14 +1852,13 @@ You love C
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>提示：使用了if的嵌套和while循环，并且使用if判断条件跳出循环</p>
 <hr>
-<h2 id="3-函数"><a href="#3-函数" class="headerlink" title="3.函数"></a>3.函数</h2><p>我们在初中就学过函数,比如这样一个函数<br> f^1^(x)=2x<br> 它的意思是把对象变成自身的二倍，你可能觉得这个函数并不能起到什么简化的作用，再看这一个函数<br> f^2^(x,y)=(x^3^+y^3^)/(x^3^-y^3^)<br> 如果我们每次使用都把后面这一串运算表示出来就太麻烦了，我们可以直接用f^2^(x,y)来表示<br> 同理，c语言中我们可以用已经写好的函数来极大的帮助我们简化主函数，让我们的代码更加清晰，层次分明，可读性强</p>
-<hr>
-<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>我们在初中就学过函数,比如这样一个函数<br> f^1^(x)=2x<br> 它的意思是把对象变成自身的二倍，你可能觉得这个函数并不能起到什么简化的作用，再看这一个函数<br> f^2^(x,y)=(x^3^+y^3^)/(x^3^-y^3^)<br> 如果我们每次使用都把后面这一串运算表示出来就太麻烦了，我们可以直接用f^2^(x,y)来表示<br> 同理，c语言中我们可以用已经写好的函数来极大的帮助我们简化主函数，让我们的代码更加清晰，层次分明，可读性强</p>
+<h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><blockquote>
 <p>函数返回值类型 函数名（形式参数类型 形式参数名）<br>{<br>形式参数参与的语句；<br>return 返回值；<br>}</p>
 </blockquote>
 <p>形式参数就就相当于f(x)=…中的x（实际参数就相当于使用函数时x的实际值）<br>返回值就是我们调用函数以后，函数输出的结果</p>
 <hr>
-<h4 id="综合案例-1"><a href="#综合案例-1" class="headerlink" title="综合案例"></a>综合案例</h4><p>“比大小”</p>
+<h2 id="案例-2"><a href="#案例-2" class="headerlink" title="案例"></a>案例</h2><p>“比大小”</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">Cpa</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span>
@@ -1817,13 +1885,13 @@ You love C
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>提示：注意定义函数的写法和调用函数的写法，注意形式参数和实际参数不要弄混</p>
 <hr>
-<h2 id="4-数组"><a href="#4-数组" class="headerlink" title="4.数组"></a>4.数组</h2><p>要想存储5个数，怎么存储？你可能觉得我定义5个变量abcde就好了。那50个数呢？500个数呢？<br>引出C语言中数组的概念：一组相同类型元素的集合</p>
-<hr>
-<h4 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h4><blockquote>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>要想存储5个数，怎么存储？你可能觉得我定义5个变量abcde就好了。那50个数呢？500个数呢？<br>引出C语言中数组的概念：一组相同类型元素的集合</p>
+<h2 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h2><blockquote>
 <p>数组数据类型 数组名[数组元素个数] = {数组元素1，数组元素2}；</p>
 </blockquote>
-<hr>
-<h4 id="访问数组元素"><a href="#访问数组元素" class="headerlink" title="访问数组元素"></a>访问数组元素</h4><blockquote>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="访问数组元素"><a href="#访问数组元素" class="headerlink" title="访问数组元素"></a>访问数组元素</h2><blockquote>
 <p>数组名[下标]</p>
 </blockquote>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
@@ -1835,9 +1903,9 @@ You love C
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>下标是按照0、1、2、3、4…的顺序排列的，所以第一个元素的下标是0</p>
+<p><strong>注意！</strong>下标是按照0、1、2、3、4…的顺序排列的，所以第一个元素的下标是0，arr[0]代表的是数组的第一个元素</p>
 <hr>
-<h4 id="综合案例-2"><a href="#综合案例-2" class="headerlink" title="综合案例"></a>综合案例</h4><p>打印数组中所有的元素</p>
+<h2 id="案例-3"><a href="#案例-3" class="headerlink" title="案例"></a>案例</h2><p>打印数组中所有的元素</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1853,12 +1921,12 @@ You love C
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h2 id="5-define定义宏"><a href="#5-define定义宏" class="headerlink" title="5.define定义宏"></a>5.define定义宏</h2><hr>
-<h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<h1 id="define定义宏"><a href="#define定义宏" class="headerlink" title="define定义宏"></a>define定义宏</h1><p>相当于快速创建一个函数</p>
+<h2 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h2><blockquote>
 <p>#defne 宏名（形式参数）（宏内容）</p>
 </blockquote>
 <hr>
-<h4 id="综合案例-3"><a href="#综合案例-3" class="headerlink" title="综合案例"></a>综合案例</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<h2 id="案例-4"><a href="#案例-4" class="headerlink" title="案例"></a>案例</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property">#<span class="token directive keyword">define</span> Add(x,y) (x+y)</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1866,11 +1934,10 @@ You love C
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上图结果为25<br>define定义宏本质就是替换，作用和函数类似</p>
+<p>上图结果为25<br>define定义宏本质就是替换，这一点和typedef很像，但是define是预处理命令，typedef是关键字</p>
 <hr>
-<h2 id="6-指针"><a href="#6-指针" class="headerlink" title="6.指针"></a>6.指针</h2><p>指针是C语言的灵魂，是当之无愧的大招。接下来我们详细讲解一下指针到底是个啥</p>
-<hr>
-<h4 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h4><p>内存是计算机中用来储存数据的空间<br>就像是一个个空房子<br>为了方便我们拜访和管理它们，每个房子都有自己的地址<br><img src="https://img-blog.csdnimg.cn/20210407124559253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><p>指针是C语言的灵魂。接下来我们略微详细的讲解一下指针到底是个啥</p>
+<h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><p>内存是计算机中用来储存数据的空间<br>就像是一个个空房子<br>为了方便我们拜访和管理它们，每个房子都有自己的地址<br><img src="https://img-blog.csdnimg.cn/20210407124559253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <ul>
 <li><p><strong>内存是怎么编号的？</strong><br>32位、64位——指的是32/64根地址线——物理线——通电——1/0——产生了电信号<br>电信号就能够存储数字信息<br>以32位的机器举例<br>二进制数字<br>从<br>00000000000000000000000000000000<br>到<br>11111111111111111111111111111111<br>一共2^32^个数字<br>可以用来当作2^32^个房间的地址<br>我们就把这2^32^个房间的地址叫做地址<br>也就是说我们可以管理2^32^个内存单元</p>
 </li>
@@ -1882,7 +1949,7 @@ You love C
 </blockquote>
 <p>这样2^32^个地址就可以管理4GB的内存</p>
 <hr>
-<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><p>承接上面内存的内容，如果我们想要定义一个int型变量，将给它分配4个字节的空间<br><img src="https://img-blog.csdnimg.cn/20210407135159714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="指针-1"><a href="#指针-1" class="headerlink" title="指针"></a>指针</h2><p>承接上面内存的内容，如果我们想要定义一个int型变量，将给它分配4个字节的空间<br><img src="https://img-blog.csdnimg.cn/20210407135159714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <ul>
 <li><strong>取地址</strong><br>引入取地址符号&amp;<br>取地址就是把一个变量的地址取出来<br>如果我们定义是四个字节的变量，虽然它每个字节都会分配地址，但是取地址就是取出这个变量第一个字节的地址<br><img src="https://img-blog.csdnimg.cn/20210407140309452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>%p是打印地址的类型</li>
 <li><strong>指针变量(存地址)</strong><br>专门定义出来用来存放地址的变量叫做指针变量，<strong>简称指针</strong>（指针其实就是这玩意儿）</li>
@@ -1921,9 +1988,8 @@ You love C
 <li><strong>指针变量的大小</strong><br>指针是用来存放地址的，而在32位机器上地址是32位的二进制数，大小是32bit，而地址有多大就决定了指针变量的大小<br>所以指针变量的大小就是32bit<br>也就是4个字节<br>（在64位机器上就是8个字节）</li>
 </ul>
 <hr>
-<h2 id="7-结构体"><a href="#7-结构体" class="headerlink" title="7.结构体"></a>7.结构体</h2><p>结构体可以通过不同的维度来描述复杂对象</p>
-<hr>
-<h4 id="创建结构体"><a href="#创建结构体" class="headerlink" title="创建结构体"></a>创建结构体</h4><p>创建结构体可以理解为创建了一个新的复合数据类型</p>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><p>结构体可以通过不同的维度来描述复杂对象，结构体本身是一种特殊的数据类型</p>
+<h2 id="创建结构体"><a href="#创建结构体" class="headerlink" title="创建结构体"></a>创建结构体</h2><p>创建结构体可以理解为创建了一个新的复合数据类型</p>
 <blockquote>
 <p>struct 结构体名<br>{<br>定义成员变量1；<br>定义成员变量2；<br>}；</p>
 </blockquote>
@@ -1936,7 +2002,7 @@ You love C
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h4 id="使用结构体"><a href="#使用结构体" class="headerlink" title="使用结构体"></a>使用结构体</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<h2 id="使用结构体"><a href="#使用结构体" class="headerlink" title="使用结构体"></a>使用结构体</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">struct</span> Stu
 <span class="token punctuation">{</span>
     <span class="token keyword">char</span> Name<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -1960,8 +2026,9 @@ You love C
 <blockquote>
 <p>结构体变量 . 结构体成员</p>
 </blockquote>
-<hr>
-<h4 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<pre class="line-numbers language-c"><code class="language-c">S<span class="token punctuation">.</span>Name
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">struct</span> Stu
 <span class="token punctuation">{</span>
     <span class="token keyword">char</span> Name<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -1994,12 +2061,14 @@ You love C
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>-&gt;就是箭头操作符<br>语法是</p>
+<p><code>-&gt;</code>是 箭头操作符<br>语法是</p>
 <blockquote>
 <p>结构体指针-&gt;结构体成员名</p>
 </blockquote>
+<pre class="line-numbers language-c"><code class="language-c">pa<span class="token operator">-></span>Name
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <hr>
-<p> 至此为止，初识C语言结束。我们已经不再是雾里看花的门外汉，真正走上了编程之路。但是这只是刚刚完成了定级赛，只是我们从青铜到王者的起点。由于是初识C语言的文章，许多知识实际上并没有形成良好的闭环，希望部分看官谅解。<br> 好戏刚刚开始，诸位尽请期待…</p>
+<p>写到这里，C语言的基本知识就粗略的讲完了。这是一篇万字长文，相信能读到这里的人都是有潜心的人。耐得住寂寞，才能守得住繁华。纵使生活有很多坎坷，但是只要坚持下去就一定会有收获。加油，兄弟！</p>
 ]]></content>
       <categories>
         <category>【C语言从青铜到王者】</category>
