@@ -1168,14 +1168,14 @@ error<span class="token punctuation">:</span>
   <entry>
     <title>【C语言从青铜到王者】第零篇·与C语言来个约会</title>
     <url>/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</url>
-    <content><![CDATA[<p><strong>本篇前言</strong><br>如果说编程是一场MOBA游戏，程序员是召唤师，那编程语言就是代替我们“参战”的英雄。C语言就是这样一个位于T0级别的热门英雄，常年位居TIOBE前三甲，是编程界当之无愧的“C位”。这篇文章，让我们先来初步认识一下它的每一个“技能”到底是什么，在今后的文章里再对这些技能的使用技巧做进一步的讲解。<br><em><strong>博主的编程环境是 Visual Studio 2019</strong></em></p>
+    <content><![CDATA[<p><strong>本篇前言</strong><br>C语言对于每个刚刚入门的编程新人来说都是熟面孔了，可真正在初学阶段就掌握透彻的又有几人呢。在【C语言从青铜到王者】系列中，我致力于通过整理自己的C语言学习笔记，牢牢的打实自己的C语言基础，希望为每个造访我博客的朋友带来最细致的知识梳理。<br><em><strong>博主的编程环境是 Visual Studio 2019</strong></em></p>
 <hr>
-<h1 id="被动技能"><a href="#被动技能" class="headerlink" title="被动技能"></a>被动技能</h1><p>被动技能学习阶段虽然不难，但是是我们今后学习主动技能必不可少的基础，请各位稳扎稳打，稍安勿躁</p>
-<hr>
-<h2 id="1-注释"><a href="#1-注释" class="headerlink" title="1.注释"></a>1.注释</h2><hr>
-<h4 id="注释的意思"><a href="#注释的意思" class="headerlink" title="注释的意思"></a>注释的意思</h4><p>注释就是写在程序里但是不会执行的语句</p>
-<h4 id="注释的作用"><a href="#注释的作用" class="headerlink" title="注释的作用"></a>注释的作用</h4><p>注释掉暂时不需要的代码<br>在难懂的代码后面写一些注释充当“笔记”的作用，让下一个读代码的人能读懂<br>记笔记<br>…</p>
-<h4 id="注释的写法"><a href="#注释的写法" class="headerlink" title="注释的写法"></a>注释的写法</h4><p>下图是C++的注释风格</p>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><h2 id="什么是注释"><a href="#什么是注释" class="headerlink" title="什么是注释"></a>什么是注释</h2><p>注释就是写在程序里但是不会执行的语句</p>
+<h2 id="为什么要写注释"><a href="#为什么要写注释" class="headerlink" title="为什么要写注释"></a>为什么要写注释</h2><p>作用一：注释掉暂时不需要的代码，以后需要再反注释回来<br>作用二：理解别人的程序时添加笔记，方便我们整理思路<br>作用三：为大型算法添加注解，方便自己和后来的读者能更容易的看懂</p>
+<blockquote>
+<p>良好的注释习惯是我们成为优秀IT人必须具备的素养</p>
+</blockquote>
+<h2 id="注释的写法"><a href="#注释的写法" class="headerlink" title="注释的写法"></a>注释的写法</h2><p>下图是C++的注释风格</p>
 <blockquote>
 <p>//</p>
 </blockquote>
@@ -1193,8 +1193,7 @@ You love C
  */</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h2 id="2-C语言程序基本框架"><a href="#2-C语言程序基本框架" class="headerlink" title="2.C语言程序基本框架"></a>2.C语言程序基本框架</h2><hr>
-<p>下面是一段程序</p>
+<h1 id="书写一个C语言程序的基本框架"><a href="#书写一个C语言程序的基本框架" class="headerlink" title="书写一个C语言程序的基本框架"></a>书写一个C语言程序的基本框架</h1><p>看下面这段程序和它的运行结果</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1202,7 +1201,7 @@ You love C
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>下图是程序编译的结果。<br><img src="https://img-blog.csdnimg.cn/20210404204743849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>也就是说，我们敲了一段代码，然后程序在控制台给我们输出了“I love C”<br>也就是说我们一段程序实际上好像就只执行了这句话</p>
+<p><img src="https://img-blog.csdnimg.cn/20210404204743849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>也就是说，我们敲了一段代码，然后程序在控制台给我们输出了“I love C”<br>而程序中和“I love C”直接相关的只有一句话</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I love C\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>再看这段程序</p>
@@ -1217,7 +1216,7 @@ You love C
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//在这里执行语句</span>
+    <span class="token comment" spellcheck="true">//在这里书写要执行的语句</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1229,8 +1228,7 @@ You love C
 <p>这一行的作用是引出“头文件”<br>#include表示的是“引出头文件”，后面&lt;&gt;中的就是头文件的名字，这些名字的后缀一般是.h<br>头文件是什么？为什么要引出头文件呢？问题留着往下看</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这一行的作用是定义主函数<br>int是函数返回值的类型，这里是整型<br>main是函数名，表示这是主函数<br>（）是形式参数，主函数由于默认形式参数为void，void的意思是“无类型”，所以（）里是空的<br>什么是函数返回值呢？什么是形式参数呢？具体内容在“主动技能——函数”中介绍，等不及的小伙伴可以直接走目录跳读</p>
-<hr>
+<p>这一行的作用是定义主函数<br>int是函数返回值的类型，这里是整型<br>main是函数名，表示这是主函数<br>（）是形式参数，主函数由于默认形式参数为void，void的意思是“无类型”，所以（）里是空的<br>什么是函数返回值呢？什么是形式参数呢？具体内容在本篇的“函数”部分介绍，等不及的小伙伴可以直接走目录跳读</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I love C\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -1238,9 +1236,9 @@ You love C
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>{}一对大括号是一个整体，里面是主函数的内容<br>printf是一个函数，全称是print function,作用是把一些东西打印到屏幕上，用法是printf(“要打印的内容”)<br>但是这个函数我们自己并没有定义它是怎么运作的，它其实是我们“借来”的，像谁借的呢，就是像我们一开始定义的头文件stdio.h，头文件就是一个别人已经帮我们写好的函数库，stdio的全称是standard input output，表示一个涵盖输入输出类型函数的文件。我们引用它，计算机就可以调用别人已经写好的程序了<br>我们注意到I love C后面还有一个\n，它是转义字符，表示换行<br>return 0;表示这个函数的返回值是0<br>我们也注意到了在大括号内的每一行代码后面都有一个英文输入法的分号；它表示一行语句的结束，所以小伙伴们以后写语句千万不要忘记用“；”结束它哦</p>
 <hr>
-<h2 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h2><p>我们写程序的目的其实是通过借助计算机强大的计算能力来解决生活中的问题，那么我们必须得学会向计算机描述这个问题<br>比如我的身高是1.75m，体重是65kg，我的国家是China<br>这些数据各有家门，必须分门别类，它们各自的类型就是数据类型</p>
-<hr>
-<h4 id="常见的数据类型"><a href="#常见的数据类型" class="headerlink" title="常见的数据类型"></a>常见的数据类型</h4><pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">char</span>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="为什么要学习数据类型"><a href="#为什么要学习数据类型" class="headerlink" title="为什么要学习数据类型"></a>为什么要学习数据类型</h2><p>我们写程序的目的其实是通过借助计算机强大的计算能力来解决生活中的问题，那么我们必须得学会向计算机描述这个问题<br>而计算机认识世界的方式就是把万事万物数据化，而分辨不同的事物靠的就是不同的数据类型</p>
+<p>比如我的身高是1.75m，体重是65kg，我的国家是China<br>身高是高度，体重是重量，China是英文。这些数据各有家门，必须分门别类，它们各自的类型就是数据类型</p>
+<h2 id="常见的数据类型"><a href="#常见的数据类型" class="headerlink" title="常见的数据类型"></a>常见的数据类型</h2><pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">char</span>
     <span class="token keyword">short</span>
     <span class="token keyword">int</span>
     <span class="token keyword">long</span>
@@ -1248,11 +1246,40 @@ You love C
     <span class="token keyword">float</span>
     <span class="token keyword">double</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>char-字符数据类型<br>用来表示字符<br> eg:ABCabc</p>
-<p>short-短整型<br>  int-整形<br>  long-长整型<br>  long long-更长的整形<br>  整形都用来表示整数<br>  eg:1234</p>
-<p>float-单精度浮点数<br>double-双精度浮点数<br>浮点数表示小数，浮点的意思就是浮动的小数点<br>eg:1.75</p>
+<p>逐个简单介绍一下：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>中文名</th>
+<th>含义</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>字符数据类型</td>
+<td>用来表示单个字符</td>
+<td>A   a   *   #</td>
+</tr>
+<tr>
+<td>short、int、long、longlong</td>
+<td>短整型、整型、长整型、更长的整型</td>
+<td>用来表示整数</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>float、double</td>
+<td>单精度浮点数、双精度浮点数（浮点就是小数点的意思）</td>
+<td>用来表示小数</td>
+<td>1.75    3.14</td>
+</tr>
+</tbody></table>
 <hr>
-<h4 id="各种数据类型的大小"><a href="#各种数据类型的大小" class="headerlink" title="各种数据类型的大小"></a>各种数据类型的大小</h4><p><em>介绍操作符sizeof()，它的作用是显示数据类型的大小（长度）</em><br>我们运行一下下面的程序看一下结果(简约起见结果注释在行末)</p>
+<h2 id="数据类型的大小"><a href="#数据类型的大小" class="headerlink" title="数据类型的大小"></a>数据类型的大小</h2><blockquote>
+<p>引入操作符 sizeof()，它的作用是显示数据类型的大小（长度）</p>
+</blockquote>
+<p>我们运行一下下面的程序看一下结果(简约起见结果注释在行末)</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1266,14 +1293,16 @@ You love C
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这里的结果是数字，它的量纲是什么呢？答案就是“字节”，“字节”的英文名是byte<br>这里引入一下c语言中数据大小的单位<br>最小的单位是“比特位”，“比特”的英文名是bit<br><img src="https://img-blog.csdnimg.cn/20210410102314353.png#pic_center" alt="在这里插入图片描述"></p>
+<p>程序的结果是数字，它的量纲是什么呢？答案就是“字节”，“字节”的英文名是byte,那什么是“字节”呢？<br>这里引入一下c语言中表述数据大小的单位<br>最小的单位是“<strong>比特位</strong>”，“比特”的英文名是<strong>bit</strong><br><img src="https://img-blog.csdnimg.cn/20210410102314353.png#pic_center" alt="在这里插入图片描述"></p>
 <p>bit是一个二元量，在计算机语言中存放1或者0，表示计算机内部电路的“通”或者“断”，通过一连串的0/1我们就可以描述出一个整体的电路状态，这个电路状态就可以用来表示信息<br><img src="https://img-blog.csdnimg.cn/20210410102717386.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>“字节”是比“比特”大一级的单位，英文名是byte,1 byte = 8 bit</p>
 <p>我们可以把比特位想象成一个存放0或1的盒子，那么一个字节（byte）就是8个并排排放的盒子，可以同时存储8个0/1</p>
-<p>以后我们说的<strong>数据的长度</strong>就是这一排存放0/1的盒子一共有多少个<br>大家看到上图有没有想到我们常见的8位二进制数，没错，实际上，一个byte就是可以存放一个8位的二进制数。一次类推，如果我们给一个数据分配了4字节的空间，那么就可以存放一个32位的二进制数，例如：</p>
+<p>以后我们说的<strong>数据的长度</strong>就是这一排存放0/1的盒子一共有多少个<br>大家看到上图有没有想到我们常见的8位二进制数，没错，实际上，一个byte就是可以存放一个8位的二进制数。依此类推，如果我们给一个数据分配了4字节的空间，那么就可以存放一个32位的二进制数，例如下面这句话：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>我们定义了一个int类型的变量，变量名叫a，赋值为10，根据上面的知识我们知道int类型的变量长度是4字节<br>10 = 8 + 2 =1x2^3^ + 0x2^2^ + 1x2^1^ + 0x2^0^，那么，a在内存中的状态就是这样的：<br><img src="https://img-blog.csdnimg.cn/20210412090519776.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p>上面的a是int类型，int类型的长度是四字节，也就是32个bit位，也就是说a这个变量有32个并排的盒子去装它的二进制序列。每个盒子中存放的1/0从左到右需要依次乘2的0次方、2的1次方、2的2次方…这是二进制数转换成十进制数的方法，是相当基础的知识，如果还有不懂的小伙伴可以自己做些功课哦<br>实际上，我们还有一系列的表示内存大小的单位<br>下面给出单位换算表</p>
+<p>解析一下这句话：我们定义了一个int类型的变量，变量名叫a，赋值为10，根据上面的程序运行结果我们知道int类型的变量长度是4字节<br>10 = 8 + 2 =1x2^3^ + 0x2^2^ + 1x2^1^ + 0x2^0^，那么，a在内存中的状态就是这样的：<br><img src="https://img-blog.csdnimg.cn/20210412090519776.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>上面的a是int类型，int类型的长度是四字节，也就是32个bit位，也就是说a这个变量有32个并排的盒子去装它的二进制序列。每个盒子中存放的1/0从左到右需要依次乘2的0次方、2的1次方、2的2次方…这是二进制数转换成十进制数的方法，我们初中实际上就学过了</p>
+<p>实际上，我们还有一系列的表示内存大小的单位<br>下面给出单位换算表</p>
 <blockquote>
 <p>1 byte = 8 bit<br>1 kb = 1024 byte<br>1 mb = 1024 kb<br>1 gb = 1024 mb<br>1 tb = 1024 gb<br>1 pb = 1024 tb<br>（1024=2^10^）</p>
 </blockquote>
