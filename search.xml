@@ -6,8 +6,6 @@
     <content><![CDATA[<p><strong>本篇前言</strong></p>
 <p>数组就是一组相同类型元素的集合，通过数组我们可以更为方便快捷的存储和访问数据。理论上来说C语言可以构造n维数组，但是由于一维数组和二维数组使用更加频繁，所以本篇着重讲解一维数组与二维数组，多维数组仅作了解。</p>
 <hr>
-<p>[toc]</p>
-<hr>
 <h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><p>存储一个数或字符我们只需要定义一个变量。那存储100个数或字符呢？<strong>方便快捷的存储和访问大量的数据</strong>，这就是数组存在的意义。</p>
 <hr>
 <h3 id="创建一维数组"><a href="#创建一维数组" class="headerlink" title="创建一维数组"></a>创建一维数组</h3><p>语法：</p>
@@ -236,8 +234,6 @@
     <title>【C语言从青铜到王者】第一篇·详解分支与循环</title>
     <url>/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</url>
     <content><![CDATA[<p><strong>本篇前言</strong><br>前文我们说到，编程的一个目的就是借助计算机帮助我们解决生活中的问题，而世界运行的基本时间逻辑，在向计算机描述时可以大致归纳成三种逻辑结构：顺序、选择、循环。<br><strong>顺序</strong>就是从前往后，从上到下，我们的写好的程序就是按顺序从第一行起被一行一行的编译的<br><strong>选择</strong>也叫分支，是同一时间点面对问题时，有不同的选择，我们选其一而行<br><strong>循环</strong>是指程序进入了一段不断重复的路，可能会一直在此循环往复，也可以打破循环，继续前进。<br>在顺序执行的程序中，分支中可能有循环，循环中也可能有分支。分支和循环是让我们的代码变得多姿多彩的关键技能，今天就让我们来升级它们吧！</p>
-<hr>
-<p>[toc]</p>
 <hr>
 <h1 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h1><hr>
 <h3 id="if-else语句"><a href="#if-else语句" class="headerlink" title="if - else语句"></a>if - else语句</h3><p>if-else语句就是由if、else（、else if）组成的语句块。它是分支语句的一种，也是我们写出选择结构必须掌握的语句<br>我在这里不厌其烦的把if-else语句分成了三种：单if语句、if-else双分支语句、if-else if-else多分支语句</p>
@@ -866,8 +862,6 @@ error<span class="token punctuation">:</span>
 </blockquote>
 <p>抛开库函数，本篇所讲函数均为<strong>自定义函数</strong></p>
 <hr>
-<p>[toc]</p>
-<hr>
 <h1 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h1><p>C语言中的库函数众多，但是仅仅是这些库函数，远远不能满足我们编程时对于函数的需求，所以我们需要学习自定义函数，自立门派。掌握自定义函数也有助于我们理解库函数的运作原理。<br>我们如何创建一个函数呢？<br>一个基本的函数应当由<strong>函数名</strong>、<strong>返回值类型</strong>、<strong>函数参数</strong>、<strong>函数体</strong>组成。函数名就是函数的名字，方便我们调用它，函数名要避免与库函数、关键字、已经定义过的函数名重名。一个函数一般会有一个返回值，可以理解为调用函数后产生的结果，它的数据类型就是返回值类型（也可以没有返回值，此时返回值类型为void）。函数参数分为实际参数和形式参数，具体见后文。函数体就是我们函数中的内容。一般函数的返回值用return关键字引出，写成return+返回值，<strong>如果有return语句，return语句就是函数结束的标志</strong><br>定义函数语法：</p>
 <blockquote>
 <p>返回值类型 函数名 (形式参数)<br>{<br>函数体；<br>（ return 返回值；）<br>}</p>
@@ -1175,8 +1169,6 @@ error<span class="token punctuation">:</span>
     <title>【C语言从青铜到王者】第零篇·与C语言来个约会</title>
     <url>/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</url>
     <content><![CDATA[<p><strong>本篇前言</strong><br>如果说编程是一场MOBA游戏，程序员是召唤师，那编程语言就是代替我们“参战”的英雄。C语言就是这样一个位于T0级别的热门英雄，常年位居TIOBE前三甲，是编程界当之无愧的“C位”。这篇文章，让我们先来初步认识一下它的每一个“技能”到底是什么，在今后的文章里再对这些技能的使用技巧做进一步的讲解。<br><em><strong>博主的编程环境是 Visual Studio 2019</strong></em></p>
-<hr>
-<p>[TOC] </p>
 <hr>
 <h1 id="被动技能"><a href="#被动技能" class="headerlink" title="被动技能"></a>被动技能</h1><p>被动技能学习阶段虽然不难，但是是我们今后学习主动技能必不可少的基础，请各位稳扎稳打，稍安勿躁</p>
 <hr>
