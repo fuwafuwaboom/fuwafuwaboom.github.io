@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://fuwafuwaboom.github.io/resources/index.html</loc>
+    <loc>http://fuwafuwaboom.github.io/tags/index.html</loc>
+    
+    <lastmod>2021-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fuwafuwaboom.github.io/categories/index.html</loc>
     
     <lastmod>2021-09-08</lastmod>
     
@@ -16,14 +23,7 @@
   </url>
   
   <url>
-    <loc>http://fuwafuwaboom.github.io/tags/index.html</loc>
-    
-    <lastmod>2021-09-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fuwafuwaboom.github.io/categories/index.html</loc>
+    <loc>http://fuwafuwaboom.github.io/resources/index.html</loc>
     
     <lastmod>2021-09-08</lastmod>
     
