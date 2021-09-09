@@ -58,7 +58,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210426172152115.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210427162435300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2021-08-03T03:32:55.000Z">
-<meta property="article:modified_time" content="2021-09-08T08:28:19.121Z">
+<meta property="article:modified_time" content="2021-09-09T09:14:31.291Z">
 <meta property="article:author" content="小葉">
 <meta property="article:tag" content="C语言学习">
 <meta property="article:tag" content="数组">
@@ -252,7 +252,7 @@ html ul > hanla {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2021-09-08 16:28:19" itemprop="dateModified" datetime="2021-09-08T16:28:19+08:00"><hanla></hanla>2021-09-08</time>
+                <time title="修改时间：2021-09-09 17:14:31" itemprop="dateModified" datetime="2021-09-09T17:14:31+08:00"><hanla></hanla>2021-09-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,26 +279,31 @@ html ul > hanla {
 <p><hanla></hanla>数组就是一组相同类型元素的集合，通过数组我们可以更为方便快捷的存储和访问数据。理论上来说<hanla></hanla>C<hanla></hanla>语言可以构造<hanla></hanla>n<hanla></hanla>维数组，但是由于一维数组和二维数组使用更加频繁，所以本篇着重讲解一维数组与二维数组，多维数组仅作了解。</p>
 <span id="more"></span>
 
-<h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><p><hanla></hanla>存储一个数或字符我们只需要定义一个变量。那存储<hanla></hanla>100<hanla></hanla>个数或字符呢？<strong>方便快捷的存储和访问大量的数据</strong>，这就是数组存在的意义。</p>
-<hr>
-<h3 id="创建一维数组"><a href="#创建一维数组" class="headerlink" title="创建一维数组"></a>创建一维数组</h3><p>语法：</p>
-<blockquote>
-<p>数组元素类型 数组名 [整型常量表达式]</p>
-</blockquote>
-<p><hanla></hanla>数组元素类型指的是数组中所有元素的数据类型，数组名是数组的名称，方括号中的常量表达式的值代表数组的元素个数（VS2019<hanla></hanla>编译环境下必须是<strong>常量</strong><hanla></hanla>表达式。DevC++<hanla></hanla>编译器支持<hanla></hanla>C99<hanla></hanla>语法，C99<hanla></hanla>中有<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%98%E9%95%BF%E6%95%B0%E7%BB%84/4081321?fr=aladdin">变长数组</a><hanla></hanla>的概念,<hanla></hanla>允许使用变量表达式，所以小伙伴在<hanla></hanla>devC++<hanla></hanla>中使用变量定义数组大小不会报错。为了增加程序的容错率建议仍使用常量表达式）。</p>
-<hr>
-<h3 id="一维整型数组初始化"><a href="#一维整型数组初始化" class="headerlink" title="一维整型数组初始化"></a>一维整型数组初始化</h3><p>创建变量时就对变量进行赋值的操作叫做初始化。单纯的创建数组就好比我们造出了一堆空盒子，接下来要做的是往盒子里放东西。<br>完全初始化：<br>完全初始化的意思是所有数组元素都被初始化，即我们一上来就把盒子都放满了</p>
+<h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><p><hanla></hanla>存储一个数或字符我们只需要定义一个变量。那存储<hanla></hanla>100<hanla></hanla>个数或字符呢？</p>
+<p><strong>方便快捷的存储和访问大量的数据</strong>，这就是数组存在的意义。</p>
+<h2 id="创建一维数组"><a href="#创建一维数组" class="headerlink" title="创建一维数组"></a>创建一维数组</h2><p>语法：</p>
+<pre class="line-numbers language-c"><code class="language-c">数组元素类型 数组名 <span class="token punctuation">[</span>整型常量表达式<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>例子：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>数组元素类型指的是数组中所有元素的数据类型，数组名是数组的名称，方括号中的常量表达式的值代表数组的元素个数</p>
+<p><hanla></hanla>（VS2019<hanla></hanla>编译环境下必须是<strong>常量</strong><hanla></hanla>表达式。DevC++<hanla></hanla>编译器支持<hanla></hanla>C99<hanla></hanla>语法，C99<hanla></hanla>中有<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%98%E9%95%BF%E6%95%B0%E7%BB%84/4081321?fr=aladdin">变长数组</a><hanla></hanla>的概念,<hanla></hanla>允许使用变量表达式，所以小伙伴在<hanla></hanla>devC++<hanla></hanla>中使用变量定义数组大小不会报错。为了增加程序的容错率建议仍使用常量表达式）。</p>
+<h3 id="一维整型数组初始化"><a href="#一维整型数组初始化" class="headerlink" title="一维整型数组初始化"></a>一维整型数组初始化</h3><p>创建变量时就对变量进行赋值的操作叫做初始化。单纯的创建数组就好比我们造出了一堆空盒子，接下来要做的是往盒子里放东西。</p>
+<p>完全初始化:</p>
+<p>完全初始化的意思是所有数组元素都被初始化，即我们一上来就把盒子都放满了</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210426104940647.png" alt="在这里插入图片描述"><br>省略定义数组元素个数则会自动完全初始化：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210426104940647.png" alt="在这里插入图片描述"></p>
+<p>省略定义数组元素个数则会自动完全初始化：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210426105832897.png" alt="在这里插入图片描述"><br>不完全初始化：<br>指的是我们并没有将所有元素都初始化</p>
+<p><img src="https://img-blog.csdnimg.cn/20210426105832897.png" alt="在这里插入图片描述"></p>
+<p>不完全初始化：<br>指的是我们并没有将所有元素都初始化</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210426105045895.png" alt="在这里插入图片描述"></p>
-<p><hanla></hanla>总结：一维整型数组初始化的元素会从左到右被依次赋值，赋值数不能超过元素个数，未赋值元素默认为<hanla></hanla>0，未标明元素个数的数组则会自动完全初始化。</p>
-<hr>
+<p>总结：<strong>一维整型数组</strong>初始化的元素会从左到右被依次赋值，赋值数不能超过元素个数，<strong><hanla></hanla>未赋值元素默认为<hanla></hanla>0</strong>，未标明元素个数的数组则会自动完全初始化。</p>
 <h3 id="一维字符型数组初始化"><a href="#一维字符型数组初始化" class="headerlink" title="一维字符型数组初始化"></a>一维字符型数组初始化</h3><p>完全初始化：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">char</span> ch<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">'h'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'l'</span><span class="token punctuation">,</span><span class="token string">'l'</span><span class="token punctuation">,</span><span class="token string">'o'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -308,7 +313,7 @@ html ul > hanla {
 <p><img src="https://img-blog.csdnimg.cn/20210426110628873.png" alt="在这里插入图片描述"></p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">char</span> ch<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"hell"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210426142105733.png" alt="在这里插入图片描述"><br><hanla></hanla>总结：字符型数组可以一个元素一个元素的初始化也可以直接用字符串初始化；区别是用字符串初始化的时候会在末尾自动补”\0”<hanla></hanla>作为字符串结束的标志。</p>
+<p><img src="https://img-blog.csdnimg.cn/20210426142105733.png" alt="在这里插入图片描述"><br>总结：字符型数组可以一个元素一个元素的初始化也可以直接用字符串初始化；区别是用<strong><hanla></hanla>字符串初始化的时候会在末尾自动补”\0”<hanla></hanla>作为字符串结束的标志</strong>。</p>
 <p>再看这三种写法的字符串长度（strlen）和字符数组的大小（sizeof）：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h&gt;</span></span>
@@ -328,7 +333,6 @@ html ul > hanla {
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210426142810944.png" alt="在这里插入图片描述"><br>总结：<strong><hanla></hanla>打印字符串和<hanla></hanla>strlen<hanla></hanla>函数计算字符串长度时，默认”\0”<hanla></hanla>是其结束的标志</strong><hanla></hanla>。ch1<hanla></hanla>没有”\0”<hanla></hanla>作为字符串的结束标志，ch2<hanla></hanla>有，ch3<hanla></hanla>由于是字符串完全初始化自动补了”\0”<hanla></hanla>所以也有，所以<hanla></hanla>strlen<hanla></hanla>函数下，ch1<hanla></hanla>的字符串长度就是随机值，ch2<hanla></hanla>和<hanla></hanla>ch3<hanla></hanla>的长度是<hanla></hanla>4。由于这三个数组都初始化了<hanla></hanla>5<hanla></hanla>个<hanla></hanla>char<hanla></hanla>类型的变量，一个<hanla></hanla>char<hanla></hanla>是一字节，所以它们的数组大小都是<hanla></hanla>5。</p>
 <p>如果省略数组元素个数则会自动完全初始化，下图的程序和上图的程序功能完全一致：<br><img src="https://img-blog.csdnimg.cn/20210426145500856.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<hr>
 <p>不完全初始化：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">char</span> ch1<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">'h'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'l'</span><span class="token punctuation">,</span><span class="token string">'l'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -338,7 +342,7 @@ html ul > hanla {
 <p><img src="https://img-blog.csdnimg.cn/20210426143317605.png" alt="在这里插入图片描述"></p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">char</span> ch3<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"hel"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210426143427795.png" alt="在这里插入图片描述"><br>总结：不完全初始化的字符型数组会自动补”\0”</p>
+<p><img src="https://img-blog.csdnimg.cn/20210426143427795.png" alt="在这里插入图片描述"><br>总结：<strong>不完全初始化的字符型数组会自动补”\0”</strong></p>
 <p>再看它们的字符串长度（strlen）和字符数组的大小（sizeof）：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h&gt;</span></span>
@@ -357,11 +361,8 @@ html ul > hanla {
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210426144540499.png" alt="在这里插入图片描述"><br><hanla></hanla>由于不完全初始化补了”\0”，所以<hanla></hanla>ch1<hanla></hanla>的字符串长度是<hanla></hanla>4，ch2<hanla></hanla>和<hanla></hanla>ch3<hanla></hanla>是<hanla></hanla>3。数组长度不变，仍然都是<hanla></hanla>5。</p>
-<blockquote>
 <p><strong>整体总结：<br><hanla></hanla>1.<hanla></hanla>不完全初始化会自动补齐元素，整型补<hanla></hanla>0，字符型补\0<br><hanla></hanla>2.<hanla></hanla>使用单个字符初始化不会补\0，使用字符串初始化时会自动补\0<br><hanla></hanla>3.<hanla></hanla>自动补\0<hanla></hanla>或者<hanla></hanla>0<hanla></hanla>的操作仅在数组空间未满时进行，若空间已满则不会进行<br><hanla></hanla>4.\0<hanla></hanla>是字符串结束的标志，strlen<hanla></hanla>读取的是\0<hanla></hanla>之前的所有字符的个数</strong></p>
-</blockquote>
-<hr>
-<h3 id="一维数组的使用与内存中的存储"><a href="#一维数组的使用与内存中的存储" class="headerlink" title="一维数组的使用与内存中的存储"></a>一维数组的使用与内存中的存储</h3><p>访问具体某个数组元素是用<strong>下标</strong>实现的，数组下标的值从<strong><hanla></hanla>0</strong><hanla></hanla>开始，比如<hanla></hanla>a[0]<hanla></hanla>代表的是数组<hanla></hanla>a<hanla></hanla>的第一个元素<br>例子：</p>
+<h2 id="一维数组的使用"><a href="#一维数组的使用" class="headerlink" title="一维数组的使用"></a>一维数组的使用</h2><p>访问具体某个数组元素是用<strong>下标</strong>实现的，数组下标的值从<strong><hanla></hanla>0</strong><hanla></hanla>开始，比如<hanla></hanla>a[0]<hanla></hanla>代表的是数组<hanla></hanla>a<hanla></hanla>的第一个元素<br>例子：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -374,7 +375,8 @@ html ul > hanla {
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210426152033733.png" alt="在这里插入图片描述"><br>一维数组元素在内存中是<strong>连续存放</strong>的，随着数组下标的增长，地址由低到高变化：<br>例子：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210426152033733.png" alt="在这里插入图片描述"></p>
+<h2 id="一维数组在内存中的存储"><a href="#一维数组在内存中的存储" class="headerlink" title="一维数组在内存中的存储"></a>一维数组在内存中的存储</h2><p>一维数组元素在内存中是<strong>连续存放</strong>的，随着数组下标的增长，地址由低到高变化：<br>例子：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -400,19 +402,16 @@ html ul > hanla {
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210426152836989.png" alt="在这里插入图片描述"><br><strong>数组元素在内存中是连续存放的</strong>，这个特性使得我们可以通过数组首元素的地址来访问整个数组，也让数组的使用变得灵活起来</p>
-<hr>
+<p><img src="https://img-blog.csdnimg.cn/20210426152836989.png" alt="在这里插入图片描述"><br><strong>数组元素在内存中是连续存放的</strong>，这个特性使得我们可以<strong>通过数组首元素的地址来访问整个数组</strong>，也让数组的使用变得灵活起来</p>
 <h1 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h1><p>二维数组，顾名思义是有两个维度的数组。<br><img src="https://img-blog.csdnimg.cn/20210426202553725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="创建二维数组"><a href="#创建二维数组" class="headerlink" title="创建二维数组"></a>创建二维数组</h3><p>语法：</p>
-<blockquote>
-<p>数组元素类型 数组名 [行数][列数]；</p>
-</blockquote>
+<h2 id="创建二维数组"><a href="#创建二维数组" class="headerlink" title="创建二维数组"></a>创建二维数组</h2><p>语法：</p>
+<pre class="line-numbers language-c"><code class="language-c">数组元素类型 数组名 <span class="token punctuation">[</span>行数<span class="token punctuation">]</span><span class="token punctuation">[</span>列数<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">char</span> ch<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<hr>
-<h3 id="二维数组初始化"><a href="#二维数组初始化" class="headerlink" title="二维数组初始化"></a>二维数组初始化</h3><p>仅介绍二维整型数组的初始化：</p>
+<h2 id="二维数组初始化"><a href="#二维数组初始化" class="headerlink" title="二维数组初始化"></a>二维数组初始化</h2><p>仅介绍二维整型数组的初始化：</p>
 <p><hanla></hanla>1.<hanla></hanla>顺序初始化</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -425,12 +424,11 @@ html ul > hanla {
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2021042615555276.png" alt="在这里插入图片描述"><br><hanla></hanla>每个子大括号表示一行的元素，缺位补<hanla></hanla>0（字符补\0）</p>
-<p><hanla></hanla>3.<hanla></hanla>省略行数的初始化<br><strong><hanla></hanla>C<hanla></hanla>语言规定：二维数组初始化可以省略行数，不能省略列数</strong></p>
+<p><hanla></hanla>3.<hanla></hanla>省略行数的初始化<br><strong><hanla></hanla>C<hanla></hanla>语言规定：二维数组初始化可以省略行数，不能省略列数</strong> （原因见后文）</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210426155917511.png" alt="在这里插入图片描述"></p>
-<hr>
-<h3 id="二维数组的使用与内存中的存储"><a href="#二维数组的使用与内存中的存储" class="headerlink" title="二维数组的使用与内存中的存储"></a>二维数组的使用与内存中的存储</h3><p>二维数组同样用下标访问。下标同样从<strong><hanla></hanla>0</strong><hanla></hanla>开始，前一个下标是行下标，后一个下标是列下标。<br>    <img src="https://img-blog.csdnimg.cn/20210426161244158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="二维数组的使用与内存中的存储"><a href="#二维数组的使用与内存中的存储" class="headerlink" title="二维数组的使用与内存中的存储"></a>二维数组的使用与内存中的存储</h3><p>二维数组同样用下标访问。下标同样从<strong><hanla></hanla>0</strong><hanla></hanla>开始，前一个下标是行下标，后一个下标是列下标。<br>    <img src="https://img-blog.csdnimg.cn/20210426161244158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>    打印一个二维数组所有的元素：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -446,7 +444,8 @@ html ul > hanla {
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210426161739580.png" alt="在这里插入图片描述"><br>二维数组在内存中的存储也是<strong>连续存放</strong>的<br><img src="https://img-blog.csdnimg.cn/20210426163118201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210426161739580.png" alt="在这里插入图片描述"><br>由此可见，二维数组在内存中的存储也是<strong>连续存放</strong>的<br><img src="https://img-blog.csdnimg.cn/20210426163118201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>打印数组各个元素的地址：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -462,13 +461,10 @@ html ul > hanla {
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210426163254877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<hr>
-<h1 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h1><p><hanla></hanla>我们可以将数组的下标看成坐标，那么一维数组就是一个离散的数轴，二维数组就是一个离散的平面直角坐标系。那三维数组其实就是一个离散的空间直角坐标系，n<hanla></hanla>维数组就是一个离散的<hanla></hanla>n<hanla></hanla>维空间<br><img src="https://img-blog.csdnimg.cn/20210426202507230.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><hanla></hanla>n<hanla></hanla>维数组其实就是<hanla></hanla>n<hanla></hanla>个一维数组相嵌套：n<hanla></hanla>维数组是由若干<hanla></hanla>n-1<hanla></hanla>维数组组成的，每个<hanla></hanla>n-1<hanla></hanla>维数组是由若干<hanla></hanla>n-2<hanla></hanla>维数组组成的…一直到每个<hanla></hanla>2<hanla></hanla>维数组是由若干一维数组组成的。<br>大家理解概念就好，用的不多不细说。</p>
-<hr>
-<h1 id="数组名到底是什么？"><a href="#数组名到底是什么？" class="headerlink" title="数组名到底是什么？"></a>数组名到底是什么？</h1><hr>
-<p>除了定义数组的时候使用数组名，其他时候程序中出现数组名的意义到底是什么？</p>
-<h3 id="数组名表示整个数组"><a href="#数组名表示整个数组" class="headerlink" title="数组名表示整个数组"></a>数组名表示整个数组</h3><p>只有<strong>两个特殊情况下</strong>数组名表示整个数组：<br><hanla></hanla>1.sizeof<hanla></hanla>计算整个数组大小时：</p>
+<h1 id="多维数组（仅作了解）"><a href="#多维数组（仅作了解）" class="headerlink" title="多维数组（仅作了解）"></a>多维数组（仅作了解）</h1><p><hanla></hanla>我们可以将数组的下标看成坐标，那么一维数组就是一个离散的数轴，二维数组就是一个离散的平面直角坐标系。那三维数组其实就是一个离散的空间直角坐标系，n<hanla></hanla>维数组就是一个离散的<hanla></hanla>n<hanla></hanla>维空间<br><img src="https://img-blog.csdnimg.cn/20210426202507230.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><hanla></hanla>n<hanla></hanla>维数组其实就是<hanla></hanla>n<hanla></hanla>个一维数组相嵌套：n<hanla></hanla>维数组是由若干<hanla></hanla>n-1<hanla></hanla>维数组组成的，每个<hanla></hanla>n-1<hanla></hanla>维数组是由若干<hanla></hanla>n-2<hanla></hanla>维数组组成的…一直到每个<hanla></hanla>2<hanla></hanla>维数组是由若干一维数组组成的。</p>
+<h1 id="重点问题：数组名到底是什么？"><a href="#重点问题：数组名到底是什么？" class="headerlink" title="重点问题：数组名到底是什么？"></a>重点问题：数组名到底是什么？</h1><p>除了定义数组的时候使用数组名，其他时候程序中出现数组名的意义到底是什么？</p>
+<h2 id="数组名表示整个数组"><a href="#数组名表示整个数组" class="headerlink" title="数组名表示整个数组"></a>数组名表示整个数组</h2><p>只有<strong>两个特殊情况下</strong>数组名表示整个数组：<br><hanla></hanla>1.sizeof<hanla></hanla>计算整个数组大小时：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -477,7 +473,8 @@ html ul > hanla {
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210426170340605.png" alt="在这里插入图片描述"><br><hanla></hanla>此时<hanla></hanla>arr<hanla></hanla>表示整个数组，sizeof<hanla></hanla>计算的是整个数组的大小<br><hanla></hanla>2.<hanla></hanla>取地址符<hanla></hanla>+<hanla></hanla>数组名时：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210426170340605.png" alt="在这里插入图片描述"><br><hanla></hanla>此时<hanla></hanla>arr<hanla></hanla>表示整个数组，sizeof<hanla></hanla>计算的是整个数组的大小</p>
+<p><hanla></hanla>2.<hanla></hanla>取地址符<hanla></hanla>+<hanla></hanla>数组名时：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -487,8 +484,7 @@ html ul > hanla {
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210426170433898.png" alt="在这里插入图片描述"><br>此时取出的也是整个数组的地址。这个地址和数组首元素的地址的值是相同的，但是它代表的是数组的地址而不是数组首元素的地址，值相同，含义不同。</p>
-<hr>
-<h3 id="数组名表示数组首元素地址"><a href="#数组名表示数组首元素地址" class="headerlink" title="数组名表示数组首元素地址"></a>数组名表示数组首元素地址</h3><p>除了上面所说的两种情况以外，<strong>其他所有情况下</strong>的数组名均表示数组首元素的地址。（我在<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51379868/article/details/115802088?spm=1001.2014.3001.5501"><hanla></hanla>【C<hanla></hanla>语言从青铜到王者】第二篇·详解函数</a>中的<strong>传址调用</strong>中也说了这一点）<br>给出一些例子佐证：<br><img src="https://img-blog.csdnimg.cn/20210426172018400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210426172152115.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210427162435300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="数组名表示数组首元素地址"><a href="#数组名表示数组首元素地址" class="headerlink" title="数组名表示数组首元素地址"></a>数组名表示数组首元素地址</h2><p>除了上面所说的两种情况以外，<strong>其他所有情况下</strong>的<strong>数组名均表示数组首元素的地址</strong>。<br>给出一些例子佐证：<br><img src="https://img-blog.csdnimg.cn/20210426172018400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210426172152115.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210427162435300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
     </div>
 
@@ -573,7 +569,7 @@ html ul > hanla {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>1.0.1.</span> <span class="nav-text">创建一维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B4%E5%9E%8B%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number"><hanla></hanla>1.0.2.</span> <span class="nav-text">一维整型数组初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E5%AD%97%E7%AC%A6%E5%9E%8B%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number"><hanla></hanla>1.0.3.</span> <span class="nav-text">一维字符型数组初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number"><hanla></hanla>1.0.4.</span> <span class="nav-text">一维数组的使用与内存中的存储</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>2.0.1.</span> <span class="nav-text">创建二维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number"><hanla></hanla>2.0.2.</span> <span class="nav-text">二维数组初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number"><hanla></hanla>2.0.3.</span> <span class="nav-text">二维数组的使用与内存中的存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">多维数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%90%8D%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">数组名到底是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%90%8D%E8%A1%A8%E7%A4%BA%E6%95%B4%E4%B8%AA%E6%95%B0%E7%BB%84"><span class="nav-number">4.0.1.</span> <span class="nav-text">数组名表示整个数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%90%8D%E8%A1%A8%E7%A4%BA%E6%95%B0%E7%BB%84%E9%A6%96%E5%85%83%E7%B4%A0%E5%9C%B0%E5%9D%80"><span class="nav-number"><hanla></hanla>4.0.2.</span> <span class="nav-text">数组名表示数组首元素地址</span></a></li></ol></li></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">创建一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B4%E5%9E%8B%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number"><hanla></hanla>1.1.1.</span> <span class="nav-text">一维整型数组初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E5%AD%97%E7%AC%A6%E5%9E%8B%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number"><hanla></hanla>1.1.2.</span> <span class="nav-text">一维字符型数组初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text">一维数组的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">一维数组在内存中的存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">创建二维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">二维数组初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number"><hanla></hanla>2.2.1.</span> <span class="nav-text">二维数组的使用与内存中的存储</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%88%E4%BB%85%E4%BD%9C%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">多维数组（仅作了解）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%9A%E6%95%B0%E7%BB%84%E5%90%8D%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">重点问题：数组名到底是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%90%8D%E8%A1%A8%E7%A4%BA%E6%95%B4%E4%B8%AA%E6%95%B0%E7%BB%84"><span class="nav-number">4.1.</span> <span class="nav-text">数组名表示整个数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%90%8D%E8%A1%A8%E7%A4%BA%E6%95%B0%E7%BB%84%E9%A6%96%E5%85%83%E7%B4%A0%E5%9C%B0%E5%9D%80"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">数组名表示数组首元素地址</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
