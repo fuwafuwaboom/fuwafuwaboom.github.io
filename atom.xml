@@ -34,18 +34,11 @@
     <link href="http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/"/>
     <id>http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</id>
     <published>2021-08-03T03:32:55.000Z</published>
-    <updated>2021-09-06T01:47:48.572Z</updated>
+    <updated>2021-09-08T08:28:19.121Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;数组就是一组相同类型元素的集合，通过数组我们可以更为方便快捷的存储和访问数据。理论上来说C语言可以构造n维数组，但是由于一维数组和二维数组使用更加频繁，所以本篇着重讲解一维数组与二维数组，多维数组仅作了解。&lt;/p&gt;
-</summary>
-        
-      
+&lt;p&gt;数组就是一组相同类型元素的集合，通过数组我们可以更为方便快捷的存储和访问数据。理论上来说C语言可以构造n维数组，但是由于一维数组和二维数组使用更加频繁，所以本篇着重讲解一维数组与二维数组，多维数组仅作了解。&lt;/p&gt;</summary>
     
     
     
@@ -63,16 +56,14 @@
     <link href="http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/"/>
     <id>http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/</id>
     <published>2021-08-03T03:29:56.000Z</published>
-    <updated>2021-09-06T01:46:15.302Z</updated>
+    <updated>2021-09-09T08:32:54.732Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;br&gt;C语言有各种各样的库函数，调用它们需要引用相应的头文件。由于C语言库函数较多，讲解原理的话涉及内容庞杂，作为替代这里给出C语言库函数（包括各种关键字）查询的网址供大家参考。有条件的小伙伴建议下载MSDN软件（相当于离线的知识</summary>
-        
-      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;br&gt;C语言有各种各样的库函数，调用它们需要引用相应的头文件。由于C语言库函数较多，讲解原理的话涉及内容庞杂，作为替代这里给出C语言库函数（包括各种关键字）查询的网址供大家参考。有条件的小伙伴建议下载MSDN软件（相当于离线的知识站）辅助学习&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cplusplus.com/reference/&quot;&gt;C/C++官方知识站&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;抛开库函数，本篇所讲函数均为&lt;strong&gt;自定义函数&lt;/strong&gt;&lt;/p&gt;</summary>
     
     
     
@@ -90,7 +81,7 @@
     <link href="http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/"/>
     <id>http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</id>
     <published>2021-08-03T03:23:02.000Z</published>
-    <updated>2021-09-08T08:24:37.640Z</updated>
+    <updated>2021-09-09T08:19:31.183Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;br&gt;前文我们说到，编程的一个目的就是借助计算机帮助我们解决生活中的问题，而世界运行的基本时间逻辑，在向计算机描述时可以大致归纳成三种基本逻辑结构：&lt;strong&gt;顺序&lt;/strong&gt;、&lt;strong&gt;选择&lt;/strong&gt;、&lt;strong&gt;循环&lt;/strong&gt;。&lt;/p&gt;</summary>
@@ -111,7 +102,7 @@
     <link href="http://fuwafuwaboom.github.io/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/"/>
     <id>http://fuwafuwaboom.github.io/2021/07/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</id>
     <published>2021-07-30T16:00:00.000Z</published>
-    <updated>2021-09-08T07:21:30.060Z</updated>
+    <updated>2021-09-08T08:28:07.451Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;br&gt;C语言对于每个刚刚入门的编程新人来说都是熟面孔了，可真正在初学阶段就掌握透彻的又有几人呢。在【C语言从青铜到王者】系列中，我致力于通过整理自己的C语言学习笔记，牢牢的打实自己的C语言基础，希望为每个造访我博客的朋友带来最细致的知识梳理。本篇文章是C语言知识体系的概论，先纵览山河，再细嗅蔷薇&lt;/p&gt;</summary>
