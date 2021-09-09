@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>【C语言从青铜到王者】第四篇·详解操作符</title>
-    <url>/2021/08/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</url>
-    <content><![CDATA[]]></content>
+    <title>【C语言从青铜到王者】第四篇·详解操作符与相关运算</title>
+    <url>/2021/09/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</url>
+    <content><![CDATA[<p><strong>本篇前言</strong></p>
+]]></content>
+      <categories>
+        <category>【C语言从青铜到王者】</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>操作符</tag>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>【C语言从青铜到王者】第三篇·详解数组</title>
@@ -223,7 +232,7 @@
         <category>【C语言从青铜到王者】</category>
       </categories>
       <tags>
-        <tag>C语言学习</tag>
+        <tag>C语言</tag>
         <tag>数组</tag>
       </tags>
   </entry>
@@ -535,7 +544,7 @@
         <category>【C语言从青铜到王者】</category>
       </categories>
       <tags>
-        <tag>C语言学习</tag>
+        <tag>C语言</tag>
         <tag>函数</tag>
       </tags>
   </entry>
@@ -1208,7 +1217,7 @@ error<span class="token punctuation">:</span>
         <category>【C语言从青铜到王者】</category>
       </categories>
       <tags>
-        <tag>C语言学习</tag>
+        <tag>C语言</tag>
         <tag>分支与循环</tag>
       </tags>
   </entry>
@@ -2123,8 +2132,7 @@ You love C
         <category>【C语言从青铜到王者】</category>
       </categories>
       <tags>
-        <tag>C语言学习</tag>
-        <tag>知识总览</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
 </search>
