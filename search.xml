@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【C++进修之路】C++入门</title>
+    <url>/2021/09/22/c-jin-xiu-zhi-lu-c-ru-men/</url>
+    <content><![CDATA[<p><strong>本篇前言</strong></p>
+<p>C++入门篇，着重在C语言的基础上讲解C++的语法。C++版本目前已经更迭支C++20，但本系列仍然着重讲解C++11</p>
+<span id="more"></span>
+
+<h1 id="C-的常用领域"><a href="#C-的常用领域" class="headerlink" title="C++的常用领域"></a>C++的常用领域</h1><p>1.操作系统以及大型系统软件开发（阿里云开发→独立大型数据库）</p>
+<p>2.服务器端开发（美团app→处理下单→每一单的处理→后端服务器的处理和数据的管理）</p>
+<p>3.人工智能（底层算法：C/C++ 上层：python封装）</p>
+<p>4.游戏开发（大型游戏对性能要求高）</p>
+<p>5.嵌入式开发（与C结合 微型系统）</p>
+<p>6.分布式系统（服务器上层)</p>
+<p>7.物联网（扫地机器人、智能家居）</p>
+<h1 id="如何学好C"><a href="#如何学好C" class="headerlink" title="如何学好C++"></a>如何学好C++</h1><p>C++最大的缺点，就是语法复杂，而且难学难精</p>
+<p>第一个层次，C++基础（平平常常）</p>
+<p>第二个层次，正确高效的使用C++（轻车熟路）</p>
+<p>第三个层次，深入解读C++（出神入化）</p>
+<p>第四个层次，研究C++（返璞归真）</p>
+<p><strong>第二层就要多从工作实战项目中吸取经验</strong></p>
+<p>C++进阶的好书很多，但是入门的好书很少</p>
+<p>前期语法居多，中期联系居多，后期融会贯通居多</p>
+<p>所以</p>
+<p>前期一定要多写博客总结+练习熟悉语法</p>
+<p>中期一定要多练习，学会运用</p>
+<p>后期一定也要多写博客总结</p>
+]]></content>
+      <categories>
+        <category>【C++进修之路】</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【C语言从青铜到王者】第四篇·详解操作符与相关运算</title>
     <url>/2021/09/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</url>
     <content><![CDATA[<p><strong>本篇前言</strong></p>
@@ -964,7 +998,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210411210301478.png" alt="在这里插入图片描述"></p>
 <h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><p>循环语句就是一些语句重复执行多次。C语言中的循环结构有三种常见的语句，分别是while、for、do-while循环，它们大同小异，都具有<strong>初始化部分</strong>、<strong>条件判断部分</strong>、<strong>调整部分</strong>，我们抓住这三个点来学习他们吧。</p>
-<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>给出语法：</p>
+<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><p>给出语法：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">while</span><span class="token punctuation">(</span>表达式）
 <span class="token punctuation">{</span>
  循环语句<span class="token punctuation">;</span>
@@ -1001,7 +1035,7 @@
 <pre class="line-numbers language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>循环体就是每次循环都会执行的循环语句，是我们循环语句的主体内容</p>
-<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>清楚了while循环，后面两个就可以类比学习了<br>给出语法：</p>
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>清楚了while循环，后面两个就可以类比学习了<br>给出语法：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">for</span><span class="token punctuation">(</span>初始化部分<span class="token punctuation">;</span>条件判断部分<span class="token punctuation">;</span>调整部分）
 <span class="token punctuation">{</span>
   循环语句<span class="token punctuation">;</span>
@@ -1047,7 +1081,7 @@
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h3><p>给出语法：</p>
+<h2 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h2><p>给出语法：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">do</span>
 <span class="token punctuation">{</span>
  循环语句<span class="token punctuation">;</span>
@@ -1068,8 +1102,9 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210412155123272.png" alt="在这里插入图片描述"></p>
 <p><strong>总体的使用频率来说：for循环 &gt; while循环 &gt; do while循环</strong></p>
-<h3 id="循环语句中的break和continue关键字"><a href="#循环语句中的break和continue关键字" class="headerlink" title="循环语句中的break和continue关键字"></a>循环语句中的break和continue关键字</h3><ul>
-<li>break<br>当程序读到break关键字的时候，直接跳出循环<br>for循环中的break：</li>
+<h2 id="循环语句中的break和continue关键字"><a href="#循环语句中的break和continue关键字" class="headerlink" title="循环语句中的break和continue关键字"></a>循环语句中的break和continue关键字</h2><ul>
+<li><h2 id="break"><a href="#break" class="headerlink" title="break"></a>break</h2><p>当程序读到break关键字的时候，直接跳出循环<br>for循环中的break：</p>
+</li>
 </ul>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1119,7 +1154,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210414105230742.png" alt="在这里插入图片描述"><br>程序结果是1 2 3 4 然后<strong>死循环</strong>（光标一直在闪烁说明程序一直未结束)，这是因为i累加到5时，执行continue语句，跳过本次循环剩下的语句<code>printf("%d ", i);</code>和<code>i++;</code>，直接跳转到条件判断 <code>i &lt;= 10</code>,判断 i = 5 , 5 &lt;= 10,然后又跳过本次循环剩下的语句<code>printf("%d ", i);</code>和<code>i++;</code>，直接跳转到条件判断 <code>i &lt;= 10</code>，判断 i = 5 , 5 &lt;= 10……所以陷入死循环了</p>
 <p>区别就是：<strong>for循环中，由于调整部分不在循环体中，所以不会因为continue的影响陷入死循环；while循环中，调整部分在循环体中，极有可能因为continue陷入死循环</strong></p>
-<h3 id="循环语句的嵌套"><a href="#循环语句的嵌套" class="headerlink" title="循环语句的嵌套"></a>循环语句的嵌套</h3><p>循环语句的嵌套就是在循环体中再加入另一个循环，从而会让我们的程序可以描述更多的循环情况，也提升了程序的空间复杂度</p>
+<h2 id="循环语句的嵌套"><a href="#循环语句的嵌套" class="headerlink" title="循环语句的嵌套"></a>循环语句的嵌套</h2><p>循环语句的嵌套就是在循环体中再加入另一个循环，从而会让我们的程序可以描述更多的循环情况，也提升了程序的空间复杂度</p>
 <p>for嵌套：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1156,7 +1191,7 @@
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210414105936984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="goto语句"><a href="#goto语句" class="headerlink" title="goto语句"></a>goto语句</h1><h3 id="goto语句的使用方法"><a href="#goto语句的使用方法" class="headerlink" title="goto语句的使用方法"></a>goto语句的使用方法</h3><p>goto语句相当于一个传送门，可以直接暴力的改变代码执行的逻辑，它就像一把双刃剑，用得好确实有奇效，但滥用可能会自废武功</p>
+<h1 id="goto语句"><a href="#goto语句" class="headerlink" title="goto语句"></a>goto语句</h1><h2 id="goto语句的使用方法"><a href="#goto语句的使用方法" class="headerlink" title="goto语句的使用方法"></a>goto语句的使用方法</h2><p>goto语句相当于一个传送门，可以直接暴力的改变代码执行的逻辑，它就像一把双刃剑，用得好确实有奇效，但滥用可能会自废武功</p>
 <p>给出语法：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">goto</span> 标记名称<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1183,7 +1218,7 @@ again<span class="token punctuation">:</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210414111310573.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxMzc5ODY4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们输入200的时候，执行else里的语句，先执行printf(“输入错误,请重新输入\n”)然后执行goto again，again在程序最开始，所以我们可以继续进行选择判断。</p>
-<h3 id="goto语句的使用场景"><a href="#goto语句的使用场景" class="headerlink" title="goto语句的使用场景"></a>goto语句的使用场景</h3><p>goto是一把双刃剑，好处是简单直接十分方便，坏处是容易使程序错乱，所以我们需要学会使用它的场景</p>
+<h2 id="goto语句的使用场景"><a href="#goto语句的使用场景" class="headerlink" title="goto语句的使用场景"></a>goto语句的使用场景</h2><p>goto是一把双刃剑，好处是简单直接十分方便，坏处是容易使程序错乱，所以我们需要学会使用它的场景</p>
 <p>goto语句跳出多重循环(弗洛伊德算法)：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>

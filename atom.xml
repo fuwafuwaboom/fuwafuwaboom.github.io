@@ -6,7 +6,7 @@
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2021-09-09T12:46:37.746Z</updated>
+  <updated>2021-09-22T15:11:54.302Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【C++进修之路】C++入门</title>
+    <link href="http://fuwafuwaboom.github.io/2021/09/22/c-jin-xiu-zhi-lu-c-ru-men/"/>
+    <id>http://fuwafuwaboom.github.io/2021/09/22/c-jin-xiu-zhi-lu-c-ru-men/</id>
+    <published>2021-09-21T16:00:00.000Z</published>
+    <updated>2021-09-22T15:11:54.302Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;C++入门篇，着重在C语言的基础上讲解C++的语法。C++版本目前已经更迭支C++20，但本系列仍然着重讲解C++11&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【C++进修之路】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C-%E8%BF%9B%E4%BF%AE%E4%B9%8B%E8%B7%AF%E3%80%91/"/>
+    
+    
+    <category term="C++" scheme="http://fuwafuwaboom.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【C语言从青铜到王者】第四篇·详解操作符与相关运算</title>
     <link href="http://fuwafuwaboom.github.io/2021/09/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/"/>
     <id>http://fuwafuwaboom.github.io/2021/09/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</id>
     <published>2021-09-08T16:00:00.000Z</published>
-    <updated>2021-09-09T12:46:37.746Z</updated>
+    <updated>2021-09-09T15:18:17.788Z</updated>
     
     
       
@@ -98,7 +118,7 @@
     <link href="http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/"/>
     <id>http://fuwafuwaboom.github.io/2021/08/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</id>
     <published>2021-08-03T03:23:02.000Z</published>
-    <updated>2021-09-09T09:17:39.331Z</updated>
+    <updated>2021-09-09T13:49:33.783Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;br&gt;前文我们说到，编程的一个目的就是借助计算机帮助我们解决生活中的问题，而世界运行的基本时间逻辑，在向计算机描述时可以大致归纳成三种基本逻辑结构：&lt;strong&gt;顺序&lt;/strong&gt;、&lt;strong&gt;选择&lt;/strong&gt;、&lt;strong&gt;循环&lt;/strong&gt;。&lt;/p&gt;</summary>
