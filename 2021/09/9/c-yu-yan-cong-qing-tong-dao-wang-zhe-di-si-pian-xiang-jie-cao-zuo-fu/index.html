@@ -20,20 +20,25 @@
     var CONFIG = {"hostname":"fuwafuwaboom.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本篇前言">
+  <meta name="description" content="本篇前言 在本系列开篇文章中，我们已经大体讲解了常见操作符，此篇就他们各自的功能和用法作更深入更详细的介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C语言从青铜到王者】第四篇·详解操作符与相关运算">
 <meta property="og:url" content="http://fuwafuwaboom.github.io/2021/09/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/index.html">
 <meta property="og:site_name" content="小葉的博客">
-<meta property="og:description" content="本篇前言">
+<meta property="og:description" content="本篇前言 在本系列开篇文章中，我们已经大体讲解了常见操作符，此篇就他们各自的功能和用法作更深入更详细的介绍">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20210923173108840.png">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20210923173259407.png">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20210923173613959.png">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20210923174320715.png">
 <meta property="article:published_time" content="2021-09-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-09T15:18:17.788Z">
+<meta property="article:modified_time" content="2021-09-23T09:44:12.405Z">
 <meta property="article:author" content="小葉">
 <meta property="article:tag" content="C语言">
 <meta property="article:tag" content="操作符">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20210923173108840.png">
 
 <link rel="canonical" href="http://fuwafuwaboom.github.io/2021/09/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/">
 
@@ -98,9 +103,9 @@ html ol > hanla,
 html ul > hanla {
     display: none;
 }
-</style><!-- hexo injector head_end end -->
+</style><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="小葉的博客" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="小葉的博客" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -214,10 +219,16 @@ html ul > hanla {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-09-09 00:00:00 / 修改时间：23:18:17" itemprop="dateCreated datePublished" datetime="2021-09-09T00:00:00+08:00"><hanla></hanla>2021-09-09</time>
+              <time title="创建时间：2021-09-09 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-09T00:00:00+08:00"><hanla></hanla>2021-09-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text"><hanla></hanla>更新于</span>
+                <time title="修改时间：2021-09-23 17:44:12" itemprop="dateModified" datetime="2021-09-23T17:44:12+08:00"><hanla></hanla>2021-09-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -240,7 +251,115 @@ html ul > hanla {
 
       
         <p><strong>本篇前言</strong></p>
+<p>在本系列开篇文章中，我们已经大体讲解了常见操作符，此篇就他们各自的功能和用法作更深入更详细的介绍</p>
+<span id="more"></span>
 
+<h1 id="各种操作符的介绍"><a href="#各种操作符的介绍" class="headerlink" title="各种操作符的介绍"></a>各种操作符的介绍</h1><h2 id="算数操作符"><a href="#算数操作符" class="headerlink" title="算数操作符"></a>算数操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th align="left">表达式</th>
+<th><hanla></hanla>结果<hanla></hanla>(a=6,b=5)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加</td>
+<td align="left">a+b</td>
+<td>11</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+<td align="left">a-b</td>
+<td>1</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td align="left">a*b</td>
+<td>30</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+<td align="left">a/b</td>
+<td>1</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取模</td>
+<td align="left">a%b</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p><strong>要点一：除号操作符的结果是否取整问题</strong></p>
+<p>看下面这段程序</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>结果是</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20210923173108840.png" alt="image-20210923173108840"></p>
+<p><hanla></hanla>如果把<hanla></hanla>a<hanla></hanla>的数据类型改成浮点数</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %f\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>结果是</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20210923173259407.png" alt="image-20210923173259407"></p>
+<p>这是为什么呢？</p>
+<p>因为<code><hanla></hanla>6/5</code><hanla></hanla>这个表达式的结果本来就是<hanla></hanla>1，把<hanla></hanla>1<hanla></hanla>放入什么类型的变量中结果都是<hanla></hanla>1</p>
+<p>那如果想真的想得到小数应该怎么办呢？</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">6.0</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %f\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20210923173613959.png" alt="image-20210923173613959"></p>
+<p>我们发现：<strong>只要除号的两端至少有一个数字是浮点数，执行的结果就是浮点数</strong></p>
+<p><hanla></hanla>如果仔细看会发现编译器会警告，原因是直接写出的小数，编译器默认是<hanla></hanla>double<hanla></hanla>类型的，double<hanla></hanla>是双精度浮点数，精度比<hanla></hanla>float<hanla></hanla>高，如果这样赋值可能会丢失精度，所以我们最好用<hanla></hanla>double<hanla></hanla>类型接收。所以要不然就用<hanla></hanla>float<hanla></hanla>类型的数字写表达式，要不然就用<hanla></hanla>double<hanla></hanla>变量接收。</p>
+<p>以下两种写法都是可以的：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">6.0f</span> <span class="token operator">/</span> <span class="token number">5.0f</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %f\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">double</span> a <span class="token operator">=</span> <span class="token number">6.0</span> <span class="token operator">/</span> <span class="token number">5.0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %lf\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>要点二：取模操作符的操作数必须为整数</strong></p>
+<p>如果用小数取模就会报错</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">double</span> a <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">%</span> <span class="token number">5.0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %lf\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20210923174320715.png" alt="image-20210923174320715"></p>
+<h2 id="移位操作符"><a href="#移位操作符" class="headerlink" title="移位操作符"></a>移位操作符</h2><h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><h2 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h2><h2 id="单目操作符"><a href="#单目操作符" class="headerlink" title="单目操作符"></a>单目操作符</h2><h2 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h2><h2 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h2><h2 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h2><h2 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h2><h2 id="下标引用"><a href="#下标引用" class="headerlink" title="下标引用"></a>下标引用</h2><h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><h2 id="访问结构体成员"><a href="#访问结构体成员" class="headerlink" title="访问结构体成员"></a>访问结构体成员</h2><h1 id="表达式的求值"><a href="#表达式的求值" class="headerlink" title="表达式的求值"></a>表达式的求值</h1>
     </div>
 
     
@@ -325,6 +444,7 @@ html ul > hanla {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">各种操作符的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">算数操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text">移位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text">赋值操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E7%9B%AE%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.5.</span> <span class="nav-text">单目操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.6.</span> <span class="nav-text">关系操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.7.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.8.</span> <span class="nav-text">条件操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number"><hanla></hanla>1.9.</span> <span class="nav-text">逗号表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E6%A0%87%E5%BC%95%E7%94%A8"><span class="nav-number"><hanla></hanla>1.10.</span> <span class="nav-text">下标引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number"><hanla></hanla>1.11.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E7%BB%93%E6%9E%84%E4%BD%93%E6%88%90%E5%91%98"><span class="nav-number"><hanla></hanla>1.12.</span> <span class="nav-text">访问结构体成员</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%B1%82%E5%80%BC"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">表达式的求值</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
