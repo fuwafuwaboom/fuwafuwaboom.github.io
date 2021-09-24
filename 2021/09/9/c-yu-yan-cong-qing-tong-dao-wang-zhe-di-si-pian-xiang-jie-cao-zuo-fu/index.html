@@ -36,11 +36,18 @@
 <meta property="og:image" content="https://i.loli.net/2021/09/24/CuSxwWL9lkjFtr6.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/24/nUZiym2GHwIbaL9.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/24/4XbflDeZ3Tp5jSu.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/DmKkH6aGNRdPV2C.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/24/sZV5JgGLXWmNfCM.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/bkUHvA8sa1EWlFC.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/4x2qgYH3N7tVk91.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/bAZIYjh5rNemocv.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/eO1y5AFXimlbdGI.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/c62K9ds3gXtlMuB.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/mlOnCLKvitpJFh2.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/23/ixRqloDSkzGdOyf.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/23/jlizTDoQL2yqcn5.png">
 <meta property="article:published_time" content="2021-09-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-24T01:35:43.072Z">
+<meta property="article:modified_time" content="2021-09-24T13:59:22.525Z">
 <meta property="article:author" content="小葉">
 <meta property="article:tag" content="C语言">
 <meta property="article:tag" content="操作符">
@@ -235,7 +242,7 @@ html ul > hanla {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2021-09-24 09:35:43" itemprop="dateModified" datetime="2021-09-24T09:35:43+08:00"><hanla></hanla>2021-09-24</time>
+                <time title="修改时间：2021-09-24 21:59:22" itemprop="dateModified" datetime="2021-09-24T21:59:22+08:00"><hanla></hanla>2021-09-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -609,7 +616,23 @@ html ul > hanla {
 <p>为什么<code><hanla></hanla>s = a + 2</code> 没有参与运算呢？</p>
 <p>因为<code><hanla></hanla>sizeof（）</code>在编译期间就完成计算了，而<code><hanla></hanla>s = a + 2</code><hanla></hanla>这句话如果要执行也得到运行期间执行</p>
 <p><img src="https://i.loli.net/2021/09/24/4XbflDeZ3Tp5jSu.png" alt="image.png"></p>
-<p><strong>要点四：<code>~</code>按位取反操作的是补码</strong></p>
+<p><strong>要点四：数组传参时<code><hanla></hanla>sizeof</code><hanla></hanla>数组名的含义</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">test</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/DmKkH6aGNRdPV2C.png" alt="image.png"></p>
+<p>我在之前讲数组的文章中说过，数组名除了两个特殊情况下表示的是整个数组，其余情况下都是数组首元素的地址。所以当我们把数组名作为参数传递给函数时，本质上是传递了数组首元素的地址，函数用指针类型的形式参数接收，所以<code><hanla></hanla>sizeof</code><hanla></hanla>这个形式参数得到的是指针变量的大小，32<hanla></hanla>位平台的结果是<hanla></hanla>4，64<hanla></hanla>位平台的结果是<hanla></hanla>8</p>
+<p><strong>要点五：<code>~</code>按位取反操作的是补码</strong></p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -627,7 +650,231 @@ html ul > hanla {
 <p>取反后原码：</p>
 <p>00000000 00000000 00000000 00000000</p>
 <p><hanla></hanla>结果是<hanla></hanla>0</p>
-<h2 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h2><h2 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h2><h2 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h2><h2 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h2><h2 id="下标引用"><a href="#下标引用" class="headerlink" title="下标引用"></a>下标引用</h2><h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><h2 id="访问结构体成员"><a href="#访问结构体成员" class="headerlink" title="访问结构体成员"></a>访问结构体成员</h2><h1 id="典型题目"><a href="#典型题目" class="headerlink" title="典型题目"></a>典型题目</h1><h2 id="例一"><a href="#例一" class="headerlink" title="例一"></a>例一</h2><p>题目：不使用第三个变量交换两个<code><hanla></hanla>int</code><hanla></hanla>变量的值，即 a = 3 , b = 5 , 交换后 a = 5 , b = 5 </p>
+<p><strong><hanla></hanla>要点六：前置<hanla></hanla>++<hanla></hanla>与后置<hanla></hanla>++<hanla></hanla>的区别（–同理）</strong></p>
+<p><hanla></hanla>后置<hanla></hanla>++：先使用，后<hanla></hanla>++</p>
+<p><hanla></hanla>前置<hanla></hanla>++：先<hanla></hanla>++，后使用</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> a<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>a<hanla></hanla>先使用（赋值给<hanla></hanla>b），再<hanla></hanla>++：</p>
+<p><img src="https://i.loli.net/2021/09/24/bkUHvA8sa1EWlFC.png" alt="image.png"></p>
+<p><strong>要点七：取地址操作符与解引用操作符</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%p\n"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>pa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>地址以<hanla></hanla>32<hanla></hanla>位<hanla></hanla>/64<hanla></hanla>位的二进制序列来标定内存空间，但是是以<hanla></hanla>16<hanla></hanla>进制的数字展示给编码者，所以用<code><hanla></hanla>%p</code><hanla></hanla>接收</p>
+<p><img src="https://i.loli.net/2021/09/24/4x2qgYH3N7tVk91.png" alt="image.png"></p>
+<p><strong>要点八：强制类型转换</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token number">3.14</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>除了这个例子，之前在生成随机数的时候调用<strong>系统时间钟</strong>也用到了强制类型转换</p>
+<h2 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td><hanla></hanla>判断左操作数是否大于右操作数                是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td><hanla></hanla>判断左操作数是否大于等于右操作数        是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td><hanla></hanla>判断左操作数是否小于右操作数                是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td><hanla></hanla>判断左操作数是否小于等于右操作数        是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>==</td>
+<td><hanla></hanla>判断左操作数是否等于右操作数                是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>!=</td>
+<td><hanla></hanla>判断左操作数是否不等于于右操作数        是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+</tbody></table>
+<h2 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>逻辑与</td>
+<td>一假则假 全真才真</td>
+</tr>
+<tr>
+<td>||</td>
+<td>逻辑或</td>
+<td>一真为真 全假才假</td>
+</tr>
+</tbody></table>
+<p><strong><hanla></hanla>要点一：&amp;&amp;<hanla></hanla>操作符只要遇到<hanla></hanla>0<hanla></hanla>就会停止运算 结果为<hanla></hanla>0</strong></p>
+<p><strong><hanla></hanla>要点二：||操作符只要遇到<hanla></hanla>1<hanla></hanla>就会停止运算 结果为<hanla></hanla>1</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    i <span class="token operator">=</span> a<span class="token operator">++</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">++</span>b <span class="token operator">&amp;&amp;</span> d<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %d\nb = %d\nc = %d\nd = %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/bAZIYjh5rNemocv.png" alt="image.png"></p>
+<p><hanla></hanla>a<hanla></hanla>为<hanla></hanla>0，<code>i</code><hanla></hanla>必为<hanla></hanla>0，后面的<code><hanla></hanla>++b</code><hanla></hanla>和<code><hanla></hanla>d++</code><hanla></hanla>不再运算</p>
+<h2 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a ? b : c</td>
+<td><hanla></hanla>a<hanla></hanla>为真结果为<hanla></hanla>b,a<hanla></hanla>为假结果为<hanla></hanla>c</td>
+</tr>
+</tbody></table>
+<p><hanla></hanla>条件操作符又叫三目操作符,<hanla></hanla>看下面的<hanla></hanla>“比大小”<hanla></hanla>算法对其的巧妙运用</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入三个数：\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">,</span> <span class="token operator">&amp;</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"三个数中最大数为：%d\n"</span><span class="token punctuation">,</span> a <span class="token operator">&gt;</span> b <span class="token operator">?</span> <span class="token punctuation">(</span>a <span class="token operator">&gt;</span> c <span class="token operator">?</span> a <span class="token punctuation">:</span> c<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>b <span class="token operator">&gt;</span> c <span class="token operator">?</span> b <span class="token punctuation">:</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"三个数中最小数为：%d\n"</span><span class="token punctuation">,</span> a <span class="token operator">&lt;</span> b <span class="token operator">?</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;</span> c <span class="token operator">?</span> a <span class="token punctuation">:</span> c<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>b <span class="token operator">&lt;</span> c <span class="token operator">?</span> b <span class="token punctuation">:</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/eO1y5AFXimlbdGI.png" alt="image.png"></p>
+<h2 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>计算方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>，</td>
+<td>用<code>,</code><hanla></hanla>隔开的一串表达式</td>
+<td>从左向右依次计算每一个表达式，整个表达式的结果是最后一个表达式的值</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> d <span class="token operator">=</span> <span class="token punctuation">(</span>c <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> a <span class="token operator">=</span> a <span class="token operator">+</span> c<span class="token punctuation">,</span> b <span class="token operator">=</span> a <span class="token operator">*</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> c <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/c62K9ds3gXtlMuB.png" alt="image.png"></p>
+<h2 id="下标引用、函数调用、访问结构体成员"><a href="#下标引用、函数调用、访问结构体成员" class="headerlink" title="下标引用、函数调用、访问结构体成员"></a>下标引用、函数调用、访问结构体成员</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><hanla></hanla>数组名<hanla></hanla>[数组元素下标]</td>
+<td>下标引用操作符</td>
+<td>访问数组元素</td>
+</tr>
+<tr>
+<td>函数名（实际参数）</td>
+<td>函数调用操作符</td>
+<td>调用函数</td>
+</tr>
+<tr>
+<td>结构体名<code>.</code><hanla></hanla>结构体成员</td>
+<td>访问结构体成员操作符</td>
+<td>访问结构体成员</td>
+</tr>
+<tr>
+<td>结构体指针<code>-&gt;</code><hanla></hanla>结构体成员</td>
+<td>访问结构体成员操作符</td>
+<td>访问结构体成员</td>
+</tr>
+</tbody></table>
+<h1 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h1><p><hanla></hanla>学会了各种操作符的用法后，我们仍需知道一些重要的<hanla></hanla>“潜规则”</p>
+<h2 id="整型提升与截断现象"><a href="#整型提升与截断现象" class="headerlink" title="整型提升与截断现象"></a>整型提升与截断现象</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword"><hanla></hanla>short</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">;</span>
+    a <span class="token operator">=</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><hanla></hanla>b<hanla></hanla>和<hanla></hanla>c<hanla></hanla>的类型不到一个普通整型的大小（4<hanla></hanla>字节），所以<code><hanla></hanla>b + c</code><hanla></hanla>这个式子在运算时会先将<hanla></hanla>b<hanla></hanla>和<hanla></hanla>c<hanla></hanla>的值<strong>提升为普通整型</strong><hanla></hanla>，然后再进行加法运算。b<hanla></hanla>和<hanla></hanla>c<hanla></hanla>进行提升后相加结果是<hanla></hanla>4<hanla></hanla>字节<code><hanla></hanla>int</code><hanla></hanla>类型，存入<code><hanla></hanla>short</code><hanla></hanla>类型的<code><hanla></hanla>a</code><hanla></hanla>中会<hanla></hanla>“放不下”，所以会发生<strong>截断现象</strong></p>
+<p><strong>精度不到整型的变量参与运算都会发生整型提升</strong></p>
+<p><strong><hanla></hanla>整型提升就是按照变量的符号位补相应的数，无符号类型统一补<hanla></hanla>0</strong></p>
+<p>看下面的代码：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> b <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/mlOnCLKvitpJFh2.png" alt="image.png"></p>
+<p><hanla></hanla>a<hanla></hanla>的二进制位：</p>
+<p>00000011</p>
+<p><hanla></hanla>b<hanla></hanla>的二进制位：</p>
+<p>01111111</p>
+<p><code>a + b</code><hanla></hanla>发生整型提升</p>
+<p><hanla></hanla>a<hanla></hanla>提升后的二进制位：</p>
+<p>00000000 00000000 00000000 00000011</p>
+<p><hanla></hanla>b<hanla></hanla>提升后的二进制位：</p>
+<p>00000000 00000000 00000000 01111111</p>
+<p>a+b：</p>
+<p>00000000 00000000 00000000 10000010</p>
+<p>然后存入<code><hanla></hanla>char</code><hanla></hanla>类型的<hanla></hanla>c<hanla></hanla>中，直接截断至<hanla></hanla>8bit<hanla></hanla>位：</p>
+<p>c:</p>
+<p>10000010</p>
+<p><hanla></hanla>然后打印的时候是用<hanla></hanla>%d<hanla></hanla>类型接收的，所以<hanla></hanla>c<hanla></hanla>也要整型提升</p>
+<p><hanla></hanla>提升后<hanla></hanla>c：</p>
+<p>11111111 11111111 11111111 10000010</p>
+<p><hanla></hanla>上面为<hanla></hanla>c<hanla></hanla>补码，则<hanla></hanla>c<hanla></hanla>反码：</p>
+<p>11111111 11111111 11111111 10000001</p>
+<p><hanla></hanla>c<hanla></hanla>原码：</p>
+<p>10000000 00000000 00000000 01111110</p>
+<p><hanla></hanla>则<hanla></hanla>c<hanla></hanla>的值为<code>-126</code></p>
+<h2 id="为什么会发生整型提升"><a href="#为什么会发生整型提升" class="headerlink" title="为什么会发生整型提升"></a>为什么会发生整型提升</h2><p><hanla></hanla>表达式的整型运算要在<hanla></hanla>CPU<hanla></hanla>的相应运算器件内执行，CPU<hanla></hanla>内整型运算器<hanla></hanla>(ALU)<hanla></hanla>的操作数的字节长度一般就是<code><hanla></hanla>int</code><hanla></hanla>的字节长度，同时也是<hanla></hanla>CPU<hanla></hanla>的通用寄存器的长度。<br><hanla></hanla>因此，即使两个<hanla></hanla>char<hanla></hanla>类型的相加，在<hanla></hanla>CPU<hanla></hanla>执行时实际上也要先转换为<hanla></hanla>CPU<hanla></hanla>内整型操作数的标准长度。<br><hanla></hanla>通用<hanla></hanla>CPU ( general-purpose CPU )<hanla></hanla>是难以直接实现两个<hanla></hanla>8<hanla></hanla>比特字节直接相加运算（虽然机器指令中可能有这种字节相加指令）。所以，表达式中各种长度可能小于<code><hanla></hanla>int</code><hanla></hanla>长度的整型值，都必须先转换为<code><hanla></hanla>int</code><hanla></hanla>或<code><hanla></hanla>unsigned int</code><hanla></hanla>，然后才能送入<hanla></hanla>CPU<hanla></hanla>去执行运算。</p>
+<h1 id="典型题目"><a href="#典型题目" class="headerlink" title="典型题目"></a>典型题目</h1><p>列举一些基本的考察操作符的题目</p>
+<h2 id="题一"><a href="#题一" class="headerlink" title="题一"></a>题一</h2><p>题目：不使用第三个变量交换两个<code><hanla></hanla>int</code><hanla></hanla>变量的值，即 a = 3 , b = 5 , 交换后 a = 5 , b = 5 </p>
 <p>读题：不使用第三个变量意味着不能直接使用中间变量赋值的方法，所以得依靠算法解决</p>
 <p>解法一：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
@@ -662,7 +909,7 @@ html ul > hanla {
 <p>异或是同假异真，</p>
 <p>所以 a ^ a = 0 , a ^ 0 = a </p>
 <p>所以 a ^ ( a ^ b ) = a ^ a ^ b = 0 ^ b = b</p>
-<h2 id="例二"><a href="#例二" class="headerlink" title="例二"></a>例二</h2><p><hanla></hanla>题目：求一个整数在内存中的二进制序列中<hanla></hanla>1<hanla></hanla>的个数</p>
+<h2 id="题二"><a href="#题二" class="headerlink" title="题二"></a>题二</h2><p><hanla></hanla>题目：求一个整数在内存中的二进制序列中<hanla></hanla>1<hanla></hanla>的个数</p>
 <p>读题：整数在内存中的二进制序列就是补码</p>
 <p>解法：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
@@ -687,7 +934,7 @@ html ul > hanla {
 <p>原理讲解：</p>
 <p><hanla></hanla>任何数与<hanla></hanla>1<hanla></hanla>相与都可以得到第一位的<hanla></hanla>1/0</p>
 <p>不断右移这个数并将每次的结果累加即可</p>
-<h2 id="例三"><a href="#例三" class="headerlink" title="例三"></a>例三</h2><p><hanla></hanla>题目：任意操作一个数的二进制序列中的某位数字，让这一位的<hanla></hanla>1<hanla></hanla>变<hanla></hanla>0，0<hanla></hanla>变<hanla></hanla>1</p>
+<h2 id="题三"><a href="#题三" class="headerlink" title="题三"></a>题三</h2><p><hanla></hanla>题目：任意操作一个数的二进制序列中的某位数字，让这一位的<hanla></hanla>1<hanla></hanla>变<hanla></hanla>0，0<hanla></hanla>变<hanla></hanla>1</p>
 <p>读题：操作二进制位，考虑位操作符和移位操作符</p>
 <p>解法：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
@@ -797,7 +1044,7 @@ html ul > hanla {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">各种操作符的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">算数操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text">移位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text">赋值操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E7%9B%AE%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.5.</span> <span class="nav-text">单目操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.6.</span> <span class="nav-text">关系操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.7.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.8.</span> <span class="nav-text">条件操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number"><hanla></hanla>1.9.</span> <span class="nav-text">逗号表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E6%A0%87%E5%BC%95%E7%94%A8"><span class="nav-number"><hanla></hanla>1.10.</span> <span class="nav-text">下标引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number"><hanla></hanla>1.11.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E7%BB%93%E6%9E%84%E4%BD%93%E6%88%90%E5%91%98"><span class="nav-number"><hanla></hanla>1.12.</span> <span class="nav-text">访问结构体成员</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E9%A2%98%E7%9B%AE"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">典型题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E4%B8%80"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">例一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E4%BA%8C"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">例二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E4%B8%89"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">例三</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">各种操作符的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">算数操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text">移位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text">赋值操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E7%9B%AE%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.5.</span> <span class="nav-text">单目操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.6.</span> <span class="nav-text">关系操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.7.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.8.</span> <span class="nav-text">条件操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number"><hanla></hanla>1.9.</span> <span class="nav-text">逗号表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E6%A0%87%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E3%80%81%E8%AE%BF%E9%97%AE%E7%BB%93%E6%9E%84%E4%BD%93%E6%88%90%E5%91%98"><span class="nav-number"><hanla></hanla>1.10.</span> <span class="nav-text">下标引用、函数调用、访问结构体成员</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">隐式类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E5%9E%8B%E6%8F%90%E5%8D%87%E4%B8%8E%E6%88%AA%E6%96%AD%E7%8E%B0%E8%B1%A1"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">整型提升与截断现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%8F%91%E7%94%9F%E6%95%B4%E5%9E%8B%E6%8F%90%E5%8D%87"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">为什么会发生整型提升</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E9%A2%98%E7%9B%AE"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">典型题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E4%B8%80"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">题一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E4%BA%8C"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text">题二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E4%B8%89"><span class="nav-number"><hanla></hanla>3.3.</span> <span class="nav-text">题三</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
