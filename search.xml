@@ -4,16 +4,136 @@
   
     
     <entry>
-      <title>【每日刷题】C语言操作符</title>
-      <link href="/2021/09/25/mei-ri-shua-ti-c-yu-yan-cao-zuo-fu/"/>
-      <url>/2021/09/25/mei-ri-shua-ti-c-yu-yan-cao-zuo-fu/</url>
+      <title>【C语言从青铜到王者】第五篇·详解指针</title>
+      <link href="/2021/10/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-xiang-jie-zhi-zhen/"/>
+      <url>/2021/10/3/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-xiang-jie-zhi-zhen/</url>
       
-        <content type="html"><![CDATA[<p><strong>2021/9/25 共5题</strong></p><span id="more"></span><h1 id="题一"><a href="#题一" class="headerlink" title="题一"></a>题一</h1><p>题目：不使用第三个变量交换两个<code>int</code>变量的值，即 a = 3 , b = 5 , 交换后 a = 5 , b = 5</p><p>读题：不使用第三个变量意味着不能直接使用中间变量赋值的方法，所以得依靠算法解决</p><p>解法一：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>    a <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>    b <span class="token operator">=</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>    a <span class="token operator">=</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %d, b = %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>解法一的缺陷：整型变量有上限，如果a和b的值加起来超出了整型变量的最大值，就会导致程序BUG</p><p>解法二：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>    a <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>    b <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>    a <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %d, b = %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>原理讲解：</p><p>1.异或过程中始终没有产生进位，所以杜绝了整型溢出的可能</p><p>2.把<code>a^b</code>这个值看成一个密码，用这个密码异或<code>b</code>就能翻译出<code>a</code>，用这个密码异或<code>a</code>就能翻译出<code>b</code>,其实就是因为</p><p>异或是同假异真，</p><p>所以 a ^ a = 0 , a ^ 0 = a</p><p>所以 a ^ ( a ^ b ) = a ^ a ^ b = 0 ^ b = b</p><h1 id="题二"><a href="#题二" class="headerlink" title="题二"></a>题二</h1><p>题目：求一个整数在内存中的二进制序列中1的个数</p><p>读题：整数在内存中的二进制序列就是补码</p><p>解法：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入a的值："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">31</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        num <span class="token operator">+</span><span class="token operator">=</span> a <span class="token operator">&amp;</span> b<span class="token punctuation">;</span>        a <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a的二进制序列中共有%d个1"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://i.loli.net/2021/09/23/ixRqloDSkzGdOyf.png" alt="image.png"></p><p>原理讲解：</p><p>任何数与1相与都可以得到第一位的1/0</p><p>不断右移这个数并将每次的结果累加即可</p><h1 id="题三"><a href="#题三" class="headerlink" title="题三"></a>题三</h1><p>题目：任意操作一个数的二进制序列中的某位数字，让这一位的1变0，0变1</p><p>读题：操作二进制位，考虑位操作符和移位操作符</p><p>解法：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入a的值："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入要改变的位数："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        b <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"变化后的a为：%d "</span><span class="token punctuation">,</span> a <span class="token operator">^</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://i.loli.net/2021/09/23/jlizTDoQL2yqcn5.png" alt="image.png"></p><p>原理讲解：</p><p>0异或1/0能保持，1异或1/0能翻转</p>]]></content>
+        <content type="html"><![CDATA[<p><strong>本篇前言</strong></p><p>指针是C语言的灵魂，精通指针也就基本精通了C语言，希望我的这篇详解指针可以给学习C语言的朋友们一些启发。</p><span id="more"></span><h1 id="指针是什么？"><a href="#指针是什么？" class="headerlink" title="指针是什么？"></a>指针是什么？</h1>]]></content>
       
       
       <categories>
           
-          <category> 刷题 </category>
+          <category> 【C语言从青铜到王者】 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> 指针 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【实战项目】五子棋</title>
+      <link href="/2021/09/26/shi-zhan-xiang-mu-wu-zi-qi/"/>
+      <url>/2021/09/26/shi-zhan-xiang-mu-wu-zi-qi/</url>
+      
+        <content type="html"><![CDATA[<p><strong>本篇集中记录一下我在刷题过程中常用的一些小技巧</strong></p><span id="more"></span><h1 id="C语言初阶的题目"><a href="#C语言初阶的题目" class="headerlink" title="C语言初阶的题目"></a>C语言初阶的题目</h1><h2 id="函数操作静态数组"><a href="#函数操作静态数组" class="headerlink" title="函数操作静态数组"></a>函数操作静态数组</h2><p>1.设置<code>sz</code>变量提前计算数组元素个数传参，<code>sz = sizeof(arr) / sizeof(arr[0]);</code></p><p>2.传递数组名用指针变量接收来并配合<code>sz</code>操控数组具体元素</p><h2 id="从两端同时操控数组元素"><a href="#从两端同时操控数组元素" class="headerlink" title="从两端同时操控数组元素"></a>从两端同时操控数组元素</h2><p>1.设置<code>left</code>和<code>right</code>变量，操作一次后，<code>left++</code> <code>right--</code>操控数组两端元素</p><p>2.适用于字符串逆序等</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 【实战项目】 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 操作符 </tag>
+            
+            <tag> 刷题 </tag>
+            
+            <tag> 小技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【实战项目】扫雷</title>
+      <link href="/2021/09/25/shi-zhan-xiang-mu-sao-lei/"/>
+      <url>/2021/09/25/shi-zhan-xiang-mu-sao-lei/</url>
+      
+        <content type="html"><![CDATA[<p><strong>本篇集中记录一下我在刷题过程中常用的一些小技巧</strong></p><span id="more"></span><h1 id="C语言初阶的题目"><a href="#C语言初阶的题目" class="headerlink" title="C语言初阶的题目"></a>C语言初阶的题目</h1><h2 id="函数操作静态数组"><a href="#函数操作静态数组" class="headerlink" title="函数操作静态数组"></a>函数操作静态数组</h2><p>1.设置<code>sz</code>变量提前计算数组元素个数传参，<code>sz = sizeof(arr) / sizeof(arr[0]);</code></p><p>2.传递数组名用指针变量接收来并配合<code>sz</code>操控数组具体元素</p><h2 id="从两端同时操控数组元素"><a href="#从两端同时操控数组元素" class="headerlink" title="从两端同时操控数组元素"></a>从两端同时操控数组元素</h2><p>1.设置<code>left</code>和<code>right</code>变量，操作一次后，<code>left++</code> <code>right--</code>操控数组两端元素</p><p>2.适用于字符串逆序等</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 【实战项目】 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 操作符 </tag>
+            
+            <tag> 刷题 </tag>
+            
+            <tag> 小技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日刷题】刷题中常用的小技巧</title>
+      <link href="/2021/09/25/mei-ri-shua-ti-shua-ti-zhong-chang-yong-de-xiao-ji-qiao/"/>
+      <url>/2021/09/25/mei-ri-shua-ti-shua-ti-zhong-chang-yong-de-xiao-ji-qiao/</url>
+      
+        <content type="html"><![CDATA[<p><strong>本篇集中记录一下我在刷题过程中常用的一些小技巧</strong></p><span id="more"></span><h1 id="C语言初阶的题目"><a href="#C语言初阶的题目" class="headerlink" title="C语言初阶的题目"></a>C语言初阶的题目</h1><h2 id="函数操作静态数组"><a href="#函数操作静态数组" class="headerlink" title="函数操作静态数组"></a>函数操作静态数组</h2><p>1.设置<code>sz</code>变量提前计算数组元素个数传参，<code>sz = sizeof(arr) / sizeof(arr[0]);</code></p><p>2.传递数组名用指针变量接收来并配合<code>sz</code>操控数组具体元素</p><h2 id="从两端同时操控数组元素"><a href="#从两端同时操控数组元素" class="headerlink" title="从两端同时操控数组元素"></a>从两端同时操控数组元素</h2><p>1.设置<code>left</code>和<code>right</code>变量，操作一次后，<code>left++</code> <code>right--</code>操控数组两端元素</p><p>2.适用于字符串逆序等</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 【每日刷题】 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 操作符 </tag>
+            
+            <tag> 刷题 </tag>
+            
+            <tag> 小技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日刷题】C语言操作符</title>
+      <link href="/2021/09/25/mei-ri-shua-ti-c-yu-yan-cao-zuo-fu/"/>
+      <url>/2021/09/25/mei-ri-shua-ti-c-yu-yan-cao-zuo-fu/</url>
+      
+        <content type="html"><![CDATA[<p><strong>2021/9/25 共5题</strong></p><span id="more"></span><h1 id="题一"><a href="#题一" class="headerlink" title="题一"></a>题一</h1><p>题目：不使用第三个变量交换两个<code>int</code>变量的值，即 a = 3 , b = 5 , 交换后 a = 5 , b = 5</p><p>读题：不使用第三个变量意味着不能直接使用中间变量赋值的方法，所以得依靠算法解决</p><p>解法一：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>    a <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>    b <span class="token operator">=</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>    a <span class="token operator">=</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %d, b = %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>解法一的缺陷：整型变量有上限，如果a和b的值加起来超出了整型变量的最大值，就会导致程序BUG</p><p>解法二：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>    a <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>    b <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>    a <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %d, b = %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>原理讲解：</p><p>1.异或过程中始终没有产生进位，所以杜绝了整型溢出的可能</p><p>2.把<code>a^b</code>这个值看成一个密码，用这个密码异或<code>b</code>就能翻译出<code>a</code>，用这个密码异或<code>a</code>就能翻译出<code>b</code>,其实就是因为</p><p>异或是同假异真，</p><p>所以 a ^ a = 0 , a ^ 0 = a</p><p>所以 a ^ ( a ^ b ) = a ^ a ^ b = 0 ^ b = b</p><h1 id="题二"><a href="#题二" class="headerlink" title="题二"></a>题二</h1><p>题目：求一个整数在内存中的二进制序列中1的个数</p><p>读题：整数在内存中的二进制序列就是补码</p><p>解法：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入a的值："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">31</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        num <span class="token operator">+</span><span class="token operator">=</span> a <span class="token operator">&amp;</span> b<span class="token punctuation">;</span>        a <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a的二进制序列中共有%d个1"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://i.loli.net/2021/09/23/ixRqloDSkzGdOyf.png" alt="image.png"></p><p>原理讲解：</p><p>任何数与1相与都可以得到第一位的1/0</p><p>不断右移这个数并将每次的结果累加即可</p><h1 id="题三"><a href="#题三" class="headerlink" title="题三"></a>题三</h1><p>题目：任意操作一个数的二进制序列中的某位数字，让这一位的1变0，0变1</p><p>读题：操作二进制位，考虑位操作符和移位操作符</p><p>解法：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入a的值："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入要改变的位数："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        b <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"变化后的a为：%d "</span><span class="token punctuation">,</span> a <span class="token operator">^</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://i.loli.net/2021/09/23/jlizTDoQL2yqcn5.png" alt="image.png"></p><p>原理讲解：</p><p>0异或1/0能保持，1异或1/0能翻转</p><h1 id="题四"><a href="#题四" class="headerlink" title="题四"></a>题四</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 【每日刷题】 </category>
           
       </categories>
       
