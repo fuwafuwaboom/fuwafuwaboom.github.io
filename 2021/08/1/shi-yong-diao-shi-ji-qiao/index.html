@@ -23,22 +23,22 @@
   <meta name="description" content="不夸张的说，好的程序，40%是写出来的，60%是调出来的。我们必须要不断的锻炼自己写bug、调bug、改bug的能力。本文着重介绍实用的调试技巧，望各位笑纳">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用调试技巧">
-<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/06/30/shi-yong-diao-shi-ji-qiao/index.html">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/08/1/shi-yong-diao-shi-ji-qiao/index.html">
 <meta property="og:site_name" content="小葉的博客">
 <meta property="og:description" content="不夸张的说，好的程序，40%是写出来的，60%是调出来的。我们必须要不断的锻炼自己写bug、调bug、改bug的能力。本文着重介绍实用的调试技巧，望各位笑纳">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/09/28/hBXJwg2nrTAo93z.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/28/z43YQchLqMFfb7V.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/28/RwW5Ty2aXeBSdDV.png">
-<meta property="article:published_time" content="2021-06-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-28T15:25:01.824Z">
+<meta property="article:published_time" content="2021-07-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-28T15:40:01.461Z">
 <meta property="article:author" content="小葉">
 <meta property="article:tag" content="小技巧">
 <meta property="article:tag" content="编程素质">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/09/28/hBXJwg2nrTAo93z.png">
 
-<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/06/30/shi-yong-diao-shi-ji-qiao/">
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/08/1/shi-yong-diao-shi-ji-qiao/">
 
 
 <script id="page-configurations">
@@ -103,9 +103,9 @@ html ul > hanla {
 }
 </style><!-- hexo injector head_end end -->
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="小葉的博客" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="小葉的博客" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -194,7 +194,7 @@ html ul > hanla {
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/06/30/shi-yong-diao-shi-ji-qiao/">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/08/1/shi-yong-diao-shi-ji-qiao/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -218,14 +218,14 @@ html ul > hanla {
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-06-30 00:00:00" itemprop="dateCreated datePublished" datetime="2021-06-30T00:00:00+08:00"><hanla></hanla>2021-06-30</time>
+              <time title="创建时间：2021-08-01 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-01T00:00:00+08:00"><hanla></hanla>2021-08-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2021-09-28 23:25:01" itemprop="dateModified" datetime="2021-09-28T23:25:01+08:00"><hanla></hanla>2021-09-28</time>
+                <time title="修改时间：2021-09-28 23:40:01" itemprop="dateModified" datetime="2021-09-28T23:40:01+08:00"><hanla></hanla>2021-09-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -347,12 +347,12 @@ html ul > hanla {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/26/shi-zhan-xiang-mu-sao-lei/" rel="prev" title="【实战项目】扫雷">
-      <i class="fa fa-chevron-left"></i> 【实战项目】扫雷
+    <a href="/2021/07/21/mei-ri-shua-ti-c-yu-yan-cao-zuo-fu/" rel="prev" title="【每日刷题】C语言操作符">
+      <i class="fa fa-chevron-left"></i><hanla></hanla> 【每日刷题】C<hanla></hanla>语言操作符
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/07/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-xiang-jie-zhi-zhen/" rel="next" title="【C语言从青铜到王者】第五篇·详解指针"><hanla></hanla>
-      【C<hanla></hanla>语言从青铜到王者】第五篇·详解指针 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/08/23/ru-he-xie-chu-piao-liang-de-yuan-ma/" rel="next" title="如何写出漂亮的“源码”"><hanla></hanla>
+      如何写出漂亮的<hanla></hanla>“源码” <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
