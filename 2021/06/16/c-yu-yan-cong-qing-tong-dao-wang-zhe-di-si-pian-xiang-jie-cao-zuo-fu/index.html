@@ -1,0 +1,1114 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fuwafuwaboom.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇前言 在本系列开篇文章中，我们已经大体讲解了常见操作符，此篇就他们各自的功能和用法作更深入更详细的介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【C语言从青铜到王者】第四篇·详解操作符与相关运算">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/06/16/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/index.html">
+<meta property="og:site_name" content="小葉的博客">
+<meta property="og:description" content="本篇前言 在本系列开篇文章中，我们已经大体讲解了常见操作符，此篇就他们各自的功能和用法作更深入更详细的介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/23/x94DQ5LEfSXN1pa.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/23/MbxiI9wt18dgKoD.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/23/UbW795CNdDtawMG.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/23/vMwdhYntflmRboD.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/23/ceoPBmQNuKRfzEq.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/23/GEs5icOuXkPUd14.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/CuSxwWL9lkjFtr6.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/nUZiym2GHwIbaL9.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/4XbflDeZ3Tp5jSu.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/DmKkH6aGNRdPV2C.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/sZV5JgGLXWmNfCM.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/bkUHvA8sa1EWlFC.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/4x2qgYH3N7tVk91.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/bAZIYjh5rNemocv.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/eO1y5AFXimlbdGI.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/c62K9ds3gXtlMuB.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/mlOnCLKvitpJFh2.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/25/gTnz8Be6Y1v3tHP.png">
+<meta property="article:published_time" content="2021-06-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-28T15:22:04.313Z">
+<meta property="article:author" content="小葉">
+<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="操作符">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/23/x94DQ5LEfSXN1pa.png">
+
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/06/16/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【C语言从青铜到王者】第四篇·详解操作符与相关运算 | 小葉的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start --><style>
+.body hanla:after {
+    content: ' ';
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
+}
+
+html code hanla,
+html pre hanla,
+html kbd hanla,
+html samp hanla {
+    display: none;
+}
+
+html ol > hanla,
+html ul > hanla {
+    display: none;
+}
+</style><!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="小葉的博客" type="application/atom+xml">
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">小葉的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/06/16/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="小葉">
+      <meta itemprop="description" content="耐得住寂寞，守得住繁华">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小葉的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline"><hanla></hanla>
+          【C<hanla></hanla>语言从青铜到王者】第四篇·详解操作符与相关运算
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-16 00:00:00" itemprop="dateCreated datePublished" datetime="2021-06-16T00:00:00+08:00"><hanla></hanla>2021-06-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text"><hanla></hanla>更新于</span>
+                <time title="修改时间：2021-09-28 23:22:04" itemprop="dateModified" datetime="2021-09-28T23:22:04+08:00"><hanla></hanla>2021-09-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text"><hanla></hanla>分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E4%BB%8E%E9%9D%92%E9%93%9C%E5%88%B0%E7%8E%8B%E8%80%85%E3%80%91/" itemprop="url" rel="index"><span itemprop="name"><hanla></hanla>【C<hanla></hanla>语言从青铜到王者】</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>本篇前言</strong></p>
+<p>在本系列开篇文章中，我们已经大体讲解了常见操作符，此篇就他们各自的功能和用法作更深入更详细的介绍</p>
+<span id="more"></span>
+
+<h1 id="各种操作符的介绍"><a href="#各种操作符的介绍" class="headerlink" title="各种操作符的介绍"></a>各种操作符的介绍</h1><h2 id="算数操作符"><a href="#算数操作符" class="headerlink" title="算数操作符"></a>算数操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th align="left">表达式</th>
+<th><hanla></hanla>结果<hanla></hanla>(a=6,b=5)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加</td>
+<td align="left">a+b</td>
+<td>11</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+<td align="left">a-b</td>
+<td>1</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td align="left">a*b</td>
+<td>30</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+<td align="left">a/b</td>
+<td>1</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取模</td>
+<td align="left">a%b</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p><strong>要点一：除号操作符的结果是否取整问题</strong></p>
+<p>看下面这段程序</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>结果是</p>
+<p><img src="https://i.loli.net/2021/09/23/x94DQ5LEfSXN1pa.png" alt="image.png"></p>
+<p><hanla></hanla>如果把<hanla></hanla>a<hanla></hanla>的数据类型改成浮点数</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %f\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>结果是</p>
+<p><img src="https://i.loli.net/2021/09/23/MbxiI9wt18dgKoD.png" alt="image.png"></p>
+<p>这是为什么呢？</p>
+<p>因为<code><hanla></hanla>6/5</code><hanla></hanla>这个表达式的结果本来就是<hanla></hanla>1，把<hanla></hanla>1<hanla></hanla>放入什么类型的变量中结果都是<hanla></hanla>1</p>
+<p>那如果想真的想得到小数应该怎么办呢？</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">6.0</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %f\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/23/UbW795CNdDtawMG.png" alt="image.png"></p>
+<p>我们发现：<strong>只要除号的两端至少有一个数字是浮点数，执行的结果就是浮点数</strong></p>
+<p><hanla></hanla>如果仔细看会发现编译器会警告，原因是直接写出的小数，编译器默认是<hanla></hanla>double<hanla></hanla>类型的，double<hanla></hanla>是双精度浮点数，精度比<hanla></hanla>float<hanla></hanla>高，如果这样赋值可能会丢失精度，所以我们最好用<hanla></hanla>double<hanla></hanla>类型接收。所以要不然就用<hanla></hanla>float<hanla></hanla>类型的数字写表达式，要不然就用<hanla></hanla>double<hanla></hanla>变量接收。</p>
+<p>以下两种写法都是可以的：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">6.0f</span> <span class="token operator">/</span> <span class="token number">5.0f</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %f\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">double</span> a <span class="token operator">=</span> <span class="token number">6.0</span> <span class="token operator">/</span> <span class="token number">5.0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %lf\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>要点二：取模操作符的操作数必须为整数</strong></p>
+<p>只有整数相除有余数</p>
+<p>如果用小数取模就会报错：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">double</span> a <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">%</span> <span class="token number">5.0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %lf\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/23/vMwdhYntflmRboD.png" alt="image.png"></p>
+<h2 id="移位操作符"><a href="#移位操作符" class="headerlink" title="移位操作符"></a>移位操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;&lt;</td>
+<td>左移操作符</td>
+<td>a &lt;&lt; 1</td>
+<td><hanla></hanla>把<hanla></hanla>a<hanla></hanla>的二进制位向左移动一位</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移操作符</td>
+<td>a &gt;&gt; 1</td>
+<td><hanla></hanla>把<hanla></hanla>a<hanla></hanla>的二进制位向右移动一位</td>
+</tr>
+</tbody></table>
+<p><strong><hanla></hanla>左移：左边丢弃，右边补<hanla></hanla>0</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> a <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"b = %d\n"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/23/ceoPBmQNuKRfzEq.png" alt="image.png"></p>
+<p><hanla></hanla>a<hanla></hanla>是<code><hanla></hanla>int</code><hanla></hanla>型，储存<hanla></hanla>4<hanla></hanla>字节<hanla></hanla>32<hanla></hanla>位有符号二进制数：</p>
+<p>00000000 00000000 00000000 00000010</p>
+<p><hanla></hanla>把<hanla></hanla>a<hanla></hanla>的二进制位向左移动一位，<strong><hanla></hanla>空位补<hanla></hanla>0</strong></p>
+<p>00000000 00000000 00000000 00000100</p>
+<p><hanla></hanla>得到的二进制输的十进制值为<hanla></hanla>4</p>
+<p><strong>右移</strong>：</p>
+<p><strong>算数右移：右边丢弃，左边补原符号位</strong></p>
+<p><strong><hanla></hanla>逻辑右移：右边丢弃，左边补<hanla></hanla>0</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> a <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"b = %d\n"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>a：</p>
+<p>00000000 00000000 00000000 00001010</p>
+<p>右移后（两种右移结果一致）：</p>
+<p>00000000 00000000 00000000 00000101</p>
+<p><hanla></hanla>结果为<hanla></hanla>5</p>
+<p><strong>要点一：整数在内存中的存储形式</strong></p>
+<table>
+<thead>
+<tr>
+<th>码制</th>
+<th>正整数</th>
+<th>负整数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原码</td>
+<td>根据十进制值写出的二进制序列</td>
+<td><hanla></hanla>二进制序列首位为符号位<hanla></hanla>1</td>
+</tr>
+<tr>
+<td>反码</td>
+<td>等于原码</td>
+<td>原码符号位不变，其他位按位取反</td>
+</tr>
+<tr>
+<td>补码</td>
+<td>等于原码</td>
+<td><hanla></hanla>反码<hanla></hanla>+1</td>
+</tr>
+</tbody></table>
+<p><strong><hanla></hanla>整数在内存中存放的是二进制的补码,<hanla></hanla>各种操作二进制序列的操作符操作的也是补码</strong></p>
+<p><strong>整数最终被打印出来的是二进制的原码转换成十进制的值</strong></p>
+<p><hanla></hanla>下面把<hanla></hanla>a<hanla></hanla>改成<code>-1</code><hanla></hanla>测试一下我的编译器是什么右移</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> a <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"b = %d\n"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>推理：</p>
+<p><hanla></hanla>对于-1<hanla></hanla>来说：</p>
+<p>原码 10000000 00000000 00000000 00000001</p>
+<p>反码 11111111 11111111 11111111 11111110</p>
+<p>补码 11111111 11111111 11111111 11111111</p>
+<p><hanla></hanla>假设为算数右移，补符号位<hanla></hanla>1，右移一位结果为：</p>
+<p>补码 11111111 11111111 11111111 11111111</p>
+<p>反码 11111111 11111111 11111111 11111110</p>
+<p>原码 10000000 00000000 00000000 00000001</p>
+<p>结果应当仍未-1</p>
+<p><img src="https://i.loli.net/2021/09/23/GEs5icOuXkPUd14.png" alt="image.png"></p>
+<p>测试结果为我的编译器为算术右移</p>
+<p><strong>要点二：移位操作符不会改变被操作变量本身的值</strong></p>
+<p>也就是说 <code>a &gt;&gt; 1</code> 并不会改变 <code>a</code> 的值</p>
+<p><strong>要点三：移位的数字要为正整数</strong></p>
+<p>移位的数字表示移动的位数，当然得是正整数</p>
+<h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>含义</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>按位与</td>
+<td>对应二进制位相与</td>
+<td>有假为假 同真为真</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或</td>
+<td>对应二进制位相或</td>
+<td>有真为真 同假为假</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或</td>
+<td>对应二进制位相异或</td>
+<td>相同为假 相异为真</td>
+</tr>
+</tbody></table>
+<h2 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>=</td>
+<td>直接赋值符</td>
+<td>把 = 右边的值赋给右边的变量</td>
+</tr>
+<tr>
+<td>+=、-=、*=、&lt;&lt;=、…</td>
+<td>复合赋值符</td>
+<td><hanla></hanla>a += b 就是 a = a + b ,<hanla></hanla>以此类推</td>
+</tr>
+</tbody></table>
+<h2 id="单目操作符"><a href="#单目操作符" class="headerlink" title="单目操作符"></a>单目操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>！</td>
+<td>逻辑反操作</td>
+<td>假→真，真→假</td>
+</tr>
+<tr>
+<td>-</td>
+<td>负号操作符</td>
+<td>符号位取反</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>取地址操作符</td>
+<td>取出变量地址</td>
+</tr>
+<tr>
+<td><code>sizeof</code></td>
+<td>类型长度</td>
+<td>以字节为单位计算类型长度</td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位取反</td>
+<td>对一个数的内存二进制序列按位取反</td>
+</tr>
+<tr>
+<td>–</td>
+<td>前置–，后置–</td>
+<td><hanla></hanla>自减<hanla></hanla>1</td>
+</tr>
+<tr>
+<td>++</td>
+<td><hanla></hanla>前置<hanla></hanla>++，后置<hanla></hanla>++</td>
+<td><hanla></hanla>自加<hanla></hanla>1</td>
+</tr>
+<tr>
+<td>*</td>
+<td>解引用操作符</td>
+<td>通过地址找到变量所在的内存</td>
+</tr>
+<tr>
+<td>( 数据类型 )</td>
+<td>强制类型转换</td>
+<td>把某个变量强制转换成括号内的类型</td>
+</tr>
+</tbody></table>
+<p><strong>要点一：单目操作符就是只有一个操作数的操作符</strong></p>
+<p><strong>要点二：详解<code><hanla></hanla>sizeof</code></strong></p>
+<p><code>sizeof</code><hanla></hanla>操作符可以丈量变量所占空间的大小，单位是字节，结果是无符号整数，严格来说要用<code><hanla></hanla>%u</code><hanla></hanla>打印，也可以用<code><hanla></hanla>%d</code><hanla></hanla>打印</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"><hanla></hanla>//<hanla></hanla>证明<hanla></hanla>sizeof<hanla></hanla>是一个操作符，而不是函数</span>
+    <span class="token function"><hanla></hanla>printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"><hanla></hanla>//sizeof<hanla></hanla>也可以计算数组大小</span>
+    <span class="token function"><hanla></hanla>printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"><hanla></hanla>//<hanla></hanla>去掉数组名<hanla></hanla>arr<hanla></hanla>的东西是数组类型</span>
+    <span class="token keyword"><hanla></hanla>return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/CuSxwWL9lkjFtr6.png" alt="image.png"></p>
+<p><strong>要点三：<code>sizeof</code><hanla></hanla>内部的表达式不参与运算</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">short</span> s <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>s <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/nUZiym2GHwIbaL9.png" alt="image.png"></p>
+<p>为什么<code><hanla></hanla>s = a + 2</code> 没有参与运算呢？</p>
+<p>因为<code><hanla></hanla>sizeof（）</code>在编译期间就完成计算了，而<code><hanla></hanla>s = a + 2</code><hanla></hanla>这句话如果要执行也得到运行期间执行</p>
+<p><img src="https://i.loli.net/2021/09/24/4XbflDeZ3Tp5jSu.png" alt="image.png"></p>
+<p><strong>要点四：数组传参时<code><hanla></hanla>sizeof</code><hanla></hanla>数组名的含义</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">test</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/DmKkH6aGNRdPV2C.png" alt="image.png"></p>
+<p>我在之前讲数组的文章中说过，数组名除了两个特殊情况下表示的是整个数组，其余情况下都是数组首元素的地址。所以当我们把数组名作为参数传递给函数时，本质上是传递了数组首元素的地址，函数用指针类型的形式参数接收，所以<code><hanla></hanla>sizeof</code><hanla></hanla>这个形式参数得到的是指针变量的大小，32<hanla></hanla>位平台的结果是<hanla></hanla>4，64<hanla></hanla>位平台的结果是<hanla></hanla>8</p>
+<p><strong>要点五：<code>~</code>按位取反操作的是补码</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token operator">~</span>a<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/sZV5JgGLXWmNfCM.png" alt="image.png"></p>
+<p><hanla></hanla>-1<hanla></hanla>补码：</p>
+<p>11111111 11111111 11111111 11111111</p>
+<p>按位取反：</p>
+<p>00000000 00000000 00000000 00000000</p>
+<p>取反后原码：</p>
+<p>00000000 00000000 00000000 00000000</p>
+<p><hanla></hanla>结果是<hanla></hanla>0</p>
+<p><strong><hanla></hanla>要点六：前置<hanla></hanla>++<hanla></hanla>与后置<hanla></hanla>++<hanla></hanla>的区别（–同理）</strong></p>
+<p><hanla></hanla>后置<hanla></hanla>++：先使用，后<hanla></hanla>++</p>
+<p><hanla></hanla>前置<hanla></hanla>++：先<hanla></hanla>++，后使用</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> a<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>a<hanla></hanla>先使用（赋值给<hanla></hanla>b），再<hanla></hanla>++：</p>
+<p><img src="https://i.loli.net/2021/09/24/bkUHvA8sa1EWlFC.png" alt="image.png"></p>
+<p><strong>要点七：取地址操作符与解引用操作符</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%p\n"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>pa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>地址以<hanla></hanla>32<hanla></hanla>位<hanla></hanla>/64<hanla></hanla>位的二进制序列来标定内存空间，但是是以<hanla></hanla>16<hanla></hanla>进制的数字展示给编码者，所以用<code><hanla></hanla>%p</code><hanla></hanla>接收</p>
+<p><img src="https://i.loli.net/2021/09/24/4x2qgYH3N7tVk91.png" alt="image.png"></p>
+<p><strong>要点八：强制类型转换</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token number">3.14</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>除了这个例子，之前在生成随机数的时候调用<strong>系统时间钟</strong>也用到了强制类型转换</p>
+<h2 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td><hanla></hanla>判断左操作数是否大于右操作数                是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td><hanla></hanla>判断左操作数是否大于等于右操作数        是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td><hanla></hanla>判断左操作数是否小于右操作数                是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td><hanla></hanla>判断左操作数是否小于等于右操作数        是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>==</td>
+<td><hanla></hanla>判断左操作数是否等于右操作数                是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+<tr>
+<td>!=</td>
+<td><hanla></hanla>判断左操作数是否不等于于右操作数        是结果为<hanla></hanla>1 否结果为<hanla></hanla>0</td>
+</tr>
+</tbody></table>
+<h2 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>逻辑与</td>
+<td>一假则假 全真才真</td>
+</tr>
+<tr>
+<td>||</td>
+<td>逻辑或</td>
+<td>一真为真 全假才假</td>
+</tr>
+</tbody></table>
+<p><strong><hanla></hanla>要点一：&amp;&amp;<hanla></hanla>操作符只要遇到<hanla></hanla>0<hanla></hanla>就会停止运算 结果为<hanla></hanla>0</strong></p>
+<p><strong><hanla></hanla>要点二：||操作符只要遇到<hanla></hanla>1<hanla></hanla>就会停止运算 结果为<hanla></hanla>1</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    i <span class="token operator">=</span> a<span class="token operator">++</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">++</span>b <span class="token operator">&amp;&amp;</span> d<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %d\nb = %d\nc = %d\nd = %d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/bAZIYjh5rNemocv.png" alt="image.png"></p>
+<p><hanla></hanla>a<hanla></hanla>为<hanla></hanla>0，<code>i</code><hanla></hanla>必为<hanla></hanla>0，后面的<code><hanla></hanla>++b</code><hanla></hanla>和<code><hanla></hanla>d++</code><hanla></hanla>不再运算</p>
+<h2 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a ? b : c</td>
+<td><hanla></hanla>a<hanla></hanla>为真结果为<hanla></hanla>b,a<hanla></hanla>为假结果为<hanla></hanla>c</td>
+</tr>
+</tbody></table>
+<p><hanla></hanla>条件操作符又叫三目操作符,<hanla></hanla>看下面的<hanla></hanla>“比大小”<hanla></hanla>算法对其的巧妙运用</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入三个数：\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">,</span> <span class="token operator">&amp;</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"三个数中最大数为：%d\n"</span><span class="token punctuation">,</span> a <span class="token operator">&gt;</span> b <span class="token operator">?</span> <span class="token punctuation">(</span>a <span class="token operator">&gt;</span> c <span class="token operator">?</span> a <span class="token punctuation">:</span> c<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>b <span class="token operator">&gt;</span> c <span class="token operator">?</span> b <span class="token punctuation">:</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"三个数中最小数为：%d\n"</span><span class="token punctuation">,</span> a <span class="token operator">&lt;</span> b <span class="token operator">?</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;</span> c <span class="token operator">?</span> a <span class="token punctuation">:</span> c<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>b <span class="token operator">&lt;</span> c <span class="token operator">?</span> b <span class="token punctuation">:</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/eO1y5AFXimlbdGI.png" alt="image.png"></p>
+<h2 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>计算方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>，</td>
+<td>用<code>,</code><hanla></hanla>隔开的一串表达式</td>
+<td>从左向右依次计算每一个表达式，整个表达式的结果是最后一个表达式的值</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> d <span class="token operator">=</span> <span class="token punctuation">(</span>c <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> a <span class="token operator">=</span> a <span class="token operator">+</span> c<span class="token punctuation">,</span> b <span class="token operator">=</span> a <span class="token operator">*</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> c <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/c62K9ds3gXtlMuB.png" alt="image.png"></p>
+<h2 id="下标引用、函数调用、访问结构体成员"><a href="#下标引用、函数调用、访问结构体成员" class="headerlink" title="下标引用、函数调用、访问结构体成员"></a>下标引用、函数调用、访问结构体成员</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><hanla></hanla>数组名<hanla></hanla>[数组元素下标]</td>
+<td>下标引用操作符</td>
+<td>访问数组元素</td>
+</tr>
+<tr>
+<td>函数名（实际参数）</td>
+<td>函数调用操作符</td>
+<td>调用函数</td>
+</tr>
+<tr>
+<td>结构体名<code>.</code><hanla></hanla>结构体成员</td>
+<td>访问结构体成员操作符</td>
+<td>访问结构体成员</td>
+</tr>
+<tr>
+<td>结构体指针<code>-&gt;</code><hanla></hanla>结构体成员</td>
+<td>访问结构体成员操作符</td>
+<td>访问结构体成员</td>
+</tr>
+</tbody></table>
+<h1 id="优先性与结合性"><a href="#优先性与结合性" class="headerlink" title="优先性与结合性"></a>优先性与结合性</h1><p><strong>优先性</strong></p>
+<p>不同操作符在同一表达式中，按照优先级顺序进行计算</p>
+<p><strong>结合性</strong></p>
+<p>同一优先级的操作符在同一表达式中，按照结合性顺序进行计算</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunshihua12829/article/details/47912123"><hanla></hanla>C<hanla></hanla>语言操作符优先级表格</a></p>
+<h1 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h1><p><hanla></hanla>学会了各种操作符的用法后，我们仍需知道；两个重要的<hanla></hanla>“潜规则”</p>
+<h2 id="整型提升与截断"><a href="#整型提升与截断" class="headerlink" title="整型提升与截断"></a>整型提升与截断</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword"><hanla></hanla>short</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">;</span>
+    a <span class="token operator">=</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><hanla></hanla>b<hanla></hanla>和<hanla></hanla>c<hanla></hanla>的类型不到一个普通整型的大小（4<hanla></hanla>字节），所以<code><hanla></hanla>b + c</code><hanla></hanla>这个式子在运算时会先将<hanla></hanla>b<hanla></hanla>和<hanla></hanla>c<hanla></hanla>的值<strong>提升为普通整型</strong><hanla></hanla>，然后再进行加法运算。b<hanla></hanla>和<hanla></hanla>c<hanla></hanla>进行提升后相加结果是<hanla></hanla>4<hanla></hanla>字节<code><hanla></hanla>int</code><hanla></hanla>类型，存入<code><hanla></hanla>short</code><hanla></hanla>类型的<code><hanla></hanla>a</code><hanla></hanla>中会<hanla></hanla>“放不下”，所以会发生<strong>截断现象</strong></p>
+<p><strong>精度不到整型的变量参与运算都会发生整型提升</strong></p>
+<p><strong><hanla></hanla>整型提升就是按照变量的符号位补相应的数，无符号类型统一补<hanla></hanla>0</strong></p>
+<p>看下面的代码：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> b <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/24/mlOnCLKvitpJFh2.png" alt="image.png"></p>
+<p><hanla></hanla>a<hanla></hanla>的二进制位：</p>
+<p>00000011</p>
+<p><hanla></hanla>b<hanla></hanla>的二进制位：</p>
+<p>01111111</p>
+<p><code>a + b</code><hanla></hanla>发生整型提升</p>
+<p><hanla></hanla>a<hanla></hanla>提升后的二进制位：</p>
+<p>00000000 00000000 00000000 00000011</p>
+<p><hanla></hanla>b<hanla></hanla>提升后的二进制位：</p>
+<p>00000000 00000000 00000000 01111111</p>
+<p>a+b：</p>
+<p>00000000 00000000 00000000 10000010</p>
+<p>然后存入<code><hanla></hanla>char</code><hanla></hanla>类型的<hanla></hanla>c<hanla></hanla>中，直接截断至<hanla></hanla>8bit<hanla></hanla>位：</p>
+<p>c:</p>
+<p>10000010</p>
+<p><hanla></hanla>然后打印的时候是用<hanla></hanla>%d<hanla></hanla>类型接收的，所以<hanla></hanla>c<hanla></hanla>也要整型提升</p>
+<p><hanla></hanla>提升后<hanla></hanla>c：</p>
+<p>11111111 11111111 11111111 10000010</p>
+<p><hanla></hanla>上面为<hanla></hanla>c<hanla></hanla>补码，则<hanla></hanla>c<hanla></hanla>反码：</p>
+<p>11111111 11111111 11111111 10000001</p>
+<p><hanla></hanla>c<hanla></hanla>原码：</p>
+<p>10000000 00000000 00000000 01111110</p>
+<p><hanla></hanla>则<hanla></hanla>c<hanla></hanla>的值为<code>-126</code></p>
+<blockquote>
+<p><strong>为什么会发生整型提升呢？</strong></p>
+<p><hanla></hanla>表达式的整型运算要在<hanla></hanla>CPU<hanla></hanla>的相应运算器件内执行，CPU<hanla></hanla>内整型运算器<hanla></hanla>(ALU)<hanla></hanla>的操作数的字节长度一般就是<code><hanla></hanla>int</code><hanla></hanla>的字节长度，同时也是<hanla></hanla>CPU<hanla></hanla>的通用寄存器的长度。<br><hanla></hanla>因此，即使两个<hanla></hanla>char<hanla></hanla>类型的相加，在<hanla></hanla>CPU<hanla></hanla>执行时实际上也要先转换为<hanla></hanla>CPU<hanla></hanla>内整型操作数的标准长度。<br><hanla></hanla>通用<hanla></hanla>CPU ( general-purpose CPU )<hanla></hanla>是难以直接实现两个<hanla></hanla>8<hanla></hanla>比特字节直接相加运算（虽然机器指令中可能有这种字节相加指令）。所以，表达式中各种长度可能小于<code><hanla></hanla>int</code><hanla></hanla>长度的整型值，都必须先转换为<code><hanla></hanla>int</code><hanla></hanla>或<code><hanla></hanla>unsigned int</code><hanla></hanla>，然后才能送入<hanla></hanla>CPU<hanla></hanla>去执行运算。</p>
+</blockquote>
+<h2 id="算数转换"><a href="#算数转换" class="headerlink" title="算数转换"></a>算数转换</h2><p>如果同时参与运算的两个或以上个操作数的类型不同，首先得按照下面的顺序进行转换后再执行运算：</p>
+<p><code>int</code> → <code>unsigned int</code> → <code>long int</code> → <code>unsigned long int</code> → <code>float</code> → <code>double</code> → <code>long double</code></p>
+<p>其实就是向精度更高的类型去转换</p>
+<h1 id="问题表达式"><a href="#问题表达式" class="headerlink" title="问题表达式"></a>问题表达式</h1><p><hanla></hanla>值得注意的是，就算我们已经掌握透彻操作符的使用场景、注意事项、优先性与结合性、隐式类型转换，但是仍然会有一些问题表达式的存在，它们的出现是<hanla></hanla>C<hanla></hanla>语言这个语言和编译语言的编译器的固有缺陷。不同的编译器的汇编语言中，执行语句的顺序有差别，这个差别导致了部分代码的移植性极差，也就是问题表达式的<hanla></hanla>“问题”<hanla></hanla>所在。我们在学习一门技术的时候要尊重它的优势，同时也要避免它的劣势，扬长避短，才能成为技术的主人</p>
+<p><strong>问题表达式一：</strong></p>
+<p><code>a*b + c*d + e*f</code></p>
+<p>三个乘法式子的优先级无法准确判断，不同编译器下的结果不同，所以这个式子是问题表达式</p>
+<p><strong>问题表达式二：</strong></p>
+<p><code>c + --c</code></p>
+<p>查表可知，<code>--</code>比<code><hanla></hanla>+</code><hanla></hanla>的优先级高，所以应该先算<code>--c</code>，后算<code><hanla></hanla>c + --c</code>，但是我们无法知道<code><hanla></hanla>+</code><hanla></hanla>左边的<code><hanla></hanla>c</code><hanla></hanla>是再<code>--c</code><hanla></hanla>之前准备好的，还是之后准备好的</p>
+<p><hanla></hanla>c=2<hanla></hanla>的情况下，之前准备好的结果是<hanla></hanla>3，之后准备好的结果是<hanla></hanla>2，不同编译器下结果不同，此式为问题表达式</p>
+<p><strong>问题表达式三：</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token operator">++</span>count<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    a <span class="token operator">=</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/25/gTnz8Be6Y1v3tHP.png" alt="image.png"></p>
+<p><hanla></hanla>这个就有很明显的困惑了。三个<hanla></hanla>fun<hanla></hanla>函数不同的执行顺序都会导致不同的结果。如果先算后面的结果就是-2，先算前面的结果就是-10</p>
+<hr>
+<p>至此，文毕。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"><hanla></hanla># C<hanla></hanla>语言</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%AC%A6/" rel="tag"># 操作符</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/7/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/" rel="prev" title="【C语言从青铜到王者】第三篇·详解数组">
+      <i class="fa fa-chevron-left"></i><hanla></hanla> 【C<hanla></hanla>语言从青铜到王者】第三篇·详解数组
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/06/26/shi-zhan-xiang-mu-sao-lei/" rel="next" title="【实战项目】扫雷">
+      【实战项目】扫雷 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">各种操作符的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">算数操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text">移位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text">赋值操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E7%9B%AE%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.5.</span> <span class="nav-text">单目操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.6.</span> <span class="nav-text">关系操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.7.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number"><hanla></hanla>1.8.</span> <span class="nav-text">条件操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number"><hanla></hanla>1.9.</span> <span class="nav-text">逗号表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E6%A0%87%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E3%80%81%E8%AE%BF%E9%97%AE%E7%BB%93%E6%9E%84%E4%BD%93%E6%88%90%E5%91%98"><span class="nav-number"><hanla></hanla>1.10.</span> <span class="nav-text">下标引用、函数调用、访问结构体成员</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E6%80%A7%E4%B8%8E%E7%BB%93%E5%90%88%E6%80%A7"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">优先性与结合性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">隐式类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E5%9E%8B%E6%8F%90%E5%8D%87%E4%B8%8E%E6%88%AA%E6%96%AD"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">整型提升与截断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E8%BD%AC%E6%8D%A2"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text">算数转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">问题表达式</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小葉" src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">小葉</p>
+  <div class="site-description" itemprop="description">耐得住寂寞，守得住繁华</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name"><hanla></hanla>日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count"><hanla></hanla>5</span>
+        <span class="site-state-item-name"><hanla></hanla>分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count"><hanla></hanla>17</span>
+        <span class="site-state-item-name"><hanla></hanla>标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><hanla></hanla>小葉</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+</body></html>
