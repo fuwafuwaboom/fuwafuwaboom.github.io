@@ -1,0 +1,768 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fuwafuwaboom.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇前言 指针是C语言的灵魂。精通指针也就基本精通了C语言。本篇博客，希望可以让朋友们对C语言的指针有一些更深的了解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【C语言从青铜到王者】第六篇·玩转C指针">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-wan-zhuan-c-zhi-zhen/index.html">
+<meta property="og:site_name" content="小葉的博客">
+<meta property="og:description" content="本篇前言 指针是C语言的灵魂。精通指针也就基本精通了C语言。本篇博客，希望可以让朋友们对C语言的指针有一些更深的了解">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/9E7F3hQerRL4VXt.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/YCDF1SZKsJqwPMI.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/BbJhjrdcSCDnzNo.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/l4zjPtq5rAhXkvT.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/czZOUKBfJ89bhHm.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/YGzdi76tURgWcDM.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/KAGdrJgRzmI2oEe.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/1XQOcEKkfFVyW5s.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/oEkCGUYP6Qp4MfF.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/HYrlm5aLC1KyNMT.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/sHa1znk7bvuMmLO.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/R91zLjUk8glOHyc.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/MqFK8HUN7nWkcbu.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/2pR8J3O6PfHMDKq.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/28/kpU2JbmZMCIvL8t.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/28/tOnK1MJSmHVzU4I.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/28/vYnIG1ZUcshdKrB.png">
+<meta property="article:published_time" content="2021-06-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-10-02T09:00:49.865Z">
+<meta property="article:author" content="小葉">
+<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="指针">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/27/9E7F3hQerRL4VXt.png">
+
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-wan-zhuan-c-zhi-zhen/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【C语言从青铜到王者】第六篇·玩转C指针 | 小葉的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start --><style>
+.body hanla:after {
+    content: ' ';
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
+}
+
+html code hanla,
+html pre hanla,
+html kbd hanla,
+html samp hanla {
+    display: none;
+}
+
+html ol > hanla,
+html ul > hanla {
+    display: none;
+}
+</style><!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="小葉的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">小葉的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-wan-zhuan-c-zhi-zhen/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="小葉">
+      <meta itemprop="description" content="耐得住寂寞，守得住繁华">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小葉的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline"><hanla></hanla>
+          【C<hanla></hanla>语言从青铜到王者】第六篇·玩转<hanla></hanla>C<hanla></hanla>指针
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-22 00:00:00" itemprop="dateCreated datePublished" datetime="2021-06-22T00:00:00+08:00"><hanla></hanla>2021-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text"><hanla></hanla>更新于</span>
+                <time title="修改时间：2021-10-02 17:00:49" itemprop="dateModified" datetime="2021-10-02T17:00:49+08:00"><hanla></hanla>2021-10-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text"><hanla></hanla>分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E4%BB%8E%E9%9D%92%E9%93%9C%E5%88%B0%E7%8E%8B%E8%80%85%E3%80%91/" itemprop="url" rel="index"><span itemprop="name"><hanla></hanla>【C<hanla></hanla>语言从青铜到王者】</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>本篇前言</strong></p>
+<p><strong><hanla></hanla>指针是<hanla></hanla>C<hanla></hanla>语言的灵魂。</strong><hanla></hanla>精通指针也就基本精通了<hanla></hanla>C<hanla></hanla>语言。本篇博客，希望可以让朋友们对<hanla></hanla>C<hanla></hanla>语言的指针有一些更深的了解</p>
+<span id="more"></span>
+
+<h1 id="指针到底是什么？"><a href="#指针到底是什么？" class="headerlink" title="指针到底是什么？"></a>指针到底是什么？</h1><h2 id="编程的本质是什么？"><a href="#编程的本质是什么？" class="headerlink" title="编程的本质是什么？"></a>编程的本质是什么？</h2><p>我们可以感性的认为编程就是通过代码这种语言在和计算机进行沟通，向计算机描述问题，告诉计算机如何执行解决方案，从而借助计算机强大的运算能力帮助我们解决问题。我们学习编程就是要借助计算机这个强大的工具帮助我们解决现实中的问题。</p>
+<p>所以就衍生出了两个基本问题：</p>
+<p><strong>一：如何向计算机描述一个问题？</strong></p>
+<p><strong>二：如何告诉计算机一个合理的解决方案？</strong></p>
+<p>这两个问题，基本贯穿于我们学习计算机科学的始终。我们学习编程语言、学习计算机组成原理、学习数据结构和算法，学习相应的数学知识、学习建模，都是为了向计算机更好的描述问题，提供给计算机更优的问题解决方案。后来我们学习操作系统和网络，拓宽了计算机本身解决问题的能力，也是为了这两个目的。</p>
+<p>那计算机是如何理解我们描述给它的问题的呢？</p>
+<p>可以说，计算机是通过<strong>数据化处理</strong>来认识这个世界的。万事万物，在计算机眼里都是数据</p>
+<p><hanla></hanla>比如说，有这样一个事实：“有一些苹果，它的单价是<hanla></hanla>2<hanla></hanla>元，现在我想获得<hanla></hanla>3<hanla></hanla>个苹果”</p>
+<p><hanla></hanla>我们把苹果的价格设为一个变量<hanla></hanla>apple_price，我需要支付的钱设为一个变量<hanla></hanla>total_price<hanla></hanla>那代码就可以写成：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> apple_price <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> total_prince <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">*</span> apple_price<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><code>int apple_price = 2;</code><hanla></hanla>这句话用我们的<hanla></hanla>“人话<hanla></hanla>“来说，就是”<hanla></hanla>苹果的单价是<hanla></hanla>2<hanla></hanla>元<hanla></hanla>“，而对于计算机来说，就是”<hanla></hanla>我在内存中开辟了一块<hanla></hanla>4<hanla></hanla>字节大小的空间，这个空间是专门划分给一个叫<hanla></hanla>apple_price<hanla></hanla>的变量的，而现在这块空间中按照整型变量的存放规则放入了十进制数字<hanla></hanla>2“</p>
+<p>用图像来表示就是：</p>
+<p><img src="https://i.loli.net/2021/09/27/9E7F3hQerRL4VXt.png" alt="image.png"></p>
+<h2 id="内存是什么？"><a href="#内存是什么？" class="headerlink" title="内存是什么？"></a>内存是什么？</h2><p><hanla></hanla>所以这就可以回答”<hanla></hanla>内存是什么<hanla></hanla>“的问题了</p>
+<p><hanla></hanla>内存就是一系列储存<hanla></hanla>0<hanla></hanla>或<hanla></hanla>1<hanla></hanla>的”<hanla></hanla>格子<hanla></hanla>“（途中的所有格子都是内存），每<hanla></hanla>8<hanla></hanla>个格子代表一个内存单元（一行格子），每开辟一块空间就是划定一段连续的格子（图中开辟<code><hanla></hanla>int</code><hanla></hanla>型变量的空间就是灰色格子），用来存放新的<hanla></hanla>01<hanla></hanla>序列，这些新的<hanla></hanla>01<hanla></hanla>序列就会根据特定的规则存放数据，比如<code><hanla></hanla>int</code><hanla></hanla>型数据就是需要<hanla></hanla>32<hanla></hanla>个格子，代表<hanla></hanla>32<hanla></hanla>位二进制序列，序列首元素代表符号，1<hanla></hanla>正<hanla></hanla>0<hanla></hanla>负，其余的按照整数二进制规则表示数字</p>
+<p><hanla></hanla>所以，计算机其实能读懂的就是这一连串的<hanla></hanla>01<hanla></hanla>序列，也叫<strong>机器语言</strong><hanla></hanla>，我们今后所写的所有程序，实际上都会被编译器翻译成无数的<hanla></hanla>0<hanla></hanla>和<hanla></hanla>1<hanla></hanla>储存在这些格子中，我们操作变量，修改代码，本质上也就是改变这些<hanla></hanla>0<hanla></hanla>和<hanla></hanla>1<hanla></hanla>的储存位置</p>
+<p><img src="https://i.loli.net/2021/09/27/YCDF1SZKsJqwPMI.png" alt="image.png"></p>
+<p><hanla></hanla>而光是存放还不够，我们是需要继续通过编程操控这些<hanla></hanla>0<hanla></hanla>和<hanla></hanla>1<hanla></hanla>的，所以这些<hanla></hanla>0<hanla></hanla>和<hanla></hanla>1<hanla></hanla>必须整整齐齐的，按照一定顺序的摆放在格子里</p>
+<p>所以继续思考一个问题：内存是如何<strong>有序的</strong><hanla></hanla>存放这一系列的<hanla></hanla>0<hanla></hanla>和<hanla></hanla>1<hanla></hanla>的呢？</p>
+<p>这就引入了<strong>地址</strong>的概念：<strong>每个内存单元的编号就是地址</strong></p>
+<p><img src="https://i.loli.net/2021/09/27/BbJhjrdcSCDnzNo.png" alt="image.png"></p>
+<p><hanla></hanla>我们像上图一样给内存单元编号，第一个内存单元就是<hanla></hanla>1<hanla></hanla>号，第二个就是<hanla></hanla>2<hanla></hanla>号……但是问题是计算机有数以亿亿计的内存单元，而且计算机只认识二进制语言（0<hanla></hanla>或<hanla></hanla>1），所以我们是不能用十进制的数字来编号的</p>
+<p><strong><hanla></hanla>C<hanla></hanla>语言规定：在<hanla></hanla>32<hanla></hanla>位系统上，地址是<hanla></hanla>32<hanla></hanla>位二进制序列，在<hanla></hanla>64<hanla></hanla>位系统上，地址是<hanla></hanla>64<hanla></hanla>位二进制序列</strong></p>
+<p><hanla></hanla>而<hanla></hanla>32<hanla></hanla>个<hanla></hanla>0/1<hanla></hanla>写出来过于繁琐，一般编译器展示给我们的序列都是<hanla></hanla>8<hanla></hanla>位<hanla></hanla>16<hanla></hanla>进制（64<hanla></hanla>位系统就是<hanla></hanla>16<hanla></hanla>位<hanla></hanla>16<hanla></hanla>进制）的序列</p>
+<p><img src="https://i.loli.net/2021/09/27/l4zjPtq5rAhXkvT.png" alt="image.png"></p>
+<p><hanla></hanla>也就是说，在<hanla></hanla>32<hanla></hanla>位系统上，每个地址是<hanla></hanla>32<hanla></hanla>位二进制序列，所以最多可以表征<hanla></hanla>2^32<hanla></hanla>个内存单元，一个内存单元的大小是一个字节，也就是<hanla></hanla>1B，2^10<hanla></hanla>字节就是<hanla></hanla>1KB，2^20<hanla></hanla>字节就是<hanla></hanla>1MB，2^30<hanla></hanla>字节就是<hanla></hanla>1GB，2^32<hanla></hanla>字节就是<hanla></hanla>4GB，所以<hanla></hanla>32<hanla></hanla>位系统最多可以有<hanla></hanla>4GB<hanla></hanla>的内存</p>
+<p><hanla></hanla>当然啦，随着科技的进步，我们对内存的需求远远超过了<hanla></hanla>4GB。我们现在的电脑基本都是<hanla></hanla>64<hanla></hanla>位系统，也就是地址都是<hanla></hanla>64<hanla></hanla>位二进制序列，最多可以表征<hanla></hanla>2^64<hanla></hanla>个内存单元，也就是<hanla></hanla>2^34GB<hanla></hanla>的内存，这个数量，够我们人类继续用好几十年啦</p>
+<h2 id="指针是什么？"><a href="#指针是什么？" class="headerlink" title="指针是什么？"></a>指针是什么？</h2><p>理解了上文所说的以后，我们终于可以来解释<strong>指针是什么</strong>了</p>
+<p><strong><hanla></hanla>指针，也叫做指针变量，是具有指针类型的，专门用来存放地址的变量，大小在<hanla></hanla>32<hanla></hanla>位系统上为<hanla></hanla>4<hanla></hanla>字节，在<hanla></hanla>64<hanla></hanla>位系统上为<hanla></hanla>8<hanla></hanla>字节</strong></p>
+<p><hanla></hanla>通过操作指针，我们就可以很方便的操控和管理内存，这也是为什么<hanla></hanla>C<hanla></hanla>语言常常是底层编码语言的原因</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token operator">*</span>pa <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个代码的意思就是：</p>
+<p>创建一个<code><hanla></hanla>int</code><hanla></hanla>类型的变量，名称叫<hanla></hanla>a，把<hanla></hanla>10<hanla></hanla>放进<hanla></hanla>a<hanla></hanla>中</p>
+<p>创建一个<code><hanla></hanla>int*</code><hanla></hanla>类型的指针变量，名称叫<hanla></hanla>pa，把<hanla></hanla>a<hanla></hanla>的地址取出来放进<hanla></hanla>pa<hanla></hanla>中</p>
+<p><hanla></hanla>对<hanla></hanla>pa<hanla></hanla>解引用也就是通过<hanla></hanla>pa<hanla></hanla>中存放的地址找到<hanla></hanla>a<hanla></hanla>所管理的空间，然后把<hanla></hanla>20<hanla></hanla>放进<hanla></hanla>a<hanla></hanla>中</p>
+<p><hanla></hanla>此时<hanla></hanla>a<hanla></hanla>的值是<hanla></hanla>20</p>
+<p>这就是通过指针对变量所占内存直接操作的一般步骤</p>
+<h1 id="指针类型"><a href="#指针类型" class="headerlink" title="指针类型"></a>指针类型</h1><p>指针变量的数据类型就是指针类型</p>
+<blockquote>
+<p><strong><code>int*</code></strong></p>
+<p><strong><code>char*</code></strong></p>
+<p><strong><code>short*</code></strong></p>
+<p><strong><code>...</code></strong></p>
+</blockquote>
+<h2 id="指针类型的大小"><a href="#指针类型的大小" class="headerlink" title="指针类型的大小"></a>指针类型的大小</h2><p><hanla></hanla>指针变量是用来储存地址的，因为地址是<hanla></hanla>32<hanla></hanla>位（在<hanla></hanla>32<hanla></hanla>位机器上），所以指针类型的大小是<hanla></hanla>4<hanla></hanla>字节</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">short</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/27/czZOUKBfJ89bhHm.png" alt="image.png"></p>
+<h2 id="指针类型决定解引用的访问权限"><a href="#指针类型决定解引用的访问权限" class="headerlink" title="指针类型决定解引用的访问权限"></a>指针类型决定解引用的访问权限</h2><p>指针类型决定了指针解引用的访问权限</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0x11223344</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token operator">*</span>pa <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>此时<hanla></hanla>a<hanla></hanla>的值被改成了<hanla></hanla>0</p>
+<p><img src="https://i.loli.net/2021/09/27/YGzdi76tURgWcDM.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2021/09/27/KAGdrJgRzmI2oEe.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2021/09/27/1XQOcEKkfFVyW5s.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2021/09/27/oEkCGUYP6Qp4MfF.png" alt="image.png"></p>
+<p>当我们用<code><hanla></hanla>char*</code><hanla></hanla>型的指针接收地址时：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0x11223344</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token operator">*</span>pa <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/27/HYrlm5aLC1KyNMT.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2021/09/27/sHa1znk7bvuMmLO.png" alt="image.png"></p>
+<p>只能访问一字节的内存，因为<code><hanla></hanla>char</code><hanla></hanla>的大小就是一字节</p>
+<h2 id="指针类型决定指针的步长"><a href="#指针类型决定指针的步长" class="headerlink" title="指针类型决定指针的步长"></a>指针类型决定指针的步长</h2><p>指针类型决定了指针走一步走多远，也就是指针的步长</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> pc <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%p\n"</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%p\n"</span><span class="token punctuation">,</span> p <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%p\n"</span><span class="token punctuation">,</span> pc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%p\n"</span><span class="token punctuation">,</span> pc <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/27/R91zLjUk8glOHyc.png" alt="image.png"></p>
+<p><hanla></hanla>7C→80 4<hanla></hanla>字节</p>
+<p><hanla></hanla>7C→7D 1<hanla></hanla>字节</p>
+<p><hanla></hanla>看下面的程序<hanla></hanla>“巧用小指针逐字节操作数组”：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> p <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">40</span> <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token operator">*</span><span class="token punctuation">(</span>p <span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/27/MqFK8HUN7nWkcbu.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2021/09/27/2pR8J3O6PfHMDKq.png" alt="image.png"></p>
+<h1 id="野指针"><a href="#野指针" class="headerlink" title="野指针"></a>野指针</h1><p>指针指向的位置是<strong>不明确</strong>的指针就是野指针。野指针的出现会干扰我们对于内存的管理，所以我们需要了解野指针的成因然后规避野指针的出现</p>
+<h2 id="野指针成因"><a href="#野指针成因" class="headerlink" title="野指针成因"></a>野指针成因</h2><p><strong><hanla></hanla>1.<hanla></hanla>指针未初始化</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> p<span class="token punctuation">;</span>
+    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>局部变量指针变量<hanla></hanla>p<hanla></hanla>未初始化，默认为随机值</p>
+<p><hanla></hanla>此时再对<hanla></hanla>p<hanla></hanla>解引用，就是非法访问内存</p>
+<p>一般编译器也会直接报错</p>
+<p><strong><hanla></hanla>2.<hanla></hanla>指针越界访问</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token operator">*</span>p <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        p<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>循环到第十一次时，指针就不指向数组了，此时解引用访问，就是非法访问内存，第十一个指针就是野指针</p>
+<p><strong><hanla></hanla>3.<hanla></hanla>指针指向的空间被释放</strong></p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span><span class="token operator">*</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>a<hanla></hanla>是局部变量，出函数即被销毁，再次通过<hanla></hanla>a<hanla></hanla>的地址操作内存就是非法访问内存</p>
+<h2 id="规避野指针的方法"><a href="#规避野指针的方法" class="headerlink" title="规避野指针的方法"></a>规避野指针的方法</h2><p><strong><hanla></hanla>1.<hanla></hanla>指针要初始化，不知道初始化什么地址就初始化为<code><hanla></hanla>NULL</code><hanla></hanla>空指针，明确知道初始化的值，那就直接取地址初始化</strong></p>
+<p><strong><hanla></hanla>2.<hanla></hanla>小心越界行为</strong></p>
+<p><strong><hanla></hanla>3.<hanla></hanla>指针指向空间一旦销毁就要把指针置成空指针</strong></p>
+<p><strong><hanla></hanla>4.<hanla></hanla>空指针不可以直接解引用访问，因为空指针指向的空间不存在于内存中</strong></p>
+<p>所以我们可以写下面的程序进行指针有效性的检查：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样，指针的状态就只会是<strong>合法的可操作指针</strong>和<strong>空指针</strong>，从而避免了野指针的出现</p>
+<h1 id="指针运算"><a href="#指针运算" class="headerlink" title="指针运算"></a>指针运算</h1><h2 id="指针-整数"><a href="#指针-整数" class="headerlink" title="指针 + - 整数"></a>指针 + - 整数</h2><p><hanla></hanla>指针<hanla></hanla>+-整数就是进行单位步长的移动</p>
+<h2 id="指针的关系运算"><a href="#指针的关系运算" class="headerlink" title="指针的关系运算"></a>指针的关系运算</h2><p>指针的关系运算就是比较两个地址的大小，地址在一个数组里是随着下标的增加由低到高变化的</p>
+<p>通过指针的运算初始化数组元素：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> p_end <span class="token operator">=</span> arr <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>p <span class="token operator">&lt;</span> p_end<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="指针-指针"><a href="#指针-指针" class="headerlink" title="指针-指针"></a>指针-指针</h2><p>指针-指针就是两个指针之间的元素数量</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>arr<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token operator">&amp;</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>结果是<hanla></hanla>9</p>
+<p>指向相同空间的指针才可以相减</p>
+<p>求字符串长度：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">my_strlen</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span> str<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> start <span class="token operator">=</span> str<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">*</span>str <span class="token operator">!=</span> <span class="token string">'\0'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        str<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> str <span class="token operator">-</span> start<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="const修饰指针"><a href="#const修饰指针" class="headerlink" title="const修饰指针"></a><code>const</code><hanla></hanla>修饰指针</h1><p>看最简单的指针修改变量值</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>num<span class="token punctuation">;</span>
+    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果我们规定<code><hanla></hanla>num</code><hanla></hanla>的值不能改，则给<code><hanla></hanla>num</code><hanla></hanla>加<code><hanla></hanla>const</code><hanla></hanla>把它变成常变量</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>num<span class="token punctuation">;</span>
+    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/28/kpU2JbmZMCIvL8t.png" alt="image.png"></p>
+<p>结果还是改了。这是怎么回事呢？因为我们可以通过指针直接操作内存，不需要通过<code><hanla></hanla>=</code><hanla></hanla>赋值操作</p>
+<p>所以这种写法就有问题</p>
+<h2 id="const放在-前面"><a href="#const放在-前面" class="headerlink" title="const放在*前面"></a><code>const</code><hanla></hanla>放在<code><hanla></hanla>*</code><hanla></hanla>前面</h2><p>表示指针指向内容（*p）不能通过指针被改变：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>num<span class="token punctuation">;</span>
+    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/28/tOnK1MJSmHVzU4I.png" alt="image.png"></p>
+<h2 id="const放在-后面、变量名前面"><a href="#const放在-后面、变量名前面" class="headerlink" title="const放在*后面、变量名前面"></a><code>const</code><hanla></hanla>放在<code><hanla></hanla>*</code><hanla></hanla>后面、变量名前面</h2><p><hanla></hanla>表示指针变量<hanla></hanla>p<hanla></hanla>不能被更改：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> <span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>num<span class="token punctuation">;</span>
+    p <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/09/28/vYnIG1ZUcshdKrB.png" alt="image.png"></p>
+<h1 id="二级指针和多级指针"><a href="#二级指针和多级指针" class="headerlink" title="二级指针和多级指针"></a>二级指针和多级指针</h1><p>指针变量的地址，存放到另一个指针变量中，第二指针变量就是二级指针，同理，第三指针变量就是三级指针</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span><span class="token operator">*</span> ppa <span class="token operator">=</span> <span class="token operator">&amp;</span>pa<span class="token punctuation">;</span><span class="token comment" spellcheck="true"><hanla></hanla>//<hanla></hanla>二级指针</span>
+    <span class="token keyword"><hanla></hanla>int</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> pppa <span class="token operator">=</span> <span class="token operator">&amp;</span>ppa<span class="token punctuation">;</span><span class="token comment" spellcheck="true"><hanla></hanla>//<hanla></hanla>三级指针</span>
+    <span class="token keyword"><hanla></hanla>return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="指针与数组"><a href="#指针与数组" class="headerlink" title="指针与数组"></a>指针与数组</h1><h2 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h2><p>指针数组本质上是一个数组，这个数组中的元素都是指针（也就是地址）</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">&amp;</span>a <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h2><h2 id="数组传参和指针传参"><a href="#数组传参和指针传参" class="headerlink" title="数组传参和指针传参"></a>数组传参和指针传参</h2><blockquote>
+<p><strong>冷知识</strong></p>
+<p>若：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>则：</p>
+<p><code>arr[2]</code> == <code>2[arr]</code> == <code>p[2]</code></p>
+<p>这样的写法不会报错</p>
+<p>原理是数组名的首元素地址，数组定义式的操作数满足交换律</p>
+</blockquote>
+<h1 id="指针与函数"><a href="#指针与函数" class="headerlink" title="指针与函数"></a>指针与函数</h1><h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><h2 id="函数指针数组"><a href="#函数指针数组" class="headerlink" title="函数指针数组"></a>函数指针数组</h2><h2 id="指向函数指针数组的指针"><a href="#指向函数指针数组的指针" class="headerlink" title="指向函数指针数组的指针"></a>指向函数指针数组的指针</h2><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><h1 id="C语言指针经典面试题"><a href="#C语言指针经典面试题" class="headerlink" title="C语言指针经典面试题"></a><hanla></hanla>C<hanla></hanla>语言指针经典面试题</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"><hanla></hanla># C<hanla></hanla>语言</a>
+              <a href="/tags/%E6%8C%87%E9%92%88/" rel="tag"># 指针</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-shu-ju-zai-nei-cun-zhong-de-cun-chu/" rel="prev" title="【C语言从青铜到王者】第五篇·数据在内存中的存储">
+      <i class="fa fa-chevron-left"></i><hanla></hanla> 【C<hanla></hanla>语言从青铜到王者】第五篇·数据在内存中的存储
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/06/30/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-qi-pian-zi-fu-chuan-han-shu-yu-nei-cun-han-shu/" rel="next" title="【C语言从青铜到王者】第七篇·字符串函数与内存函数"><hanla></hanla>
+      【C<hanla></hanla>语言从青铜到王者】第七篇·字符串函数与内存函数 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">指针到底是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">编程的本质是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">内存是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">指针是什么？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">指针类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">指针类型的大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%86%B3%E5%AE%9A%E8%A7%A3%E5%BC%95%E7%94%A8%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">指针类型决定解引用的访问权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%86%B3%E5%AE%9A%E6%8C%87%E9%92%88%E7%9A%84%E6%AD%A5%E9%95%BF"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">指针类型决定指针的步长</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8E%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">野指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8E%E6%8C%87%E9%92%88%E6%88%90%E5%9B%A0"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">野指针成因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E9%81%BF%E9%87%8E%E6%8C%87%E9%92%88%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text">规避野指针的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">指针运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88-%E6%95%B4%E6%95%B0"><span class="nav-number"><hanla></hanla>4.1.</span> <span class="nav-text">指针 + - 整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">指针的关系运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88-%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>4.3.</span> <span class="nav-text">指针-指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const%E4%BF%AE%E9%A5%B0%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>修饰指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E6%94%BE%E5%9C%A8-%E5%89%8D%E9%9D%A2"><span class="nav-number"><hanla></hanla>5.1.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>放在<hanla></hanla>*<hanla></hanla>前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E6%94%BE%E5%9C%A8-%E5%90%8E%E9%9D%A2%E3%80%81%E5%8F%98%E9%87%8F%E5%90%8D%E5%89%8D%E9%9D%A2"><span class="nav-number"><hanla></hanla>5.2.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>放在<hanla></hanla>*<hanla></hanla>后面、变量名前面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88%E5%92%8C%E5%A4%9A%E7%BA%A7%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>6.</span> <span class="nav-text">二级指针和多级指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>7.</span> <span class="nav-text">指针与数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>7.1.</span> <span class="nav-text">指针数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>7.2.</span> <span class="nav-text">数组指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E4%BC%A0%E5%8F%82%E5%92%8C%E6%8C%87%E9%92%88%E4%BC%A0%E5%8F%82"><span class="nav-number"><hanla></hanla>7.3.</span> <span class="nav-text">数组传参和指针传参</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E5%87%BD%E6%95%B0"><span class="nav-number"><hanla></hanla>8.</span> <span class="nav-text">指针与函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>8.1.</span> <span class="nav-text">函数指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>8.2.</span> <span class="nav-text">函数指针数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E7%9A%84%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>8.3.</span> <span class="nav-text">指向函数指针数组的指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number"><hanla></hanla>9.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number"><hanla></hanla>10.</span> <span class="nav-text"><hanla></hanla>C<hanla></hanla>语言指针经典面试题</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小葉" src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">小葉</p>
+  <div class="site-description" itemprop="description">耐得住寂寞，守得住繁华</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name"><hanla></hanla>日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count"><hanla></hanla>5</span>
+        <span class="site-state-item-name"><hanla></hanla>分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count"><hanla></hanla>20</span>
+        <span class="site-state-item-name"><hanla></hanla>标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><hanla></hanla>小葉</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+</body></html>
