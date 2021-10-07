@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小葉的博客</title>
+  <title>计算机学科笔记</title>
   
   
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2021-10-02T09:08:35.177Z</updated>
+  <updated>2021-10-05T17:36:15.842Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
-    <name>小葉</name>
+    <name>叶天霄</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【C++进修之路】初识C++</title>
-    <link href="http://fuwafuwaboom.github.io/2021/09/28/c-jin-xiu-zhi-lu-chu-shi-c/"/>
-    <id>http://fuwafuwaboom.github.io/2021/09/28/c-jin-xiu-zhi-lu-chu-shi-c/</id>
-    <published>2021-09-27T16:00:00.000Z</published>
-    <updated>2021-10-02T09:08:35.177Z</updated>
+    <title>【C++】初识C++</title>
+    <link href="http://fuwafuwaboom.github.io/2021/10/6/c-chu-shi-c/"/>
+    <id>http://fuwafuwaboom.github.io/2021/10/6/c-chu-shi-c/</id>
+    <published>2021-10-05T16:00:00.000Z</published>
+    <updated>2021-10-05T17:36:15.842Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
@@ -29,10 +29,32 @@
     
     
     
-    <category term="【C++进修之路】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C-%E8%BF%9B%E4%BF%AE%E4%B9%8B%E8%B7%AF%E3%80%91/"/>
+    <category term="【C++】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C-%E3%80%91/"/>
     
     
     <category term="C++" scheme="http://fuwafuwaboom.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【数据结构与算法】几种常见的排序算法</title>
+    <link href="http://fuwafuwaboom.github.io/2021/10/5/shu-ju-jie-gou-yu-suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/"/>
+    <id>http://fuwafuwaboom.github.io/2021/10/5/shu-ju-jie-gou-yu-suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/</id>
+    <published>2021-10-04T16:00:00.000Z</published>
+    <updated>2021-10-05T09:27:08.639Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;关于排序算法有很多，本篇文章用C语言实现冒泡排序和快速排序&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【数据结构与算法】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E3%80%91/"/>
+    
+    
+    <category term="算法" scheme="http://fuwafuwaboom.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="排序" scheme="http://fuwafuwaboom.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
@@ -186,11 +208,12 @@
     <link href="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-wan-zhuan-c-zhi-zhen/"/>
     <id>http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-wan-zhuan-c-zhi-zhen/</id>
     <published>2021-06-21T16:00:00.000Z</published>
-    <updated>2021-10-02T09:00:49.865Z</updated>
+    <updated>2021-10-05T09:21:10.162Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;指针是C语言的灵魂。&lt;/strong&gt;精通指针也就基本精通了C语言。本篇博客，希望可以让朋友们对C语言的指针有一些更深的了解&lt;/p&gt;</summary>
+&lt;p&gt;&lt;strong&gt;“指针是C语言的灵魂，精通指针也就基本精通了C语言。”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;指针确实非常重要，但是它只是一个工具，是帮助我们分配内存的工具，所以我们的关注点最好不要陷入研究指针这个工具。&lt;strong&gt;了解指针，并且通过指针熟练的操作内存&lt;/strong&gt;，这才是玩转C指针的精髓，也是我们努力的方向。&lt;/p&gt;</summary>
     
     
     
@@ -204,14 +227,14 @@
   </entry>
   
   <entry>
-    <title>【每日刷题】C语言操作符</title>
-    <link href="http://fuwafuwaboom.github.io/2021/06/21/mei-ri-shua-ti-c-yu-yan-cao-zuo-fu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/06/21/mei-ri-shua-ti-c-yu-yan-cao-zuo-fu/</id>
+    <title>【每日刷题】C语言</title>
+    <link href="http://fuwafuwaboom.github.io/2021/06/21/mei-ri-shua-ti-c-yu-yan/"/>
+    <id>http://fuwafuwaboom.github.io/2021/06/21/mei-ri-shua-ti-c-yu-yan/</id>
     <published>2021-06-20T16:00:00.000Z</published>
-    <updated>2021-10-02T09:11:27.393Z</updated>
+    <updated>2021-10-04T11:01:23.813Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;strong&gt;2021/9/25 共5题&lt;/strong&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本文是我学习C语言期间对遇到的好题的一些摘抄和总结&lt;/strong&gt;&lt;/p&gt;</summary>
     
     
     
