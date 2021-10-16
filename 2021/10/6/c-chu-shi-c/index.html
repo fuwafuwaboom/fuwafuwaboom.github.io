@@ -30,8 +30,9 @@
 <meta property="og:image" content="https://i.loli.net/2021/10/06/ihwHMbnm1Dtu5fl.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/06/VnJoFiS6jgPWRh3.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/06/idM5mwyXe8NVulT.png">
+<meta property="og:image" content="https://i.loli.net/2021/10/12/QlefiWCTE21ckLR.png">
 <meta property="article:published_time" content="2021-10-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-05T17:36:15.842Z">
+<meta property="article:modified_time" content="2021-10-12T13:54:42.351Z">
 <meta property="article:author" content="叶天霄">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -198,7 +199,7 @@ html ul > hanla {
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="叶天霄">
-      <meta itemprop="description" content="遇上方知有">
+      <meta itemprop="description" content="自律给我自由">
     </span>
 
     <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -216,10 +217,16 @@ html ul > hanla {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-10-06 00:00:00 / 修改时间：01:36:15" itemprop="dateCreated datePublished" datetime="2021-10-06T00:00:00+08:00"><hanla></hanla>2021-10-06</time>
+              <time title="创建时间：2021-10-06 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-06T00:00:00+08:00"><hanla></hanla>2021-10-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text"><hanla></hanla>更新于</span>
+                <time title="修改时间：2021-10-12 21:54:42" itemprop="dateModified" datetime="2021-10-12T21:54:42+08:00"><hanla></hanla>2021-10-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -245,7 +252,7 @@ html ul > hanla {
 <p><hanla></hanla>C++<hanla></hanla>入门篇，着重在<hanla></hanla>C<hanla></hanla>语言的基础上讲解<hanla></hanla>C++<hanla></hanla>的语法。C++<hanla></hanla>版本目前已经更迭支<hanla></hanla>C++20，但本系列仍然着重讲解<hanla></hanla>C++11</p>
 <span id="more"></span>
 
-<h1 id="C-入门"><a href="#C-入门" class="headerlink" title="C++入门"></a><hanla></hanla>C++<hanla></hanla>入门</h1><h2 id="C-应用的常用领域"><a href="#C-应用的常用领域" class="headerlink" title="C++应用的常用领域"></a><hanla></hanla>C++<hanla></hanla>应用的常用领域</h2><p><hanla></hanla>1.<hanla></hanla>操作系统以及大型系统软件开发（阿里云开发→独立大型数据库）</p>
+<h1 id="C-介绍"><a href="#C-介绍" class="headerlink" title="C++介绍"></a><hanla></hanla>C++<hanla></hanla>介绍</h1><h2 id="C-应用的常用领域"><a href="#C-应用的常用领域" class="headerlink" title="C++应用的常用领域"></a><hanla></hanla>C++<hanla></hanla>应用的常用领域</h2><p><hanla></hanla>1.<hanla></hanla>操作系统以及大型系统软件开发（阿里云开发→独立大型数据库）</p>
 <p><hanla></hanla>2.<hanla></hanla>服务器端开发（美团<hanla></hanla>app→处理下单→每一单的处理→后端服务器的处理和数据的管理）</p>
 <p><hanla></hanla>3.<hanla></hanla>人工智能（底层算法：C/C++ 上层：python<hanla></hanla>封装）</p>
 <p><hanla></hanla>4.<hanla></hanla>游戏开发（大型游戏对性能要求高）</p>
@@ -276,6 +283,9 @@ int main()
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></iostream></code></pre>
 <p><img src="https://i.loli.net/2021/10/06/VnJoFiS6jgPWRh3.png" alt="image.png"></p>
+<p>头文件<code><hanla></hanla>iostream</code>：<code>io</code><hanla></hanla>流概念</p>
+<p><code>using namespace std</code>: 命名空间</p>
+<p><code>cin</code>、<code>cout</code>：输入输出</p>
 <h1 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h1><h2 id="为什么要提出“命名空间”？"><a href="#为什么要提出“命名空间”？" class="headerlink" title="为什么要提出“命名空间”？"></a><hanla></hanla>为什么要提出<hanla></hanla>“命名空间”？</h2><blockquote>
 <p><strong><hanla></hanla>C++<hanla></hanla>每增加一个语法都是为了解决<hanla></hanla>C<hanla></hanla>语言做不到的东西</strong></p>
 </blockquote>
@@ -304,7 +314,7 @@ int main()
 <p><hanla></hanla>所以<hanla></hanla>C++<hanla></hanla>提出了命名空间来解决命名冲突的问题</p>
 <h2 id="命名空间的定义"><a href="#命名空间的定义" class="headerlink" title="命名空间的定义"></a>命名空间的定义</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<stdio.h>
 #include<stdlib.h><hanla></hanla>
-namespace N1
+namespace N1 //<hanla></hanla>定义了一个命名空间域
 {
     int rand = 10;
 }
@@ -312,10 +322,145 @@ int main()
 {
     printf("%p\n", rand);//rand<hanla></hanla>是函数指针
     printf("%d\n", N1::rand);//N1<hanla></hanla>中的<hanla></hanla>rand<hanla></hanla>是整型变量
+    //N1（域名）:: 变量 其中::<hanla></hanla>就是
     return 0;
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></stdlib.h></stdio.h></code></pre>
-
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></stdlib.h></stdio.h></code></pre>
+<p>命名空间中可以定义 <strong>变量 函数 宏 类型</strong></p>
+<h2 id="命名空间嵌套定义"><a href="#命名空间嵌套定义" class="headerlink" title="命名空间嵌套定义"></a>命名空间嵌套定义</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<stdio.h>
+#include<stdlib.h><hanla></hanla>
+namespace N1 
+{
+    int rand = 10;
+    namespace N2//<hanla></hanla>嵌套定义
+    {
+        int a = 1;
+    }
+}
+int main()
+{
+    printf("%d\n", N1::N2::a);//a<hanla></hanla>变量需要两次解耦
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></stdlib.h></stdio.h></code></pre>
+<h2 id="同名命名空间会自动合并"><a href="#同名命名空间会自动合并" class="headerlink" title="同名命名空间会自动合并"></a>同名命名空间会自动合并</h2><p>所以在定义同名命名空间的时候要注意定义不冲突</p>
+<p>同一个工程中的同名命名空间可以跨文件自动合并</p>
+<h2 id="如何使用命名空间"><a href="#如何使用命名空间" class="headerlink" title="如何使用命名空间"></a>如何使用命名空间</h2><p>三种方式：</p>
+<p><strong><hanla></hanla>1.<hanla></hanla>全部展开到全局</strong></p>
+<p><code>using namespace 命名空间名</code></p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<stdio.h>
+#include<stdlib.h><hanla></hanla>
+namespace N1 //<hanla></hanla>定义了一个命名空间域
+{
+    int r = 10;
+    namespace N2
+    {
+        int a = 1;
+    }
+}
+using namespace N1;
+int main()
+{
+    printf("%d\n", r);
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></stdlib.h></stdio.h></code></pre>
+<p><hanla></hanla>所以<hanla></hanla>“第一个<hanla></hanla>C++<hanla></hanla>程序”<hanla></hanla>就是把<code><hanla></hanla>std</code><hanla></hanla>（C++<hanla></hanla>标准库）这个命名空间全部展开：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+using namespace std;
+int main()
+{
+    cout &lt;&lt; "hello world" &lt;&lt; endl;
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></iostream></code></pre>
+<p>优点是方便，但缺点是把自己的定义暴露了，容易造成命名污染</p>
+<p><strong><hanla></hanla>2.<hanla></hanla>访问每个命名空间中的成员时，指定命名空间</strong></p>
+<p><code><hanla></hanla>命名空间名::<hanla></hanla>成员名</code></p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+int main()
+{
+    std::cout &lt;&lt; "hello world" &lt;&lt; std::endl;
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></iostream></code></pre>
+<p>优点是不存在命名污染，缺点是用起来麻烦，每个都得指定命名空间</p>
+<p><strong><hanla></hanla>3.<hanla></hanla>指定展开常用的成员，不常用的不展开</strong></p>
+<p><code><hanla></hanla>using 命名空间名::<hanla></hanla>成员名</code></p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+int main()
+{
+    cout &lt;&lt; "hello world" &lt;&lt; endl;
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></iostream></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<stdio.h>
+#include<stdlib.h><hanla></hanla>
+namespace N1 //<hanla></hanla>定义了一个命名空间域
+{
+    int r = 10;
+    namespace N2
+    {
+        int a = 1;
+    }
+}
+using N1::N2::a;
+int main()
+{
+    printf("%d\n", a);
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></stdlib.h></stdio.h></code></pre>
+<p><hanla></hanla>3<hanla></hanla>是折中<hanla></hanla>1<hanla></hanla>和<hanla></hanla>2<hanla></hanla>的解决方案，比较常用</p>
+<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a><hanla></hanla>IO<hanla></hanla>流</h1><h2 id="输入输出流"><a href="#输入输出流" class="headerlink" title="输入输出流"></a>输入输出流</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream><hanla></hanla>//iostream<hanla></hanla>是库头文件，不加.h，但是我们引用自己定义的头文件需要加.h
+using namespace std;
+int main()
+{
+    int n = 0;
+    cin &gt;&gt; n;// &gt;&gt; 流提取运算符<hanla></hanla>/<hanla></hanla>输入运算符
+    cout &lt;&lt; n &lt;&lt; endl;// &lt;&lt; 流插入运算符<hanla></hanla>/<hanla></hanla>输出运算符
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></iostream></code></pre>
+<p>多次输入以空格和换行间隔</p>
+<p><code>endl</code><hanla></hanla>等价于输出了一个换行符<code>'\n'</code></p>
+<p>输出是从左向右输出</p>
+<p>至于<code><hanla></hanla>cin</code><hanla></hanla>和<code><hanla></hanla>cout</code><hanla></hanla>到底是什么，在学习了类和对象以后再做解释</p>
+<h2 id="C-与C语言的输入输出方式的优劣与选择"><a href="#C-与C语言的输入输出方式的优劣与选择" class="headerlink" title="C++与C语言的输入输出方式的优劣与选择"></a><hanla></hanla>C++<hanla></hanla>与<hanla></hanla>C<hanla></hanla>语言的输入输出方式的优劣与选择</h2><p><hanla></hanla>C++<hanla></hanla>的输入输出可以<strong>自动识别类型</strong><hanla></hanla>，这是比<hanla></hanla>C<hanla></hanla>语言方便的</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+using namespace std;
+int main()
+{
+    char ch = 'A';
+    int i = 10;
+    int* p = &amp;i;
+    double d = 3.1415926;
+    cout &lt;&lt; ch &lt;&lt; endl;
+    cout &lt;&lt; i &lt;&lt; endl;
+    cout &lt;&lt; p&lt;&lt; endl;
+    cout &lt;&lt; d &lt;&lt; endl;
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></iostream></code></pre>
+<p><img src="https://i.loli.net/2021/10/12/QlefiWCTE21ckLR.png" alt="image.png"></p>
+<p><hanla></hanla>C++<hanla></hanla>的小数默认只输出小数点后<hanla></hanla>5<hanla></hanla>位，不太方便，此时推荐配合<code><hanla></hanla>printf</code><hanla></hanla>使用</p>
+<p><code>printf（“%.2f",a);</code>表示小数点后两位</p>
+<p><hanla></hanla>其实对于连续输出同类型的，比如结构体，使用<hanla></hanla>C<hanla></hanla>语言反而更方便，因为不用多写那么多<code><hanla></hanla>&lt;&lt;</code>符号</p>
+<p>所以建议<strong><hanla></hanla>在<hanla></hanla>C++<hanla></hanla>中不用纠结于到底用哪一个，而是哪个好用用哪个</strong></p>
+<h1 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h1><p><hanla></hanla>相对<hanla></hanla>C<hanla></hanla>语言，C++<hanla></hanla>增加了缺省参数的概念用于补充函数的定义</p>
+<p>在定义函数的时候直接指定形参的值，就是缺省参数</p>
+<p><strong>缺省参数仅在没有传参的时候起作用</strong>，一旦传参就没这个参数什么用了</p>
+<h2 id="缺省参数的作用"><a href="#缺省参数的作用" class="headerlink" title="缺省参数的作用"></a>缺省参数的作用</h2><blockquote>
+<p><hanla></hanla>此处关于栈的定义当时记录的时候还没学到，记得补视频！！C++1<hanla></hanla>课 1：12：10</p>
+</blockquote>
+<h2 id="全缺省"><a href="#全缺省" class="headerlink" title="全缺省"></a>全缺省</h2><p>要传就</p>
+<h2 id="半-部分-缺省"><a href="#半-部分-缺省" class="headerlink" title="半(部分)缺省"></a><hanla></hanla>半<hanla></hanla>(部分)<hanla></hanla>缺省</h2><p>必须<strong>从右往左</strong>缺省，<strong>不能间隔</strong>着给初值，因为这样会明确的给值</p>
+<h2 id="缺省参数的其他注意点"><a href="#缺省参数的其他注意点" class="headerlink" title="缺省参数的其他注意点"></a>缺省参数的其他注意点</h2><p><strong>缺省参数不能在函数声明和定义的时候同时出现，一般建议在声明的时候给缺省参数</strong></p>
+<p><strong>缺省值必须是常量和全局变量</strong></p>
+<h1 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h1>
     </div>
 
     
@@ -336,7 +481,10 @@ int main()
     <a href="/2021/10/5/shu-ju-jie-gou-yu-suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/" rel="prev" title="【数据结构与算法】几种常见的排序算法">
       <i class="fa fa-chevron-left"></i> 【数据结构与算法】几种常见的排序算法
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/16/linux-cao-zuo-xi-tong-linux-huan-jing-da-jian/" rel="next" title="【Linux操作系统】Linux环境搭建"><hanla></hanla>
+      【Linux<hanla></hanla>操作系统】Linux<hanla></hanla>环境搭建 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -395,7 +543,7 @@ int main()
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E5%85%A5%E9%97%A8"><span class="nav-number">1.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%BA%94%E7%94%A8%E7%9A%84%E5%B8%B8%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>应用的常用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E5%A5%BDC"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text"><hanla></hanla>如何学好<hanla></hanla>C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.3.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAC-%E7%A8%8B%E5%BA%8F"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text"><hanla></hanla>第一个<hanla></hanla>C++<hanla></hanla>程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">命名空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8F%90%E5%87%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E2%80%9D%EF%BC%9F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text"><hanla></hanla>为什么要提出<hanla></hanla>“命名空间”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.</span> <span class="nav-text">命名空间的定义</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%BA%94%E7%94%A8%E7%9A%84%E5%B8%B8%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>应用的常用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E5%A5%BDC"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text"><hanla></hanla>如何学好<hanla></hanla>C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.3.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAC-%E7%A8%8B%E5%BA%8F"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text"><hanla></hanla>第一个<hanla></hanla>C++<hanla></hanla>程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">命名空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8F%90%E5%87%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E2%80%9D%EF%BC%9F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text"><hanla></hanla>为什么要提出<hanla></hanla>“命名空间”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.</span> <span class="nav-text">命名空间的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E5%B5%8C%E5%A5%97%E5%AE%9A%E4%B9%89"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">命名空间嵌套定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E5%90%8D%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6"><span class="nav-number"><hanla></hanla>2.4.</span> <span class="nav-text">同名命名空间会自动合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>2.5.</span> <span class="nav-text">如何使用命名空间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IO%E6%B5%81"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text"><hanla></hanla>IO<hanla></hanla>流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">输入输出流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E4%B8%8EC%E8%AF%AD%E8%A8%80%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E7%9A%84%E4%BC%98%E5%8A%A3%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>与<hanla></hanla>C<hanla></hanla>语言的输入输出方式的优劣与选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">缺省参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number"><hanla></hanla>4.1.</span> <span class="nav-text">缺省参数的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E7%BC%BA%E7%9C%81"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">全缺省</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A-%E9%83%A8%E5%88%86-%E7%BC%BA%E7%9C%81"><span class="nav-number"><hanla></hanla>4.3.</span> <span class="nav-text"><hanla></hanla>半<hanla></hanla>(部分)<hanla></hanla>缺省</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number"><hanla></hanla>4.4.</span> <span class="nav-text">缺省参数的其他注意点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text">函数重载</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -403,27 +551,27 @@ int main()
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="叶天霄" src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">叶天霄</p>
-  <div class="site-description" itemprop="description">遇上方知有</div>
+  <div class="site-description" itemprop="description">自律给我自由</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name"><hanla></hanla>日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count"><hanla></hanla>6</span>
+        <span class="site-state-item-count"><hanla></hanla>7</span>
         <span class="site-state-item-name"><hanla></hanla>分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count"><hanla></hanla>21</span>
+        <span class="site-state-item-count"><hanla></hanla>22</span>
         <span class="site-state-item-name"><hanla></hanla>标签</span></a>
       </div>
   </nav>
