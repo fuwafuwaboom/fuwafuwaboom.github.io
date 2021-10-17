@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"fuwafuwaboom.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本篇前言 Linux操作系统的入门篇，重点讲解Linux的发展历史，以及如何搭建Linux环境">
+  <meta name="description" content="本篇前言 Linux操作系统的30条常见指令，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Linux操作系统】Linux环境搭建">
-<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/10/16/linux-cao-zuo-xi-tong-linux-huan-jing-da-jian/index.html">
+<meta property="og:title" content="【Linux操作系统】Linux历史与环境搭建">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/10/17/linux-cao-zuo-xi-tong-linux-ji-ben-zhi-ling-yu-quan-xian-li-jie/index.html">
 <meta property="og:site_name" content="计算机学科笔记">
-<meta property="og:description" content="本篇前言 Linux操作系统的入门篇，重点讲解Linux的发展历史，以及如何搭建Linux环境">
+<meta property="og:description" content="本篇前言 Linux操作系统的30条常见指令，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-16T16:01:24.136Z">
+<meta property="article:published_time" content="2021-10-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-10-17T10:10:49.545Z">
 <meta property="article:author" content="叶天霄">
-<meta property="article:tag" content="Linux环境搭建">
+<meta property="article:tag" content="Linux指令">
+<meta property="article:tag" content="Linux权限">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/10/16/linux-cao-zuo-xi-tong-linux-huan-jing-da-jian/">
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/10/17/linux-cao-zuo-xi-tong-linux-ji-ben-zhi-ling-yu-quan-xian-li-jie/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>【Linux操作系统】Linux环境搭建 | 计算机学科笔记</title>
+  <title>【Linux操作系统】Linux历史与环境搭建 | 计算机学科笔记</title>
   
 
 
@@ -189,7 +190,7 @@ html ul > hanla {
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/10/16/linux-cao-zuo-xi-tong-linux-huan-jing-da-jian/">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/10/17/linux-cao-zuo-xi-tong-linux-ji-ben-zhi-ling-yu-quan-xian-li-jie/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -202,7 +203,7 @@ html ul > hanla {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline"><hanla></hanla>
-          【Linux<hanla></hanla>操作系统】Linux<hanla></hanla>环境搭建
+          【Linux<hanla></hanla>操作系统】Linux<hanla></hanla>历史与环境搭建
         </h1>
 
         <div class="post-meta">
@@ -212,16 +213,10 @@ html ul > hanla {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-10-16 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-16T00:00:00+08:00"><hanla></hanla>2021-10-16</time>
+              <time title="创建时间：2021-10-17 00:00:00 / 修改时间：18:10:49" itemprop="dateCreated datePublished" datetime="2021-10-17T00:00:00+08:00"><hanla></hanla>2021-10-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2021-10-17 00:01:24" itemprop="dateModified" datetime="2021-10-17T00:01:24+08:00"><hanla></hanla>2021-10-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -244,33 +239,9 @@ html ul > hanla {
 
       
         <p><strong>本篇前言</strong></p>
-<p><strong><hanla></hanla>Linux<hanla></hanla>操作系统的入门篇，重点讲解<hanla></hanla>Linux<hanla></hanla>的发展历史，以及如何搭建<hanla></hanla>Linux<hanla></hanla>环境</strong></p>
+<p><hanla></hanla>Linux<hanla></hanla>操作系统的<hanla></hanla>30<hanla></hanla>条常见指令，</p>
 <span id="more"></span>
 
-<h1 id="Linux背景介绍"><a href="#Linux背景介绍" class="headerlink" title="Linux背景介绍"></a><hanla></hanla>Linux<hanla></hanla>背景介绍</h1><p><hanla></hanla>要说 Linux，还得从<hanla></hanla>UNIX<hanla></hanla>说起。</p>
-<ul>
-<li><p><hanla></hanla>1946<hanla></hanla>年<hanla></hanla>2<hanla></hanla>月<hanla></hanla>14<hanla></hanla>日，第一款计算机<hanla></hanla>“埃尼阿克”<hanla></hanla>诞生，它是为了计算导弹弹道轨迹的而发明的。主导这件事的角色是美国军方。一般这种高科技，在完成其军用任务后，就会民用，发挥其经济效益，把之前投入研究的大量经费赚回来。</p>
-</li>
-<li><p><hanla></hanla>于是，之后，计算机开始商业化。美国<hanla></hanla>“梦工厂”<hanla></hanla>硅谷，就是这样一个专门把高科技技术商业化的地方（商业化也就是从技术到产品）。</p>
-</li>
-<li><p><hanla></hanla>1960<hanla></hanla>年后，比尔盖茨、乔布斯，还有<hanla></hanla>IBM<hanla></hanla>公司，就开始利用这些技术，研究卖给用户的软硬件产品（电脑、服务器、操作系统<hanla></hanla>OS operate system、还有基于<hanla></hanla>OS<hanla></hanla>的某种软件服务）</p>
-<blockquote>
-<p><hanla></hanla>当时虽然计算机技术开始商用，但是其保密程度仍然很高，直到<hanla></hanla>90<hanla></hanla>年代，技术封锁减弱，94<hanla></hanla>年的时候，我们国家政府开始介入，中国也顺利搭上互联网时代红利快车。第一批做<hanla></hanla>“互联网”<hanla></hanla>的，其实并不是搞网络的，是做硬件的一批人，比如联想柳传志，华为任正非等。在计算机硬件技术兴起后，互联网应运而生，美国硅谷掀起了一波互联网创业潮，1900-2000<hanla></hanla>十年间被硅谷称为互联网创业<hanla></hanla>“黄金时代”。创业风气很快波及全球，尤其是中国的最先一批进军通信、计算机技术的人们，也开始了创业潮流。马化腾、马云、雷军、丁磊等一批<hanla></hanla>“互联网风云人物”<hanla></hanla>也在那时开始了各自的创业。中国互联网巅峰<hanla></hanla>10<hanla></hanla>年（2000-2010）拉开帷幕，群雄逐鹿，直到<hanla></hanla>2010<hanla></hanla>年基本形成互联网行业<hanla></hanla>B（百度）A（阿里）T（腾讯）三足鼎立，游戏邻域网易腾讯平分秋色，手机行业小米、华为、vivo、oppo、魅族等国产手机迅猛发展。2010<hanla></hanla>年后手机加速普及，世界基本进入移动互联网时代，美团、京东、拼多多、哔哩哔哩崭露头角，直到今天的字节跳动异军突起，华为<hanla></hanla>5G<hanla></hanla>技术突破奠定通信一哥。可以说中国<hanla></hanla>21<hanla></hanla>世纪以来<hanla></hanla>20<hanla></hanla>年的互联网发展与美国齐头并进。</p>
-</blockquote>
-</li>
-<li><p><hanla></hanla>1968<hanla></hanla>年，一些来自通用电器公司、贝尔实验室和麻省理工学院的研究人员开发了一个名叫<hanla></hanla>Multics<hanla></hanla>的特殊 操作系统。Multics<hanla></hanla>在多任务文件管理和用户连接中综合了许多新概念。</p>
-</li>
-<li><p><hanla></hanla>1969－1970<hanla></hanla>年，AT&amp;T<hanla></hanla>的贝尔实验室研究人员<hanla></hanla>Ken Tompson<hanla></hanla>和<hanla></hanla>Dennis Ritchie，在采用很多<hanla></hanla>Multics<hanla></hanla>特点的基础 上开发了<hanla></hanla>UINX<hanla></hanla>系统。它运行在小型机上，满足了系统对科研环境的要求。从产生开始，UNIX<hanla></hanla>就是一个有价值 的、高效的、多用户和多任务的操作系统。</p>
-</li>
-<li><p><hanla></hanla>UNIX<hanla></hanla>从满足个人的设计需求开始，逐步成长为由许多不同开发商所支持的标准软件产品。</p>
-</li>
-<li><p><hanla></hanla>1972<hanla></hanla>年，贝尔实验室开始发放商业版本，并且给不同的用户授权使用这个系统，使用者之一是加州大学伯克莱 分校的计算机系。伯克莱给系统增加了许多新的特点，后来成为了标准。</p>
-</li>
-<li><p><hanla></hanla>1975<hanla></hanla>年伯克莱由下属部门<hanla></hanla>BSD<hanla></hanla>发行了自己的<hanla></hanla>UNIX<hanla></hanla>版本。UNIX<hanla></hanla>的<hanla></hanla>BSD<hanla></hanla>版本成为<hanla></hanla>AT&amp;T<hanla></hanla>贝尔实验室版本的主要竞争 者，而其它的独立开发出的<hanla></hanla>UNIX<hanla></hanla>版本也开始萌生。</p>
-</li>
-<li><p><hanla></hanla>1980<hanla></hanla>年微软公司开发了叫做<hanla></hanla>Xenix<hanla></hanla>的<hanla></hanla>UNIX PC<hanla></hanla>版本。AT&amp;T<hanla></hanla>发行了第一个商业版本。名叫<hanla></hanla>System Ⅲ，后来被成为 对商用软件产品良好支持的<hanla></hanla>System Ⅴ所替代。</p>
-</li>
-</ul>
 
     </div>
 
@@ -280,7 +251,8 @@ html ul > hanla {
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="tag"><hanla></hanla># Linux<hanla></hanla>环境搭建</a>
+              <a href="/tags/Linux%E6%8C%87%E4%BB%A4/" rel="tag"><hanla></hanla># Linux<hanla></hanla>指令</a>
+              <a href="/tags/Linux%E6%9D%83%E9%99%90/" rel="tag"><hanla></hanla># Linux<hanla></hanla>权限</a>
           </div>
 
         
@@ -289,8 +261,8 @@ html ul > hanla {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/6/c-chu-shi-c/" rel="prev" title="【C++】初识C++">
-      <i class="fa fa-chevron-left"></i><hanla></hanla> 【C++】初识<hanla></hanla>C++
+    <a href="/2021/10/16/linux-cao-zuo-xi-tong-linux-li-shi-yu-huan-jing-da-jian/" rel="prev" title="【Linux操作系统】Linux历史与环境搭建">
+      <i class="fa fa-chevron-left"></i><hanla></hanla> 【Linux<hanla></hanla>操作系统】Linux<hanla></hanla>历史与环境搭建
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -351,7 +323,6 @@ html ul > hanla {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text"><hanla></hanla>Linux<hanla></hanla>背景介绍</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -366,7 +337,7 @@ html ul > hanla {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name"><hanla></hanla>日志</span>
         </a>
       </div>
@@ -379,7 +350,7 @@ html ul > hanla {
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count"><hanla></hanla>22</span>
+        <span class="site-state-item-count"><hanla></hanla>25</span>
         <span class="site-state-item-name"><hanla></hanla>标签</span></a>
       </div>
   </nav>
