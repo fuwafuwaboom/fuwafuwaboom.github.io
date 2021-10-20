@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>计算机学科笔记</title>
+  <title>霄の知识站</title>
   
   
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2021-10-20T10:58:54.448Z</updated>
+  <updated>2021-10-20T11:03:13.707Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -21,11 +21,10 @@
     <link href="http://fuwafuwaboom.github.io/2021/10/20/zhen-zhi-ping-zhen-wei-jin/"/>
     <id>http://fuwafuwaboom.github.io/2021/10/20/zhen-zhi-ping-zhen-wei-jin/</id>
     <published>2021-10-19T16:00:00.000Z</published>
-    <updated>2021-10-20T10:58:54.448Z</updated>
+    <updated>2021-10-20T11:03:13.707Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Linux操作系统的入门篇，重点讲解Linux的发展历史，以及如何搭建Linux环境&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/10/20/7OxbRgH5IuWlDd6.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
