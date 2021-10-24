@@ -6,14 +6,25 @@
     <content><![CDATA[<p><img src="https://i.loli.net/2021/10/20/7OxbRgH5IuWlDd6.png" alt="image.png"></p>
 <span id="more"></span>
 
-<h1 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h1><p>计算每排针数</p>
-<p>起针</p>
+<h1 id="针织秘诀"><a href="#针织秘诀" class="headerlink" title="针织秘诀"></a>针织秘诀</h1><blockquote>
+<p><strong>理解原理</strong> <strong>细节把控</strong></p>
+<p><strong>认真模仿 用力适中</strong></p>
+<p><strong>熟能生巧 大巧不工</strong></p>
+</blockquote>
+<h1 id="平针围巾基本步骤"><a href="#平针围巾基本步骤" class="headerlink" title="平针围巾基本步骤"></a>平针围巾基本步骤</h1><p><strong>1.计算每排针数:</strong></p>
+<p><code>int max = 20;</code></p>
+<p><strong>2.起针</strong></p>
+<p>起<code>max</code>针</p>
+<p><strong>3.针织开始</strong></p>
 <p>第一排：正挑不织→正针→反针→正针→反针→…→反针 正针起，反针结</p>
 <p>第二排：正挑不织→反针→正针→反针→正针→…→正针 反针起，正针结</p>
-<p>…</p>
-<p>第n排</p>
-<p>结针</p>
-<h2 id="起针"><a href="#起针" class="headerlink" title="起针"></a>起针</h2><p><img src="https://i.loli.net/2021/10/20/Kl57sZ4uTkWgAeE.png" alt="image.png"></p>
+<p>…（奇数排一正一反 偶数排一反一正）</p>
+<p><strong>4.结针</strong></p>
+<p>结<code>max</code>针</p>
+<h1 id="起针"><a href="#起针" class="headerlink" title="起针"></a>起针</h1><p><code>int n = 0;</code></p>
+<p><code>while(n=20)</code></p>
+<p><code>{</code></p>
+<p><img src="https://i.loli.net/2021/10/20/Kl57sZ4uTkWgAeE.png" alt="image.png"></p>
 <p><img src="https://i.loli.net/2021/10/20/jBVU6PG7iWL8JuY.png" alt="image.png"></p>
 <p><img src="https://i.loli.net/2021/10/20/4rqG57OxSDtWaXk.png" alt="image.png"></p>
 <p><img src="https://i.loli.net/2021/10/20/nIqUe4OjlHFycLt.png" alt="image.png"></p>
@@ -26,21 +37,43 @@
 <p><img src="https://i.loli.net/2021/10/20/qZOywTzJxFf3K1E.png" alt="image.png"></p>
 <p><img src="https://i.loli.net/2021/10/20/BmVfzoQnRsix5WM.png" alt="image.png"></p>
 <p><img src="https://i.loli.net/2021/10/20/cv5iE1Ma7IAwzQg.png" alt="image.png"></p>
-<h2 id="正挑不织"><a href="#正挑不织" class="headerlink" title="正挑不织"></a>正挑不织</h2><p>第一针不绕线</p>
-<h2 id="正针"><a href="#正针" class="headerlink" title="正针"></a>正针</h2><p>正针前顺时针绕线</p>
-<p>插进去 逆时针绕线 挑出来 松掉 </p>
-<h2 id="反针"><a href="#反针" class="headerlink" title="反针"></a>反针</h2><p>反针前逆时针绕线</p>
-<p>插进去 逆时针绕线 挑出来 松掉 </p>
-<h2 id="结针"><a href="#结针" class="headerlink" title="结针"></a>结针</h2><h1 id="平针规则"><a href="#平针规则" class="headerlink" title="平针规则"></a>平针规则</h1><p>起针后</p>
-<p>奇数排一正一反<br>偶数排一反一正</p>
-]]></content>
+<p><code>n++;</code></p>
+<p><code>}</code></p>
+<h1 id="正挑不织"><a href="#正挑不织" class="headerlink" title="正挑不织"></a>正挑不织</h1><p>抽针</p>
+<p><img src="https://i.loli.net/2021/10/24/r5pWKXdyRaZOjti.png" alt="image.png"></p>
+<p>第一针直接挑出来，不绕线</p>
+<p><img src="https://i.loli.net/2021/10/24/ZGk1IFXgRLqyn6h.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2021/10/24/Hs5oJDZKWQXw1l9.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2021/10/24/8nDQYJpL5wA72do.png" alt="image.png"></p>
+<h1 id="正针"><a href="#正针" class="headerlink" title="正针"></a>正针</h1><p>1.正针前顺时针绕线（第一针不用）</p>
+<p>2.正孔插进去 </p>
+<p><img src="https://i.loli.net/2021/10/24/NwmtyLEAzYPqHj4.png" alt="image.png"></p>
+<p>3.逆时针绕线</p>
+<p><img src="https://i.loli.net/2021/10/24/qy7oSG4Vmcpbzdl.png" alt="image.png"> </p>
+<p>4.挑出来</p>
+<p><img src="https://i.loli.net/2021/10/24/BQNrHe6DKhFPGsO.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2021/10/24/v1o23pjyiQE8Scx.png" alt="image.png"> </p>
+<p>5.松掉 </p>
+<p><img src="https://i.loli.net/2021/10/24/ULxpVh8NIl96oRY.png" alt="image.png"></p>
+<h1 id="反针"><a href="#反针" class="headerlink" title="反针"></a>反针</h1><p>1.反针前逆时针绕线</p>
+<p><img src="https://i.loli.net/2021/10/24/ZpQ3zS762wXK5rN.png" alt="image.png"></p>
+<p>2.反孔插进去 </p>
+<p><img src="https://i.loli.net/2021/10/24/AwUC6Nk4YToeXgO.png" alt="image.png"></p>
+<p>3.逆时针绕线 </p>
+<p><img src="https://i.loli.net/2021/10/24/uLVAh481vzM5BkZ.png" alt="image.png"></p>
+<p>4.挑出来 </p>
+<p><img src="https://i.loli.net/2021/10/24/jGe2usiSnEDPv8m.png" alt="image.png"></p>
+<p>5.松掉 </p>
+<p><img src="https://i.loli.net/2021/10/24/J72MaF5NvklDcuf.png" alt="image.png"></p>
+<h1 id="结针"><a href="#结针" class="headerlink" title="结针"></a>结针</h1><p>至此，围巾步骤结束</p>
+<h1 id="成果展示"><a href="#成果展示" class="headerlink" title="成果展示"></a>成果展示</h1>]]></content>
       <categories>
         <category>【针织】</category>
       </categories>
       <tags>
         <tag>兴趣爱好</tag>
         <tag>针织</tag>
-        <tag>秋天送给老妈的第一条围巾</tag>
+        <tag>送给老妈的第一条围巾</tag>
       </tags>
   </entry>
   <entry>
