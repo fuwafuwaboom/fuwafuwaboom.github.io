@@ -22,8 +22,8 @@
 
   <meta name="description" content="本篇前言 “指针是C语言的灵魂，精通指针也就基本精通了C语言。” 指针确实非常重要，但是它只是一个工具，是帮助我们分配内存的工具，所以我们的关注点最好不要陷入研究指针这个工具。了解指针，并且通过指针熟练的操作内存，这才是玩转C指针的精髓，也是我们努力的方向。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【C语言从青铜到王者】第六篇·玩转C指针">
-<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-wan-zhuan-c-zhi-zhen/index.html">
+<meta property="og:title" content="【C语言从青铜到王者】第六篇·详解C指针">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/index.html">
 <meta property="og:site_name" content="霄の知识站">
 <meta property="og:description" content="本篇前言 “指针是C语言的灵魂，精通指针也就基本精通了C语言。” 指针确实非常重要，但是它只是一个工具，是帮助我们分配内存的工具，所以我们的关注点最好不要陷入研究指针这个工具。了解指针，并且通过指针熟练的操作内存，这才是玩转C指针的精髓，也是我们努力的方向。">
 <meta property="og:locale" content="zh_CN">
@@ -56,14 +56,14 @@
 <meta property="og:image" content="https://i.loli.net/2021/10/04/SewAiC59pXPjz8B.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/04/8xiBsuWmLeP4QhN.png">
 <meta property="article:published_time" content="2021-06-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-05T09:21:10.162Z">
+<meta property="article:modified_time" content="2021-11-07T14:47:36.043Z">
 <meta property="article:author" content="叶天霄">
 <meta property="article:tag" content="C语言">
 <meta property="article:tag" content="指针">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/09/27/9E7F3hQerRL4VXt.png">
 
-<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-wan-zhuan-c-zhi-zhen/">
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/">
 
 
 <script id="page-configurations">
@@ -76,7 +76,7 @@
   };
 </script>
 
-  <title>【C语言从青铜到王者】第六篇·玩转C指针 | 霄の知识站</title>
+  <title>【C语言从青铜到王者】第六篇·详解C指针 | 霄の知识站</title>
   
 
 
@@ -219,7 +219,7 @@ html ul > hanla {
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-wan-zhuan-c-zhi-zhen/">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -232,7 +232,7 @@ html ul > hanla {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline"><hanla></hanla>
-          【C<hanla></hanla>语言从青铜到王者】第六篇·玩转<hanla></hanla>C<hanla></hanla>指针
+          【C<hanla></hanla>语言从青铜到王者】第六篇·详解<hanla></hanla>C<hanla></hanla>指针
         </h1>
 
         <div class="post-meta">
@@ -250,7 +250,7 @@ html ul > hanla {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2021-10-05 17:21:10" itemprop="dateModified" datetime="2021-10-05T17:21:10+08:00"><hanla></hanla>2021-10-05</time>
+                <time title="修改时间：2021-11-07 22:47:36" itemprop="dateModified" datetime="2021-11-07T22:47:36+08:00"><hanla></hanla>2021-11-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@ html ul > hanla {
               </span>
               <span class="post-meta-item-text"><hanla></hanla>分类于</span>
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E4%BB%8E%E9%9D%92%E9%93%9C%E5%88%B0%E7%8E%8B%E8%80%85%E3%80%91/" itemprop="url" rel="index"><span itemprop="name"><hanla></hanla>【C<hanla></hanla>语言从青铜到王者】</span></a>
+                  <a href="/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/" itemprop="url" rel="index"><span itemprop="name"><hanla></hanla>【C<hanla></hanla>语言】</span></a>
                 </span>
             </span>
 
@@ -949,7 +949,11 @@ pfun_t <span class="token function">signal</span><span class="token punctuation"
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这个东西了解即可，不需要重点学习</p>
 <h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>把一个函数的地址传递给另一个函数，这个另一个函数就是回调函数</p>
-<p><hanla></hanla>1.<hanla></hanla>通过建立<code><hanla></hanla>Calc</code><hanla></hanla>回调函数极大简化计算器的代码量：</p>
+<p>回调函数实际上是一种非常好的帮助我们解耦函数功能的方式</p>
+<p>如果是普通的函数嵌套调用，我们无法更改嵌套调用的函数，需要手动的更改函数名</p>
+<p>而回调函数通过传递函数指针的方法，让我们在嵌套函数的时候能够同时嵌套一众相同类型的函数</p>
+<p>下面给出常见的用法<strong><hanla></hanla>“回调函数<hanla></hanla>+switch<hanla></hanla>组合拳”</strong></p>
+<p>通过建立<code><hanla></hanla>Calc</code><hanla></hanla>回调函数极大简化计算器的代码量：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1005,7 +1009,7 @@ pfun_t <span class="token function">signal</span><span class="token punctuation"
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="C语言指针经典面试题"><a href="#C语言指针经典面试题" class="headerlink" title="C语言指针经典面试题"></a><hanla></hanla>C<hanla></hanla>语言指针经典面试题</h1>
+
     </div>
 
     
@@ -1024,8 +1028,8 @@ pfun_t <span class="token function">signal</span><span class="token punctuation"
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/21/mei-ri-shua-ti-c-yu-yan/" rel="prev" title="【每日刷题】C语言">
-      <i class="fa fa-chevron-left"></i><hanla></hanla> 【每日刷题】C<hanla></hanla>语言
+    <a href="/2021/06/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-shu-ju-zai-nei-cun-zhong-de-cun-chu/" rel="prev" title="【C语言从青铜到王者】第五篇·数据在内存中的存储">
+      <i class="fa fa-chevron-left"></i><hanla></hanla> 【C<hanla></hanla>语言从青铜到王者】第五篇·数据在内存中的存储
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/06/30/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-qi-pian-zi-fu-chuan-han-shu-yu-nei-cun-han-shu/" rel="next" title="【C语言从青铜到王者】第七篇·字符串函数与内存函数"><hanla></hanla>
@@ -1089,7 +1093,7 @@ pfun_t <span class="token function">signal</span><span class="token punctuation"
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">指针到底是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">编程语言的本质是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">内存是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">指针是什么？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">指针类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">指针类型的大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%86%B3%E5%AE%9A%E8%A7%A3%E5%BC%95%E7%94%A8%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">指针类型决定解引用的访问权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%86%B3%E5%AE%9A%E6%8C%87%E9%92%88%E7%9A%84%E6%AD%A5%E9%95%BF"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">指针类型决定指针的步长</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8E%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">野指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8E%E6%8C%87%E9%92%88%E6%88%90%E5%9B%A0"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">野指针成因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E9%81%BF%E9%87%8E%E6%8C%87%E9%92%88%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text">规避野指针的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">指针运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88-%E6%95%B4%E6%95%B0"><span class="nav-number"><hanla></hanla>4.1.</span> <span class="nav-text">指针 + - 整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">指针的关系运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88-%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>4.3.</span> <span class="nav-text">指针-指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const%E4%BF%AE%E9%A5%B0%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>修饰指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E6%94%BE%E5%9C%A8-%E5%89%8D%E9%9D%A2"><span class="nav-number"><hanla></hanla>5.1.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>放在<hanla></hanla>*<hanla></hanla>前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E6%94%BE%E5%9C%A8-%E5%90%8E%E9%9D%A2%E3%80%81%E5%8F%98%E9%87%8F%E5%90%8D%E5%89%8D%E9%9D%A2"><span class="nav-number"><hanla></hanla>5.2.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>放在<hanla></hanla>*<hanla></hanla>后面、变量名前面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88%E5%92%8C%E5%A4%9A%E7%BA%A7%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>6.</span> <span class="nav-text">二级指针和多级指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number"><hanla></hanla>7.</span> <span class="nav-text">指针与字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>8.</span> <span class="nav-text">指针与数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>8.1.</span> <span class="nav-text">指针数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>8.2.</span> <span class="nav-text">数组指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E5%8F%82%E6%95%B0%E5%92%8C%E6%8C%87%E9%92%88%E5%8F%82%E6%95%B0"><span class="nav-number"><hanla></hanla>8.3.</span> <span class="nav-text">函数中的数组参数和指针参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E5%87%BD%E6%95%B0"><span class="nav-number"><hanla></hanla>9.</span> <span class="nav-text">指针与函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>9.1.</span> <span class="nav-text">函数指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>9.2.</span> <span class="nav-text">函数指针数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E7%9A%84%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>9.3.</span> <span class="nav-text">指向函数指针数组的指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number"><hanla></hanla>10.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number"><hanla></hanla>11.</span> <span class="nav-text"><hanla></hanla>C<hanla></hanla>语言指针经典面试题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">指针到底是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">编程语言的本质是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">内存是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">指针是什么？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">指针类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">指针类型的大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%86%B3%E5%AE%9A%E8%A7%A3%E5%BC%95%E7%94%A8%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">指针类型决定解引用的访问权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%86%B3%E5%AE%9A%E6%8C%87%E9%92%88%E7%9A%84%E6%AD%A5%E9%95%BF"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">指针类型决定指针的步长</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8E%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">野指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8E%E6%8C%87%E9%92%88%E6%88%90%E5%9B%A0"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">野指针成因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E9%81%BF%E9%87%8E%E6%8C%87%E9%92%88%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text">规避野指针的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">指针运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88-%E6%95%B4%E6%95%B0"><span class="nav-number"><hanla></hanla>4.1.</span> <span class="nav-text">指针 + - 整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">指针的关系运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88-%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>4.3.</span> <span class="nav-text">指针-指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const%E4%BF%AE%E9%A5%B0%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>修饰指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E6%94%BE%E5%9C%A8-%E5%89%8D%E9%9D%A2"><span class="nav-number"><hanla></hanla>5.1.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>放在<hanla></hanla>*<hanla></hanla>前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E6%94%BE%E5%9C%A8-%E5%90%8E%E9%9D%A2%E3%80%81%E5%8F%98%E9%87%8F%E5%90%8D%E5%89%8D%E9%9D%A2"><span class="nav-number"><hanla></hanla>5.2.</span> <span class="nav-text"><hanla></hanla>const<hanla></hanla>放在<hanla></hanla>*<hanla></hanla>后面、变量名前面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88%E5%92%8C%E5%A4%9A%E7%BA%A7%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>6.</span> <span class="nav-text">二级指针和多级指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number"><hanla></hanla>7.</span> <span class="nav-text">指针与字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>8.</span> <span class="nav-text">指针与数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>8.1.</span> <span class="nav-text">指针数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>8.2.</span> <span class="nav-text">数组指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E5%8F%82%E6%95%B0%E5%92%8C%E6%8C%87%E9%92%88%E5%8F%82%E6%95%B0"><span class="nav-number"><hanla></hanla>8.3.</span> <span class="nav-text">函数中的数组参数和指针参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E5%87%BD%E6%95%B0"><span class="nav-number"><hanla></hanla>9.</span> <span class="nav-text">指针与函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>9.1.</span> <span class="nav-text">函数指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="nav-number"><hanla></hanla>9.2.</span> <span class="nav-text">函数指针数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E7%9A%84%E6%8C%87%E9%92%88"><span class="nav-number"><hanla></hanla>9.3.</span> <span class="nav-text">指向函数指针数组的指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number"><hanla></hanla>10.</span> <span class="nav-text">回调函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1104,14 +1108,14 @@ pfun_t <span class="token function">signal</span><span class="token punctuation"
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name"><hanla></hanla>日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count"><hanla></hanla>8</span>
+        <span class="site-state-item-count"><hanla></hanla>6</span>
         <span class="site-state-item-name"><hanla></hanla>分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
