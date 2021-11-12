@@ -27,12 +27,14 @@
 <meta property="og:site_name" content="霄の知识站">
 <meta property="og:description" content="本篇前言 关于排序算法有很多，本篇文章用C语言实现冒泡排序和快速排序">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20211109204026798.png">
 <meta property="article:published_time" content="2021-10-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-07T14:50:28.968Z">
+<meta property="article:modified_time" content="2021-11-09T13:05:38.569Z">
 <meta property="article:author" content="叶天霄">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20211109204026798.png">
 
 <link rel="canonical" href="http://fuwafuwaboom.github.io/2021/10/5/suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/">
 
@@ -195,7 +197,7 @@ html ul > hanla {
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="叶天霄">
-      <meta itemprop="description" content="相信的心就是你的魔法！">
+      <meta itemprop="description" content="全世界最相信叶天霄的是叶天霄自己">
     </span>
 
     <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -221,7 +223,7 @@ html ul > hanla {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2021-11-07 22:50:28" itemprop="dateModified" datetime="2021-11-07T22:50:28+08:00"><hanla></hanla>2021-11-07</time>
+                <time title="修改时间：2021-11-09 21:05:38" itemprop="dateModified" datetime="2021-11-09T21:05:38+08:00"><hanla></hanla>2021-11-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,8 +250,20 @@ html ul > hanla {
 <p><hanla></hanla>关于排序算法有很多，本篇文章用<hanla></hanla>C<hanla></hanla>语言实现冒泡排序和快速排序</p>
 <span id="more"></span>
 
-<p>冒泡排序</p>
-<p>快速排序</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20211109204026798.png" alt="image-20211109204026798"></p>
+<p><hanla></hanla>都拥有<hanla></hanla>S（感觉）和<hanla></hanla>P（知觉）</p>
+<p><hanla></hanla>更多的<hanla></hanla>T（思考）和<hanla></hanla>E（外向）会让我成为企业家</p>
+<p><hanla></hanla>意味着更少的<hanla></hanla>F（情感）和<hanla></hanla>I（内向）</p>
+<p>和弟弟所说的阴阳对应起来了</p>
+<p>性相近，习相远</p>
+<p>外向的人（Extroverted）能够从人际交往中获得能量，喜欢外出，表情丰富且外露，合群而且喜欢交互，不怕打扰，喜欢自由沟通，讲，然后想，易冲动，易后悔，易受他人影响（不容易长期坚持）</p>
+<p>内向的人（Introverted）能够从时间中获取能量，喜静，多思，冥想，谨慎，不露表情，社会行为的反射性（会失去机会）独立负责，周到不蛮干，不怕长时间做事，勤奋，怕打扰，先想然后讲</p>
+<p>感觉的人（Sensors\Observant）通过五官感受世界、注重真实的存在、实际，用已经有的技能解决问题，喜具体明确，重细节（少全面性），脚踏实地，做事有可能的结果、能忍耐、小心，可做重复工作（不喜新）不喜展望</p>
+<p>直觉的人（Intuitive）通过第六感洞察世界、注重应该如何，比较笼统，喜学新技能，不重准确、喜抽象和理论，重可能性，讨厌细节，好高骛远，喜欢新问题，凭爱好做事，对事情的态度易变，提新见解、匆促结论</p>
+<p>思考的人（Thinking）擅长分析，用逻辑客观方式决策，坚信自己的观点正确，不考虑他人意见，清晰、正义、不喜欢调和主义，批判和鉴别力，规则，工作中少表现出情感，也不喜欢他人感情用事</p>
+<p>情感的人（Feeling），主观和综合，用个人化的、价值导向的方式决策；考虑决策对他人的影响，和谐、宽容、喜欢调解，不按照逻辑思考，考虑环境，喜欢工作场景中的情感，从赞美中得到享受，也希望他人的赞美</p>
+<p>判断的人（Judgers）封闭定向，结构化和组织化，时间导向，决断，事情都有正误之分，喜命令，控制、反应迅速，喜欢完成任务，不善适应</p>
+<p>知觉的人（Prospecting\Perceivers）开放定向，弹性化和自发化，探索和开放结局，好奇，喜欢收集新信息而不是做结论，喜欢观望，喜欢开始许多新的项目，但不完成，优柔寡断、易分散注意力</p>
 
     </div>
 
@@ -341,7 +355,7 @@ html ul > hanla {
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="叶天霄" src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">叶天霄</p>
-  <div class="site-description" itemprop="description">相信的心就是你的魔法！</div>
+  <div class="site-description" itemprop="description">全世界最相信叶天霄的是叶天霄自己</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
