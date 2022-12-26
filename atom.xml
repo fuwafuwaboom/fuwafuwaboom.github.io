@@ -6,7 +6,7 @@
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2021-11-07T14:48:44.823Z</updated>
+  <updated>2022-12-26T17:42:42.189Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -17,9 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【Python】速通Python (上)</title>
+    <link href="http://fuwafuwaboom.github.io/2022/12/25/python-su-tong-python-shang/"/>
+    <id>http://fuwafuwaboom.github.io/2022/12/25/python-su-tong-python-shang/</id>
+    <published>2022-12-25T16:00:00.000Z</published>
+    <updated>2022-12-26T17:42:42.189Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Python基础语法和知识点总结&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【Python】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90Python%E3%80%91/"/>
+    
+    
+    <category term="Python" scheme="http://fuwafuwaboom.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C语言算法题技巧总结</title>
-    <link href="http://fuwafuwaboom.github.io/2021/11/7/c-yu-yan-suan-fa-ti-ji-qiao-zong-jie/"/>
-    <id>http://fuwafuwaboom.github.io/2021/11/7/c-yu-yan-suan-fa-ti-ji-qiao-zong-jie/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/11/6/c-yu-yan-suan-fa-ti-ji-qiao-zong-jie/"/>
+    <id>http://fuwafuwaboom.github.io/2021/11/6/c-yu-yan-suan-fa-ti-ji-qiao-zong-jie/</id>
     <published>2021-11-06T16:00:00.000Z</published>
     <updated>2021-11-07T14:48:44.823Z</updated>
     
@@ -43,8 +63,8 @@
   
   <entry>
     <title>【Linux操作系统】Linux基本指令与权限理解</title>
-    <link href="http://fuwafuwaboom.github.io/2021/10/17/linux-cao-zuo-xi-tong-linux-ji-ben-zhi-ling-yu-quan-xian-li-jie/"/>
-    <id>http://fuwafuwaboom.github.io/2021/10/17/linux-cao-zuo-xi-tong-linux-ji-ben-zhi-ling-yu-quan-xian-li-jie/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/10/16/linux-cao-zuo-xi-tong-linux-ji-ben-zhi-ling-yu-quan-xian-li-jie/"/>
+    <id>http://fuwafuwaboom.github.io/2021/10/16/linux-cao-zuo-xi-tong-linux-ji-ben-zhi-ling-yu-quan-xian-li-jie/</id>
     <published>2021-10-16T16:00:00.000Z</published>
     <updated>2021-10-17T10:14:41.253Z</updated>
     
@@ -65,8 +85,8 @@
   
   <entry>
     <title>【Linux操作系统】Linux历史与环境搭建</title>
-    <link href="http://fuwafuwaboom.github.io/2021/10/16/linux-cao-zuo-xi-tong-linux-li-shi-yu-huan-jing-da-jian/"/>
-    <id>http://fuwafuwaboom.github.io/2021/10/16/linux-cao-zuo-xi-tong-linux-li-shi-yu-huan-jing-da-jian/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/10/15/linux-cao-zuo-xi-tong-linux-li-shi-yu-huan-jing-da-jian/"/>
+    <id>http://fuwafuwaboom.github.io/2021/10/15/linux-cao-zuo-xi-tong-linux-li-shi-yu-huan-jing-da-jian/</id>
     <published>2021-10-15T16:00:00.000Z</published>
     <updated>2021-11-04T14:00:19.816Z</updated>
     
@@ -87,8 +107,8 @@
   
   <entry>
     <title>【C++】初识C++</title>
-    <link href="http://fuwafuwaboom.github.io/2021/10/6/c-chu-shi-c/"/>
-    <id>http://fuwafuwaboom.github.io/2021/10/6/c-chu-shi-c/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/10/5/c-chu-shi-c/"/>
+    <id>http://fuwafuwaboom.github.io/2021/10/5/c-chu-shi-c/</id>
     <published>2021-10-05T16:00:00.000Z</published>
     <updated>2021-10-12T13:54:42.351Z</updated>
     
@@ -107,8 +127,8 @@
   
   <entry>
     <title>【算法】几种常见的排序算法</title>
-    <link href="http://fuwafuwaboom.github.io/2021/10/5/suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/"/>
-    <id>http://fuwafuwaboom.github.io/2021/10/5/suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/10/4/suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/"/>
+    <id>http://fuwafuwaboom.github.io/2021/10/4/suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/</id>
     <published>2021-10-04T16:00:00.000Z</published>
     <updated>2021-11-09T13:05:38.569Z</updated>
     
@@ -128,9 +148,24 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="http://fuwafuwaboom.github.io/2021/09/27/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-shu-ju-zai-nei-cun-zhong-de-cun-chu/"/>
+    <id>http://fuwafuwaboom.github.io/2021/09/27/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-shu-ju-zai-nei-cun-zhong-de-cun-chu/</id>
+    <published>2021-09-27T15:33:27.804Z</published>
+    <updated>2022-09-28T22:21:41.290Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;br&gt;从本篇开始，我们要开始逐渐和内存打交道了。想学好C语言，打牢编程基本功，我们心中一定要时刻有内存的概念。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>向“C源码”学习代码规范</title>
-    <link href="http://fuwafuwaboom.github.io/2021/08/7/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/"/>
-    <id>http://fuwafuwaboom.github.io/2021/08/7/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/08/6/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/"/>
+    <id>http://fuwafuwaboom.github.io/2021/08/6/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/</id>
     <published>2021-08-06T16:00:00.000Z</published>
     <updated>2021-11-07T14:46:25.694Z</updated>
     
@@ -150,8 +185,8 @@
   
   <entry>
     <title>调试</title>
-    <link href="http://fuwafuwaboom.github.io/2021/08/5/diao-shi/"/>
-    <id>http://fuwafuwaboom.github.io/2021/08/5/diao-shi/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/08/4/diao-shi/"/>
+    <id>http://fuwafuwaboom.github.io/2021/08/4/diao-shi/</id>
     <published>2021-08-04T16:00:00.000Z</published>
     <updated>2021-11-07T14:45:42.468Z</updated>
     
@@ -171,8 +206,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第十篇·底层程序的编译过程</title>
-    <link href="http://fuwafuwaboom.github.io/2021/07/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-shi-pian-cheng-xu-de-di-ceng-bian-yi-guo-cheng/"/>
-    <id>http://fuwafuwaboom.github.io/2021/07/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-shi-pian-cheng-xu-de-di-ceng-bian-yi-guo-cheng/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/07/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-shi-pian-cheng-xu-de-di-ceng-bian-yi-guo-cheng/"/>
+    <id>http://fuwafuwaboom.github.io/2021/07/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-shi-pian-cheng-xu-de-di-ceng-bian-yi-guo-cheng/</id>
     <published>2021-07-09T16:00:00.000Z</published>
     <updated>2021-11-07T14:48:07.844Z</updated>
     
@@ -198,8 +233,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第九篇·函数栈帧的创建与销毁</title>
-    <link href="http://fuwafuwaboom.github.io/2021/07/7/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-jiu-pian-han-shu-zhan-zheng-de-chuang-jian-yu-xiao-hui/"/>
-    <id>http://fuwafuwaboom.github.io/2021/07/7/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-jiu-pian-han-shu-zhan-zheng-de-chuang-jian-yu-xiao-hui/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/07/6/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-jiu-pian-han-shu-zhan-zheng-de-chuang-jian-yu-xiao-hui/"/>
+    <id>http://fuwafuwaboom.github.io/2021/07/6/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-jiu-pian-han-shu-zhan-zheng-de-chuang-jian-yu-xiao-hui/</id>
     <published>2021-07-06T16:00:00.000Z</published>
     <updated>2021-11-07T14:48:01.913Z</updated>
     
@@ -225,8 +260,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第八篇·详解自定义类型</title>
-    <link href="http://fuwafuwaboom.github.io/2021/07/5/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ba-pian-xiang-jie-zi-ding-yi-lei-xing/"/>
-    <id>http://fuwafuwaboom.github.io/2021/07/5/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ba-pian-xiang-jie-zi-ding-yi-lei-xing/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/07/4/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ba-pian-xiang-jie-zi-ding-yi-lei-xing/"/>
+    <id>http://fuwafuwaboom.github.io/2021/07/4/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ba-pian-xiang-jie-zi-ding-yi-lei-xing/</id>
     <published>2021-07-04T16:00:00.000Z</published>
     <updated>2021-11-07T14:47:54.423Z</updated>
     
@@ -251,8 +286,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第七篇·字符串函数与内存函数</title>
-    <link href="http://fuwafuwaboom.github.io/2021/06/30/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-qi-pian-zi-fu-chuan-han-shu-yu-nei-cun-han-shu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/06/30/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-qi-pian-zi-fu-chuan-han-shu-yu-nei-cun-han-shu/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/06/29/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-qi-pian-zi-fu-chuan-han-shu-yu-nei-cun-han-shu/"/>
+    <id>http://fuwafuwaboom.github.io/2021/06/29/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-qi-pian-zi-fu-chuan-han-shu-yu-nei-cun-han-shu/</id>
     <published>2021-06-29T16:00:00.000Z</published>
     <updated>2021-11-07T14:47:46.432Z</updated>
     
@@ -274,8 +309,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第六篇·详解C指针</title>
-    <link href="http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/"/>
-    <id>http://fuwafuwaboom.github.io/2021/06/22/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/06/21/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/"/>
+    <id>http://fuwafuwaboom.github.io/2021/06/21/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/</id>
     <published>2021-06-21T16:00:00.000Z</published>
     <updated>2021-11-07T14:47:36.043Z</updated>
     
@@ -296,30 +331,9 @@
   </entry>
   
   <entry>
-    <title>【C语言从青铜到王者】第五篇·数据在内存中的存储</title>
-    <link href="http://fuwafuwaboom.github.io/2021/06/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-shu-ju-zai-nei-cun-zhong-de-cun-chu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/06/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-shu-ju-zai-nei-cun-zhong-de-cun-chu/</id>
-    <published>2021-06-09T16:00:00.000Z</published>
-    <updated>2021-11-07T14:47:16.909Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="数据的存储" scheme="http://fuwafuwaboom.github.io/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>【C语言从青铜到王者】第四篇·详解操作符与相关运算</title>
-    <link href="http://fuwafuwaboom.github.io/2021/06/1/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/06/1/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/05/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/"/>
+    <id>http://fuwafuwaboom.github.io/2021/05/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</id>
     <published>2021-05-31T16:00:00.000Z</published>
     <updated>2021-11-07T14:47:08.154Z</updated>
     
@@ -342,8 +356,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第三篇·详解数组</title>
-    <link href="http://fuwafuwaboom.github.io/2021/05/20/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/05/20/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/05/19/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/"/>
+    <id>http://fuwafuwaboom.github.io/2021/05/19/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</id>
     <published>2021-05-19T16:00:00.000Z</published>
     <updated>2021-11-07T14:46:56.741Z</updated>
     
@@ -364,8 +378,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第二篇·详解函数</title>
-    <link href="http://fuwafuwaboom.github.io/2021/05/13/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/05/13/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/05/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/"/>
+    <id>http://fuwafuwaboom.github.io/2021/05/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/</id>
     <published>2021-05-12T16:00:00.000Z</published>
     <updated>2021-11-07T14:46:50.265Z</updated>
     
@@ -389,8 +403,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第一篇·详解分支与循环</title>
-    <link href="http://fuwafuwaboom.github.io/2021/05/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/"/>
-    <id>http://fuwafuwaboom.github.io/2021/05/10/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/05/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/"/>
+    <id>http://fuwafuwaboom.github.io/2021/05/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</id>
     <published>2021-05-09T16:00:00.000Z</published>
     <updated>2021-11-07T14:46:41.406Z</updated>
     
@@ -411,8 +425,8 @@
   
   <entry>
     <title>【C语言从青铜到王者】第零篇·与C语言来个约会</title>
-    <link href="http://fuwafuwaboom.github.io/2021/05/1/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/"/>
-    <id>http://fuwafuwaboom.github.io/2021/05/1/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</id>
+    <link href="http://fuwafuwaboom.github.io/2021/04/30/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/"/>
+    <id>http://fuwafuwaboom.github.io/2021/04/30/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</id>
     <published>2021-04-30T16:00:00.000Z</published>
     <updated>2021-11-07T14:46:34.905Z</updated>
     
@@ -430,8 +444,8 @@
   
   <entry>
     <title>【针织】平针围巾</title>
-    <link href="http://fuwafuwaboom.github.io/2019/01/9/zhen-zhi-ping-zhen-wei-jin/"/>
-    <id>http://fuwafuwaboom.github.io/2019/01/9/zhen-zhi-ping-zhen-wei-jin/</id>
+    <link href="http://fuwafuwaboom.github.io/2019/01/8/zhen-zhi-ping-zhen-wei-jin/"/>
+    <id>http://fuwafuwaboom.github.io/2019/01/8/zhen-zhi-ping-zhen-wei-jin/</id>
     <published>2019-01-08T16:00:00.000Z</published>
     <updated>2021-11-07T14:49:04.521Z</updated>
     
