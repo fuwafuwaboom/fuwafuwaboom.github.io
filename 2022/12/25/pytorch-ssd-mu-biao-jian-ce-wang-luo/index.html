@@ -20,25 +20,32 @@
     var CONFIG = {"hostname":"fuwafuwaboom.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本篇前言 C++入门篇，着重在C语言的基础上讲解C++的语法。C++版本目前已经更迭支C++20，但本系列仍然着重讲解C++11">
+  <meta name="description" content="本篇前言 SSD目标检测网络介绍">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【C++】初识C++">
-<meta property="og:url" content="http://fuwafuwaboom.github.io/2021/10/5/c-chu-shi-c/index.html">
+<meta property="og:title" content="【Deep Learning】SSD目标检测网络">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2022/12/25/pytorch-ssd-mu-biao-jian-ce-wang-luo/index.html">
 <meta property="og:site_name" content="潇のNOTES">
-<meta property="og:description" content="本篇前言 C++入门篇，着重在C语言的基础上讲解C++的语法。C++版本目前已经更迭支C++20，但本系列仍然着重讲解C++11">
+<meta property="og:description" content="本篇前言 SSD目标检测网络介绍">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20221226152415570.png">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20221226153710075.png">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20221226153837143.png">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20221226154100038.png">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20221226154544340.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/06/ihwHMbnm1Dtu5fl.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/06/VnJoFiS6jgPWRh3.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/06/idM5mwyXe8NVulT.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/12/QlefiWCTE21ckLR.png">
-<meta property="article:published_time" content="2021-10-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-12T13:54:42.351Z">
+<meta property="article:published_time" content="2022-12-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-26T23:31:58.798Z">
 <meta property="article:author" content="TianxiaoYe">
-<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Neural Network">
+<meta property="article:tag" content="Deep Learning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/10/06/ihwHMbnm1Dtu5fl.png">
+<meta name="twitter:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20221226152415570.png">
 
-<link rel="canonical" href="http://fuwafuwaboom.github.io/2021/10/5/c-chu-shi-c/">
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2022/12/25/pytorch-ssd-mu-biao-jian-ce-wang-luo/">
 
 
 <script id="page-configurations">
@@ -51,7 +58,7 @@
   };
 </script>
 
-  <title>【C++】初识C++ | 潇のNOTES</title>
+  <title>【Deep Learning】SSD目标检测网络 | 潇のNOTES</title>
   
 
 
@@ -194,7 +201,7 @@ html ul > hanla {
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2021/10/5/c-chu-shi-c/">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2022/12/25/pytorch-ssd-mu-biao-jian-ce-wang-luo/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -207,7 +214,7 @@ html ul > hanla {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline"><hanla></hanla>
-          【C++】初识<hanla></hanla>C++
+          【Deep Learning】SSD<hanla></hanla>目标检测网络
         </h1>
 
         <div class="post-meta">
@@ -218,14 +225,14 @@ html ul > hanla {
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-10-06 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-06T00:00:00+08:00"><hanla></hanla>2021-10-06</time>
+              <time title="创建时间：2022-12-26 00:00:00" itemprop="dateCreated datePublished" datetime="2022-12-26T00:00:00+08:00"><hanla></hanla>2022-12-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2021-10-12 21:54:42" itemprop="dateModified" datetime="2021-10-12T21:54:42+08:00"><hanla></hanla>2021-10-12</time>
+                <time title="修改时间：2022-12-27 07:31:58" itemprop="dateModified" datetime="2022-12-27T07:31:58+08:00"><hanla></hanla>2022-12-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,7 +240,7 @@ html ul > hanla {
               </span>
               <span class="post-meta-item-text"><hanla></hanla>分类于</span>
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E3%80%90C-%E3%80%91/" itemprop="url" rel="index"><span itemprop="name">【C++】</span></a>
+                  <a href="/categories/%E3%80%90Deep-Learning%E3%80%91/" itemprop="url" rel="index"><span itemprop="name">【Deep Learning】</span></a>
                 </span>
             </span>
 
@@ -249,32 +256,26 @@ html ul > hanla {
 
       
         <p><strong>本篇前言</strong></p>
-<p><hanla></hanla>C++<hanla></hanla>入门篇，着重在<hanla></hanla>C<hanla></hanla>语言的基础上讲解<hanla></hanla>C++<hanla></hanla>的语法。C++<hanla></hanla>版本目前已经更迭支<hanla></hanla>C++20，但本系列仍然着重讲解<hanla></hanla>C++11</p>
+<p><hanla></hanla>SSD<hanla></hanla>目标检测网络介绍</p>
 <span id="more"></span>
 
-<h1 id="C-介绍"><a href="#C-介绍" class="headerlink" title="C++介绍"></a><hanla></hanla>C++<hanla></hanla>介绍</h1><h2 id="C-应用的常用领域"><a href="#C-应用的常用领域" class="headerlink" title="C++应用的常用领域"></a><hanla></hanla>C++<hanla></hanla>应用的常用领域</h2><p><hanla></hanla>1.<hanla></hanla>操作系统以及大型系统软件开发（阿里云开发→独立大型数据库）</p>
-<p><hanla></hanla>2.<hanla></hanla>服务器端开发（美团<hanla></hanla>app→处理下单→每一单的处理→后端服务器的处理和数据的管理）</p>
-<p><hanla></hanla>3.<hanla></hanla>人工智能（底层算法：C/C++ 上层：python<hanla></hanla>封装）</p>
-<p><hanla></hanla>4.<hanla></hanla>游戏开发（大型游戏对性能要求高）</p>
-<p><hanla></hanla>5.<hanla></hanla>嵌入式开发（与<hanla></hanla>C<hanla></hanla>结合 微型系统）</p>
-<p><hanla></hanla>6.<hanla></hanla>分布式系统（服务器上层)</p>
-<p><hanla></hanla>7.<hanla></hanla>物联网（扫地机器人、智能家居）</p>
-<h2 id="如何学好C"><a href="#如何学好C" class="headerlink" title="如何学好C++"></a><hanla></hanla>如何学好<hanla></hanla>C++</h2><p><hanla></hanla>C++<hanla></hanla>最大的缺点，就是语法复杂，而且难学难精</p>
-<p><hanla></hanla>第一个层次，C++<hanla></hanla>基础（平平常常）</p>
-<p><hanla></hanla>第二个层次，正确高效的使用<hanla></hanla>C++（轻车熟路）</p>
-<p><hanla></hanla>第三个层次，深入解读<hanla></hanla>C++（出神入化）</p>
-<p><hanla></hanla>第四个层次，研究<hanla></hanla>C++（返璞归真）</p>
-<p>第二层就要多从工作实战项目中吸取经验</p>
-<p><hanla></hanla>C++<hanla></hanla>进阶的好书很多，但是入门的好书很少</p>
-<p>前期语法居多，中期联系居多，后期融会贯通居多</p>
-<p>所以</p>
-<p><hanla></hanla>前期一定要多写博客总结<hanla></hanla>+<hanla></hanla>练习熟悉语法</p>
-<p>中期一定要多练习，学会运用</p>
-<p>后期一定也要多写博客总结</p>
-<h2 id="C-关键字"><a href="#C-关键字" class="headerlink" title="C++关键字"></a><hanla></hanla>C++<hanla></hanla>关键字</h2><p><hanla></hanla>C++<hanla></hanla>共计<hanla></hanla>63<hanla></hanla>个关键字，C<hanla></hanla>语言有<hanla></hanla>32<hanla></hanla>个关键字，多了几乎整整一倍。同时，C<hanla></hanla>语言中的关键字<hanla></hanla>C++<hanla></hanla>都可以用，C++<hanla></hanla>也涵盖了大部分<hanla></hanla>C<hanla></hanla>语言的语法</p>
+<h1 id="SSD整体结构介绍"><a href="#SSD整体结构介绍" class="headerlink" title="SSD整体结构介绍"></a><hanla></hanla>SSD<hanla></hanla>整体结构介绍</h1><p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226152415570.png" alt="image-20221226152415570"></p>
+<p><hanla></hanla>1.<hanla></hanla>输入的图片的<hanla></hanla>shape<hanla></hanla>必须是<hanla></hanla>300×300×3，一般需要<hanla></hanla>resize<hanla></hanla>到这个规格才能传入网络中</p>
+<p><hanla></hanla>2.SSD<hanla></hanla>对<hanla></hanla>VGG<hanla></hanla>神经网络进行了一些改变，增加了四个卷积层</p>
+<p><hanla></hanla>3.<hanla></hanla>如此，SSD<hanla></hanla>就可以对图片进行不断的特征提取，提取出各个特征层</p>
+<p><hanla></hanla>4.<hanla></hanla>特征层的高和宽就是把输入进来的图像分隔成多少个网格</p>
+<h2 id="先验框"><a href="#先验框" class="headerlink" title="先验框"></a>先验框</h2><p>以网格的中心为中心，存在先验框</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226153710075.png" alt="image-20221226153710075"></p>
+<p>先验框是我们事先在图上标好的，然后我们的工作就是将先验框调整到<img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226153837143.png" alt="image-20221226153837143">的大小。也就是说我们是先把图片分割成网格，再用每个网格自带的先验框进行调整</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226154100038.png" alt="image-20221226154100038"></p>
+<p><hanla></hanla>def.boxes:<hanla></hanla>后面的数字就是每个网格对应多少个先验框，5776<hanla></hanla>就是总共有多少个先验框</p>
+<p><hanla></hanla>我们就对这<hanla></hanla>5776<hanla></hanla>个先验框分别进行调整，然后看<hanla></hanla>5776<hanla></hanla>个框中是否包含我们需要的物体，有的话就标出来。而我们碰到重合的先验框，就得通过一些得分算法来再次调整</p>
+<h2 id="VGG-SSD特征提取网络代码详解"><a href="#VGG-SSD特征提取网络代码详解" class="headerlink" title="VGG-SSD特征提取网络代码详解"></a><hanla></hanla>VGG-SSD<hanla></hanla>特征提取网络代码详解</h2><p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226154544340.png" alt="image-20221226154544340"></p>
+<p><hanla></hanla>我们会获得<hanla></hanla>6<hanla></hanla>个有效特征层</p>
+<h2 id="SSDbody-如何处理有效特征层"><a href="#SSDbody-如何处理有效特征层" class="headerlink" title="SSDbody-如何处理有效特征层"></a>SSDbody-如何处理有效特征层</h2><p><hanla></hanla>C++<hanla></hanla>共计<hanla></hanla>63<hanla></hanla>个关键字，C<hanla></hanla>语言有<hanla></hanla>32<hanla></hanla>个关键字，多了几乎整整一倍。同时，C<hanla></hanla>语言中的关键字<hanla></hanla>C++<hanla></hanla>都可以用，C++<hanla></hanla>也涵盖了大部分<hanla></hanla>C<hanla></hanla>语言的语法</p>
 <p><img src="https://i.loli.net/2021/10/06/ihwHMbnm1Dtu5fl.png" alt="QQ图片20211006011323.png"></p>
 <p>不逐个讲解，在语法中慢慢渗透学习</p>
-<h2 id="第一个C-程序"><a href="#第一个C-程序" class="headerlink" title="第一个C++程序"></a><hanla></hanla>第一个<hanla></hanla>C++<hanla></hanla>程序</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+<h2 id="先验框详解与可视化"><a href="#先验框详解与可视化" class="headerlink" title="先验框详解与可视化"></a>先验框详解与可视化</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
 using namespace std;
 int main()
 {
@@ -469,7 +470,9 @@ int main()
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Neural-Network/" rel="tag"># Neural Network</a>
+              <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           </div>
 
         
@@ -478,12 +481,12 @@ int main()
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/4/suan-fa-ji-chong-chang-jian-de-pai-xu-suan-fa/" rel="prev" title="【算法】几种常见的排序算法">
-      <i class="fa fa-chevron-left"></i> 【算法】几种常见的排序算法
+    <a href="/2021/11/6/c-yu-yan-suan-fa-ti-ji-qiao-zong-jie/" rel="prev" title="C语言算法题技巧总结">
+      <i class="fa fa-chevron-left"></i><hanla></hanla> C<hanla></hanla>语言算法题技巧总结
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/10/15/linux-cao-zuo-xi-tong-linux-li-shi-yu-huan-jing-da-jian/" rel="next" title="【Linux操作系统】Linux历史与环境搭建"><hanla></hanla>
-      【Linux<hanla></hanla>操作系统】Linux<hanla></hanla>历史与环境搭建 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/12/25/python-su-tong-python-shang/" rel="next" title="【Python】速通Python (上)"><hanla></hanla>
+      【Python】速通<hanla></hanla>Python (上) <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -543,7 +546,7 @@ int main()
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%BA%94%E7%94%A8%E7%9A%84%E5%B8%B8%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>应用的常用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E5%A5%BDC"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text"><hanla></hanla>如何学好<hanla></hanla>C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.3.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAC-%E7%A8%8B%E5%BA%8F"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text"><hanla></hanla>第一个<hanla></hanla>C++<hanla></hanla>程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">命名空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8F%90%E5%87%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E2%80%9D%EF%BC%9F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text"><hanla></hanla>为什么要提出<hanla></hanla>“命名空间”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.</span> <span class="nav-text">命名空间的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E5%B5%8C%E5%A5%97%E5%AE%9A%E4%B9%89"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">命名空间嵌套定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E5%90%8D%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6"><span class="nav-number"><hanla></hanla>2.4.</span> <span class="nav-text">同名命名空间会自动合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>2.5.</span> <span class="nav-text">如何使用命名空间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IO%E6%B5%81"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text"><hanla></hanla>IO<hanla></hanla>流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">输入输出流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E4%B8%8EC%E8%AF%AD%E8%A8%80%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E7%9A%84%E4%BC%98%E5%8A%A3%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>与<hanla></hanla>C<hanla></hanla>语言的输入输出方式的优劣与选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">缺省参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number"><hanla></hanla>4.1.</span> <span class="nav-text">缺省参数的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E7%BC%BA%E7%9C%81"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">全缺省</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A-%E9%83%A8%E5%88%86-%E7%BC%BA%E7%9C%81"><span class="nav-number"><hanla></hanla>4.3.</span> <span class="nav-text"><hanla></hanla>半<hanla></hanla>(部分)<hanla></hanla>缺省</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number"><hanla></hanla>4.4.</span> <span class="nav-text">缺省参数的其他注意点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text">函数重载</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSD%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text"><hanla></hanla>SSD<hanla></hanla>整体结构介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E6%A1%86"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">先验框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VGG-SSD%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text"><hanla></hanla>VGG-SSD<hanla></hanla>特征提取网络代码详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSDbody-%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E6%9C%89%E6%95%88%E7%89%B9%E5%BE%81%E5%B1%82"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">SSDbody-如何处理有效特征层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E6%A1%86%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text">先验框详解与可视化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">命名空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8F%90%E5%87%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E2%80%9D%EF%BC%9F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text"><hanla></hanla>为什么要提出<hanla></hanla>“命名空间”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.</span> <span class="nav-text">命名空间的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E5%B5%8C%E5%A5%97%E5%AE%9A%E4%B9%89"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">命名空间嵌套定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E5%90%8D%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6"><span class="nav-number"><hanla></hanla>2.4.</span> <span class="nav-text">同名命名空间会自动合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>2.5.</span> <span class="nav-text">如何使用命名空间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IO%E6%B5%81"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text"><hanla></hanla>IO<hanla></hanla>流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">输入输出流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E4%B8%8EC%E8%AF%AD%E8%A8%80%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E7%9A%84%E4%BC%98%E5%8A%A3%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text"><hanla></hanla>C++<hanla></hanla>与<hanla></hanla>C<hanla></hanla>语言的输入输出方式的优劣与选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">缺省参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number"><hanla></hanla>4.1.</span> <span class="nav-text">缺省参数的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E7%BC%BA%E7%9C%81"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">全缺省</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A-%E9%83%A8%E5%88%86-%E7%BC%BA%E7%9C%81"><span class="nav-number"><hanla></hanla>4.3.</span> <span class="nav-text"><hanla></hanla>半<hanla></hanla>(部分)<hanla></hanla>缺省</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number"><hanla></hanla>4.4.</span> <span class="nav-text">缺省参数的其他注意点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text">函数重载</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

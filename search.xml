@@ -1,35 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【Python】速通Python (下)</title>
+    <url>/2022/12/26/python-su-tong-python-xia/</url>
+    <content><![CDATA[<p><strong>本篇前言</strong></p>
+<p>高级操作与案例分析</p>
+<span id="more"></span>
+
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="什么是文件"><a href="#什么是文件" class="headerlink" title="什么是文件"></a>什么是文件</h2><p>Guido van Rossum荷兰程序员</p>
+<p>诞生于1989年圣诞节，最终第一个正式版本发布于1991年</p>
+<h2 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h2><ul>
+<li>科学计算&amp;数据分析</li>
+<li>Web开发</li>
+<li>自动化运维</li>
+<li>机器学习</li>
+<li>爬虫</li>
+<li>自动化测试</li>
+<li><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227123105830.png" alt="image-20221227123105830"></li>
+</ul>
+<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>优点：</p>
+<ul>
+<li>语法简洁易上手</li>
+<li>功能强大，用途广泛</li>
+<li>生态丰富，海量第三方库</li>
+<li>与C/C++相互调用很容易</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>执行效率慢</li>
+<li>对多核心并发编程支持偏弱</li>
+<li>变量是动态类型，对大型项目和多人合作项目并不友好</li>
+</ul>
+<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><p>运行环境：Python（解释器）（下载后可以在命令行中编写python代码）</p>
+<p>开发环境：Pycharm（执行器）（认准jetbrains网址）（jetbrains有许多好用的开发工具，俗称JB全家桶）</p>
+<h2 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h2><h2 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h2><h2 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h2><h1 id="人生重开模拟器"><a href="#人生重开模拟器" class="headerlink" title="人生重开模拟器"></a>人生重开模拟器</h1><h1 id="认识标准库"><a href="#认识标准库" class="headerlink" title="认识标准库"></a>认识标准库</h1><h1 id="日期计算器"><a href="#日期计算器" class="headerlink" title="日期计算器"></a>日期计算器</h1><h1 id="单词逆序"><a href="#单词逆序" class="headerlink" title="单词逆序"></a>单词逆序</h1><h1 id="旋转字符串"><a href="#旋转字符串" class="headerlink" title="旋转字符串"></a>旋转字符串</h1><h1 id="统计字符串前缀"><a href="#统计字符串前缀" class="headerlink" title="统计字符串前缀"></a>统计字符串前缀</h1><h1 id="文件搜索工具"><a href="#文件搜索工具" class="headerlink" title="文件搜索工具"></a>文件搜索工具</h1><h1 id="pip的使用"><a href="#pip的使用" class="headerlink" title="pip的使用"></a>pip的使用</h1><h1 id="二维码生成工具"><a href="#二维码生成工具" class="headerlink" title="二维码生成工具"></a>二维码生成工具</h1><h1 id="程序猿鼓励师"><a href="#程序猿鼓励师" class="headerlink" title="程序猿鼓励师"></a>程序猿鼓励师</h1><h1 id="学生管理系统"><a href="#学生管理系统" class="headerlink" title="学生管理系统"></a>学生管理系统</h1>]]></content>
+      <categories>
+        <category>【Python】</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【Python】速通Python (上)</title>
     <url>/2022/12/25/python-su-tong-python-shang/</url>
     <content><![CDATA[<p><strong>本篇前言</strong></p>
 <p>Python基础语法和知识点总结</p>
 <span id="more"></span>
 
-<h1 id="C-介绍"><a href="#C-介绍" class="headerlink" title="C++介绍"></a>C++介绍</h1><h2 id="C-应用的常用领域"><a href="#C-应用的常用领域" class="headerlink" title="C++应用的常用领域"></a>C++应用的常用领域</h2><p>1.操作系统以及大型系统软件开发（阿里云开发→独立大型数据库）</p>
-<p>2.服务器端开发（美团app→处理下单→每一单的处理→后端服务器的处理和数据的管理）</p>
-<p>3.人工智能（底层算法：C/C++ 上层：python封装）</p>
-<p>4.游戏开发（大型游戏对性能要求高）</p>
-<p>5.嵌入式开发（与C结合 微型系统）</p>
-<p>6.分布式系统（服务器上层)</p>
-<p>7.物联网（扫地机器人、智能家居）</p>
-<h2 id="如何学好C"><a href="#如何学好C" class="headerlink" title="如何学好C++"></a>如何学好C++</h2><p>C++最大的缺点，就是语法复杂，而且难学难精</p>
-<p>第一个层次，C++基础（平平常常）</p>
-<p>第二个层次，正确高效的使用C++（轻车熟路）</p>
-<p>第三个层次，深入解读C++（出神入化）</p>
-<p>第四个层次，研究C++（返璞归真）</p>
-<p>第二层就要多从工作实战项目中吸取经验</p>
-<p>C++进阶的好书很多，但是入门的好书很少</p>
-<p>前期语法居多，中期联系居多，后期融会贯通居多</p>
-<p>所以</p>
-<p>前期一定要多写博客总结+练习熟悉语法</p>
-<p>中期一定要多练习，学会运用</p>
-<p>后期一定也要多写博客总结</p>
-<h2 id="C-关键字"><a href="#C-关键字" class="headerlink" title="C++关键字"></a>C++关键字</h2><p>C++共计63个关键字，C语言有32个关键字，多了几乎整整一倍。同时，C语言中的关键字C++都可以用，C++也涵盖了大部分C语言的语法</p>
+<h1 id="Python背景知识"><a href="#Python背景知识" class="headerlink" title="Python背景知识"></a>Python背景知识</h1><h2 id="Python是咋来的"><a href="#Python是咋来的" class="headerlink" title="Python是咋来的"></a>Python是咋来的</h2><p>Guido van Rossum荷兰程序员</p>
+<p>诞生于1989年圣诞节，最终第一个正式版本发布于1991年</p>
+<h2 id="Python都能干啥"><a href="#Python都能干啥" class="headerlink" title="Python都能干啥"></a>Python都能干啥</h2><ul>
+<li>科学计算&amp;数据分析</li>
+<li>Web开发</li>
+<li>自动化运维</li>
+<li>机器学习</li>
+<li>爬虫</li>
+<li>自动化测试</li>
+<li><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227123105830.png" alt="image-20221227123105830"></li>
+</ul>
+<h2 id="Python的优缺点"><a href="#Python的优缺点" class="headerlink" title="Python的优缺点"></a>Python的优缺点</h2><p>优点：</p>
+<ul>
+<li>语法简洁易上手</li>
+<li>功能强大，用途广泛</li>
+<li>生态丰富，海量第三方库</li>
+<li>与C/C++相互调用很容易</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>执行效率慢</li>
+<li>对多核心并发编程支持偏弱</li>
+<li>变量是动态类型，对大型项目和多人合作项目并不友好</li>
+</ul>
+<h2 id="搭建Python环境"><a href="#搭建Python环境" class="headerlink" title="搭建Python环境"></a>搭建Python环境</h2><p>运行环境：Python（解释器）（下载后可以在命令行中编写python代码）</p>
+<p>开发环境：Pycharm（执行器）（认准jetbrains网址）（jetbrains有许多好用的开发工具，俗称JB全家桶）</p>
+<h2 id="创建Python程序"><a href="#创建Python程序" class="headerlink" title="创建Python程序"></a>创建Python程序</h2><p>第一步：打开Pycharm</p>
+<p>第二步：<img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227125123317.png" alt="image-20221227125123317"></p>
+<p>第三步：选择系统解释器</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227125203323.png" alt="image-20221227125203323"></p>
+<p>第四步：创建.py文件</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227125343325.png" alt="image-20221227125343325"></p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227125417996.png" alt="image-20221227125417996"></p>
+<p>第五步：编写Python代码</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227125457810.png" alt="image-20221227125457810"></p>
+<p>第六步：运行Python程序</p>
+<p>右键→</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227125518143.png" alt="image-20221227125518143"></p>
+<p>其他：</p>
+<p>1.设置字体</p>
+<p>files→</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227125648142.png" alt="image-20221227125648142"></p>
+<p>2.设置背景图</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227125715552.png" alt="image-20221227125715552"></p>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="常量和表达式"><a href="#常量和表达式" class="headerlink" title="常量和表达式"></a>常量和表达式</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>先乘除后加减</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>结果是1.66666665，因为IEEE标准的浮点数有些许误差</p>
+<p>1 + 2 + 3称为表达式</p>
+<p>表达式的运算结果，称为表达式的返回值</p>
+<p>1 2 3这样的数字，称为 字面值常量</p>
+<p>+-*/称为 运算符/操作符</p>
+<h2 id="变量和类型"><a href="#变量和类型" class="headerlink" title="变量和类型"></a>变量和类型</h2><p>给定四个分数，求他们的方差</p>
+<p>方差：每个数字与平均值的差值平方相加除以项数-1</p>
+<pre class="line-numbers language-python"><code class="language-python">avg <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">67.5</span> <span class="token operator">+</span> <span class="token number">89.0</span> <span class="token operator">+</span> <span class="token number">12.9</span> <span class="token operator">+</span> <span class="token number">32.2</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">4</span>
+total <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">67.5</span> <span class="token operator">-</span> avg<span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">89.0</span> <span class="token operator">-</span> avg<span class="token punctuation">)</span> <span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">12.9</span> <span class="token operator">-</span> avg<span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">32.2</span> <span class="token operator">-</span> avg<span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>total <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>变量可以视为是一块用来存储数据的空间（一个纸盒子）</p>
+<p>= 赋值运算符</p>
+<p>变量名必须是 <strong>数字/字母/下划线</strong> 且 <strong>数字不能开头</strong> 且 <strong>不能与Python的关键字重合</strong> 且 <strong>大小写敏感</strong></p>
+<p>变量名尽量是 <strong>描述性单词</strong> 且 <strong>可以使用多个单词描述</strong>(PersonInfo/person_info) </p>
+<p>变量使用：</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">#初始化</span>
+b <span class="token operator">=</span> a 
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+
+a <span class="token operator">=</span> <span class="token number">20</span> <span class="token comment" spellcheck="true">#赋值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>变量类型：</p>
+<ol>
+<li>整数 int</li>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>结果：&lt;class ‘int’&gt;</p>
+<p>Python中的变量类型可以根据初始化直接定义</p>
+<p>Python中int可以表示的数据范围是<strong>无穷</strong>的 （所以没有long short 类型）</p>
+<ol start="2">
+<li>小数 float</li>
+</ol>
+<p>Python中的浮点数就是双精度浮点数</p>
+<blockquote>
+<p>Python的设计哲学：解决一个问题只使用一种方案</p>
+</blockquote>
+<ol start="3">
+<li>字符串 str</li>
+</ol>
+<p>Python中要求用引号把一系列字符引起来，单引号双引号均可</p>
+<p>单双引号可以进行’I love the book “freedom” ‘ (pycharm绿色波浪线是检查拼写错误)</p>
+<p>Python还有三引号 ‘’’，如 ‘’’ My ‘name’ is “freedom” ‘’’</p>
+<p>len()函数可以打印字符串的长度，打印字符串有多少个字符</p>
+<p>字符串可以拼接：a1 + a2 就是把a1a2两个字符串拼接（所以不能把字符串和数字混合相加）</p>
+<p>Python有两类错误：语法错误（编写代码时就发现）和 运行错误（运行后发现的错误）</p>
+<ol start="4">
+<li>布尔 bool</li>
+</ol>
+<p>布尔类型只有两个值</p>
+<p>真：True</p>
+<p>假：False</p>
+<p>（首字母大写！）</p>
+<p>布尔值用于逻辑判定</p>
+<p>数据类型的意义：</p>
+<ol>
+<li><p>不同的类型表示占用不同的空间（int默认4字节可动态扩容/float 8/bool 1/str 变长）</p>
+</li>
+<li><p>不同的类型，对应的操作权限是不同的</p>
+</li>
+</ol>
+<p>动态类型特性：</p>
+<p>程序运行过程中，变量的类型可能会发生改变</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+a <span class="token operator">=</span> <span class="token string">'hello'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+a <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227143501126.png" alt="image-20221227143501126"></p>
+<p>（C/C++是静态类型）</p>
+<pre class="line-numbers language-python"><code class="language-python">a<span class="token punctuation">:</span>int <span class="token operator">=</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">#可以进行变量类型的声明 但不会改变其动态类型特性 只是锦上添花</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="注释的使用"><a href="#注释的使用" class="headerlink" title="注释的使用"></a>注释的使用</h2><p>行注释：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 以下代码在求四个数字的方差</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>文档字符串：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">'''
+以下代码在求四个数字的方差
+'''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>批量注释：</p>
+<pre class="line-numbers language-python"><code class="language-python">Ctrl <span class="token operator">+</span> <span class="token operator">/</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h2><p>最简单的办法就是使用控制台：</p>
+<p>用户能够输入命令，向计算机安排工作，并且计算机可以显示出程序的运行结果</p>
+<p>这样的程序就叫做控制台</p>
+<p>日常生活中最常见的是图形化界面，可以大大降低用户的使用门槛，但是图形化界面的程序编写起来却不太容易</p>
+<p>格式化字符串 f - string：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"a = {a}"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>输入函数input：</p>
+<pre class="line-numbers language-python"><code class="language-python">num <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入一个整数：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'您输入的整数是{num}'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>input返回的值是一个字符串</p>
+<p>当需要使用用户输入的值时，需要类型转换</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入第一个整数：'</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入第二个整数：'</span><span class="token punctuation">)</span>
+
+a <span class="token operator">=</span> int<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+b <span class="token operator">=</span> int<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'a + b = {a + b}'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><table>
+<thead>
+<tr>
+<th align="center">运算符名称</th>
+<th align="center">运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">算术运算符</td>
+<td align="center">** * / + - // %</td>
+</tr>
+<tr>
+<td align="center">关系运算符</td>
+<td align="center">&lt; &lt;= &gt;= &gt; == !=</td>
+</tr>
+<tr>
+<td align="center">赋值运算符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>** 乘方 可以支持整数次方 也可以支持小数次方</p>
+<p>/ 除以0或者0.0都是出错的</p>
+<p>% 是取余数</p>
+<p>// 是地板除法/取整除法，会对结果进行向下取整（选择最小的整数，所以负数取整方向是反的）</p>
+<p>关系运算符的表达式值是布尔值（True/False）</p>
+<p>关系运算也可以比较字符串（字典序，字符串在字典上越靠前越小）</p>
+<p>浮点数进行关系运算有风险：0.1 + 0.2 不等于 0.3 正确的方法是做差然后看结果是否小于误差范围</p>
+<p>python支持连续比较</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.000001</span> <span class="token operator">&lt;</span> <span class="token punctuation">(</span>a <span class="token operator">-</span> b<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0.000001</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 正确比较浮点数的写法</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h1><h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>//iostream是库头文件，不加.h，但是我们引用自己定义的头文件需要加.h
+using namespace std;
+int main()
+{
+    int n = 0;
+    cin >> n;// >> 流提取运算符/输入运算符
+    cout << n << endl;// << 流插入运算符/输出运算符
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>多次输入以空格和换行间隔</p>
+<p><code>endl</code>等价于输出了一个换行符<code>'\n'</code></p>
+<p>输出是从左向右输出</p>
+<p>至于<code>cin</code>和<code>cout</code>到底是什么，在学习了类和对象以后再做解释</p>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p>C++的输入输出可以<strong>自动识别类型</strong>，这是比C语言方便的</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+using namespace std;
+int main()
+{
+    char ch = 'A';
+    int i = 10;
+    int* p = &i;
+    double d = 3.1415926;
+    cout << ch << endl;
+    cout << i << endl;
+    cout << p<< endl;
+    cout << d << endl;
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/10/12/QlefiWCTE21ckLR.png" alt="image.png"></p>
+<p>C++的小数默认只输出小数点后5位，不太方便，此时推荐配合<code>printf</code>使用</p>
+<p><code>printf（“%.2f",a);</code>表示小数点后两位</p>
+<p>其实对于连续输出同类型的，比如结构体，使用C语言反而更方便，因为不用多写那么多<code>&lt;&lt;</code>符号</p>
+<p>所以建议<strong>在C++中不用纠结于到底用哪一个，而是哪个好用用哪个</strong></p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>相对C语言，C++增加了缺省参数的概念用于补充函数的定义</p>
+<p>在定义函数的时候直接指定形参的值，就是缺省参数</p>
+<p><strong>缺省参数仅在没有传参的时候起作用</strong>，一旦传参就没这个参数什么用了</p>
+<h2 id="函数的执行过程"><a href="#函数的执行过程" class="headerlink" title="函数的执行过程"></a>函数的执行过程</h2><blockquote>
+<p>此处关于栈的定义当时记录的时候还没学到，记得补视频！！C++1课 1：12：10</p>
+</blockquote>
+<h2 id="链式调用与嵌套调用"><a href="#链式调用与嵌套调用" class="headerlink" title="链式调用与嵌套调用"></a>链式调用与嵌套调用</h2><p>要传就</p>
+<h2 id="局部变量与函数栈帧"><a href="#局部变量与函数栈帧" class="headerlink" title="局部变量与函数栈帧"></a>局部变量与函数栈帧</h2><p>必须<strong>从右往左</strong>缺省，<strong>不能间隔</strong>着给初值，因为这样会明确的给值</p>
+<h2 id="函数递归"><a href="#函数递归" class="headerlink" title="函数递归"></a>函数递归</h2><p><strong>缺省参数不能在函数声明和定义的时候同时出现，一般建议在声明的时候给缺省参数</strong></p>
+<p><strong>缺省值必须是常量和全局变量</strong></p>
+<h2 id="函数形参的默认值"><a href="#函数形参的默认值" class="headerlink" title="函数形参的默认值"></a>函数形参的默认值</h2><p><strong>缺省参数不能在函数声明和定义的时候同时出现，一般建议在声明的时候给缺省参数</strong></p>
+<p><strong>缺省值必须是常量和全局变量</strong></p>
+<h2 id="函数的关键字参数"><a href="#函数的关键字参数" class="headerlink" title="函数的关键字参数"></a>函数的关键字参数</h2><p><strong>缺省参数不能在函数声明和定义的时候同时出现，一般建议在声明的时候给缺省参数</strong></p>
+<p><strong>缺省值必须是常量和全局变量</strong></p>
+<h1 id="列表和元组"><a href="#列表和元组" class="headerlink" title="列表和元组"></a>列表和元组</h1><h2 id="列表的创建和下标访问"><a href="#列表的创建和下标访问" class="headerlink" title="列表的创建和下标访问"></a>列表的创建和下标访问</h2><h2 id="列表的切片操作"><a href="#列表的切片操作" class="headerlink" title="列表的切片操作"></a>列表的切片操作</h2><h2 id="列表的遍历操作"><a href="#列表的遍历操作" class="headerlink" title="列表的遍历操作"></a>列表的遍历操作</h2><h2 id="列表的插入操作"><a href="#列表的插入操作" class="headerlink" title="列表的插入操作"></a>列表的插入操作</h2><h2 id="列表的查找与删除"><a href="#列表的查找与删除" class="headerlink" title="列表的查找与删除"></a>列表的查找与删除</h2><h2 id="元组的操作"><a href="#元组的操作" class="headerlink" title="元组的操作"></a>元组的操作</h2><h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><h2 id="字典的创建"><a href="#字典的创建" class="headerlink" title="字典的创建"></a>字典的创建</h2><h2 id="字典查找key"><a href="#字典查找key" class="headerlink" title="字典查找key"></a>字典查找key</h2><h2 id="字典的新增修改删除"><a href="#字典的新增修改删除" class="headerlink" title="字典的新增修改删除"></a>字典的新增修改删除</h2><h2 id="理解字典操作的效率"><a href="#理解字典操作的效率" class="headerlink" title="理解字典操作的效率"></a>理解字典操作的效率</h2><h2 id="字典的遍历"><a href="#字典的遍历" class="headerlink" title="字典的遍历"></a>字典的遍历</h2><h2 id="可哈希的类型"><a href="#可哈希的类型" class="headerlink" title="可哈希的类型"></a>可哈希的类型</h2>]]></content>
+      <categories>
+        <category>【Python】</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【Deep Learning】SSD目标检测网络</title>
+    <url>/2022/12/25/pytorch-ssd-mu-biao-jian-ce-wang-luo/</url>
+    <content><![CDATA[<p><strong>本篇前言</strong></p>
+<p>SSD目标检测网络介绍</p>
+<span id="more"></span>
+
+<h1 id="SSD整体结构介绍"><a href="#SSD整体结构介绍" class="headerlink" title="SSD整体结构介绍"></a>SSD整体结构介绍</h1><p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226152415570.png" alt="image-20221226152415570"></p>
+<p>1.输入的图片的shape必须是300×300×3，一般需要resize到这个规格才能传入网络中</p>
+<p>2.SSD对VGG神经网络进行了一些改变，增加了四个卷积层</p>
+<p>3.如此，SSD就可以对图片进行不断的特征提取，提取出各个特征层</p>
+<p>4.特征层的高和宽就是把输入进来的图像分隔成多少个网格</p>
+<h2 id="先验框"><a href="#先验框" class="headerlink" title="先验框"></a>先验框</h2><p>以网格的中心为中心，存在先验框</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226153710075.png" alt="image-20221226153710075"></p>
+<p>先验框是我们事先在图上标好的，然后我们的工作就是将先验框调整到<img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226153837143.png" alt="image-20221226153837143">的大小。也就是说我们是先把图片分割成网格，再用每个网格自带的先验框进行调整</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226154100038.png" alt="image-20221226154100038"></p>
+<p>def.boxes:后面的数字就是每个网格对应多少个先验框，5776就是总共有多少个先验框</p>
+<p>我们就对这5776个先验框分别进行调整，然后看5776个框中是否包含我们需要的物体，有的话就标出来。而我们碰到重合的先验框，就得通过一些得分算法来再次调整</p>
+<h2 id="VGG-SSD特征提取网络代码详解"><a href="#VGG-SSD特征提取网络代码详解" class="headerlink" title="VGG-SSD特征提取网络代码详解"></a>VGG-SSD特征提取网络代码详解</h2><p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221226154544340.png" alt="image-20221226154544340"></p>
+<p>我们会获得6个有效特征层</p>
+<h2 id="SSDbody-如何处理有效特征层"><a href="#SSDbody-如何处理有效特征层" class="headerlink" title="SSDbody-如何处理有效特征层"></a>SSDbody-如何处理有效特征层</h2><p>C++共计63个关键字，C语言有32个关键字，多了几乎整整一倍。同时，C语言中的关键字C++都可以用，C++也涵盖了大部分C语言的语法</p>
 <p><img src="https://i.loli.net/2021/10/06/ihwHMbnm1Dtu5fl.png" alt="QQ图片20211006011323.png"></p>
 <p>不逐个讲解，在语法中慢慢渗透学习</p>
-<h2 id="第一个C-程序"><a href="#第一个C-程序" class="headerlink" title="第一个C++程序"></a>第一个C++程序</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+<h2 id="先验框详解与可视化"><a href="#先验框详解与可视化" class="headerlink" title="先验框详解与可视化"></a>先验框详解与可视化</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
 using namespace std;
 int main()
 {
@@ -217,10 +510,12 @@ int main()
 <p><strong>缺省值必须是常量和全局变量</strong></p>
 <h1 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h1>]]></content>
       <categories>
-        <category>【Python】</category>
+        <category>【Deep Learning】</category>
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>Neural Network</tag>
+        <tag>Deep Learning</tag>
       </tags>
   </entry>
   <entry>
