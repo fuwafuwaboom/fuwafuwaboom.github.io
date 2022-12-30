@@ -27,13 +27,11 @@
 <meta property="og:site_name" content="潇のNOTES">
 <meta property="og:description" content="本篇前言 高级操作与案例分析">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20221227123105830.png">
 <meta property="article:published_time" content="2022-12-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-12-27T23:17:44.407Z">
+<meta property="article:modified_time" content="2022-12-30T06:52:47.762Z">
 <meta property="article:author" content="TianxiaoYe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20221227123105830.png">
 
 <link rel="canonical" href="http://fuwafuwaboom.github.io/2022/12/26/python-su-tong-python-xia/">
 
@@ -222,7 +220,7 @@ html ul > hanla {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2022-12-28 07:17:44" itemprop="dateModified" datetime="2022-12-28T07:17:44+08:00"><hanla></hanla>2022-12-28</time>
+                <time title="修改时间：2022-12-30 14:52:47" itemprop="dateModified" datetime="2022-12-30T14:52:47+08:00"><hanla></hanla>2022-12-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,33 +247,72 @@ html ul > hanla {
 <p>高级操作与案例分析</p>
 <span id="more"></span>
 
-<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="什么是文件"><a href="#什么是文件" class="headerlink" title="什么是文件"></a>什么是文件</h2><p><hanla></hanla>Guido van Rossum<hanla></hanla>荷兰程序员</p>
-<p><hanla></hanla>诞生于<hanla></hanla>1989<hanla></hanla>年圣诞节，最终第一个正式版本发布于<hanla></hanla>1991<hanla></hanla>年</p>
-<h2 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h2><ul>
-<li><hanla></hanla>科学计算<hanla></hanla>&amp;<hanla></hanla>数据分析</li>
-<li><hanla></hanla>Web<hanla></hanla>开发</li>
-<li>自动化运维</li>
-<li>机器学习</li>
-<li>爬虫</li>
-<li>自动化测试</li>
-<li><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20221227123105830.png" alt="image-20221227123105830"></li>
-</ul>
-<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>优点：</p>
-<ul>
-<li>语法简洁易上手</li>
-<li>功能强大，用途广泛</li>
-<li>生态丰富，海量第三方库</li>
-<li><hanla></hanla>与<hanla></hanla>C/C++<hanla></hanla>相互调用很容易</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>执行效率慢</li>
-<li>对多核心并发编程支持偏弱</li>
-<li>变量是动态类型，对大型项目和多人合作项目并不友好</li>
-</ul>
-<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><p><hanla></hanla>运行环境：Python（解释器）（下载后可以在命令行中编写<hanla></hanla>python<hanla></hanla>代码）</p>
-<p><hanla></hanla>开发环境：Pycharm（执行器）（认准<hanla></hanla>jetbrains<hanla></hanla>网址）（jetbrains<hanla></hanla>有许多好用的开发工具，俗称<hanla></hanla>JB<hanla></hanla>全家桶）</p>
-<h2 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h2><h2 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h2><h2 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h2><h1 id="人生重开模拟器"><a href="#人生重开模拟器" class="headerlink" title="人生重开模拟器"></a>人生重开模拟器</h1><h1 id="认识标准库"><a href="#认识标准库" class="headerlink" title="认识标准库"></a>认识标准库</h1><h1 id="日期计算器"><a href="#日期计算器" class="headerlink" title="日期计算器"></a>日期计算器</h1><h1 id="单词逆序"><a href="#单词逆序" class="headerlink" title="单词逆序"></a>单词逆序</h1><h1 id="旋转字符串"><a href="#旋转字符串" class="headerlink" title="旋转字符串"></a>旋转字符串</h1><h1 id="统计字符串前缀"><a href="#统计字符串前缀" class="headerlink" title="统计字符串前缀"></a>统计字符串前缀</h1><h1 id="文件搜索工具"><a href="#文件搜索工具" class="headerlink" title="文件搜索工具"></a>文件搜索工具</h1><h1 id="pip的使用"><a href="#pip的使用" class="headerlink" title="pip的使用"></a><hanla></hanla>pip<hanla></hanla>的使用</h1><h1 id="二维码生成工具"><a href="#二维码生成工具" class="headerlink" title="二维码生成工具"></a>二维码生成工具</h1><h1 id="程序猿鼓励师"><a href="#程序猿鼓励师" class="headerlink" title="程序猿鼓励师"></a>程序猿鼓励师</h1><h1 id="学生管理系统"><a href="#学生管理系统" class="headerlink" title="学生管理系统"></a>学生管理系统</h1>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="什么是文件"><a href="#什么是文件" class="headerlink" title="什么是文件"></a>什么是文件</h2><h2 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h2><h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><h2 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h2><h2 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h2><h2 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h2><h1 id="人生模拟器"><a href="#人生模拟器" class="headerlink" title="人生模拟器"></a>人生模拟器</h1><p>思路：</p>
+<p><hanla></hanla>1.<hanla></hanla>游戏开始时设置初始属性</p>
+<p>分别是 颜值 体质 智力 家境</p>
+<p><hanla></hanla>2.<hanla></hanla>开始游戏，随机生成性别和出生点</p>
+<p><hanla></hanla>3.<hanla></hanla>针对每一年，都生成人生的经历（经历取决于随机因素<hanla></hanla>+<hanla></hanla>主角当前的属性）</p>
+<p>Part1：打印欢迎界面</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'-----------------------------'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'|                           |'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'|     花有重开日，人无再少年    |'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'|                           |'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'|       欢迎来到人生模拟器     |'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'|                           |'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'-----------------------------'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Part2：设置初始属性</p>
+<p><hanla></hanla>颜值，体质，智力，家境 总和不超过<hanla></hanla>20，每一项取值都是<hanla></hanla>1-10<hanla></hanla>之间</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string"><hanla></hanla>"请设置初始属性（可用点数总和为<hanla></hanla>20）"</span><span class="token punctuation">)</span>
+    face <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入颜值（1-10）："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    strong <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入体质（1-10）："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    iq <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入智力（1-10）："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    home <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入家境（1-10）："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    
+    <span class="token comment" spellcheck="true"># 校验输入是否合法</span>
+    <span class="token keyword"><hanla></hanla>if</span> face <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token operator">or</span> face <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'颜值输入有误'</span><span class="token punctuation">)</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">if</span> strong <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token operator">or</span> strong <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'体质输入有误'</span><span class="token punctuation">)</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">if</span> iq <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token operator">or</span> iq <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'智力输入有误'</span><span class="token punctuation">)</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">if</span> home <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token operator">or</span> home <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'家境输入有误'</span><span class="token punctuation">)</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">if</span> face <span class="token operator">+</span> strong <span class="token operator">+</span> iq <span class="token operator">+</span> home <span class="token operator">&gt;</span> <span class="token number">20</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string"><hanla></hanla>'总属性值超过<hanla></hanla>20！'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment" spellcheck="true">#输入都合法就结束循环</span>
+    <span class="token keyword"><hanla></hanla>print</span><span class="token punctuation">(</span><span class="token string">"初始属性输入完毕！"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"颜值：{face}，体质：{strong}，智力：{iq}，家境：{home}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">break</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Part3：随机生成角色性别</p>
+<pre class="line-numbers language-python"><code class="language-python">point <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"><hanla></hanla># random.randint<hanla></hanla>函数可以生成随机数 random<hanla></hanla>是<hanla></hanla>python<hanla></hanla>中的一个模块（别人写好的代码直接给我们来用）</span>
+<span class="token keyword">if</span> point <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    gender <span class="token operator">=</span> <span class="token string">'boy'</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你是个男孩'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    gender <span class="token operator">=</span> <span class="token string">'girl'</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你是个女孩'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>在<hanla></hanla>Python<hanla></hanla>中，如果想引入其他模块，需要用<hanla></hanla>import<hanla></hanla>语句将模块名导入进来（Pycharm<hanla></hanla>能够自动导入当前使用的模块，虽然有时候不够准确）</p>
+<p>Part4：随机生成角色出生点</p>
+<p>家境 + 随机数</p>
+<p>家境 10 第一档，大量属性加成</p>
+<p><hanla></hanla>家境 7-9<hanla></hanla>第二档，部分属性加成</p>
+<p><hanla></hanla>家境 4-6<hanla></hanla>第三档，少量属性加成</p>
+<p><hanla></hanla>家境 1-3<hanla></hanla>第四档，扣属性</p>
+<pre class="line-numbers language-python"><code class="language-python">point <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"><hanla></hanla># random.randint<hanla></hanla>函数可以生成随机数 random<hanla></hanla>是<hanla></hanla>python<hanla></hanla>中的一个模块（别人写好的代码直接给我们来用）</span>
+<span class="token keyword">if</span> home <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>在<hanla></hanla>Python<hanla></hanla>中，如果想引入其他模块，需要用<hanla></hanla>import<hanla></hanla>语句将模块名导入进来（Pycharm<hanla></hanla>能够自动导入当前使用的模块，虽然有时候不够准确）</p>
+<h1 id="认识标准库"><a href="#认识标准库" class="headerlink" title="认识标准库"></a>认识标准库</h1><h1 id="日期计算器"><a href="#日期计算器" class="headerlink" title="日期计算器"></a>日期计算器</h1><h1 id="单词逆序"><a href="#单词逆序" class="headerlink" title="单词逆序"></a>单词逆序</h1><h1 id="旋转字符串"><a href="#旋转字符串" class="headerlink" title="旋转字符串"></a>旋转字符串</h1><h1 id="统计字符串前缀"><a href="#统计字符串前缀" class="headerlink" title="统计字符串前缀"></a>统计字符串前缀</h1><h1 id="文件搜索工具"><a href="#文件搜索工具" class="headerlink" title="文件搜索工具"></a>文件搜索工具</h1><h1 id="pip的使用"><a href="#pip的使用" class="headerlink" title="pip的使用"></a><hanla></hanla>pip<hanla></hanla>的使用</h1><h1 id="二维码生成工具"><a href="#二维码生成工具" class="headerlink" title="二维码生成工具"></a>二维码生成工具</h1><h1 id="程序猿鼓励师"><a href="#程序猿鼓励师" class="headerlink" title="程序猿鼓励师"></a>程序猿鼓励师</h1><h1 id="学生管理系统"><a href="#学生管理系统" class="headerlink" title="学生管理系统"></a>学生管理系统</h1>
     </div>
 
     
@@ -355,7 +392,7 @@ html ul > hanla {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">什么是文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text">文件路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text">关闭文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.5.</span> <span class="nav-text">写文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.6.</span> <span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number"><hanla></hanla>1.7.</span> <span class="nav-text">上下文管理器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%BA%E7%94%9F%E9%87%8D%E5%BC%80%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">人生重开模拟器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A4%E8%AF%86%E6%A0%87%E5%87%86%E5%BA%93"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">认识标准库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">日期计算器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E8%AF%8D%E9%80%86%E5%BA%8F"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text">单词逆序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number"><hanla></hanla>6.</span> <span class="nav-text">旋转字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E7%BC%80"><span class="nav-number"><hanla></hanla>7.</span> <span class="nav-text">统计字符串前缀</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7"><span class="nav-number"><hanla></hanla>8.</span> <span class="nav-text">文件搜索工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pip%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number"><hanla></hanla>9.</span> <span class="nav-text"><hanla></hanla>pip<hanla></hanla>的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7"><span class="nav-number"><hanla></hanla>10.</span> <span class="nav-text">二维码生成工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%8C%BF%E9%BC%93%E5%8A%B1%E5%B8%88"><span class="nav-number"><hanla></hanla>11.</span> <span class="nav-text">程序猿鼓励师</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number"><hanla></hanla>12.</span> <span class="nav-text">学生管理系统</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">什么是文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text">文件路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text">关闭文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.5.</span> <span class="nav-text">写文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-number"><hanla></hanla>1.6.</span> <span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number"><hanla></hanla>1.7.</span> <span class="nav-text">上下文管理器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%BA%E7%94%9F%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">人生模拟器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A4%E8%AF%86%E6%A0%87%E5%87%86%E5%BA%93"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">认识标准库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">日期计算器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E8%AF%8D%E9%80%86%E5%BA%8F"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text">单词逆序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number"><hanla></hanla>6.</span> <span class="nav-text">旋转字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E7%BC%80"><span class="nav-number"><hanla></hanla>7.</span> <span class="nav-text">统计字符串前缀</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7"><span class="nav-number"><hanla></hanla>8.</span> <span class="nav-text">文件搜索工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pip%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number"><hanla></hanla>9.</span> <span class="nav-text"><hanla></hanla>pip<hanla></hanla>的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7"><span class="nav-number"><hanla></hanla>10.</span> <span class="nav-text">二维码生成工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%8C%BF%E9%BC%93%E5%8A%B1%E5%B8%88"><span class="nav-number"><hanla></hanla>11.</span> <span class="nav-text">程序猿鼓励师</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number"><hanla></hanla>12.</span> <span class="nav-text">学生管理系统</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

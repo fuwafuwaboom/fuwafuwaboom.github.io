@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/12/28/AiwgPsWoDN2bekE.png">
 <meta property="og:image" content="https://s2.loli.net/2022/12/28/k7VdToWyM3mIKpQ.png">
 <meta property="article:published_time" content="2022-12-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-12-28T02:49:35.281Z">
+<meta property="article:modified_time" content="2022-12-29T23:09:53.104Z">
 <meta property="article:author" content="TianxiaoYe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@ html ul > hanla {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text"><hanla></hanla>更新于</span>
-                <time title="修改时间：2022-12-28 10:49:35" itemprop="dateModified" datetime="2022-12-28T10:49:35+08:00"><hanla></hanla>2022-12-28</time>
+                <time title="修改时间：2022-12-30 07:09:53" itemprop="dateModified" datetime="2022-12-30T07:09:53+08:00"><hanla></hanla>2022-12-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -318,9 +318,12 @@ total <span class="token operator">=</span> <span class="token punctuation">(</s
 <span class="token keyword">print</span><span class="token punctuation">(</span>total <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>变量可以视为是一块用来存储数据的空间（一个纸盒子）</p>
+<hr>
 <p>= 赋值运算符</p>
+<hr>
 <p>变量名必须是 <strong><hanla></hanla>数字<hanla></hanla>/<hanla></hanla>字母<hanla></hanla>/<hanla></hanla>下划线</strong> 且 <strong>数字不能开头</strong> 且 <strong><hanla></hanla>不能与<hanla></hanla>Python<hanla></hanla>的关键字重合</strong> 且 <strong>大小写敏感</strong></p>
 <p>变量名尽量是 <strong>描述性单词</strong> 且 <strong>可以使用多个单词描述</strong><hanla></hanla>(PersonInfo/person_info) </p>
+<hr>
 <p>变量使用：</p>
 <pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">#初始化</span>
 b <span class="token operator">=</span> a 
@@ -329,6 +332,7 @@ b <span class="token operator">=</span> a
 a <span class="token operator">=</span> <span class="token number">20</span> <span class="token comment" spellcheck="true">#赋值</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
 <p>变量类型：</p>
 <ol>
 <li>整数 int</li>
@@ -363,6 +367,8 @@ a <span class="token operator">=</span> <span class="token number">20</span> <sp
 <p>假：False</p>
 <p>（首字母大写！）</p>
 <p>布尔值用于逻辑判定</p>
+<p><hanla></hanla>布尔值和整数相加减时，True<hanla></hanla>看成<hanla></hanla>1，False<hanla></hanla>看成<hanla></hanla>0</p>
+<hr>
 <p>数据类型的意义：</p>
 <ol>
 <li><p><hanla></hanla>不同的类型表示占用不同的空间（int<hanla></hanla>默认<hanla></hanla>4<hanla></hanla>字节可动态扩容<hanla></hanla>/float 8/bool 1/str 变长）</p>
@@ -370,6 +376,7 @@ a <span class="token operator">=</span> <span class="token number">20</span> <sp
 <li><p>不同的类型，对应的操作权限是不同的</p>
 </li>
 </ol>
+<hr>
 <p>动态类型特性：</p>
 <p>程序运行过程中，变量的类型可能会发生改变</p>
 <pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
@@ -398,6 +405,9 @@ a <span class="token operator">=</span> <span class="token boolean">True</span>
 <p>批量注释：</p>
 <pre class="line-numbers language-python"><code class="language-python">Ctrl <span class="token operator">+</span> <span class="token operator">/</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p><hanla></hanla>Python<hanla></hanla>中可以写<code>;</code>来分割同一行的两句语句</p>
+</blockquote>
 <h2 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h2><p>最简单的办法就是使用控制台：</p>
 <p>用户能够输入命令，向计算机安排工作，并且计算机可以显示出程序的运行结果</p>
 <p>这样的程序就叫做控制台</p>
@@ -435,73 +445,192 @@ b <span class="token operator">=</span> int<span class="token punctuation">(</sp
 <td align="center">&lt; &lt;= &gt;= &gt; == !=</td>
 </tr>
 <tr>
-<td align="center">赋值运算符</td>
-<td align="center"></td>
+<td align="center">逻辑运算符</td>
+<td align="center">and or not</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">赋值运算符</td>
+<td align="center">=</td>
 </tr>
 </tbody></table>
 <p>** 乘方 可以支持整数次方 也可以支持小数次方</p>
 <p><hanla></hanla>/ 除以<hanla></hanla>0<hanla></hanla>或者<hanla></hanla>0.0<hanla></hanla>都是出错的</p>
 <p>% 是取余数</p>
 <p><hanla></hanla>// 是地板除法<hanla></hanla>/<hanla></hanla>取整除法，会对结果进行向下取整（选择最小的整数，所以负数取整方向是反的）</p>
+<hr>
 <p>关系运算符的表达式值是布尔值（True/False）</p>
 <p>关系运算也可以比较字符串（字典序，字符串在字典上越靠前越小）</p>
 <p>浮点数进行关系运算有风险：0.1 + 0.2 不等于 0.3 正确的方法是做差然后看结果是否小于误差范围</p>
 <p><hanla></hanla>python<hanla></hanla>支持连续比较</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.000001</span> <span class="token operator">&lt;</span> <span class="token punctuation">(</span>a <span class="token operator">-</span> b<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0.000001</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 正确比较浮点数的写法</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h1><h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><pre class="line-numbers language-c++"><code class="language-c++">#include<iostream><hanla></hanla>//iostream<hanla></hanla>是库头文件，不加.h，但是我们引用自己定义的头文件需要加.h
-using namespace std;
-int main()
-{
-    int n = 0;
-    cin &gt;&gt; n;// &gt;&gt; 流提取运算符<hanla></hanla>/<hanla></hanla>输入运算符
-    cout &lt;&lt; n &lt;&lt; endl;// &lt;&lt; 流插入运算符<hanla></hanla>/<hanla></hanla>输出运算符
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></iostream></code></pre>
-<p>多次输入以空格和换行间隔</p>
-<p><code>endl</code><hanla></hanla>等价于输出了一个换行符<code>'\n'</code></p>
-<p>输出是从左向右输出</p>
-<p>至于<code><hanla></hanla>cin</code><hanla></hanla>和<code><hanla></hanla>cout</code><hanla></hanla>到底是什么，在学习了类和对象以后再做解释</p>
-<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p><hanla></hanla>C++<hanla></hanla>的输入输出可以<strong>自动识别类型</strong><hanla></hanla>，这是比<hanla></hanla>C<hanla></hanla>语言方便的</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
-using namespace std;
-int main()
-{
-    char ch = 'A';
-    int i = 10;
-    int* p = &amp;i;
-    double d = 3.1415926;
-    cout &lt;&lt; ch &lt;&lt; endl;
-    cout &lt;&lt; i &lt;&lt; endl;
-    cout &lt;&lt; p&lt;&lt; endl;
-    cout &lt;&lt; d &lt;&lt; endl;
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></iostream></code></pre>
-<p><hanla></hanla>C++<hanla></hanla>的小数默认只输出小数点后<hanla></hanla>5<hanla></hanla>位，不太方便，此时推荐配合<code><hanla></hanla>printf</code><hanla></hanla>使用</p>
-<p><code>printf（“%.2f",a);</code>表示小数点后两位</p>
-<p><hanla></hanla>其实对于连续输出同类型的，比如结构体，使用<hanla></hanla>C<hanla></hanla>语言反而更方便，因为不用多写那么多<code><hanla></hanla>&lt;&lt;</code>符号</p>
-<p>所以建议<strong><hanla></hanla>在<hanla></hanla>C++<hanla></hanla>中不用纠结于到底用哪一个，而是哪个好用用哪个</strong></p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p><hanla></hanla>相对<hanla></hanla>C<hanla></hanla>语言，C++<hanla></hanla>增加了缺省参数的概念用于补充函数的定义</p>
-<p>在定义函数的时候直接指定形参的值，就是缺省参数</p>
-<p><strong>缺省参数仅在没有传参的时候起作用</strong>，一旦传参就没这个参数什么用了</p>
-<h2 id="函数的执行过程"><a href="#函数的执行过程" class="headerlink" title="函数的执行过程"></a>函数的执行过程</h2><blockquote>
-<p><hanla></hanla>此处关于栈的定义当时记录的时候还没学到，记得补视频！！C++1<hanla></hanla>课 1：12：10</p>
+<hr>
+<p>and 并且 一假则假</p>
+<p>or 或者 一真则真</p>
+<p>not 逻辑取反 真假互换</p>
+<blockquote>
+<p>黄色波浪线表示写法不够简洁或不够标准，但是不影响程序运行</p>
+<p><hanla></hanla>绿色波浪线表示检查拼写或者是从外部调用的变量<hanla></hanla>/<hanla></hanla>文件</p>
 </blockquote>
-<h2 id="链式调用与嵌套调用"><a href="#链式调用与嵌套调用" class="headerlink" title="链式调用与嵌套调用"></a>链式调用与嵌套调用</h2><p>要传就</p>
-<h2 id="局部变量与函数栈帧"><a href="#局部变量与函数栈帧" class="headerlink" title="局部变量与函数栈帧"></a>局部变量与函数栈帧</h2><p>必须<strong>从右往左</strong>缺省，<strong>不能间隔</strong>着给初值，因为这样会明确的给值</p>
-<h2 id="函数递归"><a href="#函数递归" class="headerlink" title="函数递归"></a>函数递归</h2><p><strong>缺省参数不能在函数声明和定义的时候同时出现，一般建议在声明的时候给缺省参数</strong></p>
-<p><strong>缺省值必须是常量和全局变量</strong></p>
-<h2 id="函数形参的默认值"><a href="#函数形参的默认值" class="headerlink" title="函数形参的默认值"></a>函数形参的默认值</h2><p><strong>缺省参数不能在函数声明和定义的时候同时出现，一般建议在声明的时候给缺省参数</strong></p>
-<p><strong>缺省值必须是常量和全局变量</strong></p>
-<h2 id="函数的关键字参数"><a href="#函数的关键字参数" class="headerlink" title="函数的关键字参数"></a>函数的关键字参数</h2><p><strong>缺省参数不能在函数声明和定义的时候同时出现，一般建议在声明的时候给缺省参数</strong></p>
-<p><strong>缺省值必须是常量和全局变量</strong></p>
-<h1 id="列表和元组"><a href="#列表和元组" class="headerlink" title="列表和元组"></a>列表和元组</h1><h2 id="列表的创建和下标访问"><a href="#列表的创建和下标访问" class="headerlink" title="列表的创建和下标访问"></a>列表的创建和下标访问</h2><h2 id="列表的切片操作"><a href="#列表的切片操作" class="headerlink" title="列表的切片操作"></a>列表的切片操作</h2><h2 id="列表的遍历操作"><a href="#列表的遍历操作" class="headerlink" title="列表的遍历操作"></a>列表的遍历操作</h2><h2 id="列表的插入操作"><a href="#列表的插入操作" class="headerlink" title="列表的插入操作"></a>列表的插入操作</h2><h2 id="列表的查找与删除"><a href="#列表的查找与删除" class="headerlink" title="列表的查找与删除"></a>列表的查找与删除</h2><h2 id="元组的操作"><a href="#元组的操作" class="headerlink" title="元组的操作"></a>元组的操作</h2><h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><h2 id="字典的创建"><a href="#字典的创建" class="headerlink" title="字典的创建"></a>字典的创建</h2><h2 id="字典查找key"><a href="#字典查找key" class="headerlink" title="字典查找key"></a><hanla></hanla>字典查找<hanla></hanla>key</h2><h2 id="字典的新增修改删除"><a href="#字典的新增修改删除" class="headerlink" title="字典的新增修改删除"></a><hanla></hanla>字典的新增修改删除</h2><h2 id="理解字典操作的效率"><a href="#理解字典操作的效率" class="headerlink" title="理解字典操作的效率"></a>理解字典操作的效率</h2><h2 id="字典的遍历"><a href="#字典的遍历" class="headerlink" title="字典的遍历"></a>字典的遍历</h2><h2 id="可哈希的类型"><a href="#可哈希的类型" class="headerlink" title="可哈希的类型"></a>可哈希的类型</h2>
+<p><hanla></hanla>逻辑运算符是遵循<hanla></hanla>“短路求值”，比如<hanla></hanla>and<hanla></hanla>一旦得到了假，后面的表达式就不会进行计算了；同理<hanla></hanla>or<hanla></hanla>一旦得到了真，后面的表达式也不会进行计算了</p>
+<hr>
+<p>赋值运算符就是把右侧的值填充到左侧的空间中，所以左侧必须是变量</p>
+<p><code>a = b = 10</code> 属于链式赋值，但是一般不建议使用</p>
+<p><code>a, b = 10, 20</code> 属于多元赋值，相当于<code><hanla></hanla>a = 10, b = 20</code>，可以实现变量的交换：<code>a, b = b, a</code></p>
+<p><code>+= -= *= /= %=</code> 属于复合赋值运算符，<code>a = a + 1</code> 相当于 <code>a += 1</code>，注意<code><hanla></hanla>a</code><hanla></hanla>必须事先被初始化。注意<hanla></hanla>Python<hanla></hanla>是不支持<code><hanla></hanla>++</code><hanla></hanla>或者<code>--</code><hanla></hanla>操作的（与<hanla></hanla>C/C++/Java<hanla></hanla>不同）</p>
+<hr>
+<p><hanla></hanla>Python<hanla></hanla>还支持别的运算符：</p>
+<p><code>is</code> <code>is not</code> 身份运算符 判断是不是相同身份</p>
+<p><code>in</code> <code>not in</code> 成员运算符 判断某一变量是否被另一个变量包含</p>
+<p><code>&amp; | ~ ^</code> <code>&lt;&lt; &gt;&gt;</code> 位运算符</p>
+<h1 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h1><p><hanla></hanla>Pyhton<hanla></hanla>中的语句默认是从上到下依次执行的</p>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><ol>
+<li>if</li>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> expression<span class="token punctuation">:</span>
+    do_something
+do_things
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>if - else</li>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> expression1<span class="token punctuation">:</span>
+    do_something
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    do_something_else
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>if - elif - else</li>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> expression1<span class="token punctuation">:</span>
+    do_something1
+<span class="token keyword">elif</span> expression2<span class="token punctuation">:</span>
+    do_something2
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    do_something_else
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="缩进与代码块"><a href="#缩进与代码块" class="headerlink" title="缩进与代码块"></a>缩进与代码块</h2><p><hanla></hanla>Python<hanla></hanla>中缩进是非常重要的，需要缩进时不写也是错误的</p>
+<p><hanla></hanla>Python<hanla></hanla>中的缩进表示代码块，代码块只与最近的缩进语句组成整体</p>
+<p>缩进用四个空格表示</p>
+<p><code>if else elif while for ...</code> 都必须跟上代码块</p>
+<p><hanla></hanla>Python<hanla></hanla>中的缩进还可以嵌套，同一级别的代码块和缩进组成整体</p>
+<p><hanla></hanla>但是<hanla></hanla>Python<hanla></hanla>中的缩进多层嵌套就会导致可读性差（Python<hanla></hanla>程序员需要自备一个游标卡尺<hanla></hanla>= =）</p>
+<hr>
+<p>案例：</p>
+<p><hanla></hanla>1.<hanla></hanla>判断奇偶数</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入一个整数："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> a <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"偶数"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"奇数"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>2.<hanla></hanla>判断正负数</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入一个整数："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> a <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正数"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> a <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"负数"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string"><hanla></hanla>"为<hanla></hanla>0"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>3.<hanla></hanla>判断闰年</p>
+<pre class="line-numbers language-python"><code class="language-python">year <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入年份："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 判定世纪闰年</span>
+    <span class="token keyword"><hanla></hanla>if</span> year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"世纪闰年"</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"平年"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 判定普通闰年</span>
+    <span class="token keyword"><hanla></hanla>if</span> year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"普通闰年"</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"平年"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span><span class="token punctuation">(</span>year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">and</span> year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">or</span> year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"闰年"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"平年"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 但是这种写法的可读性差，并不一定是好代码</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="空语句pass"><a href="#空语句pass" class="headerlink" title="空语句pass"></a><hanla></hanla>空语句<hanla></hanla>pass</h2><pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入一个整数："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> a <span class="token operator">!=</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 空语句（啥都不做）</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p>反复执行的语句就是循环语句</p>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a><hanla></hanla>while<hanla></hanla>循环</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword"><hanla></hanla>while</span> condition<span class="token punctuation">:</span>
+    do_something
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><hanla></hanla>打印<hanla></hanla>1-10：</p>
+<pre class="line-numbers language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> num <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 循环条件</span>
+    <span class="token keyword"><hanla></hanla>print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 循环体</span>
+    num <span class="token operator">=</span> num <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment" spellcheck="true"># 更新循环</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><hanla></hanla>没有更新循环部分往往就是死循环，但是死循环不一定是<hanla></hanla>bug（比如部署服务器）</p>
+</blockquote>
+<p><hanla></hanla>计算<hanla></hanla>5！：</p>
+<pre class="line-numbers language-python"><code class="language-python">result <span class="token operator">=</span> <span class="token number">1</span>
+num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> num <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">:</span>
+    result <span class="token operator">*=</span> num
+    num <span class="token operator">+=</span><span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'result = {result}'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>计算<hanla></hanla>1！+ 2！+ 3！+ 4！+ 5!：</p>
+<pre class="line-numbers language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">1</span>
+sum <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> num <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">:</span>
+    factorSum <span class="token operator">=</span> <span class="token number">1</span>
+    factorNum <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> factorNum <span class="token operator">&lt;=</span> num<span class="token punctuation">:</span>
+        factorSum <span class="token operator">*=</span> factorNum
+        factorNum <span class="token operator">+=</span> <span class="token number">1</span>
+    sum <span class="token operator">+=</span> factorSum
+    num <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'sum = {sum}'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a><hanla></hanla>for<hanla></hanla>循环</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword"><hanla></hanla>for</span> variable <span class="token keyword">in</span> interables<span class="token punctuation">:</span>
+    do_something
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><hanla></hanla>interables<hanla></hanla>可迭代对象：一个特殊的变量，内部包含了很多其他的值</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><hanla></hanla>range<hanla></hanla>是一个内建函数</p>
+<p><hanla></hanla>range<hanla></hanla>可以得到一个可迭代对象，对象包含一系列的整数，<code>range(begin,end) =&gt; [begin, end)</code><hanla></hanla>是一个前闭后开的区间</p>
+<p><hanla></hanla>range<hanla></hanla>还提供了第三个参数，是步长</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><hanla></hanla>range<hanla></hanla>还可以从大到小</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><hanla></hanla>值得注意的是<hanla></hanla>sum<hanla></hanla>也是一个内建函数</p>
+<blockquote>
+<p>shift+F6 可以全局重命名变量名</p>
+</blockquote>
+<h3 id="continue和break"><a href="#continue和break" class="headerlink" title="continue和break"></a><hanla></hanla>continue<hanla></hanla>和<hanla></hanla>break</h3><p><code>continue</code> 立即结束这次循环，进入下次循环</p>
+<p><code>break</code> 立即结束循环</p>
+<p>输入所有数字的平均数：</p>
+<pre class="line-numbers language-python"><code class="language-python">theSum <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true"># 加和</span>
+count <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true"># 数字的个数</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    num <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入一个数字："</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> num <span class="token operator">==</span> <span class="token string">';'</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    num <span class="token operator">=</span> float<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    theSum <span class="token operator">+=</span> num
+    count <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'平均值为：{theSum / count}'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数的执行过程"><a href="#函数的执行过程" class="headerlink" title="函数的执行过程"></a>函数的执行过程</h2><h2 id="链式调用与嵌套调用"><a href="#链式调用与嵌套调用" class="headerlink" title="链式调用与嵌套调用"></a>链式调用与嵌套调用</h2><h2 id="局部变量与函数栈帧"><a href="#局部变量与函数栈帧" class="headerlink" title="局部变量与函数栈帧"></a>局部变量与函数栈帧</h2><h2 id="函数递归"><a href="#函数递归" class="headerlink" title="函数递归"></a>函数递归</h2><h2 id="函数形参的默认值"><a href="#函数形参的默认值" class="headerlink" title="函数形参的默认值"></a>函数形参的默认值</h2><h2 id="函数的关键字参数"><a href="#函数的关键字参数" class="headerlink" title="函数的关键字参数"></a>函数的关键字参数</h2><h1 id="列表和元组"><a href="#列表和元组" class="headerlink" title="列表和元组"></a>列表和元组</h1><h2 id="列表的创建和下标访问"><a href="#列表的创建和下标访问" class="headerlink" title="列表的创建和下标访问"></a>列表的创建和下标访问</h2><h2 id="列表的切片操作"><a href="#列表的切片操作" class="headerlink" title="列表的切片操作"></a>列表的切片操作</h2><h2 id="列表的遍历操作"><a href="#列表的遍历操作" class="headerlink" title="列表的遍历操作"></a>列表的遍历操作</h2><h2 id="列表的插入操作"><a href="#列表的插入操作" class="headerlink" title="列表的插入操作"></a>列表的插入操作</h2><h2 id="列表的查找与删除"><a href="#列表的查找与删除" class="headerlink" title="列表的查找与删除"></a>列表的查找与删除</h2><h2 id="元组的操作"><a href="#元组的操作" class="headerlink" title="元组的操作"></a>元组的操作</h2><h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><h2 id="字典的创建"><a href="#字典的创建" class="headerlink" title="字典的创建"></a>字典的创建</h2><h2 id="字典查找key"><a href="#字典查找key" class="headerlink" title="字典查找key"></a><hanla></hanla>字典查找<hanla></hanla>key</h2><h2 id="字典的新增修改删除"><a href="#字典的新增修改删除" class="headerlink" title="字典的新增修改删除"></a><hanla></hanla>字典的新增修改删除</h2><h2 id="理解字典操作的效率"><a href="#理解字典操作的效率" class="headerlink" title="理解字典操作的效率"></a>理解字典操作的效率</h2><h2 id="字典的遍历"><a href="#字典的遍历" class="headerlink" title="字典的遍历"></a>字典的遍历</h2><h2 id="可哈希的类型"><a href="#可哈希的类型" class="headerlink" title="可哈希的类型"></a>可哈希的类型</h2>
     </div>
 
     
@@ -584,7 +713,7 @@ int main()
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text"><hanla></hanla>Python<hanla></hanla>背景知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E6%98%AF%E5%92%8B%E6%9D%A5%E7%9A%84"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text"><hanla></hanla>Python<hanla></hanla>是咋来的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%83%BD%E8%83%BD%E5%B9%B2%E5%95%A5"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text"><hanla></hanla>Python<hanla></hanla>都能干啥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text"><hanla></hanla>Python<hanla></hanla>的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BAPython%E7%8E%AF%E5%A2%83"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text"><hanla></hanla>搭建<hanla></hanla>Python<hanla></hanla>环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAPython%E7%A8%8B%E5%BA%8F"><span class="nav-number"><hanla></hanla>1.5.</span> <span class="nav-text"><hanla></hanla>创建<hanla></hanla>Python<hanla></hanla>程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">常量和表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E7%B1%BB%E5%9E%8B"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">变量和类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">注释的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="nav-number"><hanla></hanla>2.4.</span> <span class="nav-text">输入和输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number"><hanla></hanla>2.5.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E4%B8%8E%E5%BE%AA%E7%8E%AF"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">条件与循环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text">循环语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number"><hanla></hanla>4.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number"><hanla></hanla>4.1.</span> <span class="nav-text">函数的执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E4%B8%8E%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">链式调用与嵌套调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E6%A0%88%E5%B8%A7"><span class="nav-number"><hanla></hanla>4.3.</span> <span class="nav-text">局部变量与函数栈帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92"><span class="nav-number"><hanla></hanla>4.4.</span> <span class="nav-text">函数递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number"><hanla></hanla>4.5.</span> <span class="nav-text">函数形参的默认值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number"><hanla></hanla>4.6.</span> <span class="nav-text">函数的关键字参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%92%8C%E5%85%83%E7%BB%84"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text">列表和元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE"><span class="nav-number"><hanla></hanla>5.1.</span> <span class="nav-text">列表的创建和下标访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C"><span class="nav-number"><hanla></hanla>5.2.</span> <span class="nav-text">列表的切片操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E9%81%8D%E5%8E%86%E6%93%8D%E4%BD%9C"><span class="nav-number"><hanla></hanla>5.3.</span> <span class="nav-text">列表的遍历操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C"><span class="nav-number"><hanla></hanla>5.4.</span> <span class="nav-text">列表的插入操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%9F%A5%E6%89%BE%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="nav-number"><hanla></hanla>5.5.</span> <span class="nav-text">列表的查找与删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number"><hanla></hanla>5.6.</span> <span class="nav-text">元组的操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E5%85%B8"><span class="nav-number"><hanla></hanla>6.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number"><hanla></hanla>6.1.</span> <span class="nav-text">字典的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E6%9F%A5%E6%89%BEkey"><span class="nav-number"><hanla></hanla>6.2.</span> <span class="nav-text"><hanla></hanla>字典查找<hanla></hanla>key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E6%96%B0%E5%A2%9E%E4%BF%AE%E6%94%B9%E5%88%A0%E9%99%A4"><span class="nav-number">6.3.</span> <span class="nav-text">字典的新增修改删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C%E7%9A%84%E6%95%88%E7%8E%87"><span class="nav-number"><hanla></hanla>6.4.</span> <span class="nav-text">理解字典操作的效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number"><hanla></hanla>6.5.</span> <span class="nav-text">字典的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%93%88%E5%B8%8C%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number"><hanla></hanla>6.6.</span> <span class="nav-text">可哈希的类型</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text"><hanla></hanla>Python<hanla></hanla>背景知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E6%98%AF%E5%92%8B%E6%9D%A5%E7%9A%84"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text"><hanla></hanla>Python<hanla></hanla>是咋来的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%83%BD%E8%83%BD%E5%B9%B2%E5%95%A5"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text"><hanla></hanla>Python<hanla></hanla>都能干啥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text"><hanla></hanla>Python<hanla></hanla>的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BAPython%E7%8E%AF%E5%A2%83"><span class="nav-number"><hanla></hanla>1.4.</span> <span class="nav-text"><hanla></hanla>搭建<hanla></hanla>Python<hanla></hanla>环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAPython%E7%A8%8B%E5%BA%8F"><span class="nav-number"><hanla></hanla>1.5.</span> <span class="nav-text"><hanla></hanla>创建<hanla></hanla>Python<hanla></hanla>程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">常量和表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E7%B1%BB%E5%9E%8B"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">变量和类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number"><hanla></hanla>2.3.</span> <span class="nav-text">注释的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="nav-number"><hanla></hanla>2.4.</span> <span class="nav-text">输入和输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number"><hanla></hanla>2.5.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E4%B8%8E%E5%BE%AA%E7%8E%AF"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">条件与循环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%A9%E8%BF%9B%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number"><hanla></hanla>3.2.</span> <span class="nav-text">缩进与代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E8%AF%AD%E5%8F%A5pass"><span class="nav-number"><hanla></hanla>3.3.</span> <span class="nav-text"><hanla></hanla>空语句<hanla></hanla>pass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.4.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="nav-number"><hanla></hanla>3.4.1.</span> <span class="nav-text"><hanla></hanla>while<hanla></hanla>循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="nav-number"><hanla></hanla>3.4.2.</span> <span class="nav-text"><hanla></hanla>for<hanla></hanla>循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue%E5%92%8Cbreak"><span class="nav-number"><hanla></hanla>3.4.3.</span> <span class="nav-text"><hanla></hanla>continue<hanla></hanla>和<hanla></hanla>break</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number"><hanla></hanla>4.1.</span> <span class="nav-text">函数的执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E4%B8%8E%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8"><span class="nav-number"><hanla></hanla>4.2.</span> <span class="nav-text">链式调用与嵌套调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E6%A0%88%E5%B8%A7"><span class="nav-number"><hanla></hanla>4.3.</span> <span class="nav-text">局部变量与函数栈帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92"><span class="nav-number"><hanla></hanla>4.4.</span> <span class="nav-text">函数递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number"><hanla></hanla>4.5.</span> <span class="nav-text">函数形参的默认值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number"><hanla></hanla>4.6.</span> <span class="nav-text">函数的关键字参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%92%8C%E5%85%83%E7%BB%84"><span class="nav-number"><hanla></hanla>5.</span> <span class="nav-text">列表和元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE"><span class="nav-number"><hanla></hanla>5.1.</span> <span class="nav-text">列表的创建和下标访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C"><span class="nav-number"><hanla></hanla>5.2.</span> <span class="nav-text">列表的切片操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E9%81%8D%E5%8E%86%E6%93%8D%E4%BD%9C"><span class="nav-number"><hanla></hanla>5.3.</span> <span class="nav-text">列表的遍历操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C"><span class="nav-number"><hanla></hanla>5.4.</span> <span class="nav-text">列表的插入操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%9F%A5%E6%89%BE%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="nav-number"><hanla></hanla>5.5.</span> <span class="nav-text">列表的查找与删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number"><hanla></hanla>5.6.</span> <span class="nav-text">元组的操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E5%85%B8"><span class="nav-number"><hanla></hanla>6.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number"><hanla></hanla>6.1.</span> <span class="nav-text">字典的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E6%9F%A5%E6%89%BEkey"><span class="nav-number"><hanla></hanla>6.2.</span> <span class="nav-text"><hanla></hanla>字典查找<hanla></hanla>key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E6%96%B0%E5%A2%9E%E4%BF%AE%E6%94%B9%E5%88%A0%E9%99%A4"><span class="nav-number">6.3.</span> <span class="nav-text">字典的新增修改删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C%E7%9A%84%E6%95%88%E7%8E%87"><span class="nav-number"><hanla></hanla>6.4.</span> <span class="nav-text">理解字典操作的效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number"><hanla></hanla>6.5.</span> <span class="nav-text">字典的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%93%88%E5%B8%8C%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number"><hanla></hanla>6.6.</span> <span class="nav-text">可哈希的类型</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
