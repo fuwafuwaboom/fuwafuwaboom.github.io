@@ -27,11 +27,15 @@
 <meta property="og:site_name" content="潇のNOTES">
 <meta property="og:description" content="本篇前言 高级操作与案例分析">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/01/21/WLEr8xX2HgOvVlQ.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/21/bNkTJVyRhu2rv61.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/21/69sCdgvatYZBTmo.png">
 <meta property="article:published_time" content="2022-12-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-12-30T18:15:08.698Z">
+<meta property="article:modified_time" content="2023-01-20T19:34:45.188Z">
 <meta property="article:author" content="TianxiaoYe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/01/21/WLEr8xX2HgOvVlQ.png">
 
 <link rel="canonical" href="http://fuwafuwaboom.github.io/2022/12/26/python-su-tong-python-xia/">
 
@@ -194,7 +198,7 @@ html ul > hanla {
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="TianxiaoYe">
-      <meta itemprop="description" content="where there is a will, there is a way">
+      <meta itemprop="description" content="Let your brain control your body">
     </span>
 
     <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -220,7 +224,7 @@ html ul > hanla {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-12-31 02:15:08" itemprop="dateModified" datetime="2022-12-31T02:15:08+08:00">2022-12-31</time>
+                <time title="Modified: 2023-01-21 03:34:45" itemprop="dateModified" datetime="2023-01-21T03:34:45+08:00">2023-01-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,7 +251,143 @@ html ul > hanla {
 <p>高级操作与案例分析</p>
 <span id="more"></span>
 
-<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="什么是文件"><a href="#什么是文件" class="headerlink" title="什么是文件"></a>什么是文件</h2><h2 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h2><h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><h2 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h2><h2 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h2><h2 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h2><h1 id="人生模拟器"><a href="#人生模拟器" class="headerlink" title="人生模拟器"></a>人生模拟器</h1><p>思路：</p>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="什么是文件"><a href="#什么是文件" class="headerlink" title="什么是文件"></a>什么是文件</h2><p><hanla></hanla>电影 mp4<hanla></hanla>文件</p>
+<p><hanla></hanla>歌曲 mp3<hanla></hanla>文件</p>
+<p><hanla></hanla>图片 jpg<hanla></hanla>文件</p>
+<p><hanla></hanla>文本 txt<hanla></hanla>文件</p>
+<p><hanla></hanla>表格 xlsx<hanla></hanla>文件</p>
+<p>它们虽然格式不一样，但是它们的数据都是保存在硬盘上的，也就是存储器</p>
+<p>存储器包含了内存和外存（硬盘）</p>
+<p>我们所创建的变量，就是存储在内存中</p>
+<p>文件，就是存储在硬盘中</p>
+<p>内存与硬盘的区别：</p>
+<p><hanla></hanla>1.<hanla></hanla>内存空间更小，硬盘空间更大</p>
+<p><hanla></hanla>2.<hanla></hanla>内存访问更快，硬盘访问较慢</p>
+<p><hanla></hanla>3.<hanla></hanla>内存成本更高，硬盘更便宜</p>
+<p><hanla></hanla>4.<hanla></hanla>内存的数据易丢失，硬盘的数据断电仍然可以持久存储（但寿命一般是<hanla></hanla>5-15<hanla></hanla>年，并不是永久）</p>
+<p>而硬盘上存储的数据就是以文件的方式来组织的</p>
+<p><code>此电脑</code>→<code><hanla></hanla>C<hanla></hanla>盘、D<hanla></hanla>盘</code> 这里的内容都是硬盘上的内容，也都是文件</p>
+<p>而文件夹（目录）也是一种特殊的文件，它是一种目录文件</p>
+<blockquote>
+<p>windows xp 我的电脑</p>
+<p>windows7 计算机</p>
+<p>windows8 这台电脑</p>
+<p>windows10 此电脑</p>
+<p>windows11 此电脑</p>
+<p>。。。</p>
+</blockquote>
+<p>但是即使都是文件，不同文件类型存储数据的形式都是不一样的，而且都具有非常复杂的存储算法</p>
+<p>这里仅针对最简单的<strong>文本文件</strong>进行操作</p>
+<h2 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h2><p>一般的文件都是存储在文件夹中，而文件夹又嵌套在另一个文件夹里，想找到具体文件，需要一串由文件夹名称组成的信息，这就是文件的路径</p>
+<p><hanla></hanla>为了表示<hanla></hanla>qq.exe<hanla></hanla>这个文件的位置，我们就可以通过路径的方式来表示<code><hanla></hanla>D:\program\qq\Bin\QQ.exe</code></p>
+<p>每个文件对应的路径都是唯一的，所以路径也可以看成文件的标识</p>
+<p><code>Windows</code><hanla></hanla>支持正反<code><hanla></hanla>/\</code>两种斜杠，而<code><hanla></hanla>linux</code><hanla></hanla>和<code><hanla></hanla>mac</code><hanla></hanla>一般都是用正斜杠<code><hanla></hanla>/</code>，因为<code>\</code>一般都有特定含义，可能是转义字符，双反斜杠<code>\\</code>才代表反斜杠</p>
+<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>读写文件是文件操作最重要的功能，但是在读写文件前需要打开文件，读写完成后需要关闭文件。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"><hanla></hanla># 使用<hanla></hanla>open<hanla></hanla>来打开一个文件</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string"><hanla></hanla>'D:/Python<hanla></hanla>环境<hanla></hanla>/text.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 第一个参数表示文件路径 </span>
+<span class="token comment" spellcheck="true"><hanla></hanla># 第二个参数表示打开方式 r<hanla></hanla>表示<hanla></hanla>read 按照读方式打开 w<hanla></hanla>表示<hanla></hanla>write 按照写方式打开 a<hanla></hanla>表示<hanla></hanla>append 按照写方式打开，把内容写道原有文件内容的末尾</span>
+<span class="token comment" spellcheck="true"><hanla></hanla># f<hanla></hanla>表示<hanla></hanla>file<hanla></hanla>是一种文件对象</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.loli.net/2023/01/21/WLEr8xX2HgOvVlQ.png" alt="image.png"></p>
+<p>第一行显示的是文件的基本信息</p>
+<p><hanla></hanla>第二行是<hanla></hanla>Python<hanla></hanla>对这个文件类型起的名字</p>
+<p><hanla></hanla>open<hanla></hanla>函数的返回值是一个文件对象，文件对象是内存上的一个变量，而真正的文件是在硬盘上的。所以针对内存上的文件对象的操作都会被转换成对硬盘上文件的操作。所以此处的文件对象，就像一个<hanla></hanla>“遥控器”，可以间接操作硬盘。计算机把这种远程操控的<hanla></hanla>“遥控器”<hanla></hanla>成为<hanla></hanla>“句柄”（handler）</p>
+<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><p>文件操作遵循：“有借有还，再借不难”</p>
+<p>文件在打开使用完之后一定要关闭，打开文件其实是在申请一定的系统资源，整个文件操作过程都在依赖这些资源，不再使用这些资源时，就需要及时释放。也就是说申请的系统资源一定要及时释放，不然会造成文件资源泄露，可能会造成别的代码无法顺利打开。</p>
+<p>关闭文件使用的是<code><hanla></hanla>close</code><hanla></hanla>方法</p>
+<pre class="line-numbers language-python"><code class="language-python">f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"><hanla></hanla># 关闭文件<hanla></hanla>f</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>正是因为一个系统的资源是有限的，所以一个文件能够打开的文件个数也是有上限的</p>
+<pre class="line-numbers language-python"><code class="language-python">flist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+count <span class="token operator">=</span> <span class="token number">0</span>
+whilt <span class="token boolean">True</span><span class="token punctuation">:</span>
+    f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'d:/'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span>
+    flist<span class="token punctuation">.</span>append<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    count <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'打开文件的个数：{count}'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>上面的结果是<hanla></hanla>2<hanla></hanla>的整数次方再减<hanla></hanla>3。因为每个程序在启动的时候，会默认打开三个特殊文件，它们不对应到磁盘：</p>
+<p><hanla></hanla>1.<hanla></hanla>标准输入 对应到键盘        input<hanla></hanla>通过标准输入写数据</p>
+<p><hanla></hanla>2.<hanla></hanla>标准输出 对应到显示器    print<hanla></hanla>函数就是往标准输出读数据</p>
+<p><hanla></hanla>3.<hanla></hanla>标准错误 对应到显示器</p>
+<p>而在系统中也是可以通过一些设置项来配置打开文件的最大数目</p>
+<p>使用<code><hanla></hanla>close()</code><hanla></hanla>就可以无限循环了</p>
+<pre class="line-numbers language-python"><code class="language-python">flist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+count <span class="token operator">=</span> <span class="token number">0</span>
+whilt <span class="token boolean">True</span><span class="token punctuation">:</span>
+    f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'d:/'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span>
+    flist<span class="token punctuation">.</span>append<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    count <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'打开文件的个数：{count}'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>为什么操作都必须把文件对象加入到列表中呢？因为如果不这么做，会看不到效果</p>
+<p><hanla></hanla>因为<hanla></hanla>Python<hanla></hanla>中有垃圾回收机制<hanla></hanla>(GC)，如果不继续使用文件，Python<hanla></hanla>会自动释放文件</p>
+<p>但是自动释放不一定及时，所以还是会有文件泄露的风险。所以还是要尽量进行手动释放，才能万无一失</p>
+<h2 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"><hanla></hanla># 使用<hanla></hanla>write<hanla></hanla>实现写文件操作</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'d:/Pyhton/test.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.loli.net/2023/01/21/bNkTJVyRhu2rv61.png" alt="image.png"></p>
+<blockquote>
+<p><hanla></hanla>如果直接使用<hanla></hanla>w<hanla></hanla>方式打开，会清空文件原有的内容</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"><hanla></hanla># 使用<hanla></hanla>append<hanla></hanla>方式打开</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'d:/Pyhton/test.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>使用追加写<hanla></hanla>append<hanla></hanla>就可以</p>
+<h2 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h2><p>读文件涉及到多种不同的操作</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"><hanla></hanla># 使用<hanla></hanla>read<hanla></hanla>方式读文件，可以指定读几个字符</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'d:/python/test.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+result <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>会报错，因为：</p>
+<p><hanla></hanla>中文和英文类似，在计算机中，都是用<hanla></hanla>“数字”<hanla></hanla>来表示字符的（ASCII<hanla></hanla>码），但是哪个数字对应哪个汉字在计算机中有多个版本，中文主流有两个版本（GBK<hanla></hanla>和<hanla></hanla>UTF8）</p>
+<p><hanla></hanla>txt<hanla></hanla>文件的右下角会显示文件的编码方式</p>
+<p><hanla></hanla>相比于<hanla></hanla>gbk（一般仅限简体中文），utf8<hanla></hanla>是使用更广泛的编码方式（全世界各种语言）</p>
+<p><hanla></hanla>此处我们解决的方法还是让代码按照<hanla></hanla>utf8<hanla></hanla>来进行处理</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"><hanla></hanla># 使用<hanla></hanla>read<hanla></hanla>方式读文件，可以指定读几个字符</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'d:/python/test.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span>
+result <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>而更常见的需求的是按行来读取</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"><hanla></hanla># 最简单的方法，直接<hanla></hanla>for<hanla></hanla>循环，for<hanla></hanla>循环默认按行读取</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'d:/python/test.txt'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'line = {line}'</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>注意<hanla></hanla>print<hanla></hanla>会自动添加换行符，所以我们需要设置一下</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'line = {line}'</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><hanla></hanla>end<hanla></hanla>表示每次打印需要在末尾加上东西，默认值是<code>'\n'</code></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"><hanla></hanla># 还可以使用<hanla></hanla>readlines<hanla></hanla>方法直接把整个文件的所有内容都读出来，按照行组织到一个列表里</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'d:/python/test.txt'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span>
+lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.loli.net/2023/01/21/69sCdgvatYZBTmo.png" alt="image.png"></p>
+<p>这种方式一鼓作气读完，所以这种方法速度更快</p>
+<h2 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h2><p>我们写代码的时候还是很容易忘记关闭文件的</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"><hanla></hanla># 使用<hanla></hanla>with<hanla></hanla>语句</span>
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'d:/python/test.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true">#进行文件处理的逻辑</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>很好用！！</p>
+<h1 id="人生模拟器"><a href="#人生模拟器" class="headerlink" title="人生模拟器"></a>人生模拟器</h1><p>思路：</p>
 <p><hanla></hanla>1.<hanla></hanla>游戏开始时设置初始属性</p>
 <p>分别是 颜值 体质 智力 家境</p>
 <p><hanla></hanla>2.<hanla></hanla>开始游戏，随机生成性别和出生点</p>
@@ -510,7 +650,7 @@ html ul > hanla {
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="TianxiaoYe" src="/images/avatar.png">
   <p class="site-author-name" itemprop="name"><hanla></hanla>TianxiaoYe</p>
-  <div class="site-description" itemprop="description">where there is a will, there is a way</div>
+  <div class="site-description" itemprop="description">Let your brain control your body</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
