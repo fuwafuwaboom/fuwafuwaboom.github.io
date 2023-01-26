@@ -1,6 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>blog和github</title>
+    <url>/2023/01/25/blog-he-github/</url>
+    <content><![CDATA[<p><strong>本篇前言</strong></p>
+<p>记录一下怎么上传博客和GitHub</p>
+<span id="more"></span>
+
+<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><h2 id="创建仓库连接到本地"><a href="#创建仓库连接到本地" class="headerlink" title="创建仓库连接到本地"></a>创建仓库连接到本地</h2><p>1.点击New</p>
+<p><img src="https://s2.loli.net/2023/01/27/cVzx3SdWjC6phMt.png" alt="image.png"></p>
+<p>2.设置仓库参数 创建仓库</p>
+<p><img src="https://s2.loli.net/2023/01/27/sTjIgrLly2D6fEG.png" alt="image.png"></p>
+<p>3.与本地仓库相链接</p>
+<p><img src="https://s2.loli.net/2023/01/27/XlNML1Imkdh6sqi.png" alt="image.png"></p>
+<p>右击想要创建的文件夹的空白处，点击Git Clone</p>
+<p><img src="https://s2.loli.net/2023/01/27/ybZcACDq9VxzfI8.png" alt="image.png"></p>
+<p>把刚刚的网址复制进去，然后点击ok</p>
+<p><img src="https://s2.loli.net/2023/01/27/UTRx49DVsh1flSE.png" alt="image.png"></p>
+<p>这样我们的本地仓库也创建好了</p>
+<p><img src="https://s2.loli.net/2023/01/27/UDpkTRJqKAWI2xS.png" alt="image.png"></p>
+<p>在本地仓库加入文件就可以进行上传了</p>
+<h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><p>1.add</p>
+<p><img src="https://s2.loli.net/2023/01/27/O7KxNo15Up3qzlX.png" alt="image.png"></p>
+<p>2.commit</p>
+<p><img src="https://s2.loli.net/2023/01/27/AzjTyZ26JIEOx5S.png" alt="image.png"></p>
+<p>输入一些描述性文字</p>
+<p><img src="https://s2.loli.net/2023/01/27/HnJfktDwB6s5jIu.png" alt="image.png"></p>
+<p>3.push</p>
+<p><img src="https://s2.loli.net/2023/01/27/Yir1NXIafcoU6Mm.png" alt="image.png"></p>
+<p>点击push</p>
+<p><img src="https://s2.loli.net/2023/01/27/1orPeBS6ACFglTH.png" alt="image.png"></p>
+<p>成功</p>
+<p>然后在github上就可以看到上传的文件了</p>
+<p><img src="https://s2.loli.net/2023/01/27/Pn1iMlbXWasJOHt.png" alt="image.png"></p>
+<h1 id="上传博客hexo"><a href="#上传博客hexo" class="headerlink" title="上传博客hexo"></a>上传博客hexo</h1><p>到blog根目录shift右击空白处，点击powershell</p>
+<p><code>hexo g</code></p>
+<p><code>hexo s</code> （之后用ctrl+c退出）</p>
+<p><code>hexo d</code></p>
+<p>上传完毕</p>
+]]></content>
+      <categories>
+        <category>【编程基本功】</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>hexo_blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【Pytorch】Pytorch入门</title>
+    <url>/2023/01/23/pytorch-pytorch-ru-men/</url>
+    <content><![CDATA[<p><strong>本篇前言</strong></p>
+<p>深度学习初学记录</p>
+<span id="more"></span>
+
+<h1 id="环境安装成功"><a href="#环境安装成功" class="headerlink" title="环境安装成功"></a>环境安装成功</h1><blockquote>
+<p>Python 版本3.9</p>
+<p>Pytorch 版本1.13.1</p>
+<p>conda 版本22.9.0</p>
+<p>Pycharm版本2022.3</p>
+</blockquote>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20230124174427892.png" alt="image-20230124174427892"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> torch
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'gpu:'</span><span class="token punctuation">,</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.loli.net/2023/01/25/1Y5fOQdsB6aSF8V.png" alt="image.png"></p>
+<h1 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h1><p>深度学习的核心精髓就是梯度下降算法</p>
+<p><img src="https://s2.loli.net/2023/01/25/tlJIaAd4enw3EfX.png" alt="image.png"></p>
+<p>coefficient 学习率：前进步长</p>
+<p>简单来说，使用梯度下降算法可以不断的逼近函数的极值点</p>
+<hr>
+<p>那么如何求解一个线性问题呢？</p>
+<p>比如一个二元一次方程<br>$$<br>y = w*x+b<br>$$<br>我们只需要两个已知点即可</p>
+<p><img src="https://s2.loli.net/2023/01/25/7cBxzNtPE8I1rRa.png" alt="image.png"></p>
+<p>这类问题由于可以精确求解，所以就叫closed form solution</p>
+<p><img src="https://s2.loli.net/2023/01/25/oI871sPk3FRXCbL.png" alt="image.png"></p>
+<p>而现实生活中，往往有许多问题无法精确求解，但是我们可以逼近它的一个近似解，而这个近似解在经验上被证明是可行的，那么这个问题也就能够得到解决</p>
+<hr>
+<p>如果这个模型加上一个高斯噪声呢（均值为0.01方差为1）</p>
+<p>我们同时也拿到了许多的数据样本</p>
+<p><img src="https://s2.loli.net/2023/01/25/GUba1yesM4L3J9O.png" alt="image.png"></p>
+<p>我们可以定义一个loss函数，用来表示标准函数与实际函数的距离：<br>$$<br>loss = (WX+ b-y)^2<br>$$<br>其中W、X、b、y都是向量，结果loss也是向量</p>
+<hr>
+<p>把这个方法应用到下面这个问题：</p>
+<p><img src="https://s2.loli.net/2023/01/25/5ZY4A6iGcvnxdXR.png" alt="image.png"></p>
+<p>我们只要让loss函数最小即可</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20230124181545690.png" alt="image-20230124181545690"></p>
+<p>通过损失函数，把所有已知的点（x与y的键值对）带入，能够得到自变量为w和b，因变量为loss的函数</p>
+<p><img src="https://s2.loli.net/2023/01/25/k2jB7SV9K3MX6RZ.png" alt="image.png"></p>
+<p>用计算机将这个函数可视化</p>
+<p>这个函数的任何地方都会不断减小到最小值处，因为这个函数具有全局最小解</p>
+<p>这种具有全局最小解的函数就叫凸函数，而对凸函数进行优化的一门学科就叫做凸优化</p>
+<p>而我们一般用现成的优化器就行了（SGD/ADAM等）</p>
+<p><img src="https://s2.loli.net/2023/01/25/EzkRBe43od9J8LT.gif" alt="2131231.gif"></p>
+<p>上述这种预测的函数是连续的实数空间的近似模型的方法就叫线性回归问题（Linear Regression）</p>
+<p>与线性回归问题相对的是逻辑回归问题（Logistic Regression），这钟问题把y的值从<code>-∞</code>到<code>+∞</code>变成了0到1的问题，这样就可以表示概率</p>
+<hr>
+<p>线性回归问题实战：</p>
+<p>定义损失函数Loss_function:</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">compute_error_for_line_given_points</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> w<span class="token punctuation">,</span> points<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># point是一个元组，每个元素都是一个二值列表[x,y],比如([1,134], [2,321]...)</span>
+    totalError <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        y <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        totalError <span class="token operator">+=</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span>w <span class="token operator">*</span> x <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+    <span class="token keyword">return</span> totalError <span class="token operator">/</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#len(points)就是点的个数</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>计算梯度信息（梯度下降算法的子历程）：</p>
+<p>由于损失函数定义为：<br>$$<br>loss = (WX+b-y)^2<br>$$<br>则根据梯度下降算法的定义：<br>$$<br>w’ = w-lr*\frac{∇loss}{∇w}<br>$$<br>那么loss对W的梯度为<br>$$<br>\frac{∂loss}{∂w}=2(WX+b-y)X<br>$$</p>
+<p>那么loss对b的梯度为<br>$$<br>\frac{∂loss}{∂b}=2(WX+b-y)<br>$$</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">step_gradient</span><span class="token punctuation">(</span>b_current<span class="token punctuation">,</span> w_current<span class="token punctuation">,</span> points<span class="token punctuation">,</span> learningRate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    b_gradient <span class="token operator">=</span> <span class="token number">0</span>
+    w_gradient <span class="token operator">=</span> <span class="token number">0</span> 
+    N <span class="token operator">=</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        y <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        b_gradient <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>w_current <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> b_current<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#因为马上还要求和所以先除以N</span>
+        w_gradient <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span> <span class="token operator">*</span> x <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>w_current <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> b_current<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    new_b <span class="token operator">=</span> b_current <span class="token operator">-</span> <span class="token punctuation">(</span>learningRate <span class="token operator">*</span> b_gradient<span class="token punctuation">)</span>
+    new_w <span class="token operator">=</span> w_current <span class="token operator">-</span> <span class="token punctuation">(</span>learningRate <span class="token operator">*</span> w_gradient<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>new_b<span class="token punctuation">,</span> new_w<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>迭代梯度下降函数：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">gradient_descent_runner</span><span class="token punctuation">(</span>points<span class="token punctuation">,</span> starting_b<span class="token punctuation">,</span> starting_m<span class="token punctuation">,</span> learning_rate<span class="token punctuation">,</span> num_iterations<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#points点集, starting_b初始值b, starting_m初始值m, learning_rate学习率, num_iterations迭代次数</span>
+    b <span class="token operator">=</span> starting_b
+    m <span class="token operator">=</span> starting_m
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>num_interations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        b<span class="token punctuation">,</span> m <span class="token operator">=</span> step_gradient<span class="token punctuation">(</span>b<span class="token punctuation">,</span> m<span class="token punctuation">,</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">,</span> learning_rate<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>b<span class="token punctuation">,</span> m<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>随机生成散点图（使用matplotlib包）：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#生成两个空列表</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+d<span class="token operator">=</span>np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+Mean<span class="token operator">=</span><span class="token number">0</span>
+STD<span class="token operator">=</span><span class="token number">5</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#1-10之间抽样随机数</span>
+    d<span class="token punctuation">[</span>i<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> x
+    r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">#  noise=np.random.normal(Mean,STD)</span>
+    y<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>Mean<span class="token punctuation">,</span>STD<span class="token punctuation">)</span>
+    b<span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    d<span class="token punctuation">[</span>i<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> y
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.loli.net/2023/01/27/Xsj8e9rCBFDiTlo.png" alt="image.png"></p>
+<p>所以总体代码就是：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> csv
+
+<span class="token comment" spellcheck="true"># 1. 创建文件对象</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'random_points.csv'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 2. 基于文件对象构建 csv写入对象</span>
+csv_writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#生成两个空列表</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+d <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+Mean <span class="token operator">=</span> <span class="token number">0</span>
+STD <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#1-10之间抽样随机数</span>
+    d<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> x
+    r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">#  noise=np.random.normal(Mean,STD)</span>
+    y<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>Mean<span class="token punctuation">,</span> STD<span class="token punctuation">)</span>
+    b<span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    d<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> y
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 3. 写入csv文件内容</span>
+    csv_writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">[</span>d<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> d<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 4. 关闭文件</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 5. 定义损失函数（基于y = wx + b）</span>
+<span class="token keyword">def</span> <span class="token function">compute_error_for_line_given_points</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> w<span class="token punctuation">,</span> points<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># points是一个元组，每个元素都是一个二值列表[x,y],比如([1,134], [2,321]...)</span>
+    totalError <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        y <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        totalError <span class="token operator">+=</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span>w <span class="token operator">*</span> x <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+    <span class="token keyword">return</span> totalError <span class="token operator">/</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#len(points)就是点的个数</span>
+
+<span class="token comment" spellcheck="true"># 6. 定义单次梯度下降函数</span>
+<span class="token keyword">def</span> <span class="token function">step_gradient</span><span class="token punctuation">(</span>b_current<span class="token punctuation">,</span> w_current<span class="token punctuation">,</span> points<span class="token punctuation">,</span> learningRate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    b_gradient <span class="token operator">=</span> <span class="token number">0</span>
+    w_gradient <span class="token operator">=</span> <span class="token number">0</span>
+    N <span class="token operator">=</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        y <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        b_gradient <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>w_current <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> b_current<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#因为马上还要求和所以先除以N</span>
+        w_gradient <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span> <span class="token operator">*</span> x <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>w_current <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> b_current<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    new_b <span class="token operator">=</span> b_current <span class="token operator">-</span> <span class="token punctuation">(</span>learningRate <span class="token operator">*</span> b_gradient<span class="token punctuation">)</span>
+    new_w <span class="token operator">=</span> w_current <span class="token operator">-</span> <span class="token punctuation">(</span>learningRate <span class="token operator">*</span> w_gradient<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>new_b<span class="token punctuation">,</span> new_w<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 7. 循环记录梯度下降函数</span>
+<span class="token keyword">def</span> <span class="token function">gradient_descent_runner</span><span class="token punctuation">(</span>points<span class="token punctuation">,</span> starting_b<span class="token punctuation">,</span> starting_m<span class="token punctuation">,</span> learning_rate<span class="token punctuation">,</span> num_iterations<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#points点集, starting_b初始值b, starting_m初始值m, learning_rate学习率, num_iterations迭代次数</span>
+    b <span class="token operator">=</span> starting_b
+    m <span class="token operator">=</span> starting_m
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>num_iterations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        b<span class="token punctuation">,</span> m <span class="token operator">=</span> step_gradient<span class="token punctuation">(</span>b<span class="token punctuation">,</span> m<span class="token punctuation">,</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">,</span> learning_rate<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>b<span class="token punctuation">,</span> m<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 8. 主函数逻辑</span>
+<span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    points <span class="token operator">=</span> np<span class="token punctuation">.</span>genfromtxt<span class="token punctuation">(</span><span class="token string">"random_points.csv"</span><span class="token punctuation">,</span> delimiter<span class="token operator">=</span><span class="token string">","</span><span class="token punctuation">)</span>
+    learning_rate <span class="token operator">=</span> <span class="token number">0.0001</span>
+    initial_b <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">#initial y_intercept guess</span>
+    initial_m <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">#initial slope guess</span>
+    num_iterations <span class="token operator">=</span> <span class="token number">1000</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Starting gradient descent at b = {0}, m = {1}, error = {2}"</span>
+          <span class="token punctuation">.</span>format<span class="token punctuation">(</span>initial_b<span class="token punctuation">,</span> initial_m<span class="token punctuation">,</span>
+                  compute_error_for_line_given_points<span class="token punctuation">(</span>initial_b<span class="token punctuation">,</span> initial_m<span class="token punctuation">,</span> points<span class="token punctuation">)</span>
+                  <span class="token punctuation">)</span>
+          <span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Running..."</span><span class="token punctuation">)</span>
+    <span class="token punctuation">[</span>b<span class="token punctuation">,</span> m<span class="token punctuation">]</span> <span class="token operator">=</span> gradient_descent_runner<span class="token punctuation">(</span>points<span class="token punctuation">,</span> initial_b<span class="token punctuation">,</span> initial_m<span class="token punctuation">,</span> learning_rate<span class="token punctuation">,</span> num_iterations<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"After {0} iterations b = {1}, m = {2}, error = {3}"</span>
+          <span class="token punctuation">.</span>format<span class="token punctuation">(</span>num_iterations<span class="token punctuation">,</span> b<span class="token punctuation">,</span> m<span class="token punctuation">,</span>
+                  compute_error_for_line_given_points<span class="token punctuation">(</span>b<span class="token punctuation">,</span> m<span class="token punctuation">,</span> points<span class="token punctuation">)</span>
+                  <span class="token punctuation">)</span>
+          <span class="token punctuation">)</span>
+    a_x <span class="token operator">=</span> <span class="token number">0</span>
+    b_x <span class="token operator">=</span> <span class="token number">10</span>
+    a_y <span class="token operator">=</span> m <span class="token operator">*</span> a_x <span class="token operator">+</span> b
+    b_y <span class="token operator">=</span> m <span class="token operator">*</span> b_x <span class="token operator">+</span> b
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">[</span>a_x<span class="token punctuation">,</span> b_x<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>a_y<span class="token punctuation">,</span> b_y<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果为：</p>
+<p><img src="https://s2.loli.net/2023/01/27/EsuxSYtWnRirABw.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>【Pytorch】</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Neural Network</tag>
+        <tag>Pytorch</tag>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【Python】速通Python (下)</title>
     <url>/2022/12/26/python-su-tong-python-xia/</url>
     <content><![CDATA[<p><strong>本篇前言</strong></p>

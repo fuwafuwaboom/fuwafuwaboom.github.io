@@ -1,0 +1,664 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fuwafuwaboom.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇前言 深度学习初学记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Pytorch】Pytorch入门">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/index.html">
+<meta property="og:site_name" content="潇のNOTES">
+<meta property="og:description" content="本篇前言 深度学习初学记录">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20230124174427892.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/25/1Y5fOQdsB6aSF8V.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/25/tlJIaAd4enw3EfX.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/25/7cBxzNtPE8I1rRa.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/25/oI871sPk3FRXCbL.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/25/GUba1yesM4L3J9O.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/25/5ZY4A6iGcvnxdXR.png">
+<meta property="og:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20230124181545690.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/25/k2jB7SV9K3MX6RZ.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/25/EzkRBe43od9J8LT.gif">
+<meta property="og:image" content="https://s2.loli.net/2023/01/27/Xsj8e9rCBFDiTlo.png">
+<meta property="og:image" content="https://s2.loli.net/2023/01/27/EsuxSYtWnRirABw.png">
+<meta property="article:published_time" content="2023-01-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-26T22:07:51.115Z">
+<meta property="article:author" content="TianxiaoYe">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Neural Network">
+<meta property="article:tag" content="Pytorch">
+<meta property="article:tag" content="Machine Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/23867/AppData/Roaming/Typora/typora-user-images/image-20230124174427892.png">
+
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>【Pytorch】Pytorch入门 | 潇のNOTES</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start --><style>
+.body hanla:after {
+    content: ' ';
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
+}
+
+html code hanla,
+html pre hanla,
+html kbd hanla,
+html samp hanla {
+    display: none;
+}
+
+html ol > hanla,
+html ul > hanla {
+    display: none;
+}
+</style><!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="潇のNOTES" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">潇のNOTES</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="TianxiaoYe">
+      <meta itemprop="description" content="Let your brain control your body">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潇のNOTES">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline"><hanla></hanla>
+          【Pytorch】Pytorch<hanla></hanla>入门
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-01-24 00:00:00" itemprop="dateCreated datePublished" datetime="2023-01-24T00:00:00+08:00">2023-01-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-01-27 06:07:51" itemprop="dateModified" datetime="2023-01-27T06:07:51+08:00">2023-01-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E3%80%90Pytorch%E3%80%91/" itemprop="url" rel="index"><span itemprop="name">【Pytorch】</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>本篇前言</strong></p>
+<p>深度学习初学记录</p>
+<span id="more"></span>
+
+<h1 id="环境安装成功"><a href="#环境安装成功" class="headerlink" title="环境安装成功"></a>环境安装成功</h1><blockquote>
+<p><hanla></hanla>Python 版本<hanla></hanla>3.9</p>
+<p><hanla></hanla>Pytorch 版本<hanla></hanla>1.13.1</p>
+<p><hanla></hanla>conda 版本<hanla></hanla>22.9.0</p>
+<p><hanla></hanla>Pycharm<hanla></hanla>版本<hanla></hanla>2022.3</p>
+</blockquote>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20230124174427892.png" alt="image-20230124174427892"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> torch
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'gpu:'</span><span class="token punctuation">,</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.loli.net/2023/01/25/1Y5fOQdsB6aSF8V.png" alt="image.png"></p>
+<h1 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h1><p>深度学习的核心精髓就是梯度下降算法</p>
+<p><img src="https://s2.loli.net/2023/01/25/tlJIaAd4enw3EfX.png" alt="image.png"></p>
+<p>coefficient 学习率：前进步长</p>
+<p>简单来说，使用梯度下降算法可以不断的逼近函数的极值点</p>
+<hr>
+<p>那么如何求解一个线性问题呢？</p>
+<p>比如一个二元一次方程<br><hanla></hanla>$$<br>y = w*x+b<br>$$<br><hanla></hanla>我们只需要两个已知点即可</p>
+<p><img src="https://s2.loli.net/2023/01/25/7cBxzNtPE8I1rRa.png" alt="image.png"></p>
+<p><hanla></hanla>这类问题由于可以精确求解，所以就叫<hanla></hanla>closed form solution</p>
+<p><img src="https://s2.loli.net/2023/01/25/oI871sPk3FRXCbL.png" alt="image.png"></p>
+<p>而现实生活中，往往有许多问题无法精确求解，但是我们可以逼近它的一个近似解，而这个近似解在经验上被证明是可行的，那么这个问题也就能够得到解决</p>
+<hr>
+<p><hanla></hanla>如果这个模型加上一个高斯噪声呢（均值为<hanla></hanla>0.01<hanla></hanla>方差为<hanla></hanla>1）</p>
+<p>我们同时也拿到了许多的数据样本</p>
+<p><img src="https://s2.loli.net/2023/01/25/GUba1yesM4L3J9O.png" alt="image.png"></p>
+<p><hanla></hanla>我们可以定义一个<hanla></hanla>loss<hanla></hanla>函数，用来表示标准函数与实际函数的距离：<br>$$<br>loss = (WX+ b-y)^2<br>$$<br><hanla></hanla>其中<hanla></hanla>W、X、b、y<hanla></hanla>都是向量，结果<hanla></hanla>loss<hanla></hanla>也是向量</p>
+<hr>
+<p>把这个方法应用到下面这个问题：</p>
+<p><img src="https://s2.loli.net/2023/01/25/5ZY4A6iGcvnxdXR.png" alt="image.png"></p>
+<p><hanla></hanla>我们只要让<hanla></hanla>loss<hanla></hanla>函数最小即可</p>
+<p><img src="C:\Users\23867\AppData\Roaming\Typora\typora-user-images\image-20230124181545690.png" alt="image-20230124181545690"></p>
+<p><hanla></hanla>通过损失函数，把所有已知的点（x<hanla></hanla>与<hanla></hanla>y<hanla></hanla>的键值对）带入，能够得到自变量为<hanla></hanla>w<hanla></hanla>和<hanla></hanla>b，因变量为<hanla></hanla>loss<hanla></hanla>的函数</p>
+<p><img src="https://s2.loli.net/2023/01/25/k2jB7SV9K3MX6RZ.png" alt="image.png"></p>
+<p>用计算机将这个函数可视化</p>
+<p>这个函数的任何地方都会不断减小到最小值处，因为这个函数具有全局最小解</p>
+<p>这种具有全局最小解的函数就叫凸函数，而对凸函数进行优化的一门学科就叫做凸优化</p>
+<p><hanla></hanla>而我们一般用现成的优化器就行了（SGD/ADAM<hanla></hanla>等）</p>
+<p><img src="https://s2.loli.net/2023/01/25/EzkRBe43od9J8LT.gif" alt="2131231.gif"></p>
+<p>上述这种预测的函数是连续的实数空间的近似模型的方法就叫线性回归问题（Linear Regression）</p>
+<p><hanla></hanla>与线性回归问题相对的是逻辑回归问题（Logistic Regression），这钟问题把<hanla></hanla>y<hanla></hanla>的值从<code>-∞</code>到<code><hanla></hanla>+∞</code><hanla></hanla>变成了<hanla></hanla>0<hanla></hanla>到<hanla></hanla>1<hanla></hanla>的问题，这样就可以表示概率</p>
+<hr>
+<p>线性回归问题实战：</p>
+<p><hanla></hanla>定义损失函数<hanla></hanla>Loss_function:</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">compute_error_for_line_given_points</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> w<span class="token punctuation">,</span> points<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"><hanla></hanla># point<hanla></hanla>是一个元组，每个元素都是一个二值列表<hanla></hanla>[x,y],<hanla></hanla>比如<hanla></hanla>([1,134], [2,321]...)</span>
+    totalError <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        y <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        totalError <span class="token operator">+=</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span>w <span class="token operator">*</span> x <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+    <span class="token keyword">return</span> totalError <span class="token operator">/</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"><hanla></hanla>#len(points)<hanla></hanla>就是点的个数</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>计算梯度信息（梯度下降算法的子历程）：</p>
+<p>由于损失函数定义为：<br>$$<br>loss = (WX+b-y)^2<br>$$<br><hanla></hanla>则根据梯度下降算法的定义：<br>$$<br>w’ = w-lr*\frac{∇loss}{∇w}<br>$$<br><hanla></hanla>那么<hanla></hanla>loss<hanla></hanla>对<hanla></hanla>W<hanla></hanla>的梯度为<br><hanla></hanla>$$<br>\frac{∂loss}{∂w}=2(WX+b-y)X<br>$$</p>
+<p><hanla></hanla>那么<hanla></hanla>loss<hanla></hanla>对<hanla></hanla>b<hanla></hanla>的梯度为<br><hanla></hanla>$$<br>\frac{∂loss}{∂b}=2(WX+b-y)<br>$$</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">step_gradient</span><span class="token punctuation">(</span>b_current<span class="token punctuation">,</span> w_current<span class="token punctuation">,</span> points<span class="token punctuation">,</span> learningRate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    b_gradient <span class="token operator">=</span> <span class="token number">0</span>
+    w_gradient <span class="token operator">=</span> <span class="token number">0</span> 
+    N <span class="token operator">=</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        y <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        b_gradient <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>w_current <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> b_current<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"><hanla></hanla>#因为马上还要求和所以先除以<hanla></hanla>N</span>
+        w_gradient <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span> <span class="token operator">*</span> x <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>w_current <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> b_current<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    new_b <span class="token operator">=</span> b_current <span class="token operator">-</span> <span class="token punctuation">(</span>learningRate <span class="token operator">*</span> b_gradient<span class="token punctuation">)</span>
+    new_w <span class="token operator">=</span> w_current <span class="token operator">-</span> <span class="token punctuation">(</span>learningRate <span class="token operator">*</span> w_gradient<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>new_b<span class="token punctuation">,</span> new_w<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>迭代梯度下降函数：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">gradient_descent_runner</span><span class="token punctuation">(</span>points<span class="token punctuation">,</span> starting_b<span class="token punctuation">,</span> starting_m<span class="token punctuation">,</span> learning_rate<span class="token punctuation">,</span> num_iterations<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"><hanla></hanla>#points<hanla></hanla>点集, starting_b<hanla></hanla>初始值<hanla></hanla>b, starting_m<hanla></hanla>初始值<hanla></hanla>m, learning_rate<hanla></hanla>学习率, num_iterations<hanla></hanla>迭代次数</span>
+    b <span class="token operator">=</span> starting_b
+    m <span class="token operator">=</span> starting_m
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>num_interations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        b<span class="token punctuation">,</span> m <span class="token operator">=</span> step_gradient<span class="token punctuation">(</span>b<span class="token punctuation">,</span> m<span class="token punctuation">,</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">,</span> learning_rate<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>b<span class="token punctuation">,</span> m<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>随机生成散点图（使用<hanla></hanla>matplotlib<hanla></hanla>包）：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#生成两个空列表</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+d<span class="token operator">=</span>np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+Mean<span class="token operator">=</span><span class="token number">0</span>
+STD<span class="token operator">=</span><span class="token number">5</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"><hanla></hanla>#1-10<hanla></hanla>之间抽样随机数</span>
+    d<span class="token punctuation">[</span>i<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> x
+    r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">#  noise=np.random.normal(Mean,STD)</span>
+    y<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>Mean<span class="token punctuation">,</span>STD<span class="token punctuation">)</span>
+    b<span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    d<span class="token punctuation">[</span>i<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> y
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.loli.net/2023/01/27/Xsj8e9rCBFDiTlo.png" alt="image.png"></p>
+<p>所以总体代码就是：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> csv
+
+<span class="token comment" spellcheck="true"># 1. 创建文件对象</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'random_points.csv'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"><hanla></hanla># 2. 基于文件对象构建 csv<hanla></hanla>写入对象</span>
+csv_writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#生成两个空列表</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+d <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+Mean <span class="token operator">=</span> <span class="token number">0</span>
+STD <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"><hanla></hanla>#1-10<hanla></hanla>之间抽样随机数</span>
+    d<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> x
+    r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">#  noise=np.random.normal(Mean,STD)</span>
+    y<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>Mean<span class="token punctuation">,</span> STD<span class="token punctuation">)</span>
+    b<span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    d<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> y
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"><hanla></hanla># 3. 写入<hanla></hanla>csv<hanla></hanla>文件内容</span>
+    csv_writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">[</span>d<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> d<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 4. 关闭文件</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"><hanla></hanla># 5. 定义损失函数（基于<hanla></hanla>y = wx + b）</span>
+<span class="token keyword">def</span> <span class="token function">compute_error_for_line_given_points</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> w<span class="token punctuation">,</span> points<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"><hanla></hanla># points<hanla></hanla>是一个元组，每个元素都是一个二值列表<hanla></hanla>[x,y],<hanla></hanla>比如<hanla></hanla>([1,134], [2,321]...)</span>
+    totalError <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        y <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        totalError <span class="token operator">+=</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span>w <span class="token operator">*</span> x <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+    <span class="token keyword">return</span> totalError <span class="token operator">/</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"><hanla></hanla>#len(points)<hanla></hanla>就是点的个数</span>
+
+<span class="token comment" spellcheck="true"># 6. 定义单次梯度下降函数</span>
+<span class="token keyword">def</span> <span class="token function">step_gradient</span><span class="token punctuation">(</span>b_current<span class="token punctuation">,</span> w_current<span class="token punctuation">,</span> points<span class="token punctuation">,</span> learningRate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    b_gradient <span class="token operator">=</span> <span class="token number">0</span>
+    w_gradient <span class="token operator">=</span> <span class="token number">0</span>
+    N <span class="token operator">=</span> float<span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        y <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        b_gradient <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>w_current <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> b_current<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"><hanla></hanla>#因为马上还要求和所以先除以<hanla></hanla>N</span>
+        w_gradient <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span> <span class="token operator">*</span> x <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>w_current <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> b_current<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    new_b <span class="token operator">=</span> b_current <span class="token operator">-</span> <span class="token punctuation">(</span>learningRate <span class="token operator">*</span> b_gradient<span class="token punctuation">)</span>
+    new_w <span class="token operator">=</span> w_current <span class="token operator">-</span> <span class="token punctuation">(</span>learningRate <span class="token operator">*</span> w_gradient<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>new_b<span class="token punctuation">,</span> new_w<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 7. 循环记录梯度下降函数</span>
+<span class="token keyword">def</span> <span class="token function">gradient_descent_runner</span><span class="token punctuation">(</span>points<span class="token punctuation">,</span> starting_b<span class="token punctuation">,</span> starting_m<span class="token punctuation">,</span> learning_rate<span class="token punctuation">,</span> num_iterations<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"><hanla></hanla>#points<hanla></hanla>点集, starting_b<hanla></hanla>初始值<hanla></hanla>b, starting_m<hanla></hanla>初始值<hanla></hanla>m, learning_rate<hanla></hanla>学习率, num_iterations<hanla></hanla>迭代次数</span>
+    b <span class="token operator">=</span> starting_b
+    m <span class="token operator">=</span> starting_m
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>num_iterations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        b<span class="token punctuation">,</span> m <span class="token operator">=</span> step_gradient<span class="token punctuation">(</span>b<span class="token punctuation">,</span> m<span class="token punctuation">,</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">,</span> learning_rate<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>b<span class="token punctuation">,</span> m<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 8. 主函数逻辑</span>
+<span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    points <span class="token operator">=</span> np<span class="token punctuation">.</span>genfromtxt<span class="token punctuation">(</span><span class="token string">"random_points.csv"</span><span class="token punctuation">,</span> delimiter<span class="token operator">=</span><span class="token string">","</span><span class="token punctuation">)</span>
+    learning_rate <span class="token operator">=</span> <span class="token number">0.0001</span>
+    initial_b <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">#initial y_intercept guess</span>
+    initial_m <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">#initial slope guess</span>
+    num_iterations <span class="token operator">=</span> <span class="token number">1000</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Starting gradient descent at b = {0}, m = {1}, error = {2}"</span>
+          <span class="token punctuation">.</span>format<span class="token punctuation">(</span>initial_b<span class="token punctuation">,</span> initial_m<span class="token punctuation">,</span>
+                  compute_error_for_line_given_points<span class="token punctuation">(</span>initial_b<span class="token punctuation">,</span> initial_m<span class="token punctuation">,</span> points<span class="token punctuation">)</span>
+                  <span class="token punctuation">)</span>
+          <span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Running..."</span><span class="token punctuation">)</span>
+    <span class="token punctuation">[</span>b<span class="token punctuation">,</span> m<span class="token punctuation">]</span> <span class="token operator">=</span> gradient_descent_runner<span class="token punctuation">(</span>points<span class="token punctuation">,</span> initial_b<span class="token punctuation">,</span> initial_m<span class="token punctuation">,</span> learning_rate<span class="token punctuation">,</span> num_iterations<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"After {0} iterations b = {1}, m = {2}, error = {3}"</span>
+          <span class="token punctuation">.</span>format<span class="token punctuation">(</span>num_iterations<span class="token punctuation">,</span> b<span class="token punctuation">,</span> m<span class="token punctuation">,</span>
+                  compute_error_for_line_given_points<span class="token punctuation">(</span>b<span class="token punctuation">,</span> m<span class="token punctuation">,</span> points<span class="token punctuation">)</span>
+                  <span class="token punctuation">)</span>
+          <span class="token punctuation">)</span>
+    a_x <span class="token operator">=</span> <span class="token number">0</span>
+    b_x <span class="token operator">=</span> <span class="token number">10</span>
+    a_y <span class="token operator">=</span> m <span class="token operator">*</span> a_x <span class="token operator">+</span> b
+    b_y <span class="token operator">=</span> m <span class="token operator">*</span> b_x <span class="token operator">+</span> b
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">[</span>a_x<span class="token punctuation">,</span> b_x<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>a_y<span class="token punctuation">,</span> b_y<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果为：</p>
+<p><img src="https://s2.loli.net/2023/01/27/EsuxSYtWnRirABw.png" alt="image.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Neural-Network/" rel="tag"># Neural Network</a>
+              <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
+              <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/12/26/python-su-tong-python-xia/" rel="prev" title="【Python】速通Python (下)">
+      <i class="fa fa-chevron-left"></i><hanla></hanla> 【Python】速通<hanla></hanla>Python (下)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/01/25/blog-he-github/" rel="next" title="blog和github"><hanla></hanla>
+      blog<hanla></hanla>和<hanla></hanla>github <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="nav-number">1.</span> <span class="nav-text">环境安装成功</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">回归问题</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="TianxiaoYe" src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name"><hanla></hanla>TianxiaoYe</p>
+  <div class="site-description" itemprop="description">Let your brain control your body</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TianxiaoYe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+</body></html>

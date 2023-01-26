@@ -6,7 +6,7 @@
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2023-01-20T19:34:45.188Z</updated>
+  <updated>2023-01-26T22:54:54.676Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>blog和github</title>
+    <link href="http://fuwafuwaboom.github.io/2023/01/25/blog-he-github/"/>
+    <id>http://fuwafuwaboom.github.io/2023/01/25/blog-he-github/</id>
+    <published>2023-01-25T16:00:00.000Z</published>
+    <updated>2023-01-26T22:54:54.676Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;记录一下怎么上传博客和GitHub&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【编程基本功】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90%E7%BC%96%E7%A8%8B%E5%9F%BA%E6%9C%AC%E5%8A%9F%E3%80%91/"/>
+    
+    
+    <category term="github" scheme="http://fuwafuwaboom.github.io/tags/github/"/>
+    
+    <category term="hexo_blog" scheme="http://fuwafuwaboom.github.io/tags/hexo-blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Pytorch】Pytorch入门</title>
+    <link href="http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/"/>
+    <id>http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/</id>
+    <published>2023-01-23T16:00:00.000Z</published>
+    <updated>2023-01-26T22:07:51.115Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;深度学习初学记录&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【Pytorch】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90Pytorch%E3%80%91/"/>
+    
+    
+    <category term="Python" scheme="http://fuwafuwaboom.github.io/tags/Python/"/>
+    
+    <category term="Neural Network" scheme="http://fuwafuwaboom.github.io/tags/Neural-Network/"/>
+    
+    <category term="Pytorch" scheme="http://fuwafuwaboom.github.io/tags/Pytorch/"/>
+    
+    <category term="Machine Learning" scheme="http://fuwafuwaboom.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>【Python】速通Python (下)</title>
@@ -417,53 +465,6 @@
     <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
     
     <category term="数组" scheme="http://fuwafuwaboom.github.io/tags/%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第二篇·详解函数</title>
-    <link href="http://fuwafuwaboom.github.io/2021/05/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/05/12/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-er-pian-xiang-jie-han-shu/</id>
-    <published>2021-05-12T16:00:00.000Z</published>
-    <updated>2021-11-07T14:46:50.265Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;br&gt;C语言有各种各样的库函数，调用它们需要引用相应的头文件。由于C语言库函数较多，讲解原理的话涉及内容庞杂，作为替代这里给出C语言库函数（包括各种关键字）查询的网址供大家参考。有条件的小伙伴建议下载MSDN软件（相当于离线的知识站）辅助学习&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cplusplus.com/reference/&quot;&gt;C/C++官方知识站&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;抛开库函数，本篇所讲函数均为&lt;strong&gt;自定义函数&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="函数" scheme="http://fuwafuwaboom.github.io/tags/%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第一篇·详解分支与循环</title>
-    <link href="http://fuwafuwaboom.github.io/2021/05/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/"/>
-    <id>http://fuwafuwaboom.github.io/2021/05/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-yi-pian-xiang-jie-fen-zhi-yu-xun-huan/</id>
-    <published>2021-05-09T16:00:00.000Z</published>
-    <updated>2021-11-07T14:46:41.406Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;br&gt;前文我们说到，编程的一个目的就是借助计算机帮助我们解决生活中的问题，而世界运行的基本时间逻辑，在向计算机描述时可以大致归纳成三种基本逻辑结构：&lt;strong&gt;顺序&lt;/strong&gt;、&lt;strong&gt;选择&lt;/strong&gt;、&lt;strong&gt;循环&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;顺序&lt;/strong&gt;就是从前往后，从上到下，一行一行的执行。是程序执行语句的基本逻辑&lt;br&gt;&lt;strong&gt;选择&lt;/strong&gt;也叫分支，是同一时间点面对问题时，有不同的选择，会使我们的程序选择性的执行&lt;br&gt;&lt;strong&gt;循环&lt;/strong&gt;是指程序进入了一段不断重复的路，可能会一直在此循环往复，也可以打破循环，继续前进&lt;br&gt;在顺序执行的程序中，分支中可能有循环，循环中也可能有分支&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="分支与循环" scheme="http://fuwafuwaboom.github.io/tags/%E5%88%86%E6%94%AF%E4%B8%8E%E5%BE%AA%E7%8E%AF/"/>
     
   </entry>
   
