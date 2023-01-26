@@ -252,7 +252,7 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
 <p><img src="https://s2.loli.net/2023/01/27/EsuxSYtWnRirABw.png" alt="image.png"></p>
 ]]></content>
       <categories>
-        <category>【Pytorch】</category>
+        <category>【Deep Learning】</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -2557,7 +2557,7 @@ size_t <span class="token function">my_strlen</span><span class="token punctuati
 <p><code>_cdecl</code>是<strong>函数调用约定</strong>：函数调用约定是一系列关于函数调用时编译器执行的细节规则</p>
 ]]></content>
       <categories>
-        <category>【C语言】</category>
+        <category>【编程基本功】</category>
       </categories>
       <tags>
         <tag>小技巧</tag>

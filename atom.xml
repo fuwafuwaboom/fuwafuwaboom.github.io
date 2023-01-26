@@ -43,7 +43,7 @@
     <link href="http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/"/>
     <id>http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/</id>
     <published>2023-01-23T16:00:00.000Z</published>
-    <updated>2023-01-26T22:07:51.115Z</updated>
+    <updated>2023-01-26T22:59:56.460Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
@@ -51,7 +51,7 @@
     
     
     
-    <category term="【Pytorch】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90Pytorch%E3%80%91/"/>
+    <category term="【Deep Learning】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90Deep-Learning%E3%80%91/"/>
     
     
     <category term="Python" scheme="http://fuwafuwaboom.github.io/tags/Python/"/>
@@ -259,14 +259,14 @@
     <link href="http://fuwafuwaboom.github.io/2021/08/6/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/"/>
     <id>http://fuwafuwaboom.github.io/2021/08/6/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/</id>
     <published>2021-08-06T16:00:00.000Z</published>
-    <updated>2021-11-07T14:46:25.694Z</updated>
+    <updated>2023-01-26T22:59:18.721Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;我们如何写出易于调试，有健壮性的代码呢？源码就是这样的代码，我们要多看多学习源码的写法来提升我们的代码风格&lt;/strong&gt;&lt;/p&gt;</summary>
     
     
     
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
+    <category term="【编程基本功】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90%E7%BC%96%E7%A8%8B%E5%9F%BA%E6%9C%AC%E5%8A%9F%E3%80%91/"/>
     
     
     <category term="小技巧" scheme="http://fuwafuwaboom.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>

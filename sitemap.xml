@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://fuwafuwaboom.github.io/2023/01/25/blog-he-github/</loc>
+    <loc>http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/</loc>
     
     <lastmod>2023-01-26</lastmod>
     
   </url>
   
   <url>
-    <loc>http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/</loc>
+    <loc>http://fuwafuwaboom.github.io/2021/08/6/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/</loc>
+    
+    <lastmod>2023-01-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fuwafuwaboom.github.io/2023/01/25/blog-he-github/</loc>
     
     <lastmod>2023-01-26</lastmod>
     
@@ -150,13 +157,6 @@
   
   <url>
     <loc>http://fuwafuwaboom.github.io/2021/04/30/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ling-pian-yu-c-yu-yan-lai-ge-yue-hui/</loc>
-    
-    <lastmod>2021-11-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fuwafuwaboom.github.io/2021/08/6/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/</loc>
     
     <lastmod>2021-11-07</lastmod>
     
@@ -504,13 +504,6 @@
   
   <url>
     <loc>http://fuwafuwaboom.github.io/categories/%E3%80%90Deep-Learning%E3%80%91/</loc>
-    <lastmod>2023-01-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://fuwafuwaboom.github.io/categories/%E3%80%90Pytorch%E3%80%91/</loc>
     <lastmod>2023-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
