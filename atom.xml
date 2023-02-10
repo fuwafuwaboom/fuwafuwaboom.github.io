@@ -6,7 +6,7 @@
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2023-01-26T22:54:54.676Z</updated>
+  <updated>2023-02-10T00:30:14.434Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -15,6 +15,74 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【ROS】ROS系统基础</title>
+    <link href="http://fuwafuwaboom.github.io/2023/01/31/ros-ros-xi-tong-ji-chu/"/>
+    <id>http://fuwafuwaboom.github.io/2023/01/31/ros-ros-xi-tong-ji-chu/</id>
+    <published>2023-01-31T16:00:00.000Z</published>
+    <updated>2023-02-10T00:30:14.434Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ROS基础知识&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【ROS】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90ROS%E3%80%91/"/>
+    
+    
+    <category term="ROS" scheme="http://fuwafuwaboom.github.io/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【ROS】阿克曼差速移动机器人（上）</title>
+    <link href="http://fuwafuwaboom.github.io/2023/01/31/ros-a-ke-man-chai-su-yi-dong-ji-qi-ren-shang/"/>
+    <id>http://fuwafuwaboom.github.io/2023/01/31/ros-a-ke-man-chai-su-yi-dong-ji-qi-ren-shang/</id>
+    <published>2023-01-31T16:00:00.000Z</published>
+    <updated>2023-02-04T17:08:28.478Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ROS小车学习记录&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【ROS】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90ROS%E3%80%91/"/>
+    
+    <category term="【Robotics】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90ROS%E3%80%91/%E3%80%90Robotics%E3%80%91/"/>
+    
+    
+    <category term="ROS" scheme="http://fuwafuwaboom.github.io/tags/ROS/"/>
+    
+    <category term="Robotics" scheme="http://fuwafuwaboom.github.io/tags/Robotics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【ROS】阿克曼差速移动机器人（下）</title>
+    <link href="http://fuwafuwaboom.github.io/2023/01/31/ros-a-ke-man-chai-su-yi-dong-ji-qi-ren-xia/"/>
+    <id>http://fuwafuwaboom.github.io/2023/01/31/ros-a-ke-man-chai-su-yi-dong-ji-qi-ren-xia/</id>
+    <published>2023-01-31T16:00:00.000Z</published>
+    <updated>2023-02-04T17:06:54.692Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ROS小车进阶&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【ROS】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90ROS%E3%80%91/"/>
+    
+    <category term="【Robotics】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90ROS%E3%80%91/%E3%80%90Robotics%E3%80%91/"/>
+    
+    
+    <category term="ROS" scheme="http://fuwafuwaboom.github.io/tags/ROS/"/>
+    
+    <category term="Robotics" scheme="http://fuwafuwaboom.github.io/tags/Robotics/"/>
+    
+  </entry>
   
   <entry>
     <title>blog和github</title>
@@ -43,7 +111,7 @@
     <link href="http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/"/>
     <id>http://fuwafuwaboom.github.io/2023/01/23/pytorch-pytorch-ru-men/</id>
     <published>2023-01-23T16:00:00.000Z</published>
-    <updated>2023-01-27T04:01:18.804Z</updated>
+    <updated>2023-02-01T07:40:18.692Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
@@ -396,75 +464,6 @@
     <category term="字符串函数" scheme="http://fuwafuwaboom.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0/"/>
     
     <category term="内存函数" scheme="http://fuwafuwaboom.github.io/tags/%E5%86%85%E5%AD%98%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第六篇·详解C指针</title>
-    <link href="http://fuwafuwaboom.github.io/2021/06/21/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/"/>
-    <id>http://fuwafuwaboom.github.io/2021/06/21/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-liu-pian-xiang-jie-c-zhi-zhen/</id>
-    <published>2021-06-21T16:00:00.000Z</published>
-    <updated>2021-11-07T14:47:36.043Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“指针是C语言的灵魂，精通指针也就基本精通了C语言。”&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;指针确实非常重要，但是它只是一个工具，是帮助我们分配内存的工具，所以我们的关注点最好不要陷入研究指针这个工具。&lt;strong&gt;了解指针，并且通过指针熟练的操作内存&lt;/strong&gt;，这才是玩转C指针的精髓，也是我们努力的方向。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="指针" scheme="http://fuwafuwaboom.github.io/tags/%E6%8C%87%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第四篇·详解操作符与相关运算</title>
-    <link href="http://fuwafuwaboom.github.io/2021/05/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/05/31/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-si-pian-xiang-jie-cao-zuo-fu/</id>
-    <published>2021-05-31T16:00:00.000Z</published>
-    <updated>2021-11-07T14:47:08.154Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;C语言的各种操作符让我们对数据的算数操作有了可能，为各种算法的出现提供了强力的工具。今天，就让我们深入的了解一下C语言中所有的操作符和它们的使用规则与注意事项&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="操作符" scheme="http://fuwafuwaboom.github.io/tags/%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="算法" scheme="http://fuwafuwaboom.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第三篇·详解数组</title>
-    <link href="http://fuwafuwaboom.github.io/2021/05/19/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/05/19/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-san-pian-xiang-jie-shu-zu/</id>
-    <published>2021-05-19T16:00:00.000Z</published>
-    <updated>2021-11-07T14:46:56.741Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;数组就是&lt;strong&gt;一组相同类型的元素的集合&lt;/strong&gt;，通过数组我们可以更为方便快捷的存储和访问数据。理论上来说C语言可以构造n维数组，但是由于&lt;strong&gt;一维数组&lt;/strong&gt;和&lt;strong&gt;二维数组&lt;/strong&gt;使用更加频繁，所以本篇着重讲解一维数组与二维数组，多维数组仅作了解。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="数组" scheme="http://fuwafuwaboom.github.io/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   

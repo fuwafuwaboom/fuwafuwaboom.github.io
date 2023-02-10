@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://s2.loli.net/2023/01/27/Xsj8e9rCBFDiTlo.png">
 <meta property="og:image" content="https://s2.loli.net/2023/01/27/EsuxSYtWnRirABw.png">
 <meta property="article:published_time" content="2023-01-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-01-27T04:01:18.804Z">
+<meta property="article:modified_time" content="2023-02-01T07:40:18.692Z">
 <meta property="article:author" content="TianxiaoYe">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Neural Network">
@@ -236,7 +236,7 @@ html ul > hanla {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-01-27 12:01:18" itemprop="dateModified" datetime="2023-01-27T12:01:18+08:00">2023-01-27</time>
+                <time title="Modified: 2023-02-01 15:40:18" itemprop="dateModified" datetime="2023-02-01T15:40:18+08:00">2023-02-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -459,6 +459,10 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>效果为：</p>
 <p><img src="https://s2.loli.net/2023/01/27/EsuxSYtWnRirABw.png" alt="image.png"></p>
+<h1 id="手写数字识别"><a href="#手写数字识别" class="headerlink" title="手写数字识别"></a>手写数字识别</h1><p><hanla></hanla>MNIST<hanla></hanla>数据集：包含<hanla></hanla>0-9<hanla></hanla>十个数字，每个数字是<hanla></hanla>28×28<hanla></hanla>大小的黑白图片，每个数字有<hanla></hanla>7000<hanla></hanla>张照片，一共<hanla></hanla>70k<hanla></hanla>张，其中，60k<hanla></hanla>用于训练，10k<hanla></hanla>用于验证。</p>
+<p><hanla></hanla>对于其中一张照片，是<hanla></hanla>28×28<hanla></hanla>的图片，包含<hanla></hanla>28×28<hanla></hanla>个<hanla></hanla>0<hanla></hanla>或<hanla></hanla>1</p>
+<p><hanla></hanla>然后我们用<hanla></hanla>flat<hanla></hanla>操作将这个二维矩阵打平成<hanla></hanla>784×1<hanla></hanla>的向量</p>
+<p><hanla></hanla>再在这个向量之前插入一个<hanla></hanla>1，及<hanla></hanla>[1, 784] </p>
 
     </div>
 
@@ -545,7 +549,7 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="nav-number">1.</span> <span class="nav-text">环境安装成功</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">回归问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="nav-number">1.</span> <span class="nav-text">环境安装成功</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">回归问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB"><span class="nav-number"><hanla></hanla>3.</span> <span class="nav-text">手写数字识别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -560,20 +564,20 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

@@ -1,0 +1,587 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fuwafuwaboom.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇前言 ROS基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【ROS】ROS系统基础">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2023/01/31/ros-ros-xi-tong-ji-chu/index.html">
+<meta property="og:site_name" content="潇のNOTES">
+<meta property="og:description" content="本篇前言 ROS基础知识">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/SUk1flbYojc6Z7p.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/05/udxLK2Y6U79McIm.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/05/yc1ULYBvWpAtesk.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/05/9vbRMDjSOPel326.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/05/ziCQoZscp7vfSlP.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/05/ieO5dPoZrGyVJnc.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/05/yKnu2tg5cHwlvJo.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/05/yAYp9hnPejCrTzS.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/4l17z3IHvZSUQLP.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/ZSP79aBJzEVXgfb.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/86M5EomNDgfjuIZ.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/zB2QhuoZgefc4Sq.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/JyOhQAtUfNnCZlj.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/7JolxUyjbASD8nK.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/KJWcLOmHyCjqE4x.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/DipnJZWKRw3Ns4I.png">
+<meta property="og:image" content="https://s2.loli.net/2023/02/10/nuDyKzWstFfhIO4.png">
+<meta property="article:published_time" content="2023-01-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-10T00:30:14.434Z">
+<meta property="article:author" content="TianxiaoYe">
+<meta property="article:tag" content="ROS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/02/10/SUk1flbYojc6Z7p.png">
+
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2023/01/31/ros-ros-xi-tong-ji-chu/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>【ROS】ROS系统基础 | 潇のNOTES</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start --><style>
+.body hanla:after {
+    content: ' ';
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
+}
+
+html code hanla,
+html pre hanla,
+html kbd hanla,
+html samp hanla {
+    display: none;
+}
+
+html ol > hanla,
+html ul > hanla {
+    display: none;
+}
+</style><!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="潇のNOTES" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">潇のNOTES</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2023/01/31/ros-ros-xi-tong-ji-chu/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="TianxiaoYe">
+      <meta itemprop="description" content="Let your brain control your body">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潇のNOTES">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline"><hanla></hanla>
+          【ROS】ROS<hanla></hanla>系统基础
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-02-01 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-01T00:00:00+08:00">2023-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-10 08:30:14" itemprop="dateModified" datetime="2023-02-10T08:30:14+08:00">2023-02-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E3%80%90ROS%E3%80%91/" itemprop="url" rel="index"><span itemprop="name">【ROS】</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>本篇前言</strong></p>
+<p><hanla></hanla>ROS<hanla></hanla>基础知识</p>
+<span id="more"></span>
+
+<p><img src="https://s2.loli.net/2023/02/10/SUk1flbYojc6Z7p.png" alt="image.png"></p>
+<h1 id="工作空间"><a href="#工作空间" class="headerlink" title="工作空间"></a>工作空间</h1><p>工作空间是一个文件夹<code><hanla></hanla>workspace</code></p>
+<p>一般在工作空间下有三个文件夹<code><hanla></hanla>build</code> <code>src</code> <code>devel</code></p>
+<p><hanla></hanla>src<hanla></hanla>文件夹下放置的是用户的源代码，也就是功能包</p>
+<p><hanla></hanla>build<hanla></hanla>文件夹放置的是编译过程中生成的中间文件</p>
+<p><hanla></hanla>devel<hanla></hanla>文件夹放置的是编译生成的一些可执行文件</p>
+<p><hanla></hanla>build<hanla></hanla>和<hanla></hanla>devel<hanla></hanla>文件夹在使用<hanla></hanla>ros<hanla></hanla>时是可以忽略的</p>
+<h2 id="创建工作空间"><a href="#创建工作空间" class="headerlink" title="创建工作空间"></a>创建工作空间</h2><p><hanla></hanla>1.<hanla></hanla>创建文件夹</p>
+<p><code>mkdir -p ~/new_workspace/src</code></p>
+<p>mkdir 创建文件夹（linux）</p>
+<p><hanla></hanla>-p<hanla></hanla>检测这个路径 如果没有这个文件夹 就创建它</p>
+<p><hanla></hanla>2.<hanla></hanla>进入文件夹</p>
+<p><code>cd new_workspace/src</code></p>
+<p><hanla></hanla>3.<hanla></hanla>将这个文件夹初始化成一个工作空间</p>
+<p><code>catkin_init_workspace</code></p>
+<h2 id="编译工作空间"><a href="#编译工作空间" class="headerlink" title="编译工作空间"></a>编译工作空间</h2><p><hanla></hanla>4.<hanla></hanla>编译工作空间需要在<code><hanla></hanla>src</code><hanla></hanla>上一级目录下完成</p>
+<p><code>cd ..</code> 返回上一级目录</p>
+<p><code>catkin_make</code><hanla></hanla>再编译</p>
+<p><hanla></hanla>5.<hanla></hanla>编译完成后，在同一目录下生成了<code><hanla></hanla>build</code><hanla></hanla>和<code><hanla></hanla>devel</code><hanla></hanla>文件夹（还有一个.catkin_make_workspace<hanla></hanla>文件）</p>
+<p><hanla></hanla>6.<hanla></hanla>但是<code><hanla></hanla>catkin_make</code><hanla></hanla>是编译全部工作空间，如果想编译单独的功能包，使用以下指令</p>
+<p><code>catkin_make -DCATKIN_WHITELIST_PACKAGES="功能包名"</code></p>
+<p><hanla></hanla>注意，此时的<hanla></hanla>catkin_make<hanla></hanla>也会直接编译指定的功能包</p>
+<p><hanla></hanla>如果想解除，需要重新运行（将<hanla></hanla>“”<hanla></hanla>内改成空即可）</p>
+<p><code>catkin_make -DCATKIN_WHITELIST_PACKAGES=""</code></p>
+<p><hanla></hanla>7.<hanla></hanla>还可以指定任务数和线程数编译</p>
+<p><code>catkin_make -j4 -l4</code><hanla></hanla>(4<hanla></hanla>任务数<hanla></hanla>4<hanla></hanla>线程)</p>
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><p>编译完后需要添加环境变量，告诉系统这是工作空间的路径，这样运行工作空间内的程序才能被正确的索引到</p>
+<p><hanla></hanla>8.<hanla></hanla>进入<hanla></hanla>workspace<hanla></hanla>文件夹</p>
+<p><code>source devel/setup.bash</code></p>
+<p><hanla></hanla>9.<hanla></hanla>检查有没有添加成功</p>
+<p><code>echo SROS_PACKAGE_PATH</code></p>
+<p>注意环境变量的有效性仅限于当前终端，再打开一个终端就不行了，因为此时添加的是局部环境变量</p>
+<p><hanla></hanla>10.<hanla></hanla>添加全局环境变量</p>
+<p><code>nano .bashrc</code></p>
+<p><hanla></hanla>在<hanla></hanla>source<hanla></hanla>栏再添加一行</p>
+<p><code>source /home/Tonkla/new_workspace/devel/setup.bash</code></p>
+<p><hanla></hanla>再<hanla></hanla>source<hanla></hanla>以下</p>
+<p><code>source .bashrc</code></p>
+<h1 id="功能包"><a href="#功能包" class="headerlink" title="功能包"></a>功能包</h1><p>功能包是存放在工作空间中的<code><hanla></hanla>src</code><hanla></hanla>文件夹目录下的</p>
+<p>一般代码文件除了主程序文件还有头文件、参数文件等</p>
+<p>下图是一般功能包内常见文件类型</p>
+<p><img src="https://s2.loli.net/2023/02/05/udxLK2Y6U79McIm.png" alt="image.png"></p>
+<h2 id="创建新功能包"><a href="#创建新功能包" class="headerlink" title="创建新功能包"></a>创建新功能包</h2><p><hanla></hanla>进入<hanla></hanla>src<hanla></hanla>路径下</p>
+<p><code>catkin_create_pkg  &lt;package_name&gt; [depend1] [depend2] [depend3]</code></p>
+<p>示例：<code>catkin_create_pkg new_package std_msgs rospy rosc</code></p>
+<p><hanla></hanla>后面三个是<hanla></hanla>“依赖”</p>
+<p><hanla></hanla>include<hanla></hanla>里是.h<hanla></hanla>的头文件</p>
+<p><hanla></hanla>launch<hanla></hanla>里是.launch<hanla></hanla>可执行文件</p>
+<p><hanla></hanla>map<hanla></hanla>里是用来存放地图的文件夹</p>
+<p><hanla></hanla>param<hanla></hanla>和<hanla></hanla>config<hanla></hanla>文件夹基本都是.yaml<hanla></hanla>的参数文件</p>
+<p><hanla></hanla>scripts<hanla></hanla>里是<hanla></hanla>python<hanla></hanla>文件</p>
+<p><hanla></hanla>src<hanla></hanla>内是.cpp<hanla></hanla>文件</p>
+<p><hanla></hanla>然后就是编译规则文件<hanla></hanla>CMakeLists.txt<hanla></hanla>和包描述文件<hanla></hanla>package.xml</p>
+<h2 id="CMakeLists-txt"><a href="#CMakeLists-txt" class="headerlink" title="CMakeLists.txt"></a>CMakeLists.txt</h2><p><hanla></hanla>这个文件的作用是定义编译规则</p>
+<p>具体可查<a target="_blank" rel="noopener" href="http://wiki.ros.org/catkin/CMakeLists.txt"><hanla></hanla>CMakeList<hanla></hanla>官方文档</a></p>
+<p>常见宏（点开文件怎么读）：</p>
+<p><img src="https://s2.loli.net/2023/02/05/yc1ULYBvWpAtesk.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/02/05/9vbRMDjSOPel326.png" alt="image.png"></p>
+<h2 id="package-xml"><a href="#package-xml" class="headerlink" title="package.xml"></a>package.xml</h2><p><hanla></hanla>此文件是按照标签的形式来写的</p>
+<p><a target="_blank" rel="noopener" href="http://wiki.ros.org/catkin/package.xml"><hanla></hanla>package<hanla></hanla>官方文档</a></p>
+<p><img src="https://s2.loli.net/2023/02/05/ziCQoZscp7vfSlP.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/02/05/ieO5dPoZrGyVJnc.png" alt="image.png"></p>
+<h1 id="launch文件"><a href="#launch文件" class="headerlink" title="launch文件"></a><hanla></hanla>launch<hanla></hanla>文件</h1><p><hanla></hanla>launch<hanla></hanla>文件是一种可以实现多节点启动和参数配置的<hanla></hanla>xml<hanla></hanla>文件</p>
+<p><hanla></hanla>下面列出<hanla></hanla>launch<hanla></hanla>文件标签总览</p>
+<p><img src="https://s2.loli.net/2023/02/05/yKnu2tg5cHwlvJo.png" alt="image.png"></p>
+<p>右边三个标签用的较少</p>
+<p>根标签：</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>launch</span><span class="token punctuation">&gt;</span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>launch</span><span class="token punctuation">&gt;</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>嵌套标签：</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true"><hanla></hanla><!-- include<hanla></hanla>打开其他<hanla></hanla>launch<hanla></hanla>文件 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span> <span class="token attr-name">file</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>$(find 功能包名)/launch/include/base_serial.launch<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> 
+
+<span class="token comment" spellcheck="true"><hanla></hanla><!-- include<hanla></hanla>打开其他<hanla></hanla>xml<hanla></hanla>文件 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span> <span class="token attr-name">file</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>$(find 功能包名)/launch/include/base_serial.launch.xml<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">&gt;</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="节点：ROS程序运行的单位是node"><a href="#节点：ROS程序运行的单位是node" class="headerlink" title="节点：ROS程序运行的单位是node"></a><hanla></hanla>节点：ROS<hanla></hanla>程序运行的单位是<hanla></hanla>node</h2><p><hanla></hanla>运行单个<hanla></hanla>node<hanla></hanla>的指令是<hanla></hanla>rosrun：</p>
+<p><code>rosrun  &lt;package_name&gt; &lt;executable|python&gt;</code></p>
+<p><hanla></hanla>node<hanla></hanla>标签的含义就像<hanla></hanla>rosrun<hanla></hanla>命令一样，一个<hanla></hanla>node<hanla></hanla>标签就是启动一个节点，启动多个节点就是设置多个<hanla></hanla>node<hanla></hanla>标签</p>
+<p><hanla></hanla>使用<hanla></hanla>node<hanla></hanla>标签代表<hanla></hanla>rosrun：</p>
+<p><code>&lt;node pkg="package_name" type="executable|python" name="node_name" /&gt;</code></p>
+<p><hanla></hanla>功能包名<hanla></hanla>/<hanla></hanla>可执行文件名<hanla></hanla>/<hanla></hanla>重命名的名字</p>
+<p>示例：</p>
+<p><code>rosrun turn_on_wheeltec_robot wheeltec_robot_node</code></p>
+<p><code>&lt;node pkg="turn_on_wheeltec_robot" type="wheeltec_robot_node" name="wheeltec_robot"&gt;</code></p>
+<p><hanla></hanla>node<hanla></hanla>标签除了上面三个属性以外，还有其他可选的属性</p>
+<p><img src="https://s2.loli.net/2023/02/05/yAYp9hnPejCrTzS.png" alt="image.png"></p>
+<p><hanla></hanla>对于节点，有无<hanla></hanla>output<hanla></hanla>的对比：</p>
+<p><img src="https://s2.loli.net/2023/02/10/4l17z3IHvZSUQLP.png" alt="image.png"></p>
+<p><hanla></hanla>output<hanla></hanla>就是将节点的日志输出到终端</p>
+<p><hanla></hanla>respawn<hanla></hanla>默认是<hanla></hanla>false，这样如果找不到串口就会自动关闭节点，能够起到发现故障的作用（required<hanla></hanla>的作用和<hanla></hanla>respawn<hanla></hanla>相反）</p>
+<p><hanla></hanla>node<hanla></hanla>里面还有三个重要属性</p>
+<p><img src="https://s2.loli.net/2023/02/10/ZSP79aBJzEVXgfb.png" alt="image.png"></p>
+<h2 id="参数服务器"><a href="#参数服务器" class="headerlink" title="参数服务器"></a>参数服务器</h2><p><hanla></hanla>机器人系统中，参数众多，这些参数可能来自机器内部的变量，也可能来自外部的传感器，同时参数的传递也非常频繁，因此设置和修改参数的便捷性就显得十分重要。ROS<hanla></hanla>中提供了参数服务器这个功能，用户可以在命令行<hanla></hanla>/launch<hanla></hanla>文件<hanla></hanla>/C++/pyhton<hanla></hanla>中去输入<hanla></hanla>/<hanla></hanla>读取<hanla></hanla>/<hanla></hanla>修改<hanla></hanla>/<hanla></hanla>加载参数服务器中的参数。简单来说，参数服务器是一个全局的<hanla></hanla>“字典”</p>
+<p><hanla></hanla>param<hanla></hanla>是一种全局的添加，arg<hanla></hanla>是在<hanla></hanla>launch<hanla></hanla>中的局部添加</p>
+<p>命令行端调用参数服务器的函数：</p>
+<p><img src="https://s2.loli.net/2023/02/10/86M5EomNDgfjuIZ.png" alt="image.png"></p>
+<p><hanla></hanla>下面以<hanla></hanla>C++<hanla></hanla>程序为例</p>
+<p><img src="https://s2.loli.net/2023/02/10/zB2QhuoZgefc4Sq.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/02/10/JyOhQAtUfNnCZlj.png" alt="image.png"></p>
+<p>因为这样写可以直接在开头的地方进行修改值，这样所有后面调用的地方都会改了</p>
+<h2 id="节点分组：group标签"><a href="#节点分组：group标签" class="headerlink" title="节点分组：group标签"></a><hanla></hanla>节点分组：group<hanla></hanla>标签</h2><p><img src="https://s2.loli.net/2023/02/10/7JolxUyjbASD8nK.png" alt="image.png"></p>
+<p><strong><hanla></hanla>作用<hanla></hanla>1：</strong>能够增加命名空间的别名：</p>
+<p><img src="https://s2.loli.net/2023/02/10/KJWcLOmHyCjqE4x.png" alt="image.png"></p>
+<p><hanla></hanla>进入<hanla></hanla>rqt<hanla></hanla>图形化查看：</p>
+<p><img src="https://s2.loli.net/2023/02/10/DipnJZWKRw3Ns4I.png" alt="image.png"></p>
+<p><hanla></hanla>如果有时候，想分类的节点不在同一个<hanla></hanla>launch<hanla></hanla>里面，但是又想将他们归类到同一个命名空间下，就可以进行直接使用<hanla></hanla>node ns</p>
+<p><hanla></hanla>在<hanla></hanla>node<hanla></hanla>的结尾加上 <code>ns = "robot1"</code>即可</p>
+<p><strong><hanla></hanla>作用<hanla></hanla>2：</strong>group if  起到判断的作用</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>group</span> <span class="token attr-name">if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>$(a <span class="token punctuation">=</span><span class="token punctuation">=</span> 1)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    &lt;node = ""&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>node</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>group</span><span class="token punctuation">&gt;</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><hanla></hanla>注意！只能是<hanla></hanla>group<hanla></hanla>包含<hanla></hanla>node，不能是<hanla></hanla>node<hanla></hanla>包含<hanla></hanla>group</p>
+<h2 id="重命名标签remap"><a href="#重命名标签remap" class="headerlink" title="重命名标签remap"></a><hanla></hanla>重命名标签<hanla></hanla>remap</h2><p><hanla></hanla>给话题重命名：</p>
+<p><img src="https://s2.loli.net/2023/02/10/nuDyKzWstFfhIO4.png" alt="image.png"></p>
+<p>如果订阅话题，就是先重命名，再输入；如果发布话题，就是先重命名，再输出</p>
+<p>（最后有个斜杠别忘了！）</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ROS/" rel="tag"># ROS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/01/31/ros-a-ke-man-chai-su-yi-dong-ji-qi-ren-shang/" rel="prev" title="【ROS】阿克曼差速移动机器人（上）">
+      <i class="fa fa-chevron-left"></i> 【ROS】阿克曼差速移动机器人（上）
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-number">1.</span> <span class="nav-text">工作空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>1.1.</span> <span class="nav-text">创建工作空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-number"><hanla></hanla>1.2.</span> <span class="nav-text">编译工作空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number"><hanla></hanla>1.3.</span> <span class="nav-text">设置环境变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-number"><hanla></hanla>2.</span> <span class="nav-text">功能包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-number"><hanla></hanla>2.1.</span> <span class="nav-text">创建新功能包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMakeLists-txt"><span class="nav-number"><hanla></hanla>2.2.</span> <span class="nav-text">CMakeLists.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-xml"><span class="nav-number">2.3.</span> <span class="nav-text">package.xml</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#launch%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text"><hanla></hanla>launch<hanla></hanla>文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%EF%BC%9AROS%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%9A%84%E5%8D%95%E4%BD%8D%E6%98%AFnode"><span class="nav-number"><hanla></hanla>3.1.</span> <span class="nav-text"><hanla></hanla>节点：ROS<hanla></hanla>程序运行的单位是<hanla></hanla>node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">3.2.</span> <span class="nav-text">参数服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%88%86%E7%BB%84%EF%BC%9Agroup%E6%A0%87%E7%AD%BE"><span class="nav-number"><hanla></hanla>3.3.</span> <span class="nav-text"><hanla></hanla>节点分组：group<hanla></hanla>标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E6%A0%87%E7%AD%BEremap"><span class="nav-number"><hanla></hanla>3.4.</span> <span class="nav-text"><hanla></hanla>重命名标签<hanla></hanla>remap</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="TianxiaoYe" src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">TianxiaoYe</p>
+  <div class="site-description" itemprop="description">Let your brain control your body</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TianxiaoYe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+</body></html>
