@@ -6,7 +6,7 @@
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2023-02-10T00:30:14.434Z</updated>
+  <updated>2023-02-15T02:24:40.519Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://fuwafuwaboom.github.io/2023/01/31/ros-ros-xi-tong-ji-chu/"/>
     <id>http://fuwafuwaboom.github.io/2023/01/31/ros-ros-xi-tong-ji-chu/</id>
     <published>2023-01-31T16:00:00.000Z</published>
-    <updated>2023-02-10T00:30:14.434Z</updated>
+    <updated>2023-02-15T02:24:40.519Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
@@ -193,6 +193,28 @@
     <category term="Neural Network" scheme="http://fuwafuwaboom.github.io/tags/Neural-Network/"/>
     
     <category term="Deep Learning" scheme="http://fuwafuwaboom.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【ROS】第一讲·邂逅ROS</title>
+    <link href="http://fuwafuwaboom.github.io/2022/01/31/ros-di-yi-jiang-xie-hou-ros/"/>
+    <id>http://fuwafuwaboom.github.io/2022/01/31/ros-di-yi-jiang-xie-hou-ros/</id>
+    <published>2022-01-31T16:00:00.000Z</published>
+    <updated>2023-03-25T23:40:19.719Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ROS第一讲，这一讲主要介绍两个问题：一是为什么要学习ROS？二是ROS是什么？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【ROS】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90ROS%E3%80%91/"/>
+    
+    
+    <category term="ROS" scheme="http://fuwafuwaboom.github.io/tags/ROS/"/>
+    
+    <category term="Robotics" scheme="http://fuwafuwaboom.github.io/tags/Robotics/"/>
     
   </entry>
   
@@ -441,29 +463,6 @@
     <category term="枚举体" scheme="http://fuwafuwaboom.github.io/tags/%E6%9E%9A%E4%B8%BE%E4%BD%93/"/>
     
     <category term="联合体" scheme="http://fuwafuwaboom.github.io/tags/%E8%81%94%E5%90%88%E4%BD%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第七篇·字符串函数与内存函数</title>
-    <link href="http://fuwafuwaboom.github.io/2021/06/29/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-qi-pian-zi-fu-chuan-han-shu-yu-nei-cun-han-shu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/06/29/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-qi-pian-zi-fu-chuan-han-shu-yu-nei-cun-han-shu/</id>
-    <published>2021-06-29T16:00:00.000Z</published>
-    <updated>2021-11-07T14:47:46.432Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="字符串函数" scheme="http://fuwafuwaboom.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0/"/>
-    
-    <category term="内存函数" scheme="http://fuwafuwaboom.github.io/tags/%E5%86%85%E5%AD%98%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
