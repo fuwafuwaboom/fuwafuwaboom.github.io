@@ -6,7 +6,7 @@
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2023-02-15T02:24:40.519Z</updated>
+  <updated>2023-06-11T20:40:36.602Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1.concept of AI big words</title>
+    <link href="http://fuwafuwaboom.github.io/2023/06/6/1.concept-of-ai-big-words/"/>
+    <id>http://fuwafuwaboom.github.io/2023/06/6/1.concept-of-ai-big-words/</id>
+    <published>2023-06-06T16:00:00.000Z</published>
+    <updated>2023-06-11T20:40:36.602Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Most used Artificial Intelligence terms clearly explained to everyone&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【Introduce to AI】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90Introduce-to-AI%E3%80%91/"/>
+    
+    
+    <category term="Basic concept" scheme="http://fuwafuwaboom.github.io/tags/Basic-concept/"/>
+    
+    <category term="Artificial Intelligence" scheme="http://fuwafuwaboom.github.io/tags/Artificial-Intelligence/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>research team of UW Madison ECE</title>
+    <link href="http://fuwafuwaboom.github.io/2023/04/23/new-words-when-learning/"/>
+    <id>http://fuwafuwaboom.github.io/2023/04/23/new-words-when-learning/</id>
+    <published>2023-04-23T16:00:00.000Z</published>
+    <updated>2023-04-30T01:47:45.594Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇记录一下威斯康辛大学麦迪逊分校的ece的老师们的研究领域&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【research】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90research%E3%80%91/"/>
+    
+    
+    <category term="research" scheme="http://fuwafuwaboom.github.io/tags/research/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>research team of UW Madison ECE</title>
+    <link href="http://fuwafuwaboom.github.io/2023/04/23/wisc-ece-research/"/>
+    <id>http://fuwafuwaboom.github.io/2023/04/23/wisc-ece-research/</id>
+    <published>2023-04-23T16:00:00.000Z</published>
+    <updated>2023-04-30T01:47:45.594Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇记录一下威斯康辛大学麦迪逊分校的ece的老师们的研究领域&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【research】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90research%E3%80%91/"/>
+    
+    
+    <category term="research" scheme="http://fuwafuwaboom.github.io/tags/research/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>避孕手段合集</title>
+    <link href="http://fuwafuwaboom.github.io/2023/04/11/bi-yun-shou-duan-he-ji/"/>
+    <id>http://fuwafuwaboom.github.io/2023/04/11/bi-yun-shou-duan-he-ji/</id>
+    <published>2023-04-11T16:00:00.000Z</published>
+    <updated>2023-04-13T04:33:25.152Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;常见的避孕手段极其利弊&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【生活常识】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90%E7%94%9F%E6%B4%BB%E5%B8%B8%E8%AF%86%E3%80%91/"/>
+    
+    
+    <category term="避孕" scheme="http://fuwafuwaboom.github.io/tags/%E9%81%BF%E5%AD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>【ROS】ROS系统基础</title>
@@ -201,7 +280,7 @@
     <link href="http://fuwafuwaboom.github.io/2022/03/25/ros-di-yi-jiang-xie-hou-ros/"/>
     <id>http://fuwafuwaboom.github.io/2022/03/25/ros-di-yi-jiang-xie-hou-ros/</id>
     <published>2022-03-25T16:00:00.000Z</published>
-    <updated>2023-03-26T05:13:09.521Z</updated>
+    <updated>2023-03-27T20:42:19.527Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
@@ -362,107 +441,6 @@
     <category term="小技巧" scheme="http://fuwafuwaboom.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
     <category term="编程素质" scheme="http://fuwafuwaboom.github.io/tags/%E7%BC%96%E7%A8%8B%E7%B4%A0%E8%B4%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>调试</title>
-    <link href="http://fuwafuwaboom.github.io/2021/08/4/diao-shi/"/>
-    <id>http://fuwafuwaboom.github.io/2021/08/4/diao-shi/</id>
-    <published>2021-08-04T16:00:00.000Z</published>
-    <updated>2021-11-07T14:45:42.468Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;不夸张的说，好的程序，40%是写出来的，60%是调出来的。我们必须要不断的锻炼自己写bug、调bug、改bug的能力。本文着重介绍实用的调试技巧，望各位笑纳&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【编程基本功】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90%E7%BC%96%E7%A8%8B%E5%9F%BA%E6%9C%AC%E5%8A%9F%E3%80%91/"/>
-    
-    
-    <category term="小技巧" scheme="http://fuwafuwaboom.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    
-    <category term="编程素质" scheme="http://fuwafuwaboom.github.io/tags/%E7%BC%96%E7%A8%8B%E7%B4%A0%E8%B4%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第十篇·底层程序的编译过程</title>
-    <link href="http://fuwafuwaboom.github.io/2021/07/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-shi-pian-cheng-xu-de-di-ceng-bian-yi-guo-cheng/"/>
-    <id>http://fuwafuwaboom.github.io/2021/07/9/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-shi-pian-cheng-xu-de-di-ceng-bian-yi-guo-cheng/</id>
-    <published>2021-07-09T16:00:00.000Z</published>
-    <updated>2021-11-07T14:48:07.844Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;编程的三重境界：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1.代码就是代码&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2.代码就是内存&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3.代码不是代码&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="预处理操作" scheme="http://fuwafuwaboom.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86%E6%93%8D%E4%BD%9C/"/>
-    
-    <category term="链接" scheme="http://fuwafuwaboom.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第九篇·函数栈帧的创建与销毁</title>
-    <link href="http://fuwafuwaboom.github.io/2021/07/6/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-jiu-pian-han-shu-zhan-zheng-de-chuang-jian-yu-xiao-hui/"/>
-    <id>http://fuwafuwaboom.github.io/2021/07/6/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-jiu-pian-han-shu-zhan-zheng-de-chuang-jian-yu-xiao-hui/</id>
-    <published>2021-07-06T16:00:00.000Z</published>
-    <updated>2021-11-07T14:48:01.913Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;编程的三重境界：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1.代码就是代码&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2.代码就是内存&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3.代码不是代码&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="预处理操作" scheme="http://fuwafuwaboom.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86%E6%93%8D%E4%BD%9C/"/>
-    
-    <category term="链接" scheme="http://fuwafuwaboom.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【C语言从青铜到王者】第八篇·详解自定义类型</title>
-    <link href="http://fuwafuwaboom.github.io/2021/07/4/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ba-pian-xiang-jie-zi-ding-yi-lei-xing/"/>
-    <id>http://fuwafuwaboom.github.io/2021/07/4/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-ba-pian-xiang-jie-zi-ding-yi-lei-xing/</id>
-    <published>2021-07-04T16:00:00.000Z</published>
-    <updated>2021-11-07T14:47:54.423Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;结构体实际上是一种我们自定义的数据类型。结构体的出现使得我们可以给某个变量多个维度的数据。今天就让我们深入学习一下C语言的&lt;strong&gt;自定义类型：结构体、枚举体、联合体&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【C语言】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90C%E8%AF%AD%E8%A8%80%E3%80%91/"/>
-    
-    
-    <category term="C语言" scheme="http://fuwafuwaboom.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="结构体" scheme="http://fuwafuwaboom.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93/"/>
-    
-    <category term="枚举体" scheme="http://fuwafuwaboom.github.io/tags/%E6%9E%9A%E4%B8%BE%E4%BD%93/"/>
-    
-    <category term="联合体" scheme="http://fuwafuwaboom.github.io/tags/%E8%81%94%E5%90%88%E4%BD%93/"/>
     
   </entry>
   
