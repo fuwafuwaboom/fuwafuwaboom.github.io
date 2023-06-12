@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://fuwafuwaboom.github.io/about/2023_6_12.html</loc>
+    <loc>http://fuwafuwaboom.github.io/about/index.html</loc>
+    
+    <lastmod>2023-06-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fuwafuwaboom.github.io/2022/03/25/ros-di-yi-jiang-xie-hou-ros/</loc>
     
     <lastmod>2023-06-12</lastmod>
     
@@ -33,13 +40,6 @@
     <loc>http://fuwafuwaboom.github.io/2023/04/11/bi-yun-shou-duan-he-ji/</loc>
     
     <lastmod>2023-04-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fuwafuwaboom.github.io/2022/03/25/ros-di-yi-jiang-xie-hou-ros/</loc>
-    
-    <lastmod>2023-03-27</lastmod>
     
   </url>
   
@@ -96,13 +96,6 @@
     <loc>http://fuwafuwaboom.github.io/2022/12/25/python-su-tong-python-shang/</loc>
     
     <lastmod>2023-01-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fuwafuwaboom.github.io/about/index.html</loc>
-    
-    <lastmod>2022-12-27</lastmod>
     
   </url>
   
