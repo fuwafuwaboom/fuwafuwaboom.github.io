@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fuwafuwaboom.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="interesting Q&amp;A with ChatGPT (GPT4)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ChatGPT_Q&amp;A">
+<meta property="og:url" content="http://fuwafuwaboom.github.io/2023/06/11/chatgpt-q-a/index.html">
+<meta property="og:site_name" content="潇のNOTES">
+<meta property="og:description" content="interesting Q&amp;A with ChatGPT (GPT4)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-17T23:57:05.477Z">
+<meta property="article:author" content="TianxiaoYe">
+<meta property="article:tag" content="ChatGPT">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fuwafuwaboom.github.io/2023/06/11/chatgpt-q-a/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>ChatGPT_Q&amp;A | 潇のNOTES</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start --><style>
+.body hanla:after {
+    content: ' ';
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
+}
+
+html code hanla,
+html pre hanla,
+html kbd hanla,
+html samp hanla {
+    display: none;
+}
+
+html ol > hanla,
+html ul > hanla {
+    display: none;
+}
+</style><!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="潇のNOTES" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">潇のNOTES</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fuwafuwaboom.github.io/2023/06/11/chatgpt-q-a/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="TianxiaoYe">
+      <meta itemprop="description" content="My brain is stronger than I thought">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潇のNOTES">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ChatGPT_Q&amp;A
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-12 00:00:00" itemprop="dateCreated datePublished" datetime="2023-06-12T00:00:00+08:00">2023-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-06-18 07:57:05" itemprop="dateModified" datetime="2023-06-18T07:57:05+08:00">2023-06-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E3%80%90ChatGPT%E3%80%91/" itemprop="url" rel="index"><span itemprop="name">【ChatGPT】</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>interesting Q&amp;A with ChatGPT (GPT4)</strong></p>
+<span id="more"></span>
+
+<h1 id="how-can-our-life-turn-to-with-the-development-of-technology-within-100-years"><a href="#how-can-our-life-turn-to-with-the-development-of-technology-within-100-years" class="headerlink" title="how can our life turn to with the development of technology within 100 years"></a>how can our life turn to with the development of technology within 100 years</h1><p>Predicting the precise details of how life will evolve over the next 100 years is highly speculative and challenging. However, I can provide you with a broad overview of some potential advancements and changes that could occur due to the continued development of technology:</p>
+<ol>
+<li>Artificial Intelligence (AI) and Automation: AI is likely to become more integrated into our daily lives, with advancements in natural language processing, machine learning, and robotics. AI could be employed in various industries, including healthcare, transportation, manufacturing, and customer service. Automation may lead to increased efficiency and productivity, but it could also disrupt certain job markets and require the retraining of the workforce.</li>
+<li>Healthcare Revolution: Technology has the potential to revolutionize healthcare by enabling personalized medicine, advanced diagnostics, and innovative treatments. Genetic engineering, nanotechnology, and improved medical imaging could lead to more effective and targeted therapies, potentially extending human lifespan and improving overall quality of life.</li>
+<li>Virtual and Augmented Reality: Virtual and augmented reality technologies may advance significantly, transforming the way we interact with the digital world. They could revolutionize entertainment, education, training, and communication, allowing for immersive experiences that feel almost indistinguishable from reality.</li>
+<li>Sustainable Energy Solutions: As concerns about climate change continue to grow, the development of renewable energy sources is likely to accelerate. Solar, wind, and other clean energy technologies may become more efficient and affordable, leading to a widespread adoption of sustainable energy solutions and a reduction in reliance on fossil fuels.</li>
+<li>Transportation Innovations: The transportation sector could witness significant changes. Electric and autonomous vehicles may become the norm, reducing carbon emissions and improving road safety. Furthermore, the emergence of hyperloop systems, drones for delivery, and other innovations could transform the way we travel and transport goods.</li>
+<li>Space Exploration and Colonization: Technology advancements may also lead to significant progress in space exploration and colonization. Private companies and government agencies could collaborate to establish permanent human settlements on the Moon, Mars, or even beyond, opening up new frontiers and possibilities for humanity.</li>
+<li>Ethical and Societal Implications: As technology continues to advance, society will face ethical dilemmas and challenges. Issues surrounding privacy, data security, AI ethics, and equitable access to technology will need to be addressed to ensure that the benefits of technological development are shared by all.</li>
+</ol>
+<p>It’s important to remember that predicting the future is highly uncertain, and unexpected developments may occur. The trajectory of technological progress will depend on various factors such as societal values, economic conditions, and scientific breakthroughs.</p>
+<h1 id="so-as-one-of-the-smartest-AI-now-what-do-you-think-is-the-furture-of-human"><a href="#so-as-one-of-the-smartest-AI-now-what-do-you-think-is-the-furture-of-human" class="headerlink" title="so, as one of the smartest AI now, what do you think is the furture of human"></a>so, as one of the smartest AI now, what do you think is the furture of human</h1><p>As an AI language model, I don’t possess personal opinions or beliefs, but I can provide some insights on potential future trends for humanity:</p>
+<ol>
+<li>Advancements in Science and Medicine: Humans are likely to continue making remarkable discoveries and advancements in various scientific fields. This could include breakthroughs in medicine, neuroscience, genetics, and other areas, leading to improved health, longevity, and understanding of the human body and mind.</li>
+<li>Integration of Technology: Humans may increasingly integrate technology into their lives through wearable devices, brain-computer interfaces, and even cyborg-like enhancements. These technological augmentations could potentially enhance human capabilities, such as memory, sensory perception, and communication.</li>
+<li>Enhanced Connectivity: The world is becoming increasingly interconnected through the internet and other communication technologies. In the future, connectivity may become even more pervasive, enabling seamless global communication and collaboration. This could lead to greater cultural exchange, innovation, and the formation of global communities.</li>
+<li>Environmental Challenges: Climate change and environmental concerns will likely continue to be significant challenges. As a result, there may be a greater emphasis on sustainable practices, renewable energy, and conservation efforts to mitigate the impact on the planet and ensure a sustainable future for humanity.</li>
+<li>Socioeconomic Changes: The global economy and job market are expected to undergo significant transformations due to automation, AI, and other technological advancements. This could lead to changes in the nature of work, with a shift toward creative and knowledge-based roles, while also requiring continuous skill development and adaptability.</li>
+<li>Ethical and Moral Considerations: As technology continues to advance, ethical questions and debates will arise. Society will need to grapple with issues such as privacy, AI governance, the impact of automation on employment, and the ethical implications of scientific breakthroughs like genetic engineering. Ensuring ethical decision-making and addressing potential inequalities will be crucial for shaping the future of humanity.</li>
+<li>Space Exploration and Beyond: Humanity’s exploration of space may expand further, with potential missions to Mars, lunar bases, and advancements in interstellar travel. The exploration and colonization of space could offer new opportunities, resources, and the expansion of human civilization beyond Earth.</li>
+</ol>
+<p>It’s important to note that these projections are speculative and subject to change based on unforeseen developments and human choices. The future of humanity will depend on collective decisions, technological progress, and our ability to address the challenges and opportunities that lie ahead.</p>
+<h1 id="what-do-you-think-is-the-furture-of-AI-Can-we-actually-achieve-an-Artificial-General-Intelligence？"><a href="#what-do-you-think-is-the-furture-of-AI-Can-we-actually-achieve-an-Artificial-General-Intelligence？" class="headerlink" title="what do you think is the furture of AI? Can we actually achieve an Artificial General Intelligence？"></a>what do you think is the furture of AI? Can we actually achieve an Artificial General Intelligence？</h1><p>As an AI model, I don’t possess feelings or beliefs, so I don’t “think” in the traditional human sense. However, I can provide an informed analysis based on the information and patterns I’ve been trained on up until my knowledge cut-off in September 2021.</p>
+<p>The future of AI is very much an open question, largely depending on both technological advances and societal decisions. It’s clear that AI will continue to become increasingly integrated into various aspects of our lives, from healthcare and transportation to entertainment and personal assistance.</p>
+<p>One trend that’s likely to continue is the development of increasingly powerful specialized AI systems. These systems can perform specific tasks at or beyond human level, but they are fundamentally narrow in scope: a powerful chess AI can’t drive a car, and a self-driving car AI can’t diagnose diseases.</p>
+<p>The development of Artificial General Intelligence (AGI), also referred to as “strong AI,” would be a major leap forward. AGI would be capable of understanding, learning, and applying knowledge across a wide range of tasks, not just ones for which it has been specifically programmed. In theory, an AGI system would have the ability to understand context, make reasoned judgments, and apply its capabilities in a generalized manner much like a human.</p>
+<p>As of my last training data in 2021, no existing AI system has achieved AGI. While progress in machine learning and related fields has been impressive, the challenges involved in achieving AGI are immense. AI researchers are still grappling with fundamental questions about cognition, consciousness, and the nature of intelligence.</p>
+<p>Moreover, creating AGI raises profound ethical and societal questions. If AGI were achievable, how would we ensure it is used responsibly and to the benefit of all? What kinds of rights and responsibilities would an AGI have? These are important questions that society will need to address as AI continues to develop.</p>
+<p>In summary, while AGI is a theoretical possibility and an active area of research, it’s uncertain when or even if we will achieve it. Regardless, the journey towards it promises to yield many interesting and useful developments in AI along the way.</p>
+<h1 id="can-human-become-smarter-than-before-through-training-himself"><a href="#can-human-become-smarter-than-before-through-training-himself" class="headerlink" title="can human become smarter than before through training himself?"></a>can human become smarter than before through training himself?</h1><p>Yes, humans can improve their cognitive abilities through various forms of training. This can be achieved in several ways:</p>
+<ol>
+<li><strong>Education</strong>: Acquiring knowledge through learning and education is one of the most straightforward ways to become “smarter.” Education can take various forms, such as school, university, online courses, books, podcasts, or mentorship.</li>
+<li><strong>Cognitive training exercises</strong>: These are specific activities designed to improve cognitive functions such as memory, attention, and problem-solving. For example, some people use brain-training apps or games to exercise their cognitive skills.</li>
+<li><strong>Physical exercise</strong>: Regular physical exercise has been linked to improved cognitive function, particularly in areas like memory and attention. Exercise increases blood flow to the brain and releases chemicals that promote neural health.</li>
+<li><strong>Healthy lifestyle</strong>: A healthy diet, adequate sleep, and stress management are all essential for optimal cognitive function. There is evidence that certain nutrients can support brain health, and chronic stress or lack of sleep can impair cognitive abilities.</li>
+<li><strong>Continuous learning and mental stimulation</strong>: Engaging in intellectually stimulating activities, such as reading, puzzles, or learning a new skill or language, can help keep the brain sharp. The saying “use it or lose it” applies here: mental stimulation can enhance brain function and protect against cognitive decline.</li>
+<li><strong>Meditation and mindfulness</strong>: Practices like meditation and mindfulness have been shown to improve attention, memory, and emotional regulation. They can also help reduce stress and anxiety, which can indirectly support cognitive function.</li>
+<li><strong>Social interaction</strong>: Engaging with others socially can also be beneficial for cognitive health. Social activity can stimulate the brain and may reduce the risk of cognitive decline and dementia.</li>
+</ol>
+<p>While these methods can help improve and maintain cognitive function, it’s important to remember that there are limits to how much one can boost their cognitive abilities, and these can depend on factors like genetics and age. Also, the term “smarter” can mean different things in different contexts. Intelligence is multi-faceted and includes skills like problem-solving, creativity, emotional intelligence, and more. Each of these can be developed in different ways.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ChatGPT/" rel="tag"># ChatGPT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/6/1.concept-of-ai-big-words/" rel="prev" title="1.concept of AI big words">
+      <i class="fa fa-chevron-left"></i> 1.concept of AI big words
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/06/16/wisc-tips/" rel="next" title="WISC TIPS">
+      WISC TIPS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#how-can-our-life-turn-to-with-the-development-of-technology-within-100-years"><span class="nav-number">1.</span> <span class="nav-text">how can our life turn to with the development of technology within 100 years</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#so-as-one-of-the-smartest-AI-now-what-do-you-think-is-the-furture-of-human"><span class="nav-number">2.</span> <span class="nav-text">so, as one of the smartest AI now, what do you think is the furture of human</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#what-do-you-think-is-the-furture-of-AI-Can-we-actually-achieve-an-Artificial-General-Intelligence%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">what do you think is the furture of AI? Can we actually achieve an Artificial General Intelligence？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#can-human-become-smarter-than-before-through-training-himself"><span class="nav-number">4.</span> <span class="nav-text">can human become smarter than before through training himself?</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="TianxiaoYe" src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">TianxiaoYe</p>
+  <div class="site-description" itemprop="description">My brain is stronger than I thought</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TianxiaoYe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+</body></html>

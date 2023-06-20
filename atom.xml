@@ -6,7 +6,7 @@
   <link href="http://fuwafuwaboom.github.io/atom.xml" rel="self"/>
   
   <link href="http://fuwafuwaboom.github.io/"/>
-  <updated>2023-06-11T20:40:36.602Z</updated>
+  <updated>2023-06-17T23:54:24.730Z</updated>
   <id>http://fuwafuwaboom.github.io/</id>
   
   <author>
@@ -17,11 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>WISC TIPS</title>
+    <link href="http://fuwafuwaboom.github.io/2023/06/16/wisc-tips/"/>
+    <id>http://fuwafuwaboom.github.io/2023/06/16/wisc-tips/</id>
+    <published>2023-06-16T16:00:00.000Z</published>
+    <updated>2023-06-17T23:54:24.730Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Tips of learning in UW-Madison&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【tips】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90tips%E3%80%91/"/>
+    
+    
+    <category term="tips" scheme="http://fuwafuwaboom.github.io/tags/tips/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ChatGPT_Q&amp;A</title>
+    <link href="http://fuwafuwaboom.github.io/2023/06/11/chatgpt-q-a/"/>
+    <id>http://fuwafuwaboom.github.io/2023/06/11/chatgpt-q-a/</id>
+    <published>2023-06-11T16:00:00.000Z</published>
+    <updated>2023-06-17T23:57:05.477Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;interesting Q&amp;amp;A with ChatGPT (GPT4)&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="【ChatGPT】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90ChatGPT%E3%80%91/"/>
+    
+    
+    <category term="ChatGPT" scheme="http://fuwafuwaboom.github.io/tags/ChatGPT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>1.concept of AI big words</title>
     <link href="http://fuwafuwaboom.github.io/2023/06/6/1.concept-of-ai-big-words/"/>
     <id>http://fuwafuwaboom.github.io/2023/06/6/1.concept-of-ai-big-words/</id>
     <published>2023-06-06T16:00:00.000Z</published>
-    <updated>2023-06-11T20:40:36.602Z</updated>
+    <updated>2023-06-17T23:57:03.050Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;Most used Artificial Intelligence terms clearly explained to everyone&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -38,21 +76,21 @@
   </entry>
   
   <entry>
-    <title>research team of UW Madison ECE</title>
-    <link href="http://fuwafuwaboom.github.io/2023/04/23/new-words-when-learning/"/>
-    <id>http://fuwafuwaboom.github.io/2023/04/23/new-words-when-learning/</id>
-    <published>2023-04-23T16:00:00.000Z</published>
-    <updated>2023-04-30T01:47:45.594Z</updated>
+    <title>New Words When Learning</title>
+    <link href="http://fuwafuwaboom.github.io/2023/06/6/new-words-when-learning/"/>
+    <id>http://fuwafuwaboom.github.io/2023/06/6/new-words-when-learning/</id>
+    <published>2023-06-06T16:00:00.000Z</published>
+    <updated>2023-06-17T18:54:49.632Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇记录一下威斯康辛大学麦迪逊分校的ece的老师们的研究领域&lt;/strong&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Write down new words to help me knowing them&lt;/p&gt;</summary>
     
     
     
-    <category term="【research】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90research%E3%80%91/"/>
+    <category term="【english】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90english%E3%80%91/"/>
     
     
-    <category term="research" scheme="http://fuwafuwaboom.github.io/tags/research/"/>
+    <category term="english" scheme="http://fuwafuwaboom.github.io/tags/english/"/>
     
   </entry>
   
@@ -405,42 +443,6 @@
     <category term="算法" scheme="http://fuwafuwaboom.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
     <category term="排序" scheme="http://fuwafuwaboom.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://fuwafuwaboom.github.io/2021/09/27/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-shu-ju-zai-nei-cun-zhong-de-cun-chu/"/>
-    <id>http://fuwafuwaboom.github.io/2021/09/27/c-yu-yan-cong-qing-tong-dao-wang-zhe-di-wu-pian-shu-ju-zai-nei-cun-zhong-de-cun-chu/</id>
-    <published>2021-09-27T15:33:27.804Z</published>
-    <updated>2022-09-28T22:21:41.290Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本篇前言&lt;/strong&gt;&lt;br&gt;从本篇开始，我们要开始逐渐和内存打交道了。想学好C语言，打牢编程基本功，我们心中一定要时刻有内存的概念。&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>向“C源码”学习代码规范</title>
-    <link href="http://fuwafuwaboom.github.io/2021/08/6/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/"/>
-    <id>http://fuwafuwaboom.github.io/2021/08/6/xiang-yuan-ma-xue-xi-dai-ma-gui-fan/</id>
-    <published>2021-08-06T16:00:00.000Z</published>
-    <updated>2023-01-26T22:59:18.721Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;我们如何写出易于调试，有健壮性的代码呢？源码就是这样的代码，我们要多看多学习源码的写法来提升我们的代码风格&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="【编程基本功】" scheme="http://fuwafuwaboom.github.io/categories/%E3%80%90%E7%BC%96%E7%A8%8B%E5%9F%BA%E6%9C%AC%E5%8A%9F%E3%80%91/"/>
-    
-    
-    <category term="小技巧" scheme="http://fuwafuwaboom.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    
-    <category term="编程素质" scheme="http://fuwafuwaboom.github.io/tags/%E7%BC%96%E7%A8%8B%E7%B4%A0%E8%B4%A8/"/>
     
   </entry>
   
